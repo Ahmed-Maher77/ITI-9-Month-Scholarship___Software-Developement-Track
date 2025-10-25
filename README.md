@@ -184,8 +184,7 @@ __coming soon__
 
 | **Assignment Name** | **Description** | **Links** |
 |:----------------------:|------------------|:-----------:|
-| **Database Analysis and Design (ERD)** | Practice problems covering loops, functions, arrays, and pointers. | [🔗 Assignment](./Assignments/Database_Analysis_and_Design) |
-| **SQL Queries Practice** | Designed and modeled a complete database system using ERD, including entities, relationships, and normalization. | [🔗 Assignment](./Assignments/SQL_Queries_Practice) |
+| **Database (Analysis and Design – SQL Queries)** | Designed and modeled a complete database system using ERD (entities, relationships, normalization) and practiced SQL queries implementation. | [🔗 Assignment](./Assignments/Database%20(Analysis%20and%20Design%20-%20SQL%20Queries)) |
 
 
 
