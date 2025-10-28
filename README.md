@@ -92,7 +92,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 
 > Below is the full structured curriculum of the **ITI 9-Month Professional Scholarship – Software Development Track**, organized by chapters and key areas of study.
 
-| **Chapter** | **Course Name** | **Description** | **Instructor (Teaching Expert)** |
+| **Chapter** | **Course Name** | **Description** | **Instructor** |
 |:--------------:|------------------|-----------------|:---------------------------:|
 | **Software Development Fundamentals** | **Introduction to Programming** | Learn the basics of programming logic, syntax, and problem-solving. |
 |  | **Data Structures and Algorithms** | Explore efficient data handling and algorithmic problem-solving techniques. |
