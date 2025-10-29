@@ -1,0 +1,38 @@
+/* ===================== Shared Styles ===================== */
+.img-container {
+    text-align: center;
+}
+.sm-size {
+    font-size: 10pt;
+}
+.red-color {
+    color: #d21b1b;
+}
+.align-right {
+    text-align: right;
+}
+.align-center {
+    text-align: center;
+}
+
+
+/* ===================== Main Page ===================== */
+#main-page {
+    background: #ffd6d6;
+}
+#headings {
+    text-align: center;
+}
+#headings h1,
+#content h3 {
+    text-decoration: underline;
+}
+#welcome-img {
+    background-color: #fff;
+}
+
+/* ===================== Section Styles (sec-styles) ===================== */
+#sec-styles .sec-list li.fonts {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 20pt;
+}
