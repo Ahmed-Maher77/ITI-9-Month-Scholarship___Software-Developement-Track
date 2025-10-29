@@ -92,11 +92,11 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 
 > Below is the full structured curriculum of the **ITI 9-Month Professional Scholarship – Software Development Track**, organized by chapters and key areas of study.
 
-| **Chapter** | **Course Name** | **Description** |
-|:--------------:|------------------|-----------------|
+| **Chapter** | **Course Name** | **Description** | **Instructor** |
+|:--------------:|------------------|-----------------|:---------------------------:|
 | **Software Development Fundamentals** | **Introduction to Programming** | Learn the basics of programming logic, syntax, and problem-solving. |
 |  | **Data Structures and Algorithms** | Explore efficient data handling and algorithmic problem-solving techniques. |
-|  | **Database Fundamentals** | Understand relational databases, normalization, and SQL operations. |
+|  | **Database Fundamentals** | Understand relational databases, normalization, and SQL operations. |  [🔗 Ramy Abou-Nagi](https://www.linkedin.com/in/ramy-abou-nagi-057158a7) |
 |  | **Object-Oriented Programming Concepts** | Master OOP principles including inheritance, polymorphism, and encapsulation. |
 |  | **Operating Systems Fundamentals** | Learn the core concepts of operating systems such as processes, memory, and file systems. |
 | **Software Design Essentials** | **Agile Software Development Methodologies** | Apply agile principles (Scrum, Kanban) for collaborative software delivery. |
@@ -121,7 +121,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **High Impact Presentations** | Improve presentation skills to deliver engaging and persuasive talks. |
 |  | **Job Seeking Skills** | Prepare for the job market with CV, interview, and career strategy training. |
 | **Frontend Web Development** | **Client-Side Technologies** | Understand browser-based technologies and client-server interactions. |
-|  | **HTML5 & CSS3** | Build structured and visually styled web pages with modern HTML and CSS. |
+|  | **HTML5 & CSS3** | Build structured and visually styled web pages with modern HTML and CSS. | [🔗 Niveen N. Morsi](https://www.linkedin.com/in/niveen-n-morsi-ph-d-82254621/) |
 |  | **jQuery Fundamentals** | Simplify DOM manipulation and event handling using jQuery. |
 |  | **Responsive Web Fundamentals** | Create adaptive designs that function across all devices. |
 |  | **Responsive Web Design Frameworks** | Learn frameworks like Bootstrap for responsive layouts. |
