@@ -98,7 +98,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **Data Structures and Algorithms** | Explore efficient data handling and algorithmic problem-solving techniques. |
 |  | **Database Fundamentals** | Understand relational databases, normalization, and SQL operations. |  [🔗 Ramy Abou-Nagi](https://www.linkedin.com/in/ramy-abou-nagi-057158a7) |
 |  | **Object-Oriented Programming Concepts** | Master OOP principles including inheritance, polymorphism, and encapsulation. |
-|  | **Operating Systems Fundamentals** | Learn the core concepts of operating systems such as processes, memory, and file systems. |
+|  | **Operating Systems Fundamentals** | Learn the core concepts of operating systems such as processes, memory, and file systems. | [🔗 Mohsen Diab](https://www.linkedin.com/in/mohsen-diab-4215b621/) |
 | **Software Design Essentials** | **Agile Software Development Methodologies** | Apply agile principles (Scrum, Kanban) for collaborative software delivery. |
 |  | **Introduction to DevOps** | Discover CI/CD pipelines, automation tools, and collaborative workflows. |
 |  | **Introduction to Software Engineering** | Overview of the software development lifecycle (SDLC) and engineering principles. |
