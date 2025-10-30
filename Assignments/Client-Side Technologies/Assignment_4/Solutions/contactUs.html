@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Primary Meta -->
+        <meta charset="uit-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="the first lab in CTS Course in ITI - contact us page" />
+        <meta name="keywords" content="iti, cts, html, css, js" />
+
+        <!-- Title & Logo -->
+        <title>CTS Lab 1 | Contact Us</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="./assets/images/iti-logo.png"
+        />
+
+        <!-- Main Styles -->
+        <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    </head>
+    <body>
+        <!-- Image Mapping Fallabck (way 1) -->
+        <div class="img-container">
+            <img src="./assets/images/socialmedia.png" usemap="#socialmedia">
+            <map name="socialmedia">
+                <area shape="rect" coords="88,140,342,388" href="https://www.x.com/" alt="x - twitter" target="_blank">
+                <area shape="rect" coords="397,144,525,265" href="https://www.youtube.com/" alt="youtube" target="_blank">
+                <area shape="rect" coords="598,34,848,279" href="https://www.facebook.com/" alt="facebook" target="_blank">
+                <area shape="rect" coords="398,341,642,567" href="https://www.instagram.com/" alt="instagram" target="_blank">
+                <area shape="rect" coords="724,329,850,454" href="https://www.linkedin.com/" alt="linkedin" target="_blank">
+                <area shape="rect" coords="905,228,1034,345" href="https://www.whatsapp.com/" alt="whatsapp" target="_blank">
+                <!-- fallback: if click doesn't match any specific area, go to main.html -->
+                <area shape="dafult" href="home.html" alt="back-to-main">
+            </map>
+        </div>
+        
+        <!-- Image Mapping Fallabck (way 2) -->
+        <div class="img-container">
+            <a href="home.html" title="back-to-main">
+                <img src="./assets/images/socialmedia.png" usemap="#socialmedia">
+            </a>
+            <map name="socialmedia">
+                <area shape="rect" coords="88,140,342,388" href="https://www.x.com/" alt="x - twitter" target="_blank">
+                <area shape="rect" coords="397,144,525,265" href="https://www.youtube.com/" alt="youtube" target="_blank">
+                <area shape="rect" coords="598,34,848,279" href="https://www.facebook.com/" alt="facebook" target="_blank">
+                <area shape="rect" coords="398,341,642,567" href="https://www.instagram.com/" alt="instagram" target="_blank">
+                <area shape="rect" coords="724,329,850,454" href="https://www.linkedin.com/" alt="linkedin" target="_blank">
+                <area shape="rect" coords="905,228,1034,345" href="https://www.whatsapp.com/" alt="whatsapp" target="_blank">
+            </map>
+        </div>
+        
+        <!-- Image Mapping Fallabck (way 3) -->
+        <div class="img-container">
+            <object data="./assets/images/socialmedia.png" usemap="#socialmedia" type="image/png">
+                <a href="home.html" title="back-to-main">
+                    <img src="./assets/images/socialmedia.png" alt="Social media map">
+                </a>
+            </object>
+            <map name="socialmedia">
+                <area shape="rect" coords="88,140,342,388" href="https://www.x.com/" alt="x - twitter" target="_blank">
+                <area shape="rect" coords="397,144,525,265" href="https://www.youtube.com/" alt="youtube" target="_blank">
+                <area shape="rect" coords="598,34,848,279" href="https://www.facebook.com/" alt="facebook" target="_blank">
+                <area shape="rect" coords="398,341,642,567" href="https://www.instagram.com/" alt="instagram" target="_blank">
+                <area shape="rect" coords="724,329,850,454" href="https://www.linkedin.com/" alt="linkedin" target="_blank">
+                <area shape="rect" coords="905,228,1034,345" href="https://www.whatsapp.com/" alt="whatsapp" target="_blank">
+                <!-- fallback: if click doesn't match any specific area, go to main.html -->
+                <area shape="rect" coords="0,0,1206,631" href="home.html" alt="back-to-main">
+            </map>
+        </div>
+
+        <footer>
+            <div class="img-container">
+                <a href="mailto:ahmedmaher.dev1@gmail.com?subject=CTS Lab 1 - Contact Us&body=Hi, I want to contact you for ..." title="send email" target="_blank">
+                    <img height="50" src="./assets/images/iti-logo.png" alt="iti logo">
+                </a>
+            </div>
+
+            <p class="align-center">
+                Copyright &copy; 2025. Designed and Developed by <b>Ahmed Maher</b>
+                <br/>
+                All rights reserved
+            </p>
+        </footer>
+    </body>
+</html>

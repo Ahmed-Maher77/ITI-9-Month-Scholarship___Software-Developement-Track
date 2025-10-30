@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 - CST | Login</title>
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body id="login-page">
+    <form id="login-form" action="main.html" method="get">
+        <fieldset>
+            <legend>Login</legend>
+
+            <!-- User name -->
+            <div class="input-field full-w">
+                <label for="username">User <u>N</u>ame:</label> <br>
+                <input class="full-w" type="text" name="username" id="username" palaceholder="Enter user name" accesskey="n" tabindex="1" />
+            </div>
+
+            <!-- User Password -->
+            <div class="input-field">
+                <label for="password">Pa<u>s</u>sword:</label> <br>
+                <input class="full-w" type="password" name="password" id="password" palaceholder="Enter user password" accesskey="s" tabindex="2" />
+            </div>
+
+            <!-- Remember me -->
+            <div class="input-field">
+                <input type="checkbox" name="rememberMe" id="rememberMe" accesskey="r" tabindex="3" />
+                <label for="rememberMe"><u>R</u>emember me</label>
+            </div>
+
+            <!-- Submit button -->
+            <div class="btns">
+                <input type="submit" value="Sign In.."  tabindex="4" />
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

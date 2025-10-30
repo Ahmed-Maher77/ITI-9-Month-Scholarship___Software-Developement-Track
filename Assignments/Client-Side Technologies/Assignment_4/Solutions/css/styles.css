@@ -1,0 +1,135 @@
+/* ===================== Shared Styles ===================== */
+.bold {
+    font-weight: bold;
+}
+.img-container {
+    text-align: center;
+}
+.sm-size {
+    font-size: 10pt;
+}
+.red-color {
+    color: #d21b1b;
+}
+.align-right {
+    text-align: right;
+}
+.align-center {
+    text-align: center;
+}
+
+
+/* ===================== Main Page ===================== */
+#main-page {
+    background: #ffd6d6;
+}
+#headings {
+    text-align: center;
+}
+#headings h1,
+#content h3 {
+    text-decoration: underline;
+}
+#welcome-img {
+    background-color: #fff;
+}
+
+/* ===================== Section Styles (sec-styles) ===================== */
+#sec-styles .sec-list li.fonts {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 20pt;
+}
+
+
+
+/* ====================== Registeration Form ====================== */
+#register-form {
+    margin-block: 40px;
+}
+#register-form h1 {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+#register-form form {
+    width: 400px;
+    margin: 0 auto;
+}
+#register-form form table, #register-form form table tr td {
+    border: 4px solid #ccc;
+}
+#register-form form table #sports-table,
+#register-form form table #sports-table tr td {
+    border: none
+}
+#register-form form table {
+    width: 100%;
+    border-collapse: collapse;
+}
+#register-form form table tr td {
+    padding: 12px;
+}
+#register-form form table tr td input,
+#register-form form table tr td select, 
+#register-form form table tr td textarea,
+#register-form form table tr td #birthday {
+    padding: 5px;
+}
+#register-form form table tr td select {
+    width: 100%;
+}
+#register-form form table tr td #birthday,
+#register-form form table tr td textarea {
+    width: 95%;
+}
+#register-form form table tr td textarea {
+    resize: none;
+}
+#register-form form table tr.register-btns td {
+    border: none;
+    text-align: center;
+    width: 50%;
+}
+
+
+/* ====================== Login Form ====================== */
+#login-page {
+    background-color: #f0f8ff;
+}
+#login-form {
+    width: 450px;
+    margin: 30px auto;
+}
+#login-form fieldset {
+    border: 4px solid #8bbafe;
+}
+#login-form fieldset legend {
+    color: #f00;
+    font-weight: bold;
+    font-size: 15pt;
+}
+#login-form .input-field {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#login-form .input-field label {
+    font-weight: bold;
+}
+#login-form .input-field .full-w {
+    width: 95%;
+}
+#login-form .input-field input {
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+.btns {
+    text-align: center;
+}
+#login-form [type="submit"] {
+    background-color: #c1c2c395;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: rgb(197, 46, 46);
+    border: 1px solid #ccc;
+}
