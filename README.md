@@ -92,14 +92,14 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 
 > Below is the full structured curriculum of the **ITI 9-Month Professional Scholarship – Software Development Track**, organized by chapters and key areas of study.
 
-| **Chapter** | **Course Name** | **Description** | **Instructor** |
+| **Chapter** | **Course Name** | **Description** | **Instructor** | **Teaching Assistant** |
 |:--------------:|------------------|-----------------|:---------------------------:|
-| **Software Development Fundamentals** | **Introduction to Programming** | Learn the basics of programming logic, syntax, and problem-solving. |
+| **Software Development Fundamentals** | **Introduction to Programming** | Learn the basics of programming logic, syntax, and problem-solving. | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
 |  | **Data Structures and Algorithms** | Explore efficient data handling and algorithmic problem-solving techniques. |
 |  | **Database Fundamentals** | Understand relational databases, normalization, and SQL operations. |  [🔗 Ramy Abou-Nagi](https://www.linkedin.com/in/ramy-abou-nagi-057158a7) |
 |  | **Object-Oriented Programming Concepts** | Master OOP principles including inheritance, polymorphism, and encapsulation. |
 |  | **Operating Systems Fundamentals** | Learn the core concepts of operating systems such as processes, memory, and file systems. | [🔗 Mohsen Diab](https://www.linkedin.com/in/mohsen-diab-4215b621/) |
-| **Software Design Essentials** | **Agile Software Development Methodologies** | Apply agile principles (Scrum, Kanban) for collaborative software delivery. |
+| **Software Design Essentials** | **Agile Software Development Methodologies** | Apply agile principles (Scrum, Kanban) for collaborative software delivery. | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
 |  | **Introduction to DevOps** | Discover CI/CD pipelines, automation tools, and collaborative workflows. |
 |  | **Introduction to Software Engineering** | Overview of the software development lifecycle (SDLC) and engineering principles. |
 |  | **Object-Oriented Analysis & Design using UML** | Use UML diagrams to design and document software systems. |
@@ -114,13 +114,14 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **Introduction to Computer Networks & Cyber Security** | Understand networking basics and key cybersecurity practices. |
 |  | **Secure Coding Essentials** | Apply secure development practices to prevent vulnerabilities. |
 |  | **Design Elements and Prototyping** | Learn to translate design concepts into interactive prototypes. |
-| **Soft Skills Courses** | **Progressive Teamwork and Leadership Skills (Workshop)** | Develop effective team collaboration and leadership competencies. |
+| **Soft Skills Courses** | **Progressive Teamwork and Leadership Skills (Workshop)** | Develop effective team collaboration and leadership competencies. | [🔗 Basma Sabri](https://www.linkedin.com/in/basma-sabri-607b9b13b/) |
+|  | **Business English Course** | Enhance professional English communication, presentation, and negotiation skills in a business context. |
 |  | **Professional Demeanor (Workshop)** | Cultivate a professional image, ethics, and workplace conduct. |
 |  | **Best Practices for Remote Working (Workshop)** | Learn how to stay productive and connected in remote environments. |
 |  | **Communication Essentials for Professionals** | Strengthen verbal, written, and interpersonal communication. |
 |  | **High Impact Presentations** | Improve presentation skills to deliver engaging and persuasive talks. |
 |  | **Job Seeking Skills** | Prepare for the job market with CV, interview, and career strategy training. |
-| **Frontend Web Development** | **Client-Side Technologies** | Understand browser-based technologies and client-server interactions. |
+| **Frontend Web Development** | **Client-Side Technologies** | Understand browser-based technologies and client-server interactions. | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
 |  | **HTML5 & CSS3** | Build structured and visually styled web pages with modern HTML and CSS. | [🔗 Niveen N. Morsi](https://www.linkedin.com/in/niveen-n-morsi-ph-d-82254621/) |
 |  | **jQuery Fundamentals** | Simplify DOM manipulation and event handling using jQuery. |
 |  | **Responsive Web Fundamentals** | Create adaptive designs that function across all devices. |
@@ -132,7 +133,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **Vue.js Fundamentals** | Build reactive web interfaces using Vue.js components and directives. |
 |  | **React.js Fundamentals** | Learn React core concepts: components, props, state, and hooks. |
 |  | **Next.js Fundamentals** | Implement server-side rendering (SSR) and static site generation (SSG) with Next.js. |
-| **MEAN Stack Development** | **Angular Fundamentals** | Build modular and dynamic web applications with Angular. |
+| **MEAN Stack Development** | **Angular Fundamentals** | Build modular and dynamic web applications with Angular. | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
 |  | **Angular NgRx and Reactive RxJS** | Manage state and handle asynchronous data streams in Angular. |
 |  | **Node.js Fundamentals** | Learn backend JavaScript and event-driven programming with Node.js. |
 |  | **NestJS Framework** | Develop scalable, structured backend applications using NestJS. |
@@ -186,6 +187,7 @@ __coming soon__
 | **Assignment Name** | **Description** | **Links** |
 |:----------------------:|------------------|:-----------:|
 | **Database (Analysis and Design – SQL Queries)** | Designed and modeled a complete database system using ERD (entities, relationships, normalization) and practiced SQL queries implementation. | [🔗 Assignment](./Assignments/Database%20(Analysis%20and%20Design%20-%20SQL%20Queries)) |
+| **Client-Side Technologies** | Practiced core front-end development concepts including HTML, CSS, JavaScript, and DOM manipulation through interactive and responsive web assignments. | [🔗 Assignment](./Assignments/Client-Side%20Technologies) |
 
 
 
