@@ -83,9 +83,9 @@ It will remove all rows from the table!
 
 ### 💡 Tips for Safe DML Use
 
-✅ Always use WHERE carefully in UPDATE and DELETE to avoid unintended changes.
-✅ Try using SELECT first to preview affected rows before modifying them.
-✅ Use transactions (BEGIN TRANSACTION, ROLLBACK, COMMIT) when making multiple related changes.
+- ✅ Always use WHERE carefully in UPDATE and DELETE to avoid unintended changes.
+- ✅ Try using SELECT first to preview affected rows before modifying them.
+- ✅ Use transactions (BEGIN TRANSACTION, ROLLBACK, COMMIT) when making multiple related changes.
 
 ---
 
