@@ -1,0 +1,17 @@
+Using C++:
+
+
+1️⃣ Print Personal Information
+Write a program to input and display your name, age, and city.
+
+
+2️⃣ Basic Arithmetic Operations
+Write a program to input two numbers and display their sum, difference, and average.
+
+
+3️⃣ ASCII Code Finder
+Write a program to input a character and print its ASCII code.
+
+
+4️⃣ Number System Conversion
+Write a program to input a decimal number and display its hexadecimal and octal equivalents.
