@@ -1,0 +1,35 @@
+C++ Assignments
+
+
+1️⃣ Even Numbers Printer
+Write a program that prints all even numbers from 1 to 100.
+
+
+
+2️⃣ Simple Menu Calculator
+Create a menu-driven calculator that performs:
+(a) Addition
+(b) Subtraction
+(c) Multiplication
+(d) Division
+(e/E) Exit
+
+Validate user input, repeat the menu until exit is chosen.
+
+
+
+3️⃣ Magic Box Generator
+Write a program to generate a Magic Box (magic square) for odd sizes such as 3×3, 5×5, or 7×7.
+Validate the input (must be odd).
+Bonus: Display the box using ANSI color codes.
+
+
+
+4️⃣ Grading System
+Write a program that takes a score and prints the corresponding grade, covering all possible grade ranges.
+
+
+
+5️⃣ Diagonal Matrix Drawer
+Write a program to draw a square matrix where only the main diagonal elements are marked (e.g., using *).
+
