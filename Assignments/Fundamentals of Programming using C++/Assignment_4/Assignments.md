@@ -1,6 +1,3 @@
-# 🧩 `Assignments.md` (Detailed Problem Statements)
-
-```markdown
 # 📚 C++ Programming Assignments
 
 Below are the detailed problem statements and instructions for each assignment.
@@ -15,8 +12,8 @@ Write a program that swaps two string values using **call by reference**.
 - Enter a: Ahmed
 - Enter b: Ali
 - After Swap:
-- -  a after swap: Ali
-- -  b after swap: Ahmed
+  -  a after swap: Ali
+  -  b after swap: Ahmed
 
 ---
 
@@ -52,5 +49,3 @@ Combine a highlightable menu system with an employee management form.
 - Display specific employee by index
 - Display all employees
 - Interactive terminal navigation with arrow keys
-
----
