@@ -1,0 +1,15 @@
+# Compiled object files
+*.o
+*.out
+*.obj
+
+# Executables
+a.out
+*.exe
+
+# VSCode and CLion
+.vscode/
+.idea/
+
+# Build directories
+/build/
