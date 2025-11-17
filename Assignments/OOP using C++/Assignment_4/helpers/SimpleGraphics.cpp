@@ -59,6 +59,50 @@ void drawText(int x, int y, const char* txt){
     }
 }
 
+void drawEllipse(int cx, int cy, int a, int b) {
+    int a2 = a * a;
+    int b2 = b * b;
+    int err = 0;
+    int e2 = 0;
+
+    int x = 0;
+    int y = b;
+
+    putPixel(cx + x, cy + y);
+    putPixel(cx + x, cy - y);
+    putPixel(cx - x, cy + y);
+    putPixel(cx - x, cy - y);
+
+    while (x < y) {
+        x++;
+        e2 = 4 * (a2 * x * x) + b2 * (y * y);
+        if (e2 > 2 * a2 * y) {
+            y--;
+            e2 -= 4 * (a2 * y * y) + b2 * (x * x);
+        }
+
+        putPixel(cx + x, cy + y);
+        putPixel(cx + x, cy - y);
+        putPixel(cx - x, cy + y);
+        putPixel(cx - x, cy - y);
+
+        if (e2 < 2 * a2 * (y - x + 1)) {
+            e2 += 4 * (a2 * (y * y)) + b2 * ((x - 1) * (x - 1));
+            y--;
+        }
+
+        putPixel(cx + x, cy + y);
+        putPixel(cx + x, cy - y);
+        putPixel(cx - x, cy + y);
+        putPixel(cx - x, cy - y);
+
+        if (e2 > 2 * a2 * (y + x)) {
+            e2 -= 4 * (a2 * (x * x)) + b2 * ((y - 1) * (y - 1));
+            x++;
+        }
+    }
+}
+
 void renderScreen() {
     for (int y=0; y<HEIGHT; y++){
         for (int x=0; x<WIDTH; x++)
