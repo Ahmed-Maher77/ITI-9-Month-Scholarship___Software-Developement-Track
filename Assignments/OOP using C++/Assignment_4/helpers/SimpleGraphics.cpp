@@ -59,46 +59,54 @@ void drawText(int x, int y, const char* txt){
     }
 }
 
-void drawEllipse(int cx, int cy, int a, int b) {
-    int a2 = a * a;
-    int b2 = b * b;
-    int err = 0;
-    int e2 = 0;
+void drawEllipse(int cx, int cy, int rx, int ry) {
+    if (rx <= 0 || ry <= 0) return;
 
-    int x = 0;
-    int y = b;
+    auto plotSymmetric = [&](int x, int y) {
+        putPixel(cx + x, cy + y);
+        putPixel(cx + x, cy - y);
+        putPixel(cx - x, cy + y);
+        putPixel(cx - x, cy - y);
+    };
 
-    putPixel(cx + x, cy + y);
-    putPixel(cx + x, cy - y);
-    putPixel(cx - x, cy + y);
-    putPixel(cx - x, cy - y);
+    long long rxSq = 1LL * rx * rx;
+    long long rySq = 1LL * ry * ry;
+    long long twoRxSq = 2 * rxSq;
+    long long twoRySq = 2 * rySq;
 
-    while (x < y) {
+    long long x = 0;
+    long long y = ry;
+    long long px = 0;
+    long long py = twoRxSq * y;
+
+    long double p = rySq - (rxSq * ry) + (0.25L * rxSq);
+
+    // Region 1: slope magnitude < 1
+    while (px < py) {
+        plotSymmetric(static_cast<int>(x), static_cast<int>(y));
         x++;
-        e2 = 4 * (a2 * x * x) + b2 * (y * y);
-        if (e2 > 2 * a2 * y) {
+        px += twoRySq;
+        if (p < 0) {
+            p += rySq + px;
+        } else {
             y--;
-            e2 -= 4 * (a2 * y * y) + b2 * (x * x);
+            py -= twoRxSq;
+            p += rySq + px - py;
         }
+    }
 
-        putPixel(cx + x, cy + y);
-        putPixel(cx + x, cy - y);
-        putPixel(cx - x, cy + y);
-        putPixel(cx - x, cy - y);
-
-        if (e2 < 2 * a2 * (y - x + 1)) {
-            e2 += 4 * (a2 * (y * y)) + b2 * ((x - 1) * (x - 1));
-            y--;
-        }
-
-        putPixel(cx + x, cy + y);
-        putPixel(cx + x, cy - y);
-        putPixel(cx - x, cy + y);
-        putPixel(cx - x, cy - y);
-
-        if (e2 > 2 * a2 * (y + x)) {
-            e2 -= 4 * (a2 * (x * x)) + b2 * ((y - 1) * (y - 1));
+    // Region 2: slope magnitude >= 1
+    p = rySq * (x + 0.5L) * (x + 0.5L) + rxSq * (y - 1) * (y - 1) - rxSq * rySq;
+    while (y >= 0) {
+        plotSymmetric(static_cast<int>(x), static_cast<int>(y));
+        y--;
+        py -= twoRxSq;
+        if (p > 0) {
+            p += rxSq - py;
+        } else {
             x++;
+            px += twoRySq;
+            p += rxSq - py + px;
         }
     }
 }
