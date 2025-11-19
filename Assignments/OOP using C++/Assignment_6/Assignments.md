@@ -31,9 +31,11 @@ Design and implement geometric shapes using **public inheritance** to demonstrat
 ### Key Concepts Demonstrated
 
 -   Public inheritance (`class Derived : public Base`)
+-   Protected inheritance (`class Derived : protected Base`) - demonstrated with `Square` inheriting from `Triangle`
 -   Method overriding
 -   Access to base class members through inheritance
 -   Constructor initialization lists
+-   Assignment operator overloading
 
 ### Classes Implemented
 
@@ -41,6 +43,13 @@ Design and implement geometric shapes using **public inheritance** to demonstrat
 -   `Rect` - Rectangle inheriting from `GeoShape`
 -   `Circle` - Circle with radius, overrides `calcArea()` using π
 -   `Triangle` - Triangle with base and height, overrides `calcArea()`
+-   `Square` - Square inheriting from `Triangle` using **protected inheritance**
+
+### Features
+
+-   Assignment operator (`operator=`) overloaded in all shape classes
+-   Self-assignment protection in assignment operators
+-   Proper base class assignment handling in derived classes
 
 ---
 
@@ -64,6 +73,7 @@ Redesign the geometric shapes using **protected inheritance** and understand the
 -   Access control changes with protected inheritance
 -   Public interface design for derived classes
 -   Encapsulation principles
+-   Assignment operator overloading
 
 ### Design Changes
 
@@ -71,6 +81,13 @@ Redesign the geometric shapes using **protected inheritance** and understand the
 -   Derived classes use `getArea()` as public interface
 -   Base class methods become protected in derived classes
 -   Demonstrates when protected inheritance is appropriate
+-   `Square` class demonstrates protected inheritance from `Triangle`
+
+### Features
+
+-   Assignment operator (`operator=`) overloaded in all shape classes
+-   Self-assignment protection in assignment operators
+-   Proper base class assignment handling in derived classes
 
 ---
 
@@ -95,8 +112,10 @@ Transform `GeoShape` into an **abstract class** and extend the design to support
 -   Abstract classes and pure virtual functions
 -   Virtual function overriding with `const` qualifiers
 -   Multiple inheritance hierarchies (2D and 3D)
+-   Protected inheritance (`class Square : protected Triangle`) - demonstrates inheritance from a derived class
 -   Polymorphism through base class pointers/references
 -   Standalone functions working with polymorphic objects
+-   Assignment operator overloading
 
 ### Classes Implemented
 
@@ -106,16 +125,21 @@ Transform `GeoShape` into an **abstract class** and extend the design to support
 -   `Circle` - Circle
 -   `Triangle` - Triangle
 -   `Rhombus` - Rhombus (new)
+-   `Square` - Square inheriting from `Triangle` using **protected inheritance**
 
 #### 3D Shapes (inherit from `GeoShape3D`)
 
--   `Cube` - Cube with area and volume calculations
+-   `Cube` - Cube with area, volume, and perimeter calculations
 
 ### Features
 
 -   `compareArea()` function comparing any two `GeoShape` objects
 -   Virtual functions marked as `const` for const-correctness
 -   Proper access control with protected members
+-   Assignment operator (`operator=`) overloaded in all shape classes (2D and 3D)
+-   Self-assignment protection in assignment operators
+-   Proper base class assignment handling in derived classes
+-   Perimeter calculation for 3D shapes (`calcPerimeter()`) - calculates perimeter of one face
 
 ---
 
@@ -143,21 +167,27 @@ Work with dynamically allocated objects, base class pointers, and implement sort
 -   STL containers (`vector`) with pointers
 -   STL algorithms (`sort`) with custom comparators
 -   Virtual destructors for proper cleanup
+-   Assignment operator overloading
 
 ### Implementation Details
 
 -   Uses `vector<GeoShape*>` to store polymorphic objects
 -   Custom comparison functions: `compareAreaASC()` and `compareAreaDESC()`
 -   Demonstrates sorting 2D shapes by area
--   Includes 3D shape (Cube) with volume calculation
+-   Includes 3D shape (Cube) with volume and perimeter calculations
 -   Proper memory cleanup to prevent leaks
+-   Assignment operator (`operator=`) overloaded in all shape classes (2D and 3D)
+-   Self-assignment protection in assignment operators
+-   Proper base class assignment handling in derived classes
+-   `Square` class demonstrates protected inheritance (cannot be stored in `vector<GeoShape*>` due to protected inheritance)
+-   Perimeter calculation for 3D shapes (`calcPerimeter()`) - calculates perimeter of one face
 
 ### Output
 
 -   Displays all shape areas
 -   Shows shapes sorted in ascending order
 -   Shows shapes sorted in descending order
--   Displays cube area and volume
+-   Displays cube area, volume, and perimeter
 
 ---
 
@@ -191,6 +221,8 @@ Through these assignments, students learn:
 4. **Memory Management**: Dynamic allocation and proper cleanup
 5. **STL Usage**: Containers and algorithms with custom comparators
 6. **Object-Oriented Design**: Proper class hierarchies and encapsulation
+7. **Operator Overloading**: Assignment operator implementation with self-assignment protection
+8. **Multi-level Inheritance**: `Square` inheriting from `Triangle` demonstrates inheritance from derived classes
 
 ---
 
@@ -201,6 +233,8 @@ Through these assignments, students learn:
 -   Const-correctness is maintained throughout
 -   Memory management is properly handled
 -   Code is well-commented and structured
+-   Assignment operators are implemented with self-assignment protection
+-   All shape classes support assignment operations for object copying
 
 ---
 
