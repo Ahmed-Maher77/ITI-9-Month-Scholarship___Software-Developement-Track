@@ -94,7 +94,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 > Below is the full structured curriculum of the **ITI 9-Month Professional Scholarship – Software Development Track**, organized by chapters and key areas of study.
 
 | **Chapter** | **Course Name** | **Description** | **Instructor** | **Teaching Assistant** |
-|:-------------|:----------------|:----------------|:----------------|:----------------|
+|:-------------|:----------------|:----------------|:----------------:|:----------------:|
 | **Software Development Fundamentals** | **Introduction to Programming** | Learn the basics of programming logic, syntax, and problem-solving. | |  |  |
 |  | **Data Structures and Algorithms** | Explore efficient data handling and algorithmic problem-solving techniques. |  |  |
 |  | **Database Fundamentals** | Understand relational databases, normalization, and SQL operations. | [🔗 Ramy Abou-Nagi](https://www.linkedin.com/in/ramy-abou-nagi-057158a7) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
@@ -103,8 +103,8 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **Operating Systems Fundamentals** | Learn the core concepts of operating systems such as processes, memory, and file systems. | [🔗 Mohsen Diab](https://www.linkedin.com/in/mohsen-diab-4215b621/) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
 | **Software Design Essentials** | **Agile Software Development Methodologies** | Apply agile principles (Scrum, Kanban) for collaborative software delivery. | |  |  |
 |  | **Introduction to DevOps** | Discover CI/CD pipelines, automation tools, and collaborative workflows. |  |  |
-|  | **Introduction to Software Engineering** | Overview of the software development lifecycle (SDLC) and engineering principles. |  |  |
-|  | **Object-Oriented Analysis & Design using UML** | Use UML diagrams to design and document software systems. |  |  |
+|  | **Introduction to Software Engineering** | Overview of the software development lifecycle (SDLC) and engineering principles. | [🔗 Shimaa Hamdy](https://www.linkedin.com/in/shimaa-hamdy-97a134236/) |  |
+|  | **Object-Oriented Analysis & Design using UML** | Use UML diagrams to design and document software systems. | [🔗 Shimaa Hamdy](https://www.linkedin.com/in/shimaa-hamdy-97a134236/) |  |
 |  | **Introduction to MS Azure** | Introduction to cloud computing and Azure deployment fundamentals. |  |  |
 |  | **JavaScript Design Patterns** | Learn reusable design solutions and best practices for scalable JavaScript codebases. |  |  |
 |  | **JavaScript Unit Testing** | Write and automate unit tests to ensure code quality and reliability. |  |  |
