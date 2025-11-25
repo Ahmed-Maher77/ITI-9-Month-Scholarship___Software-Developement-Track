@@ -146,7 +146,8 @@ ON DeptStats.DepartmentID = D.DeptID;
 
 ## 🙏 Appreciation
 
-Special thanks to **Dr. Ramy Abou-Nagi** (Instructor) and **Eng. Mahmoud Abdelaziz** (Teaching Assistant) for their clear demonstrations — helping us understand how Subqueries power complex decision-making in SQL.
+
+Special thanks to **[Dr. Ramy Abou-Nagi](https://www.linkedin.com/in/ramy-abou-nagi-057158a7/?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3Bk4JmI6wHQeKHJp5sTxJJuQ%3D%3D)** (Instructor) and **[Eng. Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3Bk4JmI6wHQeKHJp5sTxJJuQ%3D%3D)** (Teaching Assistant) for their clear demonstrations — helping us understand how Subqueries power complex decision-making in SQL.
 
 ---
 
