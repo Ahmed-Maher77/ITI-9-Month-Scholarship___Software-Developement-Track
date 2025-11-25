@@ -113,7 +113,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **Docker and Kubernetes Fundamentals** | Understand containerization, orchestration, and microservices deployment. |  |  |
 |  | **E-Business Fundamentals** | Explore the fundamentals of online business models and e-commerce systems. |  |  |
 |  | **Internet Marketing** | Learn the principles of digital marketing, SEO, and analytics. |  |  |
-|  | **Introduction to Computer Networks & Cyber Security** | Understand networking basics and key cybersecurity practices. |  |  |
+|  | **Introduction to Computer Networks & Cyber Security** | Understand networking basics and key cybersecurity practices. | [🔗 Hager Taha](https://www.linkedin.com/in/hager-taha-moustafa/) |  |
 |  | **Secure Coding Essentials** | Apply secure development practices to prevent vulnerabilities. |  |  |
 |  | **Design Elements and Prototyping** | Learn to translate design concepts into interactive prototypes. |  |  |
 | **Soft Skills Courses** | **Progressive Teamwork and Leadership Skills (Workshop)** | Develop effective team collaboration and leadership competencies. | [🔗 Basma Sabri](https://www.linkedin.com/in/basma-sabri-607b9b13b/) |  |
