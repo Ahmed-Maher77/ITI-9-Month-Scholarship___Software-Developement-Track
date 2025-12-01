@@ -1,0 +1,11 @@
+#Task 1:
+- Install Git
+- Create an account on GitHub.
+- Create a new local repo and a remote repo on GitHub, then make a file
+- contains your full name , then push it to the remote repo .
+
+
+
+#Task 2:
+- Create a new remote repo on GitHub and clone it.
+- add the instructor as a contributor 
