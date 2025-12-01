@@ -109,7 +109,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **JavaScript Design Patterns** | Learn reusable design solutions and best practices for scalable JavaScript codebases. |  |  |
 |  | **JavaScript Unit Testing** | Write and automate unit tests to ensure code quality and reliability. |  |  |
 |  | **IIS Administration** | Configure and manage Internet Information Services (IIS) for web applications. |  |  |
-|  | **Source Control (Git & GitHub)** | Manage code versions, branches, and collaboration using Git and GitHub. |  |  |
+|  | **Source Control (Git & GitHub)** | Manage code versions, branches, and collaboration using Git and GitHub. | [🔗 Nada Mostafa](https://www.linkedin.com/in/nada-mostafa-mohamed) |  |
 |  | **Docker and Kubernetes Fundamentals** | Understand containerization, orchestration, and microservices deployment. |  |  |
 |  | **E-Business Fundamentals** | Explore the fundamentals of online business models and e-commerce systems. |  |  |
 |  | **Internet Marketing** | Learn the principles of digital marketing, SEO, and analytics. |  |  |
