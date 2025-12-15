@@ -96,7 +96,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 | **Chapter** | **Course Name** | **Description** | **Instructor** | **Teaching Assistant** |
 |:-------------|:----------------|:----------------|:----------------:|:----------------:|
 | **Software Development Fundamentals** | **Introduction to Programming** | Learn the basics of programming logic, syntax, and problem-solving. | |  |  |
-|  | **Data Structures and Algorithms** | Explore efficient data handling and algorithmic problem-solving techniques. |  |  |
+|  | **Data Structures and Algorithms** | Explore efficient data handling and algorithmic problem-solving techniques. | [🔗 Hany Safwat](https://www.linkedin.com/in/hany-safwat-872676387/) |  |
 |  | **Database Fundamentals** | Understand relational databases, normalization, and SQL operations. | [🔗 Ramy Abou-Nagi](https://www.linkedin.com/in/ramy-abou-nagi-057158a7) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
 |  | **Fundamentals of Programming using C++** | Learn C++ programming syntax, control structures, arrays, and functions to build strong coding fundamentals. | [🔗 Sherihan Mohamed]() | [🔗 Omar Walid]() |
 |  | **Object-Oriented Programming Concepts** | Master OOP principles including inheritance, polymorphism, and encapsulation. |  |  |
