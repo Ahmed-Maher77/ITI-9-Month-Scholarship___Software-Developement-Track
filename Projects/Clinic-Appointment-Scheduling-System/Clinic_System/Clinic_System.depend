@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1764351899 source:c:\users\ahmed talha\desktop\final\clinic-appointment-scheduling-system\clinic_system\main.cpp
+	<iostream>
+	"system.h"
+
+1764342298 c:\users\ahmed talha\desktop\final\clinic-appointment-scheduling-system\clinic_system\system.h
+	<vector>
+	<string>
+	"UserClass.h"
+	"Admin.h"
+	"Doctor.h"
+	"Receptionist.h"
+	"Patient.h"
+	"appointment.h"
+
+1764352026 c:\users\ahmed talha\desktop\final\clinic-appointment-scheduling-system\clinic_system\userclass.h
+	<iostream>
+	<string>
+	"PersonClass.h"
+
+1764351956 c:\users\ahmed talha\desktop\final\clinic-appointment-scheduling-system\clinic_system\personclass.h
+	<string>
+	<iostream>
+
+1764352483 c:\users\ahmed talha\desktop\final\clinic-appointment-scheduling-system\clinic_system\admin.h
+	<iostream>
+	<string>
+	<conio.h>
+	<cstdlib>
+	<vector>
+	"UserClass.h"
+	"doctor.h"
+	"receptionist.h"
+
+1764351878 c:\users\ahmed talha\desktop\final\clinic-appointment-scheduling-system\clinic_system\doctor.h
+	<string>
+	<iostream>
+	<vector>
+	"UserClass.h"
+	"appointment.h"
+
+1764351849 c:\users\ahmed talha\desktop\final\clinic-appointment-scheduling-system\clinic_system\appointment.h
+
+1764351986 c:\users\ahmed talha\desktop\final\clinic-appointment-scheduling-system\clinic_system\receptionist.h
+	<vector>
+	<string>
+	<iostream>
+	"UserClass.h"
+	"Patient.h"
+	"Appointment.h"
+	"Doctor.h"
+
+1764351925 c:\users\ahmed talha\desktop\final\clinic-appointment-scheduling-system\clinic_system\patient.h
+	"PersonClass.h"
+
