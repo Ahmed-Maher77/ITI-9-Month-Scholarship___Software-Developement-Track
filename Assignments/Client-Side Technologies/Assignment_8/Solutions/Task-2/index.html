@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <form action="submitForm.html" method="get" novalidate>
+        <!-- Username -->
+        <h3>Personal Information</h3>
+        <fieldset>
+            <label for="username">Enter your name: </label>
+            <input type="text" name="username" placeholder="ex: ahmed maher" id="username" required minlength="5">
+        </fieldset>
+        <!-- Password -->
+        <fieldset>
+            <label for="password">Enter your password: </label>
+            <input type="password" name="password" placeholder="ex: ......." id="password" required minlength="5">
+        </fieldset>
+        <!-- Title -->
+        <fieldset>
+            <label for="title">Enter your title: </label>
+            <input type="text" name="title" placeholder="ex: Mr, Eng, Dr" id="title" required minlength="5">
+        </fieldset>
+        <!-- Address -->
+        <fieldset>
+            <label for="address">Enter your address: </label>
+            <input type="text" name="address" placeholder="ex: 6th of october, cairo" id="address" required minlength="8">
+        </fieldset>
+        <!-- Gender -->
+        <fieldset>
+            <label for="gender">Enter your gender: </label>
+            <select name="gender" id="gender" required>
+                <option value="default">Choose your gender</option>
+                <option value="male">male</option>
+                <option value="female">female</option>
+                <option value="other">other</option>
+            </select>
+        </fieldset>
+        <hr>
+        <h3>Contact Information</h3>
+        <!-- Email -->
+        <fieldset>
+            <label for="email">Enter your email: </label>
+            <input type="email" name="email" placeholder="ex: 0WdQ3@example.com" id="email" required>
+        </fieldset>
+        <!-- Mobile -->
+        <fieldset>
+            <label for="mobile">Enter your mobile: </label>
+            <input type="text" name="mobile" placeholder="ex: 01234567890" id="mobile" required minlength="11" maxlength="11">
+        </fieldset>
+        <hr>
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+    <script>
+        // display a recommendation to use chrome browser if he is using another browser
+        displayBrowserRecommendation();
+        function displayBrowserRecommendation() {
+            const vendorName = navigator.vendor;
+            // if (vendorName != "Google Inc.") {
+            const browserInfo = navigator.userAgent;
+            if (browserInfo.indexOf("Chrome") == -1) {
+                alert("You are using " + vendorName + " browser. We recommend you to use Google Chrome browser to get the best experience.");
+            }
+        }
+    </script>
+</body>
+</html>
