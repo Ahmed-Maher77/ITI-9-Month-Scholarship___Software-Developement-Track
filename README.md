@@ -95,10 +95,10 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 
 | **Chapter** | **Course Name** | **Description** | **Instructor** | **Teaching Assistant** |
 |:-------------|:----------------|:----------------|:----------------:|:----------------:|
-| **Software Development Fundamentals** | **Introduction to Programming** | Learn the basics of programming logic, syntax, and problem-solving. | |  |  |
+| **Software Development Fundamentals** | **Introduction to Programming** | Learn the basics of programming logic, syntax, and problem-solving. |  |  |  |
 |  | **Data Structures and Algorithms** | Explore efficient data handling and algorithmic problem-solving techniques. | [🔗 Hany Safwat](https://www.linkedin.com/in/hany-safwat-872676387/) |  |
 |  | **Database Fundamentals** | Understand relational databases, normalization, and SQL operations. | [🔗 Ramy Abou-Nagi](https://www.linkedin.com/in/ramy-abou-nagi-057158a7) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
-|  | **Fundamentals of Programming using C++** | Learn C++ programming syntax, control structures, arrays, and functions to build strong coding fundamentals. | [🔗 Sherihan Mohamed]() | [🔗 Omar Walid]() |
+|  | **Fundamentals of Programming using C++** | Learn C++ programming syntax, control structures, arrays, and functions to build strong coding fundamentals. | [🔗 Sherihan Mohamed](https://www.linkedin.com/in/sherihan-m-ahmed-aa248046/) | [🔗 Omar Walid](https://www.linkedin.com/in/omar-waled/) |
 |  | **Object-Oriented Programming Concepts** | Master OOP principles including inheritance, polymorphism, and encapsulation. |  |  |
 |  | **Operating Systems Fundamentals** | Learn the core concepts of operating systems such as processes, memory, and file systems. | [🔗 Mohsen Diab](https://www.linkedin.com/in/mohsen-diab-4215b621/) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
 | **Software Design Essentials** | **Agile Software Development Methodologies** | Apply agile principles (Scrum, Kanban) for collaborative software delivery. | |  |  |
@@ -111,17 +111,17 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **IIS Administration** | Configure and manage Internet Information Services (IIS) for web applications. |  |  |
 |  | **Source Control (Git & GitHub)** | Manage code versions, branches, and collaboration using Git and GitHub. | [🔗 Nada Mostafa](https://www.linkedin.com/in/nada-mostafa-mohamed) |  |
 |  | **Docker and Kubernetes Fundamentals** | Understand containerization, orchestration, and microservices deployment. |  |  |
-|  | **E-Business Fundamentals** | Explore the fundamentals of online business models and e-commerce systems. |  |  |
+|  | **E-Business Fundamentals** | Explore the fundamentals of online business models and e-commerce systems. | [🔗 Basma Sabri](https://www.linkedin.com/in/basma-sabri-607b9b13b/) |  |
 |  | **Internet Marketing** | Learn the principles of digital marketing, SEO, and analytics. |  |  |
 |  | **Introduction to Computer Networks & Cyber Security** | Understand networking basics and key cybersecurity practices. | [🔗 Hager Taha](https://www.linkedin.com/in/hager-taha-moustafa/) |  |
 |  | **Secure Coding Essentials** | Apply secure development practices to prevent vulnerabilities. |  |  |
 |  | **Design Elements and Prototyping** | Learn to translate design concepts into interactive prototypes. |  |  |
-| **Soft Skills Courses** | **Progressive Teamwork and Leadership Skills (Workshop)** | Develop effective team collaboration and leadership competencies. | [🔗 Basma Sabri](https://www.linkedin.com/in/basma-sabri-607b9b13b/) |  |
-|  | **Business English Course** | Enhance professional English communication, presentation, and negotiation skills in a business context. |  |  |
-|  | **Professional Demeanor (Workshop)** | Cultivate a professional image, ethics, and workplace conduct. |  |  |
+| **Soft Skills Courses** | **Progressive Teamwork and Leadership Skills (Workshop)** | Develop effective team collaboration and leadership competencies. |  |  |
+|  | **Business English Course** | Enhance professional English communication, presentation, and negotiation skills in a business context. | [🔗 Basma Sabri](https://www.linkedin.com/in/basma-sabri-607b9b13b/) |  |
+|  | **Professional Demeanor (Workshop)** | Cultivate a professional image, ethics, and workplace conduct. | [Sharl Hanna](https://www.linkedin.com/in/sharlhanna/) |  |
 |  | **Best Practices for Remote Working (Workshop)** | Learn how to stay productive and connected in remote environments. |  |  |
 |  | **Communication Essentials for Professionals** | Strengthen verbal, written, and interpersonal communication. | [🔗 Sharl Hanna](https://www.linkedin.com/in/sharlhanna/) |  |
-|  | **High Impact Presentations** | Improve presentation skills to deliver engaging and persuasive talks. |  |  |
+|  | **High Impact Presentations** | Improve presentation skills to deliver engaging and persuasive talks. | [Sharl Hanna](https://www.linkedin.com/in/sharlhanna/) |  |
 |  | **Job Seeking Skills** | Prepare for the job market with CV, interview, and career strategy training. |  |  |
 | **Frontend Web Development** | **Client-Side Technologies** | Understand browser-based technologies and client-server interactions. | | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |  |
 |  | **HTML5 & CSS3** | Build structured and visually styled web pages with modern HTML and CSS. | [🔗 Niveen N. Morsi](https://www.linkedin.com/in/niveen-n-morsi-ph-d-82254621/) |  |
@@ -140,7 +140,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **Node.js Fundamentals** | Learn backend JavaScript and event-driven programming with Node.js. |  |  |
 |  | **NestJS Framework** | Develop scalable, structured backend applications using NestJS. |  |  |
 |  | **NoSQL Database Fundamentals** | Work with MongoDB and other NoSQL databases for flexible data modeling. |  |  |
-|  | **Advanced JavaScript** | Deep dive into closures, async/await, and advanced ES features. |  |  |
+|  | **Advanced JavaScript** | Deep dive into closures, async/await, and advanced ES features. | [🔗 Niveen N. Morsi](https://www.linkedin.com/in/niveen-n-morsi-ph-d-82254621/) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
 |  | **JavaScript Modern Frameworks and Architecture** | Explore best practices in architecture and module organization. |  |  |
 |  | **GraphQL API** | Learn how to build and query APIs using GraphQL for efficient data fetching. |  |  |
 |  | **Relational Database** | Understand advanced SQL concepts, schema design, and optimization. |  |  |
@@ -149,8 +149,8 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 | **UI/UX Concepts and Technologies** | **UI/UX Design Principles and Wireframing** | Learn the fundamentals of designing intuitive and user-friendly interfaces. |  |  |
 |  | **UX Writing Fundamentals** | Create clear and empathetic copy for digital experiences. |  |  |
 |  | **Design Thinking** | Apply problem-solving through human-centered design methodology. |  |  |
-|  | **Adobe Photoshop for Web** | Use Photoshop to create and optimize web graphics and layouts. |  |  |
-|  | **Adobe Illustrator for Web** | Create vector-based assets and icons for responsive interfaces. |  |  |
+|  | **Adobe Photoshop for Web** | Use Photoshop to create and optimize web graphics and layouts. | [Osama Ali](https://www.linkedin.com/in/osama-ali-48b47357) |  |
+|  | **Adobe Illustrator for Web** | Create vector-based assets and icons for responsive interfaces. | [Osama Ali](https://www.linkedin.com/in/osama-ali-48b47357) |  |
 |  | **Visual Design for Web** | Understand color theory, typography, and layout composition for digital products. |  |  |
 | **AI Courses** | **Introduction to Generative AI and Prompt Engineering** | Learn how to design and optimize AI prompts for creative and technical tasks. |  |  |
 |  | **AI-powered Coding Assistant Tools** | Use AI tools (e.g., GitHub Copilot, ChatGPT) to boost coding efficiency. |  |  |
