@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>JavaScript Calculator</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <table class="calc" role="presentation">
+                <tr>
+                    <td colspan="4" class="header">JavaScript Calculator</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input id="Answer" name="Answer" type="text" readonly />
+                    </td>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn op"
+                            value="="
+                            onclick="EnterEqual()"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn"
+                            value="1"
+                            onclick="EnterNumber(this.value)"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn"
+                            value="2"
+                            onclick="EnterNumber(this.value)"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn"
+                            value="3"
+                            onclick="EnterNumber(this.value)"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn op"
+                            value="+"
+                            onclick="EnterOperator(this.value)"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn"
+                            value="4"
+                            onclick="EnterNumber(this.value)"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn"
+                            value="5"
+                            onclick="EnterNumber(this.value)"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn"
+                            value="6"
+                            onclick="EnterNumber(this.value)"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn op"
+                            value="-"
+                            onclick="EnterOperator(this.value)"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn"
+                            value="7"
+                            onclick="EnterNumber(this.value)"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn"
+                            value="8"
+                            onclick="EnterNumber(this.value)"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn"
+                            value="9"
+                            onclick="EnterNumber(this.value)"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn op"
+                            value="*"
+                            onclick="EnterOperator(this.value)"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn"
+                            id="clear-btn"
+                            value="C"
+                            onclick="EnterClear()"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn"
+                            value="0"
+                            onclick="EnterNumber(this.value)"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn"
+                            value="."
+                            onclick="EnterNumber(this.value)"
+                        />
+                    </td>
+                    <td>
+                        <input
+                            type="button"
+                            class="btn op"
+                            value="/"
+                            onclick="EnterOperator(this.value)"
+                        />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <script src="app.js"></script>
+    </body>
+</html>

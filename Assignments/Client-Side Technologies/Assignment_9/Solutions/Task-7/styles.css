@@ -1,0 +1,30 @@
+button {
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.navigation-btns {
+    text-align: center;
+    padding-top: 80px;
+}
+.navigation-btns > button {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+.navigation-btns input {
+    padding: 10px;
+    font-size: 1rem;
+    min-width: fit-content;
+}
+.reset-btns {
+    display: inline-block;
+}
+.reset-btns button {
+    width: 80px;
+    background-color: #f00;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+}
