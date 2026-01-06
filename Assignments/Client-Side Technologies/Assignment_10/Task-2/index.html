@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <main>
+        <!-- Username -->
+        <div class="input-container">
+            <label for="username">Enter your name:</label>
+            <input type="text" name="username" id="username" placeholder="enter your name..." />
+        </div>
+
+        <!-- Age -->
+        <div class="input-container">
+            <label for="age">Enter your age:</label>
+            <input type="number" name="age" id="age" placeholder="enter your age..." />
+        </div>
+
+        <!-- Gender -->
+        <div class="input-container">
+            <p>Select your gender:</p>
+            <div class="selection">
+                <label for="male">
+                    <img src="./images/1.jpg" alt="male photo">
+                </label>
+                <input type="radio" name="gender" id="male" value="male" />
+            </div>
+            <div class="selection">
+                <label for="female">
+                    <img src="./images/2.jpg" alt="female photo">
+                </label>
+                <input type="radio" name="gender" id="female" value="female" />
+            </div>
+        </div>
+
+        <!-- Favorite Color -->
+        <div class="input-container">
+            <label for="favColor">Select your favorite Color:</label>
+            <select name="favColor" id="favColor">
+                <option value="red">red</option>
+                <option value="green">green</option>
+                <option value="blue">blue</option>
+            </select>
+        </div>
+
+        <!-- Register -->
+        <button id="register">Register</button>
+    </main>
+
+    <script src="cookieLib.js"></script>
+    <script src="main1.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

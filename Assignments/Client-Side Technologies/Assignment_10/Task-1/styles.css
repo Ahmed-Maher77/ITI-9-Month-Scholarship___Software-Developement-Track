@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f1f1;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+section {
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#getcookiesForm #get-cookie {
+    background-color: rgb(0, 68, 255);
+}
+#getcookiesForm #delete-cookie {
+    background-color: rgb(167, 0, 0);
+}
+#get-all-cookies {
+    background-color: rgb(0, 0, 0);
+}

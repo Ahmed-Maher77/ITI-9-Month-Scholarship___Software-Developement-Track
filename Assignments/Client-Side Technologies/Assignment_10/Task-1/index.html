@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Task-1</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+        <section>
+            <h2>Set Cookies</h2>
+            <form id="setcookiesForm">
+                <input type="text" name="cookieName" placeholder="Enter Cookie Name ..." />
+                <input type="text" name="cookieValue" placeholder="Enter Cookie Value ..." />
+                <input type="date" name="cookieExpiry" placeholder="Enter Cookie Expiry ..." />
+                <button type="submit">Set Cookie</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Get/Delete a Cookie</h2>
+            <form id="getcookiesForm">
+                <input type="text" name="cookieName" placeholder="Enter Cookie Name ..." />
+                <button id="get-cookie">Get Cookie</button>
+                <button id="delete-cookie">Delete Cookie</button>
+            </form>
+        </section>
+
+        <button id="get-all-cookies">Get All Cookies</button>
+        
+        <script src="cookieLib.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+            }
+            figure {
+                width: 90%;
+                max-width: 530px;
+                margin: 40px auto;
+            }
+            figure figcaption {
+                margin-top: 40px;
+                font-size: 1.2rem;
+            }
+            #logout {
+                padding: 10px 20px;
+                background-color: #d20400;
+                color: white;
+                font-size: 1.01rem;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-block: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="logout">&lt;&lt; Log Out</button>
+        <figure>
+            <img id="img" src="" alt="" />
+
+            <figcaption>
+                <h2>
+                    Welcome
+                    <span id="username" class="favColor">Username</span>!
+                </h2>
+                <p>
+                    You have visited this site
+                    <span id="visitCount" class="favColor">N</span> times :&#41;
+                </p>
+            </figcaption>
+        </figure>
+
+        <script src="cookieLib.js"></script>
+        <script src="main1.js"></script>
+        <script>
+            window.onload = function () {
+                // get the required data
+                // create an array includes the required data
+                // loop through the array
+                // call the getCookie(cookieName) for each of them
+                // store the data in a userData object
+                let userData = {};
+                const requiredData = [
+                    "username",
+                    "favColor",
+                    "visitCount",
+                    "gender",
+                ];
+                for (const i in requiredData) {
+                    const key = requiredData[i];
+                    const cookieResult = getCookie(key);
+                    // getCookie returns an object like {key: "value"}, extract the value
+                    userData[key] = cookieResult[key] || "";
+                }
+
+                // render the data in the profile page
+                const userImg = document.getElementById("img");
+                const username = document.getElementById("username");
+                const visitCount = document.getElementById("visitCount");
+                const favColorEles = document.querySelectorAll(".favColor");
+
+                userImg.src =
+                    "./images/" +
+                    (userData.gender == "male" ? "1" : "2") +
+                    ".jpg";
+                username.innerText = userData.username;
+
+                const currentVisitCount = parseInt(userData.visitCount) || 0;
+                const newVisitCount = currentVisitCount + 1;
+                visitCount.innerText = newVisitCount;
+                setCookie("visitCount", String(newVisitCount));
+
+                for (let i = 0; i < favColorEles.length; i++) {
+                    favColorEles[i].style.color = userData.favColor;
+                }
+
+                // Log Out
+                document.getElementById("logout").onclick = logout;
+                function logout() {
+                    deleteCookie("username");
+                    deleteCookie("age");
+                    deleteCookie("gender");
+                    deleteCookie("favColor");
+                    deleteCookie("visitCount");
+                    location.href = "index.html";
+                }
+            };
+        </script>
+    </body>
+</html>
