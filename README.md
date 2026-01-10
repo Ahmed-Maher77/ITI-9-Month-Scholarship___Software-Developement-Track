@@ -114,7 +114,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **E-Business Fundamentals** | Explore the fundamentals of online business models and e-commerce systems. | [🔗 Basma Sabri](https://www.linkedin.com/in/basma-sabri-607b9b13b/) |  |
 |  | **Internet Marketing** | Learn the principles of digital marketing, SEO, and analytics. |  |  |
 |  | **Introduction to Computer Networks & Cyber Security** | Understand networking basics and key cybersecurity practices. | [🔗 Hager Taha](https://www.linkedin.com/in/hager-taha-moustafa/) |  |
-|  | **Secure Coding Essentials** | Apply secure development practices to prevent vulnerabilities. |  |  |
+|  | **Secure Coding Essentials** | Apply secure development practices to prevent vulnerabilities. | [Mervat Karam](https://www.linkedin.com/in/mervatkaram/) |  |
 |  | **Design Elements and Prototyping** | Learn to translate design concepts into interactive prototypes. |  |  |
 | **Soft Skills Courses** | **Progressive Teamwork and Leadership Skills (Workshop)** | Develop effective team collaboration and leadership competencies. |  |  |
 |  | **Business English Course** | Enhance professional English communication, presentation, and negotiation skills in a business context. | [🔗 Basma Sabri](https://www.linkedin.com/in/basma-sabri-607b9b13b/) |  |
