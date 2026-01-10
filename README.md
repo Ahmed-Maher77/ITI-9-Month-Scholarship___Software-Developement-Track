@@ -152,9 +152,9 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **Adobe Photoshop for Web** | Use Photoshop to create and optimize web graphics and layouts. | [Osama Ali](https://www.linkedin.com/in/osama-ali-48b47357) |  |
 |  | **Adobe Illustrator for Web** | Create vector-based assets and icons for responsive interfaces. | [Osama Ali](https://www.linkedin.com/in/osama-ali-48b47357) |  |
 |  | **Visual Design for Web** | Understand color theory, typography, and layout composition for digital products. |  |  |
-| **AI Courses** | **Introduction to Generative AI and Prompt Engineering** | Learn how to design and optimize AI prompts for creative and technical tasks. |  |  |
-|  | **AI-powered Coding Assistant Tools** | Use AI tools (e.g., GitHub Copilot, ChatGPT) to boost coding efficiency. |  |  |
-|  | **Developing Gen-AI Based Software** | Build applications that integrate generative AI into real-world use cases. |  |  |
+| **AI Courses** | **Introduction to Generative AI and Prompt Engineering** | Learn how to design and optimize AI prompts for creative and technical tasks. | [Omar Abdallah](https://www.linkedin.com/in/omar-abdallah-abdelrahman/) |  |
+|  | **AI-powered Coding Assistant Tools** | Use AI tools (e.g., GitHub Copilot, ChatGPT) to boost coding efficiency. | [Omar Abdallah](https://www.linkedin.com/in/omar-abdallah-abdelrahman/) |  |
+|  | **Developing Gen-AI Based Software** | Build applications that integrate generative AI into real-world use cases. | [Omar Abdallah](https://www.linkedin.com/in/omar-abdallah-abdelrahman/) |  |
 
 > 🧠 *This curriculum reflects a balance between technical depth and professional growth — preparing developers to become full-stack software engineers with strong industry readiness.*
 
