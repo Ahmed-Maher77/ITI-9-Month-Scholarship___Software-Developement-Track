@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f7f7f7;
+    color: #222;
+}
+
+.page {
+    width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px auto;
+}
+h1,
+h2 {
+    font-weight: bold;
+}
+
+section {
+    width: 90%;
+    margin-bottom: 24px;
+    border: 1px solid #c7c7c7;
+    padding: 25px;
+    background: #fff;
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+form {
+    margin-top: 10px;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 95%;
+    padding: 6px 8px;
+    border: 2px solid #d8d8d8;
+    font-size: 14px;
+    background: #fff;
+    border-radius: 7px;
+    padding: 13px;
+}
+
+button {
+    padding: 15px 37px;
+    border: 1px solid #666;
+    background: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    border-radius: 6px;
+    margin: 40px auto 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+}
+
+th,
+td {
+    border: 1px solid #c7c7c7;
+    padding: 20px;
+    text-align: left;
+    font-size: 16px;
+    text-align: center;
+}
+
+th {
+    background: #efefef;
+}
+
+.muted {
+    color: #666;
+    font-size: 13px;
+}

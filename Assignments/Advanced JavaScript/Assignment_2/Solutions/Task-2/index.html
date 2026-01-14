@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <h1>Book Management</h1>
+
+        <section>
+            <h2>Add Book</h2>
+            <form action="" id="addBook-form">
+                <fieldset>
+                    <label for="title">Book Title</label>
+                    <input
+                        type="text"
+                        name="title"
+                        id="title"
+                        placeholder="ex: JavaScript Mastery..."
+                    />
+                </fieldset>
+                <fieldset>
+                    <label for="numofChapters">Number of Chapters</label>
+                    <input
+                        type="number"
+                        name="numofChapters"
+                        id="numofChapters"
+                        placeholder="ex: 12"
+                    />
+                </fieldset>
+                <fieldset>
+                    <label for="author">Author</label>
+                    <input
+                        type="text"
+                        name="author"
+                        id="author"
+                        placeholder="ex: Brandon Eich"
+                    />
+                </fieldset>
+                <fieldset>
+                    <label for="numofPages">Number of Pages</label>
+                    <input
+                        type="number"
+                        name="numofPages"
+                        id="numofPages"
+                        placeholder="ex: 350"
+                    />
+                </fieldset>
+                <fieldset>
+                    <label for="publisher">Publisher</label>
+                    <input
+                        type="text"
+                        name="publisher"
+                        id="publisher"
+                        placeholder="ex: O'Reilly Media"
+                    />
+                </fieldset>
+                <button type="submit">Add Book</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Our Box</h2>
+            <div id="box-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Chapters</th>
+                            <th>Pages</th>
+                            <th>Publisher</th>
+                            <th>Copies</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>
