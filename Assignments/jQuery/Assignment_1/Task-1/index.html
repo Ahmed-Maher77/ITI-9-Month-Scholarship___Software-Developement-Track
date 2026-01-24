@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <figure>
+        <img src="images/12.gif" alt="car picture" />
+        <figcaption>
+            <div></div>
+            <button id="move-manual">Move Manually</button>
+            <button id="start-moving">Start Moving</button>
+            <button id="continue-moving">Continue Moving</button>
+            <button id="stop-moving">Stop Moving</button>
+            <button id="reset-moving">Reset Moving</button>
+        </figcaption>
+    </figure>
+
+
+
+    <script>
+        let currentPosition = 20;
+        let interval;
+        
+        // Initial caption update
+        changeCaption(currentPosition);
+
+        // Move manually on button click
+        $('#move-manual').on('click', function() {
+            startManualMove();
+        });
+        
+        // Start automatic movement
+        $('#start-moving').on('click', function() {
+            startAutoMove();
+        });
+        
+        // Continue automatic movement
+        $('#continue-moving').on('click', function() {
+            startAutoMove();
+        });
+        
+        // Reset automatic movement
+        $('#reset-moving').on('click', function() {
+            resetMoving();
+        });
+
+        // Stop automatic movement
+        $('#stop-moving').on('click', function() {
+            clearInterval(interval);
+        });
+        
+
+        function startManualMove() {
+            currentPosition += 40;
+            $('img').animate({
+                left: currentPosition + 'px'
+            }, 100);
+            changeCaption(currentPosition);
+        }
+
+        function startAutoMove() {
+            interval = setInterval(() => {
+                currentPosition += 40;
+                $('img').animate({
+                    left: currentPosition + 'px'
+                }, 100);
+                changeCaption(currentPosition);
+            }, 100);
+        }
+
+        function resetMoving() {
+            currentPosition = 20;
+            $('img').animate({
+                left: currentPosition + 'px'
+            }, 100);
+            changeCaption(currentPosition);
+        }
+
+        function changeCaption(newPosition) {
+            $('figcaption div').text(`<img src="images/12.gif" style="left: ${newPosition}px" />`);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+body {
+    font-family: "Courier New", Courier, monospace;
+}
+h1 {
+    font-size: 36px;
+    color: #333333;
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 30px;
+}
+main {
+    padding: 20px;
+}
+main .black-hole,
+main figure {
+    display: inline-block;
+}
+
+/* Black Hole */
+main .black-hole {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    line-height: 400px;
+    font-size: 24px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    position: relative;
+}
+svg {
+    margin-top: 20px;
+}
+
+/* Draggable Image */
+main figure {
+    width: 140px;
+    background-color: #cccccc;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 0;
+    position: absolute;
+    right: 19px;
+    top: 265px;
+    cursor: grab;
+}
+main figure img {
+    width: 120px;
+    height: 120px;
+}
+main figure figcaption {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+
+.dragging {
+    width: 120px;
+    border: 2px solid blue;
+    cursor: grabbing;
+    opacity: 0.7;
+}

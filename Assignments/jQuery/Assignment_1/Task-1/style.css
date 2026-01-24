@@ -1,0 +1,41 @@
+figure {
+    padding-top: 200px;
+    text-align: center;
+}
+figure img {
+    width: 230px;
+    margin-bottom: 50px;
+    position: absolute;
+    left: 20px;
+    top: 40px;
+}
+figure figcaption {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+#move-manual {
+    background-color: #000000;
+}
+#start-moving {
+    background-color: #28a745;
+}
+#continue-moving {
+    background-color: #ffc107;
+}
+#stop-moving {
+    background-color: #dc3545;
+}
+#reset-moving {
+    background-color: #6c757d;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- jQuery UI JS -->
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li id="about-trigger">About</li>
+            <li id="gallery-trigger">Gallery</li>
+            <li id="services-trigger">
+                Services
+                <!-- Services Section -->
+                <ul id="services-section" class="hide">
+                    <li>Item #1</li>
+                    <li>Item #2</li>
+                    <li>Item #3</li>
+                </ul>
+            </li>
+            <li id="complaints-trigger">Complaints</li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- About Section -->
+        <section id="about-section" class="hide">
+            <h2>Story About Snow Man</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, cupiditate enim a fuga veritatis sed!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, cupiditate enim a fuga veritatis sed!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, cupiditate enim a fuga veritatis sed!</p>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery-section" class="hide">
+            <h2>Gallery</h2>
+            <div class="gallery-container">
+                <img class="active" src="images/1.jpg" alt="Image 1">
+                <img src="images/2.jpg" alt="Image 2">
+                <img src="images/3.jpg" alt="Image 3">
+                <img src="images/4.jpg" alt="Image 4">
+                <img src="images/5.jpg" alt="Image 5">
+                <img src="images/6.jpg" alt="Image 6">
+                <img src="images/7.jpg" alt="Image 7">
+                <img src="images/8.jpg" alt="Image 8">
+            </div>
+            <div class="contollers">
+                <button id="left">
+                    <img src="images/left.png" alt="left arrow">
+                </button>
+                <button id="right">
+                    <img src="images/right.png" alt="right arrow">
+                </button>
+            </div>
+        </section>
+
+        <!-- <section id="Complaints-section" class="hide"> -->
+        <section id="complaints-section" class="hide">
+            <form>
+                <fieldset>
+                    <label for="username">Name:</label>
+                    <input type="text" name="username" id="username" placeholder="Enter your username..." />
+                </fieldset>
+                <fieldset>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email..." />
+                </fieldset>
+                <fieldset>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Enter your phone..." />
+                </fieldset>
+                <fieldset>
+                    <label for="complain">Complain:</label>
+                    <textarea name="complain" id="complain" rows="6" placeholder="Enter your complain..."></textarea>
+                </fieldset>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+
+
+    <script>
+        $('nav ul li').click(function () {
+            const sectionSelctor = '#'+$(this).attr('id').toLowerCase().split('-')[0]+'-section';            
+            if (sectionSelctor !== '#services-section') {
+                $('section').addClass('hide');
+                $(sectionSelctor).removeClass('hide');
+            } else {
+                $('#services-section').toggleClass('hide');
+            }
+        });
+    </script>
+
+
+
+    <script src="gallery.js"></script>
+    <script src="complaints.js"></script>
+</body>
+</html>

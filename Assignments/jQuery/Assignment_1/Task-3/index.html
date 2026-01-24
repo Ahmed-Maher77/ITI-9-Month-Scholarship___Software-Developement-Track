@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <!-- jQuery UI JS -->
+        <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>Droppables</h1>
+        <main>
+            <!-- Black Hole -->
+            <div class="black-hole">
+                <svg width="400" height="400" viewBox="0 0 400 400">
+                    <!-- Circular path for text -->
+                    <defs>
+                        <path
+                            id="circlePath"
+                            d="M 200, 200 m -180, 0 a 180,180 0 1,1 360,0 a 180,180 0 1,1 -360,0"
+                            fill="none"
+                        />
+                    </defs>
+                    <!-- Text on path -->
+                    <text font-size="24" fill="white" letter-spacing="8">
+                        <textPath
+                            href="#circlePath"
+                            startOffset="27%"
+                            text-anchor="middle"
+                        >
+                            Black Hole
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+            
+            
+            <!-- Draggable Image -->
+            <figure>
+                <img
+                    src="images/21.jpg"
+                    alt="rabbit"
+                    draggable="true"
+                    id="drag1"
+                />
+                <figcaption>Drag Me</figcaption>
+            </figure>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
