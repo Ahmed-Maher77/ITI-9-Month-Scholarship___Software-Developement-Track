@@ -1,0 +1,57 @@
+
+table, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+
+/* font family */
+.font-arial {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.font-times {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* text align */
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+
+
+/* line height */
+.line-height-normal {
+    line-height: normal;
+}
+.line-height-10 {
+    line-height: 10px;
+}
+.line-height-15 {
+    line-height: 15px;
+}
+.line-height-1_5 {
+    line-height: 1.5;
+}
+
+
+/* letter spacing */
+.letter-spacing-normal {
+    letter-spacing: normal;
+}
+.letter-spacing--1 {
+    letter-spacing: -1px;
+}
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+.letter-spacing-3 {
+    letter-spacing: 3px;
+}

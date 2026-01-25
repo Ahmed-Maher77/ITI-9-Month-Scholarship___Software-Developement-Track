@@ -1,0 +1,63 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* Pics */
+#pics {
+    width: 95%;
+    max-width: 600px;
+    height: 400px;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    padding: 10px;
+    position: relative;
+}
+#pics img {
+    position: absolute;
+    width: 60px;
+}
+#left-img {
+    left: 10px;
+    top: 10px;
+}
+#right-img {
+    right: 10px;
+    top: calc(50% - 30px);
+}
+#bottom-img {
+    bottom: 10px;
+    left: calc(50% - 30px);
+}
+
+
+/* Buttons */
+.btns {
+    text-align: center;
+    margin-top: 20px;
+}
+button {
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.1rem;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+button:disabled {
+    background-color: #ccc !important;
+    cursor: not-allowed;
+}
+#start-btn {
+    background-color: #4CAF50;
+}
+#stop-btn {
+    background-color: #f44336;
+}
+#reset-btn {
+    background-color: #008CBA;
+}

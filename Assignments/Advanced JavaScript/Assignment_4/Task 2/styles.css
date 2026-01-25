@@ -1,0 +1,14 @@
+#header {
+    text-align: right;
+}
+.align-left {
+    text-align: left;
+}
+
+#navigation {
+    max-width: fit-content;
+    margin-inline: auto;
+}
+.circle {
+    list-style-type: circle;
+}
