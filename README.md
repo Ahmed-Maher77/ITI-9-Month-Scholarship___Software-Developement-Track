@@ -101,7 +101,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **Fundamentals of Programming using C++** | Learn C++ programming syntax, control structures, arrays, and functions to build strong coding fundamentals. | [🔗 Sherihan Mohamed](https://www.linkedin.com/in/sherihan-m-ahmed-aa248046/) | [🔗 Omar Walid](https://www.linkedin.com/in/omar-waled/) |
 |  | **Object-Oriented Programming Concepts** | Master OOP principles including inheritance, polymorphism, and encapsulation. |  |  |
 |  | **Operating Systems Fundamentals** | Learn the core concepts of operating systems such as processes, memory, and file systems. | [🔗 Mohsen Diab](https://www.linkedin.com/in/mohsen-diab-4215b621/) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
-| **Software Design Essentials** | **Agile Software Development Methodologies** | Apply agile principles (Scrum, Kanban) for collaborative software delivery. | |  |  |
+| **Software Design Essentials** | **Agile Software Development Methodologies** | Apply agile principles (Scrum, Kanban) for collaborative software delivery. | [🔗 Waleed Kamel](https://www.linkedin.com/in/waleedkamel/) |  |  |
 |  | **Introduction to DevOps** | Discover CI/CD pipelines, automation tools, and collaborative workflows. |  |  |
 |  | **Introduction to Software Engineering** | Overview of the software development lifecycle (SDLC) and engineering principles. | [🔗 Shimaa Hamdy](https://www.linkedin.com/in/shimaa-hamdy-97a134236/) |  |
 |  | **Object-Oriented Analysis & Design using UML** | Use UML diagrams to design and document software systems. | [🔗 Shimaa Hamdy](https://www.linkedin.com/in/shimaa-hamdy-97a134236/) |  |
