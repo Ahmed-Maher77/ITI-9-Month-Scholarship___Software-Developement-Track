@@ -51,6 +51,14 @@ A web platform that connects fresh graduates and career switchers in Egypt with 
 
 ---
 
+## 🔗 Live MVP Demo
+ Explore the GuideMe MVP here:<br/>
+ [https://guideme-mvp.lovable.app/](https://guideme-mvp.lovable.app/)<br/>
+
+*(Built and validated during the workshop to test real user demand and usability.)*
+
+---
+
 This workshop wasn’t just about tools—it was about mindset.
 
 Our instructor, [Waleed Kamel](https://www.linkedin.com/in/waleedkamel/), taught us to think like entrepreneurs:
@@ -63,10 +71,10 @@ not as gears in a machine, but as product orchestrators.
 - [Islam Saeed](https://www.linkedin.com/in/islam-saeed-3815211b0/)
 - [Abd Elrahman Saeed](https://www.linkedin.com/in/abd-elrahman-saeed/)
 - [Daniel Samy](https://www.linkedin.com/in/daniel-samy-321301285/)
-- @Ebrahim Reda
+- Ebrahim Reda
 - [Mohammed Reda](https://www.linkedin.com/in/mohammed-reda-4194a1228/)
 - [Abdelrahman Nader](https://www.linkedin.com/in/abdelrahman-nader-1b4810292/)
-- @Abd Agwad
+- Mohamed Abdelgwad
 
 ---
 
