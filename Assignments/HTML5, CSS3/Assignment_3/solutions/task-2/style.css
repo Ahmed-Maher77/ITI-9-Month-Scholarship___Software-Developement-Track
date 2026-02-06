@@ -1,0 +1,23 @@
+img {
+    width: 400px;
+    display: block;
+    margin-inline: auto;
+    transition: opacity 0.5s ease;
+}
+
+img:hover {
+    /* opacity: 0.3; */
+    animation: fadeEffect 0.5s linear infinite alternate;
+}
+
+
+
+/* Another Solution */
+@keyframes fadeEffect {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}

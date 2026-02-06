@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="">
+        <h3>Change Email Address</h3>
+        <fieldset>
+            <input type="text" placeholder="Username" pattern="[a-zA-Z]{8,}" required />
+            <div class="error">The required user name may only be a series of alphabetic characters</div>
+        </fieldset>
+        <fieldset>
+            <input type="email" placeholder="Email" pattern="[a-z1-9]{5,}@[a-z]{2,}.[a-z]{2,}" required />
+            <div class="error">The required email address may not include any special characters other than '@' sign</div>
+        </fieldset>
+        <button type="submit">Change</button>
+    </form>
+</body>
+</html>

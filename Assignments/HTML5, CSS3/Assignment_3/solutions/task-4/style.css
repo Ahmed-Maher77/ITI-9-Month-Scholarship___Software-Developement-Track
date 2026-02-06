@@ -1,0 +1,72 @@
+#playing-card {
+    width: 95%;
+    max-width: 250px;
+    height: 400px;
+    border-radius: 20px;
+    border: 4px solid #f00;
+    position: relative;
+    margin: 50px auto;
+}
+
+/* Left and Right A */
+#playing-card .char-A {
+    font-size: 2.5rem;
+    color: #000;
+    font-weight: bold;
+    position: absolute;
+}
+
+#playing-card #top-left {
+    top: 15px;
+    left: 15px;
+}
+
+#playing-card #bottom-right {
+    right: 15px;
+    bottom: 15px;
+}
+
+/* Centered Sign */
+#playing-card #core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#playing-card #core #triangle {
+    border-width: 34px 22px;
+    border-style: solid;
+    position: absolute;
+    top: 47%;
+    left: 49.5%;
+    translate: -50% 0;
+    border-color: transparent transparent rgb(0, 0, 0) transparent;
+}
+
+#heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    rotate: 180deg;
+}
+
+#heart:before,
+#heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: rgb(0, 0, 0);
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+#heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}

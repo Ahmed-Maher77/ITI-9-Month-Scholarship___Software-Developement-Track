@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    position: relative;
+}
+
+#pockemon {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    animation: goAround 8s linear infinite;
+    transform-origin: center;
+}
+
+/* Half circles */
+#pockemon::before,
+#pockemon::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 75px solid;
+}
+
+/* white half */
+#pockemon::before {
+    border-color: transparent white transparent transparent;
+}
+
+/* red half (animated fade) */
+#pockemon::after {
+    border-color: transparent red transparent transparent;
+    animation: fadeout 0.5s infinite;
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes goAround {
+    /* top edge */
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    24% {
+        transform: translate(500px, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(500px, 0) rotate(90deg);
+    }
+
+    /* right edge */
+    49% {
+        transform: translate(500px, 500px) rotate(90deg);
+    }
+    50% {
+        transform: translate(500px, 500px) rotate(180deg);
+    }
+
+    /* bottom edge */
+    74% {
+        transform: translate(0, 500px) rotate(180deg);
+    }
+    75% {
+        transform: translate(0, 500px) rotate(270deg);
+    }
+
+    /* left edge */
+    99% {
+        transform: translate(0, 0) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
