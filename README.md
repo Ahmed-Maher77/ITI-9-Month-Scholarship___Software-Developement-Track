@@ -126,7 +126,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 | **Frontend Web Development** | **Client-Side Technologies** | Understand browser-based technologies and client-server interactions. | | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |  |
 |  | **HTML5 & CSS3** | Build structured and visually styled web pages with modern HTML and CSS. | [🔗 Niveen N. Morsi](https://www.linkedin.com/in/niveen-n-morsi-ph-d-82254621/) | [🔗 Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/) |
 |  | **jQuery Fundamentals** | Simplify DOM manipulation and event handling using jQuery. | [🔗 Arwa Osama]() | [🔗 Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/) |
-|  | **Responsive Web Fundamentals** | Create adaptive designs that function across all devices. |  |  |
+|  | **Responsive Web Fundamentals** | Create adaptive designs that function across all devices. | [Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
 |  | **Responsive Web Design Frameworks** | Learn frameworks like Bootstrap for responsive layouts. |  |  |
 |  | **Material UI for React.js** | Use Material UI components for professional React interfaces. |  |  |
 |  | **Modern Responsive Web Design Frameworks** | Explore modern CSS frameworks and UI kits for scalable design. |  |  |
