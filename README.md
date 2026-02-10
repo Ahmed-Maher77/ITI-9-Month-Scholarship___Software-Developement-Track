@@ -19,14 +19,14 @@ The ITI program aims to bridge the gap between academic education and real indus
 
 ## 🧭 Repository Structure
 
-| Folder | Description |
-|--------|--------------|
-| [`/About_Scholarship_and_Tracks - Docs`](./About_Scholarship_and_Tracks%20-%20Docs) | Detailed documents outlining the ITI 9-Month Scholarship, its objectives, tracks, and learning outcomes. |
-| [`/Courses`](./Courses) | Contains all course-related materials, categorized by chapters and subjects (Software Engineering, Frontend, MEAN Stack, Soft Skills, etc.). |
-| [`/Assignments`](./Assignments) | Contains technical assignments and their solutions. |
-| [`/Projects`](./Projects) | Contains practical projects developed during the program. |
-| [`LICENSE`](./LICENSE) | Repository license information. |
-| [`README.md`](./README.md) | The documentation you are reading. |
+| Folder                                                                              | Description                                                                                                                                  |
+| ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`/About_Scholarship_and_Tracks - Docs`](./About_Scholarship_and_Tracks%20-%20Docs) | Detailed documents outlining the ITI 9-Month Scholarship, its objectives, tracks, and learning outcomes.                                     |
+| [`/Courses`](./Courses)                                                             | Contains all course-related materials, categorized by chapters and subjects (Software Engineering, Frontend, MEAN Stack, Soft Skills, etc.). |
+| [`/Assignments`](./Assignments)                                                     | Contains technical assignments and their solutions.                                                                                          |
+| [`/Projects`](./Projects)                                                           | Contains practical projects developed during the program.                                                                                    |
+| [`LICENSE`](./LICENSE)                                                              | Repository license information.                                                                                                              |
+| [`README.md`](./README.md)                                                          | The documentation you are reading.                                                                                                           |
 
 ---
 
@@ -58,9 +58,9 @@ The **Software Development Track** focuses on building industry-ready engineers 
 
 The admission process includes multiple rigorous stages:
 
-1. 🧩 **IQ & Problem-Solving Exam**  
-2. 💻 **Technical Exam** *(C, OOP, DB, Web Development)*  
-3. 🎯 **Technical Interview**  
+1. 🧩 **IQ & Problem-Solving Exam**
+2. 💻 **Technical Exam** _(C, OOP, DB, Web Development)_
+3. 🎯 **Technical Interview**
 4. 🤝 **Interpersonal & Behavioral Interview**
 
 Over **11,000 applicants** compete each year — only the top candidates join the program.
@@ -69,22 +69,23 @@ Over **11,000 applicants** compete each year — only the top candidates join th
 
 ## 🧑‍🏫 Learning Environment
 
-- 🧪 **75% Practical Labs** and **25% Theoretical Sessions**  
-- 👨‍🏫 Highly professional and supportive instructors  
-- ⏰ Intensive daily schedule (lectures, labs, assignments, and exams)  
-- 🎓 Continuous evaluation ensuring discipline, teamwork, and growth  
+- 🧪 **75% Practical Labs** and **25% Theoretical Sessions**
+- 👨‍🏫 Highly professional and supportive instructors
+- ⏰ Intensive daily schedule (lectures, labs, assignments, and exams)
+- 🎓 Continuous evaluation ensuring discipline, teamwork, and growth
 - 🤝 Collaborative projects that simulate real industry environments
 
 ---
 
 ## 💡 About Me
 
-I’m **Ahmed Maher Algohary**, a passionate **Full-Stack Developer and Software Engineer** specializing in **modern web technologies** and **user-centered design**.  
+I’m **Ahmed Maher Algohary**, a passionate **Full-Stack Developer and Software Engineer** specializing in **modern web technologies** and **user-centered design**.
 
 Being accepted into the ITI 9-Month Scholarship is a milestone in my professional growth — it’s not just a program, but a transformative journey that’s enhancing my:
-- Technical expertise in **software engineering principles**  
-- Problem-solving and analytical skills  
-- Professional and communication abilities  
+
+- Technical expertise in **software engineering principles**
+- Problem-solving and analytical skills
+- Professional and communication abilities
 - Team collaboration mindset
 
 ---
@@ -93,91 +94,80 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 
 > Below is the full structured curriculum of the **ITI 9-Month Professional Scholarship – Software Development Track**, organized by chapters and key areas of study.
 
-| **Chapter** | **Course Name** | **Description** | **Instructor** | **Teaching Assistant** |
-|:-------------|:----------------|:----------------|:----------------:|:----------------:|
-| **Software Development Fundamentals** | **Introduction to Programming** | Learn the basics of programming logic, syntax, and problem-solving. | [🔗 Sherihan Mohamed](https://www.linkedin.com/in/sherihan-m-ahmed-aa248046/) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |  |
-|  | **Data Structures and Algorithms** | Explore efficient data handling and algorithmic problem-solving techniques. | [🔗 Hany Safwat](https://www.linkedin.com/in/hany-safwat-872676387/) | [🔗 Omar Walid](https://www.linkedin.com/in/omar-waled/) |
-|  | **Database Fundamentals** | Understand relational databases, normalization, and SQL operations. | [🔗 Ramy Abou-Nagi](https://www.linkedin.com/in/ramy-abou-nagi-057158a7) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
-|  | **Fundamentals of Programming using C++** | Learn C++ programming syntax, control structures, arrays, and functions to build strong coding fundamentals. | [🔗 Sherihan Mohamed](https://www.linkedin.com/in/sherihan-m-ahmed-aa248046/) | [🔗 Omar Walid](https://www.linkedin.com/in/omar-waled/) |
-|  | **Object-Oriented Programming Concepts** | Master OOP principles including inheritance, polymorphism, and encapsulation. | [🔗 Sherihan Mohamed](https://www.linkedin.com/in/sherihan-m-ahmed-aa248046/) | [🔗 Omar Walid](https://www.linkedin.com/in/omar-waled/) |
-|  | **Operating Systems Fundamentals** | Learn the core concepts of operating systems such as processes, memory, and file systems. | [🔗 Mohsen Diab](https://www.linkedin.com/in/mohsen-diab-4215b621/) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
-| **Software Design Essentials** | **Agile Software Development Methodologies** | Apply agile principles (Scrum, Kanban) for collaborative software delivery. | [🔗 Waleed Kamel](https://www.linkedin.com/in/waleedkamel/) |  |  |
-|  | **Introduction to DevOps** | Discover CI/CD pipelines, automation tools, and collaborative workflows. |  |  |
-|  | **Introduction to Software Engineering** | Overview of the software development lifecycle (SDLC) and engineering principles. | [🔗 Shimaa Hamdy](https://www.linkedin.com/in/shimaa-hamdy-97a134236/) |  |
-|  | **Object-Oriented Analysis & Design using UML** | Use UML diagrams to design and document software systems. | [🔗 Shimaa Hamdy](https://www.linkedin.com/in/shimaa-hamdy-97a134236/) |  |
-|  | **Introduction to MS Azure** | Introduction to cloud computing and Azure deployment fundamentals. |  |  |
-|  | **JavaScript Design Patterns** | Learn reusable design solutions and best practices for scalable JavaScript codebases. |  |  |
-|  | **JavaScript Unit Testing** | Write and automate unit tests to ensure code quality and reliability. |  |  |
-|  | **IIS Administration** | Configure and manage Internet Information Services (IIS) for web applications. |  |  |
-|  | **Source Control (Git & GitHub)** | Manage code versions, branches, and collaboration using Git and GitHub. | [🔗 Nada Mostafa](https://www.linkedin.com/in/nada-mostafa-mohamed) |  |
-|  | **Docker and Kubernetes Fundamentals** | Understand containerization, orchestration, and microservices deployment. |  |  |
-|  | **E-Business Fundamentals** | Explore the fundamentals of online business models and e-commerce systems. | [🔗 Basma Sabri](https://www.linkedin.com/in/basma-sabri-607b9b13b/) |  |
-|  | **Internet Marketing** | Learn the principles of digital marketing, SEO, and analytics. |  |  |
-|  | **Introduction to Computer Networks & Cyber Security** | Understand networking basics and key cybersecurity practices. | [🔗 Hager Taha](https://www.linkedin.com/in/hager-taha-moustafa/) |  |
-|  | **Secure Coding Essentials** | Apply secure development practices to prevent vulnerabilities. | [Mervat Karam](https://www.linkedin.com/in/mervatkaram/) |  |
-|  | **Design Elements and Prototyping** | Learn to translate design concepts into interactive prototypes. | [🔗 Abobakr Sobhy](https://www.linkedin.com/in/abobakr-sobhy/) |  |
-| **Soft Skills Courses** | **Progressive Teamwork and Leadership Skills (Workshop)** | Develop effective team collaboration and leadership competencies. |  |  |
-|  | **Business English Course** | Enhance professional English communication, presentation, and negotiation skills in a business context. | [🔗 Basma Sabri](https://www.linkedin.com/in/basma-sabri-607b9b13b/) |  |
-|  | **Professional Demeanor (Workshop)** | Cultivate a professional image, ethics, and workplace conduct. | [Sharl Hanna](https://www.linkedin.com/in/sharlhanna/) |  |
-|  | **Best Practices for Remote Working (Workshop)** | Learn how to stay productive and connected in remote environments. |  |  |
-|  | **Communication Essentials for Professionals** | Strengthen verbal, written, and interpersonal communication. | [🔗 Sharl Hanna](https://www.linkedin.com/in/sharlhanna/) |  |
-|  | **High Impact Presentations** | Improve presentation skills to deliver engaging and persuasive talks. | [Sharl Hanna](https://www.linkedin.com/in/sharlhanna/) |  |
-|  | **Job Seeking Skills** | Prepare for the job market with CV, interview, and career strategy training. |  |  |
-| **Frontend Web Development** | **Client-Side Technologies** | Understand browser-based technologies and client-server interactions. | [🔗 Arwa Osama]() | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |  |
-|  | **HTML5 & CSS3** | Build structured and visually styled web pages with modern HTML and CSS. | [🔗 Niveen N. Morsi](https://www.linkedin.com/in/niveen-n-morsi-ph-d-82254621/) | [🔗 Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/) |
-|  | **jQuery Fundamentals** | Simplify DOM manipulation and event handling using jQuery. | [🔗 Arwa Osama]() | [🔗 Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/) |
-|  | **Responsive Web Fundamentals** | Create adaptive designs that function across all devices. | [Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
-|  | **Responsive Web Design Frameworks** | Learn frameworks like Bootstrap for responsive layouts. | [Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/) |  |
-|  | **Material UI for React.js** | Use Material UI components for professional React interfaces. |  |  |
-|  | **Modern Responsive Web Design Frameworks** | Explore modern CSS frameworks and UI kits for scalable design. |  |  |
-|  | **CSS Preprocessor (Sass/SCSS)** | Use Sass/SCSS for cleaner and modular CSS management. |  |  |
-|  | **TypeScript** | Add type safety and modern features to JavaScript development. |  |  |
-|  | **Vue.js Fundamentals** | Build reactive web interfaces using Vue.js components and directives. |  |  |
-|  | **React.js Fundamentals** | Learn React core concepts: components, props, state, and hooks. |  |  |
-|  | **Next.js Fundamentals** | Implement server-side rendering (SSR) and static site generation (SSG) with Next.js. |  |  |
-| **MEAN Stack Development** | **Angular Fundamentals** | Build modular and dynamic web applications with Angular. | | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |  |
-|  | **Angular NgRx and Reactive RxJS** | Manage state and handle asynchronous data streams in Angular. |  |  |
-|  | **Node.js Fundamentals** | Learn backend JavaScript and event-driven programming with Node.js. |  |  |
-|  | **NestJS Framework** | Develop scalable, structured backend applications using NestJS. |  |  |
-|  | **NoSQL Database Fundamentals** | Work with MongoDB and other NoSQL databases for flexible data modeling. |  |  |
-|  | **Advanced JavaScript** | Deep dive into closures, async/await, and advanced ES features. | [🔗 Niveen N. Morsi](https://www.linkedin.com/in/niveen-n-morsi-ph-d-82254621/) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
-|  | **JavaScript Modern Frameworks and Architecture** | Explore best practices in architecture and module organization. |  |  |
-|  | **GraphQL API** | Learn how to build and query APIs using GraphQL for efficient data fetching. |  |  |
-|  | **Relational Database** | Understand advanced SQL concepts, schema design, and optimization. |  |  |
-|  | **ES.Next (ES6+)** | Use modern JavaScript features like destructuring, classes, and modules. |  |  |
-|  | **Progressive Web Apps (PWA)** | Develop installable web apps with offline capabilities and push notifications. | [🔗 Arwa Osama]() | [🔗 Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/) |
-| **UI/UX Concepts and Technologies** | **UI/UX Design Principles and Wireframing** | Learn the fundamentals of designing intuitive and user-friendly interfaces. | [🔗 Abobakr Sobhy](https://www.linkedin.com/in/abobakr-sobhy/) |  |
-|  | **UX Writing Fundamentals** | Create clear and empathetic copy for digital experiences. | [🔗 Abobakr Sobhy](https://www.linkedin.com/in/abobakr-sobhy/) |  |
-|  | **Design Thinking** | Apply problem-solving through human-centered design methodology. | [🔗 Abobakr Sobhy](https://www.linkedin.com/in/abobakr-sobhy/) |  |
-|  | **Adobe Photoshop for Web** | Use Photoshop to create and optimize web graphics and layouts. | [Osama Ali](https://www.linkedin.com/in/osama-ali-48b47357) |  |
-|  | **Adobe Illustrator for Web** | Create vector-based assets and icons for responsive interfaces. | [Osama Ali](https://www.linkedin.com/in/osama-ali-48b47357) |  |
-|  | **Visual Design for Web** | Understand color theory, typography, and layout composition for digital products. | [🔗 Abobakr Sobhy](https://www.linkedin.com/in/abobakr-sobhy/) |  |
-| **AI Courses** | **Introduction to Generative AI and Prompt Engineering** | Learn how to design and optimize AI prompts for creative and technical tasks. | [Omar Abdallah](https://www.linkedin.com/in/omar-abdallah-abdelrahman/) |  |
-|  | **AI-powered Coding Assistant Tools** | Use AI tools (e.g., GitHub Copilot, ChatGPT) to boost coding efficiency. | [Omar Abdallah](https://www.linkedin.com/in/omar-abdallah-abdelrahman/) |  |
-|  | **Developing Gen-AI Based Software** | Build applications that integrate generative AI into real-world use cases. | [Omar Abdallah](https://www.linkedin.com/in/omar-abdallah-abdelrahman/) |  |
+| **Chapter**                           | **Course Name**                                           | **Description**                                                                                              |                                 **Instructor**                                  |                           **Teaching Assistant**                           |
+| :------------------------------------ | :-------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------- | :-----------------------------------------------------------------------------: | :------------------------------------------------------------------------: | --- |
+| **Software Development Fundamentals** | **Introduction to Programming**                           | Learn the basics of programming logic, syntax, and problem-solving.                                          |  [🔗 Sherihan Mohamed](https://www.linkedin.com/in/sherihan-m-ahmed-aa248046/)  | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |     |
+|                                       | **Data Structures and Algorithms**                        | Explore efficient data handling and algorithmic problem-solving techniques.                                  |      [🔗 Hany Safwat](https://www.linkedin.com/in/hany-safwat-872676387/)       |          [🔗 Omar Walid](https://www.linkedin.com/in/omar-waled/)          |
+|                                       | **Database Fundamentals**                                 | Understand relational databases, normalization, and SQL operations.                                          |    [🔗 Ramy Abou-Nagi](https://www.linkedin.com/in/ramy-abou-nagi-057158a7)     | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
+|                                       | **Fundamentals of Programming using C++**                 | Learn C++ programming syntax, control structures, arrays, and functions to build strong coding fundamentals. |  [🔗 Sherihan Mohamed](https://www.linkedin.com/in/sherihan-m-ahmed-aa248046/)  |          [🔗 Omar Walid](https://www.linkedin.com/in/omar-waled/)          |
+|                                       | **Object-Oriented Programming Concepts**                  | Master OOP principles including inheritance, polymorphism, and encapsulation.                                |  [🔗 Sherihan Mohamed](https://www.linkedin.com/in/sherihan-m-ahmed-aa248046/)  |          [🔗 Omar Walid](https://www.linkedin.com/in/omar-waled/)          |
+|                                       | **Operating Systems Fundamentals**                        | Learn the core concepts of operating systems such as processes, memory, and file systems.                    |       [🔗 Mohsen Diab](https://www.linkedin.com/in/mohsen-diab-4215b621/)       | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
+| **Software Design Essentials**        | **Agile Software Development Methodologies**              | Apply agile principles (Scrum, Kanban) for collaborative software delivery.                                  |           [🔗 Waleed Kamel](https://www.linkedin.com/in/waleedkamel/)           |                                                                            |     |
+|                                       | **Introduction to DevOps**                                | Discover CI/CD pipelines, automation tools, and collaborative workflows.                                     |                                                                                 |                                                                            |
+|                                       | **Introduction to Software Engineering**                  | Overview of the software development lifecycle (SDLC) and engineering principles.                            |     [🔗 Shimaa Hamdy](https://www.linkedin.com/in/shimaa-hamdy-97a134236/)      |                                                                            |
+|                                       | **Object-Oriented Analysis & Design using UML**           | Use UML diagrams to design and document software systems.                                                    |     [🔗 Shimaa Hamdy](https://www.linkedin.com/in/shimaa-hamdy-97a134236/)      |                                                                            |
+|                                       | **Introduction to MS Azure**                              | Introduction to cloud computing and Azure deployment fundamentals.                                           |                                                                                 |                                                                            |
+|                                       | **JavaScript Design Patterns**                            | Learn reusable design solutions and best practices for scalable JavaScript codebases.                        |                                                                                 |                                                                            |
+|                                       | **JavaScript Unit Testing**                               | Write and automate unit tests to ensure code quality and reliability.                                        |                                                                                 |                                                                            |
+|                                       | **IIS Administration**                                    | Configure and manage Internet Information Services (IIS) for web applications.                               |                                                                                 |                                                                            |
+|                                       | **Source Control (Git & GitHub)**                         | Manage code versions, branches, and collaboration using Git and GitHub.                                      |       [🔗 Nada Mostafa](https://www.linkedin.com/in/nada-mostafa-mohamed)       |                                                                            |
+|                                       | **Docker and Kubernetes Fundamentals**                    | Understand containerization, orchestration, and microservices deployment.                                    |                                                                                 |                                                                            |
+|                                       | **E-Business Fundamentals**                               | Explore the fundamentals of online business models and e-commerce systems.                                   |      [🔗 Basma Sabri](https://www.linkedin.com/in/basma-sabri-607b9b13b/)       |                                                                            |
+|                                       | **Internet Marketing**                                    | Learn the principles of digital marketing, SEO, and analytics.                                               |                                                                                 |                                                                            |
+|                                       | **Introduction to Computer Networks & Cyber Security**    | Understand networking basics and key cybersecurity practices.                                                |        [🔗 Hager Taha](https://www.linkedin.com/in/hager-taha-moustafa/)        |                                                                            |
+|                                       | **Secure Coding Essentials**                              | Apply secure development practices to prevent vulnerabilities.                                               |            [Mervat Karam](https://www.linkedin.com/in/mervatkaram/)             |                                                                            |
+|                                       | **Design Elements and Prototyping**                       | Learn to translate design concepts into interactive prototypes.                                              |         [🔗 Abobakr Sobhy](https://www.linkedin.com/in/abobakr-sobhy/)          |                                                                            |
+| **Soft Skills Courses**               | **Progressive Teamwork and Leadership Skills (Workshop)** | Develop effective team collaboration and leadership competencies.                                            |                                                                                 |                                                                            |
+|                                       | **Business English Course**                               | Enhance professional English communication, presentation, and negotiation skills in a business context.      |      [🔗 Basma Sabri](https://www.linkedin.com/in/basma-sabri-607b9b13b/)       |                                                                            |
+|                                       | **Professional Demeanor (Workshop)**                      | Cultivate a professional image, ethics, and workplace conduct.                                               |             [Sharl Hanna](https://www.linkedin.com/in/sharlhanna/)              |                                                                            |
+|                                       | **Best Practices for Remote Working (Workshop)**          | Learn how to stay productive and connected in remote environments.                                           |                                                                                 |                                                                            |
+|                                       | **Communication Essentials for Professionals**            | Strengthen verbal, written, and interpersonal communication.                                                 |            [🔗 Sharl Hanna](https://www.linkedin.com/in/sharlhanna/)            |                                                                            |
+|                                       | **High Impact Presentations**                             | Improve presentation skills to deliver engaging and persuasive talks.                                        |             [Sharl Hanna](https://www.linkedin.com/in/sharlhanna/)              |                                                                            |
+|                                       | **Job Seeking Skills**                                    | Prepare for the job market with CV, interview, and career strategy training.                                 |                                                                                 |                                                                            |
+| **Frontend Web Development**          | **Client-Side Technologies**                              | Understand browser-based technologies and client-server interactions.                                        |                                [🔗 Arwa Osama]()                                | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |     |
+|                                       | **HTML5 & CSS3**                                          | Build structured and visually styled web pages with modern HTML and CSS.                                     | [🔗 Niveen N. Morsi](https://www.linkedin.com/in/niveen-n-morsi-ph-d-82254621/) |       [🔗 Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/)        |
+|                                       | **jQuery Fundamentals**                                   | Simplify DOM manipulation and event handling using jQuery.                                                   |                                [🔗 Arwa Osama]()                                |       [🔗 Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/)        |
+|                                       | **Responsive Web Fundamentals**                           | Create adaptive designs that function across all devices.                                                    |           [Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/)            | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
+|                                       | **Responsive Web Design Frameworks**                      | Learn frameworks like Bootstrap for responsive layouts.                                                      |           [Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/)            |                                                                            |
+|                                       | **Material UI for React.js**                              | Use Material UI components for professional React interfaces.                                                |                                                                                 |                                                                            |
+|                                       | **Modern Responsive Web Design Frameworks**               | Explore modern CSS frameworks and UI kits for scalable design.                                               |                                                                                 |                                                                            |
+|                                       | **CSS Preprocessor (Sass/SCSS)**                          | Use Sass/SCSS for cleaner and modular CSS management.                                                        |                                                                                 |                                                                            |
+|                                       | **TypeScript**                                            | Add type safety and modern features to JavaScript development.                                               |                                                                                 |                                                                            |
+|                                       | **Vue.js Fundamentals**                                   | Build reactive web interfaces using Vue.js components and directives.                                        |                                                                                 |                                                                            |
+|                                       | **React.js Fundamentals**                                 | Learn React core concepts: components, props, state, and hooks.                                              |                                                                                 |                                                                            |
+|                                       | **Next.js Fundamentals**                                  | Implement server-side rendering (SSR) and static site generation (SSG) with Next.js.                         |                                                                                 |                                                                            |
+| **MEAN Stack Development**            | **Angular Fundamentals**                                  | Build modular and dynamic web applications with Angular.                                                     |                                                                                 | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |     |
+|                                       | **Angular NgRx and Reactive RxJS**                        | Manage state and handle asynchronous data streams in Angular.                                                |                                                                                 |                                                                            |
+|                                       | **Node.js Fundamentals**                                  | Learn backend JavaScript and event-driven programming with Node.js.                                          |                                                                                 |                                                                            |
+|                                       | **NestJS Framework**                                      | Develop scalable, structured backend applications using NestJS.                                              |                                                                                 |                                                                            |
+|                                       | **NoSQL Database Fundamentals**                           | Work with MongoDB and other NoSQL databases for flexible data modeling.                                      |                                                                                 |                                                                            |
+|                                       | **Advanced JavaScript**                                   | Deep dive into closures, async/await, and advanced ES features.                                              | [🔗 Niveen N. Morsi](https://www.linkedin.com/in/niveen-n-morsi-ph-d-82254621/) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
+|                                       | **JavaScript Modern Frameworks and Architecture**         | Explore best practices in architecture and module organization.                                              |                                                                                 |                                                                            |
+|                                       | **GraphQL API**                                           | Learn how to build and query APIs using GraphQL for efficient data fetching.                                 |                                                                                 |                                                                            |
+|                                       | **Relational Database**                                   | Understand advanced SQL concepts, schema design, and optimization.                                           |                                                                                 |                                                                            |
+|                                       | **ES.Next (ES6+)**                                        | Use modern JavaScript features like destructuring, classes, and modules.                                     |                                                                                 |                                                                            |
+|                                       | **Progressive Web Apps (PWA)**                            | Develop installable web apps with offline capabilities and push notifications.                               |                                [🔗 Arwa Osama]()                                |       [🔗 Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/)        |
+| **UI/UX Concepts and Technologies**   | **UI/UX Design Principles and Wireframing**               | Learn the fundamentals of designing intuitive and user-friendly interfaces.                                  |         [🔗 Abobakr Sobhy](https://www.linkedin.com/in/abobakr-sobhy/)          |                                                                            |
+|                                       | **UX Writing Fundamentals**                               | Create clear and empathetic copy for digital experiences.                                                    |         [🔗 Abobakr Sobhy](https://www.linkedin.com/in/abobakr-sobhy/)          |                                                                            |
+|                                       | **Design Thinking**                                       | Apply problem-solving through human-centered design methodology.                                             |         [🔗 Abobakr Sobhy](https://www.linkedin.com/in/abobakr-sobhy/)          |                                                                            |
+|                                       | **Adobe Photoshop for Web**                               | Use Photoshop to create and optimize web graphics and layouts.                                               |           [Osama Ali](https://www.linkedin.com/in/osama-ali-48b47357)           |                                                                            |
+|                                       | **Adobe Illustrator for Web**                             | Create vector-based assets and icons for responsive interfaces.                                              |           [Osama Ali](https://www.linkedin.com/in/osama-ali-48b47357)           |                                                                            |
+|                                       | **Visual Design for Web**                                 | Understand color theory, typography, and layout composition for digital products.                            |         [🔗 Abobakr Sobhy](https://www.linkedin.com/in/abobakr-sobhy/)          |                                                                            |
+| **AI Courses**                        | **Introduction to Generative AI and Prompt Engineering**  | Learn how to design and optimize AI prompts for creative and technical tasks.                                |     [Omar Abdallah](https://www.linkedin.com/in/omar-abdallah-abdelrahman/)     |                                                                            |
+|                                       | **AI-powered Coding Assistant Tools**                     | Use AI tools (e.g., GitHub Copilot, ChatGPT) to boost coding efficiency.                                     |     [Omar Abdallah](https://www.linkedin.com/in/omar-abdallah-abdelrahman/)     |                                                                            |
+|                                       | **Developing Gen-AI Based Software**                      | Build applications that integrate generative AI into real-world use cases.                                   |     [Omar Abdallah](https://www.linkedin.com/in/omar-abdallah-abdelrahman/)     |                                                                            |
 
-> 🧠 *This curriculum reflects a balance between technical depth and professional growth — preparing developers to become full-stack software engineers with strong industry readiness.*
-
+> 🧠 _This curriculum reflects a balance between technical depth and professional growth — preparing developers to become full-stack software engineers with strong industry readiness._
 
 ---
 
 ## 💻 Projects
 
 > Practical projects developed during the program to apply theoretical knowledge into real-world applications.
-<br/>
-__coming soon__
 
-<!--
-
-| **Project Name** | **Description** | **Link** |
-|------------------|------------------|-----------|
-| **SignLink** | Web & mobile app converting sign language to text using AI, WebRTC, and Firebase. | [🔗 GitHub](https://github.com/AhmedAlgohary/SignLink) |
-| **HappyStore** | Arabic e-commerce web app with Redux Toolkit, React Router, and Tailwind. | [🔗 GitHub](https://github.com/AhmedAlgohary/HappyStore) |
-| **Classimax** | Classified marketplace platform for local buying/selling using Gulp, jQuery, and Sass. | [🔗 GitHub](https://github.com/AhmedAlgohary/Classimax) |
-| **Maintain** | Professional home maintenance website with interactive UI and form validation. | [🔗 GitHub](https://github.com/AhmedAlgohary/Maintain) |
-| **DevFolio** | Personal portfolio website showcasing projects, skills, and experience. | [🔗 GitHub](https://github.com/AhmedAlgohary/DevFolio) |
-
--->
+| **Project Name**                         | **Description**                                                                               | **Link**                                                      |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| **Clinic Appointment Scheduling System** | A comprehensive healthcare management system for scheduling and managing clinic appointments. | [🔗 Project](./Projects/Clinic-Appointment-Scheduling-System) |
 
 ---
 
@@ -185,29 +175,33 @@ __coming soon__
 
 > A collection of hands-on assignments and problem-solving exercises completed during the ITI 9-Month Scholarship – applying theory to real-world development challenges.
 
-| **Assignment Name** | **Description** | **Links** |
-|:----------------------:|------------------|:-----------:|
-| **Database (Analysis and Design – SQL Queries)** | Designed and modeled a complete database system using ERD (entities, relationships, normalization) and practiced SQL queries implementation. | [🔗 Assignment](./Assignments/Database%20(Analysis%20and%20Design%20-%20SQL%20Queries)) |
-| **Client-Side Technologies** | Practiced core front-end development concepts including HTML, CSS, JavaScript, and DOM manipulation through interactive and responsive web assignments. | [🔗 Assignment](./Assignments/Client-Side%20Technologies) |
-
-
-
-<!--
-| **C Programming Basics** | Practice problems covering loops, functions, arrays, and pointers. | [🔗 Assignment](./Assignments/C_Programming) |
-| **Data Structures** | Implementing linked lists, stacks, queues, and trees in C. | [🔗 Assignment](./Assignments/Data_Structures) |
-| **SQL Queries Practice** | Hands-on SQL exercises using joins, aggregates, and subqueries. | [🔗 Assignment](./Assignments/SQL_Practice) |
-| **Web Fundamentals** | HTML/CSS/JS challenges for responsive layouts and interactivity. | [🔗 Assignment](./Assignments/Web_Fundamentals) |
-| **React Components** | Component-based tasks building reusable and dynamic UIs. | [🔗 Assignment](./Assignments/React_Tasks) |
--->
+|               **Assignment Name**                | **Description**                                                                                                                                         |                                         **Links**                                         |
+| :----------------------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------: |
+|    **Fundamentals of Programming using C++**     | Core C++ programming exercises covering syntax, control structures, arrays, and functions.                                                              |       [🔗 Assignment](./Assignments/Fundamentals%20of%20Programming%20using%20C++)        |
+|                **OOP using C++**                 | Object-oriented programming assignments implementing classes, inheritance, polymorphism, and encapsulation in C++.                                      |                     [🔗 Assignment](./Assignments/OOP%20using%20C++)                      |
+|         **Data Structures & Algorithms**         | Implementation of fundamental data structures (linked lists, stacks, queues, trees) and algorithmic problem-solving.                                    |            [🔗 Assignment](./Assignments/Data%20Structures%20%26%20Algorithms)            |
+| **Database (Analysis and Design – SQL Queries)** | Designed and modeled a complete database system using ERD (entities, relationships, normalization) and practiced SQL queries implementation.            | [🔗 Assignment](<./Assignments/Database%20(Analysis%20and%20Design%20-%20SQL%20Queries)>) |
+|        **Source Control (Git & Github)**         | Version control exercises including branching, merging, and collaborative workflows with Git and GitHub.                                                |         [🔗 Assignment](<./Assignments/Source%20Control%20(Git%20%26%20Github)>)          |
+|       **Design Elements and Prototyping**        | Design assignments focusing on user interface elements and interactive prototypes.                                                                      |           [🔗 Assignment](./Assignments/Design%20Elements%20and%20Prototyping)            |
+|           **Photoshop & Illustrator**            | Web design assignments using Adobe Photoshop and Illustrator for creating visual assets.                                                                |               [🔗 Assignment](./Assignments/Photoshop%20%26%20Illustrator)                |
+|   **Networking & Cyber Security Fundamentals**   | Network configuration and cybersecurity practice exercises.                                                                                             |     [🔗 Assignment](./Assignments/Networking%20%26%20Cyber%20Security%20Fundamentals)     |
+|                 **HTML5, CSS3**                  | Modern web development assignments focusing on semantic HTML5 and advanced CSS3 styling techniques.                                                     |                      [🔗 Assignment](./Assignments/HTML5%2C%20CSS3)                       |
+|           **Client-Side Technologies**           | Practiced core front-end development concepts including HTML, CSS, JavaScript, and DOM manipulation through interactive and responsive web assignments. |                 [🔗 Assignment](./Assignments/Client-Side%20Technologies)                 |
+|                    **jQuery**                    | DOM manipulation and event handling exercises using jQuery library.                                                                                     |                           [🔗 Assignment](./Assignments/jQuery)                           |
+|             **Advanced JavaScript**              | Deep dive into closures, async/await, prototypes, and advanced ES features.                                                                             |                   [🔗 Assignment](./Assignments/Advanced%20JavaScript)                    |
+|                **ES6 and beyond**                | Modern JavaScript assignments covering ES6+ features like arrow functions, destructuring, classes, and modules.                                         |                     [🔗 Assignment](./Assignments/ES6%20and%20beyond)                     |
+|            **Responsive Web Design**             | Creating adaptive and mobile-first responsive layouts across different devices and screen sizes.                                                        |                 [🔗 Assignment](./Assignments/Responsive%20Web%20Design)                  |
+|          **PWA (Progressive Web App)**           | Building installable web applications with offline capabilities, service workers, and push notifications.                                               |             [🔗 Assignment](<./Assignments/PWA%20(Progressive%20Web%20App)>)              |
+|           **AI & Prompt Engineering**            | Generative AI and prompt engineering exercises for building AI-powered applications.                                                                    |              [🔗 Assignment](./Assignments/AI%20%26%20Prompt%20Engineering)               |
 
 ---
 
 ## 🏁 Future Plans
 
-- Develop a **capstone project** that integrates **AI, Cloud Services, and Full-Stack Development**.  
-- Contribute to **open-source projects** focused on **web accessibility** and **AI-driven productivity**.  
-- Pursue **advanced certifications** in **Software Architecture** and **Cloud Deployment**.  
-- Continue **mentoring and documenting** my journey to support future ITI students.  
+- Develop a **capstone project** that integrates **AI, Cloud Services, and Full-Stack Development**.
+- Contribute to **open-source projects** focused on **web accessibility** and **AI-driven productivity**.
+- Pursue **advanced certifications** in **Software Architecture** and **Cloud Deployment**.
+- Continue **mentoring and documenting** my journey to support future ITI students.
 - Share **LinkedIn posts** as a series — each highlighting key takeaways from a specific course in the program.  
   👉 Follow my learning journey on [LinkedIn](https://www.linkedin.com/in/ahmed-maher-algohary)
 
@@ -229,4 +223,3 @@ Special thanks to the **instructors**, **coordinators**, and **colleagues** whos
 ---
 
 ### ⭐ If you find this repository helpful, don’t forget to star it!
-
