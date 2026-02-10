@@ -123,11 +123,11 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **Communication Essentials for Professionals** | Strengthen verbal, written, and interpersonal communication. | [🔗 Sharl Hanna](https://www.linkedin.com/in/sharlhanna/) |  |
 |  | **High Impact Presentations** | Improve presentation skills to deliver engaging and persuasive talks. | [Sharl Hanna](https://www.linkedin.com/in/sharlhanna/) |  |
 |  | **Job Seeking Skills** | Prepare for the job market with CV, interview, and career strategy training. |  |  |
-| **Frontend Web Development** | **Client-Side Technologies** | Understand browser-based technologies and client-server interactions. | | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |  |
+| **Frontend Web Development** | **Client-Side Technologies** | Understand browser-based technologies and client-server interactions. | [🔗 Arwa Osama]() | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |  |
 |  | **HTML5 & CSS3** | Build structured and visually styled web pages with modern HTML and CSS. | [🔗 Niveen N. Morsi](https://www.linkedin.com/in/niveen-n-morsi-ph-d-82254621/) | [🔗 Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/) |
 |  | **jQuery Fundamentals** | Simplify DOM manipulation and event handling using jQuery. | [🔗 Arwa Osama]() | [🔗 Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/) |
 |  | **Responsive Web Fundamentals** | Create adaptive designs that function across all devices. | [Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/) | [🔗 Mahmoud Abdelaziz](https://www.linkedin.com/in/mahmoud-abdelaziz-11m/) |
-|  | **Responsive Web Design Frameworks** | Learn frameworks like Bootstrap for responsive layouts. |  |  |
+|  | **Responsive Web Design Frameworks** | Learn frameworks like Bootstrap for responsive layouts. | [Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/) |  |
 |  | **Material UI for React.js** | Use Material UI components for professional React interfaces. |  |  |
 |  | **Modern Responsive Web Design Frameworks** | Explore modern CSS frameworks and UI kits for scalable design. |  |  |
 |  | **CSS Preprocessor (Sass/SCSS)** | Use Sass/SCSS for cleaner and modular CSS management. |  |  |
@@ -146,7 +146,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |  | **Relational Database** | Understand advanced SQL concepts, schema design, and optimization. |  |  |
 |  | **ES.Next (ES6+)** | Use modern JavaScript features like destructuring, classes, and modules. |  |  |
 |  | **Progressive Web Apps (PWA)** | Develop installable web apps with offline capabilities and push notifications. | [🔗 Arwa Osama]() | [🔗 Ryhab Farouq](https://www.linkedin.com/in/ryhab--farouq/) |
-| **UI/UX Concepts and Technologies** | **UI/UX Design Principles and Wireframing** | Learn the fundamentals of designing intuitive and user-friendly interfaces. |  |  |
+| **UI/UX Concepts and Technologies** | **UI/UX Design Principles and Wireframing** | Learn the fundamentals of designing intuitive and user-friendly interfaces. | [🔗 Abobakr Sobhy](https://www.linkedin.com/in/abobakr-sobhy/) |  |
 |  | **UX Writing Fundamentals** | Create clear and empathetic copy for digital experiences. | [🔗 Abobakr Sobhy](https://www.linkedin.com/in/abobakr-sobhy/) |  |
 |  | **Design Thinking** | Apply problem-solving through human-centered design methodology. | [🔗 Abobakr Sobhy](https://www.linkedin.com/in/abobakr-sobhy/) |  |
 |  | **Adobe Photoshop for Web** | Use Photoshop to create and optimize web graphics and layouts. | [Osama Ali](https://www.linkedin.com/in/osama-ali-48b47357) |  |
@@ -222,10 +222,9 @@ Special thanks to the **instructors**, **coordinators**, and **colleagues** whos
 
 ## 📫 Contact
 
-📧 **Email:** ahmedalgohary.dev@gmail.com  
-🌐 **Portfolio:** [ahmedalgohary.github.io/DevFolio](https://ahmedalgohary.github.io/DevFolio)  
-💼 **LinkedIn:** [linkedin.com/in/ahmedalgohary](https://linkedin.com/in/ahmedalgohary)  
-🐙 **GitHub:** [github.com/AhmedAlgohary](https://github.com/AhmedAlgohary)
+- 📧 **Email:** [ahmedmaher.dev1@gmail.com](mailto:ahmedmaher.dev1@gmail.com)
+- 🌐 **Portfolio:** [ahmedmaher-portfolio.vercel.app/](https://ahmedmaher-portfolio.vercel.app/)
+- 💼 **LinkedIn:** [linkedin.com/in/ahmed-maher-algohary/](https://www.linkedin.com/in/ahmed-maher-algohary/)
 
 ---
 
