@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <!-- font awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+    </head>
+    <body>
+        <section id="video-wrapper">
+            <!-- video -->
+            <video poster="" loop>
+                <source
+                    src="media/001 Course Structure and Projects.mp4"
+                    type="video/mp4"
+                />
+                Your browser does not support the video tag.
+            </video>
+
+            <!-- scrubber -->
+            <div id="scrubber">
+                <input
+                    type="range"
+                    name="scrubber"
+                    id="scrubber-slider"
+                    min="0"
+                    max=""
+                    value="0"
+                />              <!-- max value will be set by JS: video.duration -->
+            </div>
+
+            <!-- control buttons -->
+            <div class="control-btns">
+                <div class="left">
+                    <!-- Play/Pause -->
+                    <button id="play-btn">
+                        <span class="fa-solid fa-play"></span>
+                    </button>
+                    <!-- Forward/Backward -->
+                    <button id="forward">
+                        <span class="fa-solid fa-forward"></span>
+                    </button>
+                    <button id="backword">
+                        <span class="fa-solid fa-backward"></span>
+                    </button>
+                </div>
+                <div class="center">
+                    <!-- Autoplay -->
+                    <button id="loop" class="active">
+                        <span class="fa-solid fa-arrows-rotate"></span>
+                    </button>
+                    <!-- Reset -->
+                    <button id="reset">
+                        <span class="fa-solid fa-arrow-rotate-right"></span>
+                    </button>
+                </div>
+                <div class="right">
+                    <!-- Volume -->
+                    <button id="volume">
+                        <span class="fa-solid fa-volume-high"></span>
+                    </button>
+                    <input type="range" name="volume" id="volume-slider" min="0" max="1" step="0.1" />
+                    <!-- Full Screen -->
+                    <button id="full-screen">
+                        <span class="fa-solid fa-expand"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Next Video -->
+            <button id="next-video">
+                Next Video
+                <span class="fa-solid fa-forward"></span>
+            </button>
+
+            <!-- time display -->
+            <div id="time-display">0:00 / 0:00</div>
+        </section>
+
+        <script src="app.js"></script>
+    </body>
+</html>

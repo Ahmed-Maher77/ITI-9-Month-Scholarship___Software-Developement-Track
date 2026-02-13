@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="control-btns">
+            <fieldset>
+                <label for="red-btn">Red</label>
+                <input type="range" name="red-btn" id="red-btn" min="0" max="255" value="0">
+            </fieldset>
+            <fieldset>
+                <label for="green-btn">Green</label>
+                <input type="range" name="green-btn" id="green-btn" min="0" max="255" value="0">
+            </fieldset>
+            <fieldset>
+                <label for="blue-btn">Blue</label>
+                <input type="range" name="blue-btn" id="blue-btn" min="0" max="255" value="0">
+            </fieldset>
+        </div>
+
+        <p id="color-ground">Change the 3 Color Ranges above and observe my color change</p>
+    </main>
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>
