@@ -168,6 +168,7 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 | **Project Name**                         | **Description**                                                                               | **Link**                                                      |
 | ---------------------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
 | **Clinic Appointment Scheduling System** | A comprehensive healthcare management system for scheduling and managing clinic appointments. | [🔗 Project](./Projects/Clinic-Appointment-Scheduling-System) |
+| **TaskWave - Installable Web-based Task Manager** | An installable Progressive Web App for task management with offline support, filters, and productivity tracking. | [🔗 Project](./Projects/TaskWave%20-%20Installable%20Web-based%20Task%20Manager) |
 
 ---
 
