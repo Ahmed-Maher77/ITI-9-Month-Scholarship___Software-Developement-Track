@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TaskWave – Installable Task Management Web-App</title>
+        <meta
+            name="description"
+            content="TaskWave is a modern, installable task management web app that helps users stay organized and productive — even without an internet connection."
+        />
+        <meta
+            name="keywords"
+            content="TaskWave, to-do list, task manager, installable web app, offline tasks, reminders, overdue notifications, dark mode, light mode, IndexedDB, Bootstrap, JavaScript"
+        />
+        <meta name="theme-color" content="#0d6efd" />
+        <!-- Favicon / App Icons -->
+        <link rel="icon" href="./images/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="./images/logo.png" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="TaskWave – Installable Task Management Web-App"
+        />
+        <meta
+            property="og:description"
+            content="TaskWave is a modern, installable task management web app that helps users stay organized and productive — even without an internet connection."
+        />
+        <meta
+            property="og:url"
+            content="https://ahmed-maher77.github.io/TaskWave-Installable-Web-based-Task-Manager/"
+        />
+        <meta
+            property="og:image"
+            content="https://ahmed-maher77.github.io/TaskWave-Installable-Web-based-Task-Manager/images/screenshots/desktop.png"
+        />
+        <meta property="og:site_name" content="TaskWave" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="TaskWave – Installable Task Management Web-App"
+        />
+        <meta
+            name="twitter:description"
+            content="TaskWave is a modern, installable task management web app that helps users stay organized and productive — even without an internet connection."
+        />
+        <meta
+            name="twitter:image"
+            content="https://ahmed-maher77.github.io/TaskWave-Installable-Web-based-Task-Manager/images/screenshots/desktop.png"
+        />
+
+        <!-- Bootstrap -->
+        <link
+            rel="stylesheet"
+            href="packages/bootstrap-5.3.8-dist/css/bootstrap.min.css"
+        />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="style.css" />
+        <!-- manifest.json -->
+        <link rel="manifest" href="./manifest.json" />
+    </head>
+    <body>
+        <!-- Initial Loader -->
+        <div id="initial-loader" class="initial-loader">
+            <div class="initial-loader-content text-center">
+                <div class="spinner-border text-primary mb-3" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <h2 class="text-primary mb-2">To Do List</h2>
+                <p class="text-muted mb-0">Preparing your tasks...</p>
+            </div>
+        </div>
+
+        <!-- Toasts / Notifications Container -->
+        <div id="notifications-container" class="notifications-container"></div>
+
+        <!-- Main Header -->
+        <header class="py-4 mb-3">
+            <div
+                class="container d-flex justify-content-center align-items-center gap-2 flex-wrap"
+            >
+                <h1 class="text-primary fs-head1 mb-0 text-center reveal-on-scroll">
+                    Manage your tasks
+                </h1>
+                <div class="header-actions d-flex align-items-center gap-2">
+                    <button
+                        id="install-btn"
+                        type="button"
+                        class="btn btn-primary btn-sm d-flex align-items-center justify-content-center d-none"
+                        aria-label="Install app"
+                    >
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                    <button
+                        id="theme-toggle"
+                        type="button"
+                        class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center"
+                        aria-label="Toggle dark/light mode"
+                        title="Toggle dark/light mode"
+                    >
+                        <i class="fa-regular fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main>
+            <div class="container">
+                <form
+                    id="tasks-form"
+                    class="mx-auto p-4 rounded bg-body-secondary reveal-on-scroll"
+                >
+                    <div class="row gap-4">
+                        <h2 class="lobster text-center mb-2">
+                            Add New To Do...
+                        </h2>
+
+                        <div class="fields">
+                            <div class="row">
+                                <!-- Task Title -->
+                                <div class="mb-3">
+                                    <label
+                                        for="exampleInputTaskTitle"
+                                        class="form-label"
+                                        >Task Title:</label
+                                    >
+                                    <input
+                                        type="text"
+                                        name="task-title"
+                                        class="form-control"
+                                        id="exampleInputTaskTitle"
+                                        aria-describedby="taskTitleHelp"
+                                        placeholder="Enter task title..."
+                                        required
+                                    />
+                                    <p class="invalid-feedback d-none">
+                                        Task title is required.
+                                    </p>
+                                </div>
+                                <!-- Task Description -->
+                                <div class="mb-3">
+                                    <label
+                                        for="exampleInputTaskDescription"
+                                        class="form-label"
+                                        >Task Description:</label
+                                    >
+                                    <textarea
+                                        name="task-description"
+                                        class="form-control"
+                                        id="exampleInputTaskDescription"
+                                        rows="3"
+                                        placeholder="Enter task description..."
+                                    ></textarea>
+                                    <div
+                                        id="taskDescriptionHelp"
+                                        class="form-text"
+                                    >
+                                        Task description is optional.
+                                    </div>
+                                </div>
+                                <!-- Task Time -->
+                                <div
+                                    class="time-options mt-3 d-flex flex-column gap-2"
+                                >
+                                    <label
+                                        for="meeting-time"
+                                        class="form-label text-center w-100 fs-3 lobster"
+                                        >Select Date and Time:</label
+                                    >
+                                    <div
+                                        class="tabs d-flex align-items-center rounded-pill mx-auto w-100 border border-2 border-secondary"
+                                    >
+                                        <button
+                                            id="no-time"
+                                            class="btn btn-secondary rounded-0 rounded-start-pill border-0 py-2 w-100"
+                                        >
+                                            No Time
+                                        </button>
+                                        <button
+                                            id="schedule"
+                                            class="active btn btn-secondary rounded-0 rounded-end-pill border-0 py-2 w-100"
+                                        >
+                                            Schedule
+                                        </button>
+                                    </div>
+                                    <div class="mb-3 mt-1 pt-1">
+                                        <input
+                                            type="datetime-local"
+                                            class="form-control"
+                                            id="task-time"
+                                            name="task-time"
+                                        />
+                                        <p class="invalid-feedback d-none">
+                                            Please select a date and time.
+                                        </p>
+                                        <p
+                                            class="text-muted d-none task-time-text text-center"
+                                        >
+                                            Your task won't be limited to a
+                                            specific time.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add Task Button -->
+                        <div class="btns">
+                            <div class="row">
+                                <button
+                                    class="submit-form-btn btn btn-primary mt-4 padd-block-8 d-flex align-items-center justify-content-center gap-2"
+                                    type="submit"
+                                    disabled
+                                >
+                                    Add Task <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Notification Switcher -->
+                <section
+                    class="notification-switcher mx-auto my-4 d-flex justify-content-start"
+                >
+                    <div class="form-check form-switch">
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            role="switch"
+                            id="switchCheckChecked"
+                        />
+                        <label
+                            class="form-check-label ms-2"
+                            for="switchCheckChecked"
+                            >Enable Notifications</label
+                        >
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Tasks Container -->
+        <section id="tasks-container" class="my-5 pt-2 mx-auto w-100">
+            <div class="container w-100">
+                <h2 class="lobster text-center mb-3 reveal-on-scroll">
+                    Your To Do List
+                </h2>
+
+                <!-- Tasks Filters -->
+                <div
+                    class="tasks-filters btn-group d-flex justify-content-center"
+                    role="group"
+                    aria-label="Filter tasks"
+                >
+                    <button
+                        type="button"
+                        class="btn btn-outline-primary active"
+                        data-filter="all"
+                    >
+                        <span class="filter-text">All</span>    
+                        <span 
+                            class="badge text-bg-secondary filter-badge"
+                            data-status="all"
+                        >
+                            0
+                        </span>
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-outline-primary"
+                        data-filter="pending"
+                    >
+                        <span class="filter-text">Pending</span>
+                        <span 
+                            class="badge text-bg-primary filter-badge"
+                            data-status="pending"
+                        >
+                            0
+                        </span>
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-outline-primary"
+                        data-filter="completed"
+                    >
+                        <span class="filter-text">Completed</span>
+                        <span 
+                            class="badge text-bg-success filter-badge"
+                            data-status="completed"
+                        >
+                            0
+                        </span>
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-outline-primary"
+                        data-filter="overdue"
+                    >
+                        <span class="filter-text">Overdue</span>
+                        <span
+                            class="badge rounded-pill text-bg-danger ms-1 filter-badge"
+                            data-status="overdue"
+                        >
+                            0
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Weekly completed indicator -->
+                <div
+                    id="task-weekly-summary"
+                    class="task-weekly-summary text-center my-3 small text-muted"
+                >
+                    Tasks completed this week: 0
+                </div>
+
+                <ul class="list-group gap-2">
+                    <!-- the tasks will be added dynamically using JS -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer mt-auto py-3">
+            <div
+                class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-1 text-center text-md-start"
+            >
+                <p class="mb-0 small">
+                    Copyright &copy;
+                    <span id="copyright-year"></span>
+                    Designed and Developed by
+                    <a
+                        href="https://www.linkedin.com/in/ahmed-maher-algohary"
+                        title="About Developer"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Ahmed Maher
+                    </a>
+                </p>
+                <span class="mb-0 small text-muted">All Rights Reserved</span>
+            </div>
+        </footer>
+
+        <script src="./packages/indexedDB.js"></script>
+        <script src="./js/app.js" type="module"></script>
+        <script src="./js/pushNotificationsHandler.js"></script>
+    </body>
+</html>

@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+body {
+    font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========= Variables ========= */
+:root,
+:root[data-theme="light"] {
+    /* colors */
+    --form-placeholder-color: rgb(74 74 74 / 75%);
+    --form-border: #ccc;
+    --label-color: #333333;
+    --white-color: #fff;
+    --d-danger-hover-color: #ca0014;
+    --danger-hover-color: #ff0019;
+    --primary-color: #0d6efd;
+    --task-title-color: #545454;
+    --info-notification-message-color: #004085;
+    --time-label-color: #6c757d;
+    --notification-info-border-color: #0d6efd;
+    --notification-error-border-color: #dc3545;
+    --notification-error-message-color: #721c24;
+    --notification-success-border-color: #28a745;
+    /* background colors */
+    --backdrop-background-color: rgba(0, 0, 0, 0.45);
+    --bg-white-color: #fff;
+    --notification-error-background-color: #fdf5f5;
+    --notification-info-background-color: #f0f5ff;
+    --notification-success-background-color: #f0f8f4;
+    /* box shadow colors */
+    --box-shadow-color: rgba(0, 0, 0, 0.18);
+    --box-shadow-notification-color: rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="dark"] {
+    /* colors (dark variants) */
+    --form-placeholder-color: rgb(200 200 200 / 80%);
+    --form-border: #555;
+    --label-color: #e2e2e2;
+    --white-color: #0b1018;
+    --d-danger-hover-color: #ff4b5a;
+    --danger-hover-color: #ff6b7a;
+    --primary-color: #4ea3ff;
+    --task-title-color: #f1f1f1;
+    --info-notification-message-color: #cfe4ff;
+    --time-label-color: #c0c4cc;
+    --notification-info-border-color: #4ea3ff;
+    --notification-error-border-color: #ff6b7a;
+    --notification-error-message-color: #ffc2c7;
+    --notification-success-border-color: #63d48b;
+    /* background colors */
+    --backdrop-background-color: rgba(0, 0, 0, 0.65);
+    --bg-white-color: #121827;
+    --notification-error-background-color: #3a1218;
+    --notification-info-background-color: #10223d;
+    --notification-success-background-color: #0f2b1e;
+    /* box shadow colors */
+    --box-shadow-color: rgba(0, 0, 0, 0.8);
+    --box-shadow-notification-color: rgba(0, 0, 0, 0.7);
+}
+/* ========= Reusable Classes ========= */
+.w-fit {
+    width: fit-content;
+}
+.h-fit {
+    height: fit-content;
+}
+
+/* Fonts */
+.lobster {
+    font-family: "Lobster Two", sans-serif;
+}
+.font-small {
+    font-size: 0.9rem;
+}
+
+/* headings */
+.fs-head1 {
+    font-size: clamp(2.9rem, 5.5vw, 4.2rem);
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 600;
+}
+
+/* Spacing */
+.padd-block-8 {
+    padding-block: 8px;
+}
+
+/* Form */
+.form-control {
+    padding-block: 10.5px;
+}
+.form-control::placeholder {
+    color: var(--form-placeholder-color);
+}
+:disabled {
+    cursor: not-allowed !important;
+    pointer-events: all !important;
+}
+
+/* Cursor */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Transitions */
+.trans-3 {
+    transition: all 0.3s ease-in-out;
+}
+
+/* =======header section========= */
+#theme-toggle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+/* ========= Form ========= */
+main > .container {
+    max-width: 700px;
+}
+#tasks-form {
+    border: 2px solid var(--form-border) !important;
+}
+.invalid-feedback {
+    font-size: 0.95rem;
+    color: var(--danger-hover-color);
+}
+
+/* ========= Tabs ========= */
+.tabs .active {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* ========= Notification Switcher ========= */
+.notification-switcher input {
+    margin-top: 3px !important;
+    height: 1.3em !important;
+    width: 2.5em !important;
+    margin-right: -3em !important;
+    cursor: pointer;
+}
+.notification-switcher label {
+    font-size: 1.15rem !important;
+    color: var(--label-color);
+}
+
+/* ========= Task Container ========= */
+#tasks-container {
+    max-width: 800px;
+}
+#tasks-container h2 {
+    font-size: clamp(2.2rem, 4vw, 4rem);
+}
+
+.custom-list-item {
+    background-color: #f8f9fa;
+    border: 1px solid var(--form-border);
+    color: var(--label-color);
+}
+:root[data-theme="dark"] .custom-list-item {
+    background-color: #0b1018;
+}
+.custom-list-item .wrapper .content > p {
+    color: var(--time-label-color);
+}
+
+/* Tasks filters - horizontal slider on small screens */
+.tasks-filters {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.tasks-filters::-webkit-scrollbar {
+    display: none;
+}
+.tasks-filters > .btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    display: flex !important;
+    align-items: center;
+    gap: 1px;
+}
+.tasks-filters .btn .filter-badge {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-inline-start: 5px;
+    margin-top: 3px;
+}
+.tasks-filters .btn[data-filter="pending"] {
+    border-inline: none;
+}
+
+@media (max-width: 576px) {
+    .tasks-filters {
+        justify-content: flex-start !important;
+    }
+}
+
+.task-weekly-summary {
+    font-size: 0.85rem;
+    color: var(--label-color);
+}
+
+/* Theme + install controls - floating group */
+.header-actions {
+    position: fixed;
+    right: 1.25rem;
+    top: 1.25rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 1100;
+    align-items: flex-end;
+    z-index: 1100;
+}
+
+#theme-toggle,
+#install-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem !important;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0px 8px rgb(0 0 0 / 8%);
+    background-color: var(--bg-white-color);
+    border: 1px solid var(--form-border);
+    color: var(--label-color);
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+@media (max-width: 992px) {
+    .header-actions {
+        bottom: 1.25rem;
+        top: auto;
+    }
+    #theme-toggle,
+    #install-btn {
+        font-size: 1rem !important;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+.custom-list-item.task-overdue h4 {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+.custom-list-item .time-label.task-overdue {
+    color: var(--d-danger-hover-color) !important;
+}
+.actions .text-danger:hover {
+    color: var(--danger-hover-color) !important;
+}
+.actions .fa-angle-down {
+    rotate: -90deg;
+}
+.actions .fa-angle-down.active {
+    rotate: 0deg;
+}
+.actions .fa-angle-down:hover,
+.actions .fa-angle-down.active {
+    color: var(--primary-color) !important;
+}
+.wrapper .content h4 {
+    letter-spacing: -0.8px;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 2vw, 1.3rem);
+    color: var(--task-title-color);
+}
+
+/* Completed tasks */
+.custom-list-item.task-completed h4 {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+.custom-list-item.task-completed .time-label {
+    color: var(--time-label-color);
+}
+.task-complete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.icon-btn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 999px;
+}
+.wrapper .content > p {
+    height: 0;
+    overflow: hidden;
+    margin-block: 0 !important;
+    transition: all 0.3s ease-in-out;
+}
+.wrapper .content > p.show {
+    height: auto;
+    margin-block: 1rem !important;
+}
+
+/* ========= Notifications ========= */
+.notifications-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+/* ========= Notifications Modal (Enable Prompt) ========= */
+.notifications-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: var(--backdrop-background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.notifications-modal {
+    background: var(--bg-white-color);
+    border-radius: 10px;
+    padding: 20px 22px;
+    max-width: 380px;
+    width: calc(100% - 40px);
+    box-shadow: 0 10px 30px var(--box-shadow-color);
+}
+
+.notifications-modal h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.notifications-modal p {
+    margin: 0.75rem 0 0;
+    font-size: 0.95rem;
+}
+
+.notification {
+    padding: 16px 20px;
+    border-radius: 8px;
+    background-color: var(--bg-white-color);
+    border-left: 4px solid;
+    box-shadow: 0 4px 12px var(--box-shadow-notification-color);
+    animation: slideIn 0.3s ease-in-out;
+    max-width: 100%;
+}
+
+.notification.success {
+    border-left-color: var(--notification-success-border-color);
+    background-color: var(--notification-success-background-color);
+}
+
+.notification.success .notification-message {
+    color: var(--success-notification-message-color);
+}
+
+.notification.error {
+    border-left-color: var(--notification-error-border-color);
+    background-color: var(--notification-error-background-color);
+}
+
+.notification.error .notification-message {
+    color: var(--notification-error-message-color);
+}
+
+.notification.info {
+    border-left-color: var(--notification-info-border-color);
+    background-color: var(--notification-info-background-color);
+}
+
+.notification.info .notification-message {
+    color: var(--info-notification-message-color);
+}
+
+.notification-message {
+    font-size: 0.95rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ========= Initial Loader ========= */
+.initial-loader {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(4px);
+    z-index: 1200;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.initial-loader.initial-loader--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.initial-loader-content h2 {
+    font-size: 1.6rem;
+    font-family: "Lobster Two", sans-serif;
+}
+
+/* ========= Scroll Reveal Animations ========= */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+        opacity 0.4s ease-out,
+        transform 0.4s ease-out;
+}
+
+.reveal-on-scroll.reveal-on-scroll--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========= Footer ========= */
+.app-footer {
+    border-top: 1px solid var(--form-border);
+    background-color: var(--bg-white-color);
+}
+.app-footer a {
+    text-decoration: none;
+}
+.app-footer a:hover {
+    text-decoration: underline;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
