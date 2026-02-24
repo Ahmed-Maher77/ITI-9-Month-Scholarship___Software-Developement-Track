@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main, main div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    width: 100vw;
+    /* max-width: 800px; */
+    height: 100vh;
+    border: thick solid black;
+    /* margin: 20px auto; */
+}
+main div {
+    width: 80px;
+    height: 80px;
+    border: thick solid rgb(157, 157, 1);
+}
