@@ -1,0 +1,52 @@
+Project Title:
+SmartCar Advisor Platform
+
+Project Type:
+Decision Support & Recommendation Platform (NOT a car manufacturer)
+
+Project Description:
+SmartCar Advisor is a software-based web and mobile platform.
+It does NOT manufacture cars and does NOT design vehicles.
+
+The platform helps users DECIDE which existing cars in the market
+are most suitable for them.
+
+Users do NOT buy cars from the platform.
+They use it only for analysis, comparison, and decision support.
+
+Core Purpose:
+Help users choose the right car by analyzing existing market data.
+
+What the system DOES:
+- Analyze existing car models already available in different countries
+- Compare prices between countries
+- Compare fuel vs electric vs hybrid cars
+- Compare maintenance cost, fuel cost, and resale value
+- Show safety ratings, reliability, and ownership cost
+- Adapt recommendations based on country regulations and infrastructure
+
+What the system DOES NOT do:
+- Does NOT manufacture cars
+- Does NOT design vehicles
+- Does NOT build hardware
+- Does NOT produce batteries or engines
+
+User Inputs:
+- Budget range
+- Country or countries of interest
+- Usage purpose (daily commute, family, ride-sharing, travel)
+- Fuel preference
+- Environmental concerns
+
+Target Users:
+- Individual buyers
+- Families
+- Ride-sharing drivers
+- People relocating between countries
+- First-time car buyers
+
+Global Scope:
+The platform works across multiple countries and markets
+and adapts recommendations based on regional data.
+
+The project focuses on INFORMATION, ANALYSIS, and DECISION SUPPORT only.

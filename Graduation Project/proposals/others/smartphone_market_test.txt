@@ -1,0 +1,36 @@
+Project Title:
+Smartphone Market Intelligence Platform
+
+Project Description:
+This project focuses on understanding smartphone products
+available in the local and regional markets.
+
+The system should extract knowledge typically found in:
+- Product specification sheets
+- Online comparison tables
+- Promotional catalogs
+- Product images
+- Retail pricing documents
+
+Target Market:
+- Egypt
+- UAE
+
+Expected Smartphone Data:
+- Brand
+- Model
+- Storage variants
+- RAM
+- Processor
+- Camera specifications
+- Battery capacity
+- Market price
+- Currency
+
+Important Notes:
+Smartphone information is often inconsistent across documents.
+Some prices are mentioned in marketing materials,
+while specifications appear in separate technical sheets.
+
+The system should handle missing or partial data gracefully
+and produce structured records for database storage.

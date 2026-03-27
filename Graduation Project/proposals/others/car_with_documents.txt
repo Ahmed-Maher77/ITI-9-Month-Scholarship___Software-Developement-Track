@@ -1,0 +1,40 @@
+Project Title:
+Automotive Documentation & Market Analysis System
+
+Project Description:
+This project aims to analyze vehicle data as presented in
+automotive documentation such as brochures, technical sheets,
+and market pricing documents.
+
+The system should understand that automotive data is often distributed
+across multiple document types rather than a single source.
+
+Types of Documents Involved:
+- Vehicle specification brochures
+- Technical PDF sheets
+- Dealer pricing documents
+- Market comparison reports
+- Vehicle image catalogs (interior and exterior)
+
+Target Vehicles:
+- Toyota Corolla
+- Hyundai Elantra
+- Nissan Sunny
+- Volkswagen Golf
+
+Markets:
+- Egypt
+- Saudi Arabia
+- Germany
+
+Expected Knowledge Patterns:
+- Same car model appears with different prices
+- Different trims shown in separate documents
+- Images used to represent features and variants
+- Technical specs distributed across tables and paragraphs
+
+The system should extract structured information
+even if data is fragmented across different documents.
+
+No explicit source links are provided.
+The system should infer that data comes from official and semi-official documents.

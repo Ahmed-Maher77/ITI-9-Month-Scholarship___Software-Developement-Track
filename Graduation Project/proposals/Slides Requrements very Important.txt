@@ -1,0 +1,69 @@
+the number of slides in the presentation (slide deck) must be just 4 slides
+
+Add a technical slide detailing the AI architecture. Use the provided list to explain how RAG, Agents, and LLMs are specifically applied to Matching, Emergency, and Personalization features.
+
+just update Care_Pal_Predictive_AI_For_Elderly_Care.pdf by adding the 4th slide contain the AI models that we will use it 
+don't make any changes in the first 3 slides of the old one 
+
+=====================================================
+
+
+
+---
+
+### **Title: The Tech Stack: How AI Powers Each Feature**
+
+
+
+#### **1. Intelligent Matching )**
+
+* **Architecture:** **RAG (Retrieval-Augmented Generation)**
+* **AI Model:** `Llama-3-8b` (via Groq) + `all-MiniLM-L6-v2` (Embeddings).
+* **Vector DB:** `Pinecone` or `ChromaDB`.
+* **How it works:**
+1. **Retrieval:** The system searches the Vector Database for caregivers whose skills match the elder's medical needs.
+2. **Generation:** The LLM receives the elder’s personality profile + the retrieved caregivers. It analyzes psychological compatibility (e.g., "This caregiver is patient, suitable for Alzheimer's") and ranks them with a **Compatibility Score**.
+
+
+
+#### **2. Automated Emergency Response **
+
+* **Architecture:** **Autonomous Agent**
+* **Framework:** `LangChain` (Agents & Tools).
+* **AI Model:** `Llama-3-70b` (High Precision).
+* **How it works:**
+1. **Classification:** When the button is pressed or a distress phrase is detected ("I fell"), the LLM classifies the intent: is it Medical? Police? or False Alarm?
+2. **Action:** The Agent triggers the **Decision Tool**, which executes an API call (e.g., Twilio API) to send location data to the simulated ambulance dispatch system immediately.
+
+
+
+#### **3. Personalized Care Plans **
+
+* **Architecture:** **Context-Aware LLM**
+* **AI Model:** `GPT-4o` or `Mixtral-8x7b`.
+* **How it works:**
+1. **Data Ingestion:** The model takes unstructured medical reports and daily activity logs as context.
+2. **Planning:** It generates a dynamic daily schedule (medication times, walking exercises, mental games) tailored specifically to the patient's current condition, not a generic template.
+
+
+
+#### **4. Emotional Intelligence & NLP **
+
+* **Architecture:** **Sentiment Analysis Engine**
+* **AI Model:** `DistilBERT` (Lightweight) or `Llama-3`.
+* **How it works:**
+1. **Monitoring:** The model scans chat logs between the elder and caregiver in real-time.
+2. **Detection:** It assigns a "Sentiment Score" (-1 to +1). If the score drops (indicating sadness or anger), the system flags a "Psychological Risk Alert" to the admin dashboard.
+
+
+
+#### **5. Self-Learning Loop **
+
+* **Architecture:** **Dynamic RAG (Feedback Loop)**
+* **How it works:**
+* When a service is completed and rated, the feedback text is vectorized and updated in the `Pinecone` database.
+* This effectively "updates the memory" of the system, so the next time a search happens, the AI "remembers" the previous performance without needing full model retraining.
+
+
+
+
