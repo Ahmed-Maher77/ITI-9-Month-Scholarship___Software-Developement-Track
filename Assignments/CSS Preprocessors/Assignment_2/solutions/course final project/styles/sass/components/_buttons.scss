@@ -1,0 +1,68 @@
+@use "../abstracts/mixins" as m;
+
+$btn-solid: (
+    primary: #2f6df6,
+    success: #1f9d66,
+    danger: #de3f55,
+    dark: #1f2430,
+);
+
+// Core button styles
+@mixin btn-core {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid transparent;
+    border-radius: 0.55rem;
+    text-decoration: none;
+    font-weight: 560;
+    line-height: 1.45;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.btn {
+    @include btn-core;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(22, 29, 45, 0.2);
+}
+
+// Generate solid button variants
+@each $name, $tone in $btn-solid {
+    @include m.button-variant($name, $tone);
+}
+
+// Outline button variants
+.btn-outline-primary {
+    color: map-get($btn-solid, primary);
+    border-color: map-get($btn-solid, primary);
+    background-color: transparent;
+}
+
+.btn-outline-light {
+    color: #f6f8fb;
+    border-color: #f6f8fb;
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-light:hover {
+    color: #161b2a;
+    background-color: #fff;
+}
+
+#contact .btn {
+    min-width: 138px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

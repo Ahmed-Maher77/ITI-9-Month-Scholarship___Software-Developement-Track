@@ -1,0 +1,9 @@
+
+@mixin createCols($breakpointName: "", $gap: 20px) {
+    $colName: if($breakpointName != "", "col-#{$breakpointName}", "col");
+    @for $i from 1 through 12 {
+        .#{$colName}-#{$i} {
+            width: calc((100% / 12) * $i - $gap);
+        }
+    }
+}

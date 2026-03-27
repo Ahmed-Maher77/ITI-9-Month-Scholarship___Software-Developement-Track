@@ -1,0 +1,71 @@
+#main-navbar .shape {
+    width: 80px;
+    height: 65px;
+    background-color: var(--main-shadow-color);
+    position: relative;
+}
+
+#main-navbar .shape::before {
+    content: "";
+    position: absolute;
+    bottom: -51px;
+    left: 1.5px;
+    width: 78px;
+    height: 74px;
+    background-color: var(--main-bg-color);
+    border-radius: 50%;
+}
+
+#main-navbar figure {
+    transition: all 0.5s ease;
+}
+
+#main-navbar figure:hover {
+    rotate: 360deg;
+}
+
+#main-navbar figure img {
+    width: 80px;
+    height: 80px;
+}
+
+#main-navbar figure img,
+#testimonials figure img {
+    box-shadow: 0 0 1px 4.5px var(--main-shadow-color);
+}
+
+@media (max-width: 350px) {
+    #main-navbar figure img {
+        width: 40px;
+        height: 40px;
+    }
+
+    #main-navbar .shape {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    #main-navbar figure img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #main-navbar .shape {
+        width: 50px;
+        height: 30px;
+    }
+
+    #main-navbar .shape::before {
+        bottom: -57px;
+        left: 0.5px;
+        width: 49px;
+        height: 74px;
+    }
+}
+
+@media (max-width: 991px) {
+    #main-navbar .shape {
+        rotate: -90deg;
+    }
+}

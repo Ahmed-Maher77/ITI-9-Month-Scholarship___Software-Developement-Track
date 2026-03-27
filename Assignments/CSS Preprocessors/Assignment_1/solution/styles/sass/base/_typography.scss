@@ -1,0 +1,10 @@
+@import "../abstracts/variables";
+
+.main {
+    &-title {
+        color: $primary-color;
+    }
+    &-subtitle {
+        color: $secondary-color;
+    }
+}

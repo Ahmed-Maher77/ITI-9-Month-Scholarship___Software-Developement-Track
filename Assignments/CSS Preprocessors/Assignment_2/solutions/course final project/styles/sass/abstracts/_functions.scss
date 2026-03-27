@@ -1,0 +1,5 @@
+@use "sass:math";
+
+@function span-width($span, $columns: 12) {
+	@return math.percentage(math.div($span, $columns));
+}

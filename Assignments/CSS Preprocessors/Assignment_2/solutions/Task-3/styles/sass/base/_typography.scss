@@ -1,0 +1,36 @@
+body {
+    min-height: 100vh;
+    font-family: $font-body;
+    color: $ink;
+    background:
+        radial-gradient(
+            circle at 0 0,
+            rgba(255, 255, 255, 0.72),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 100% 10%,
+            rgba(210, 189, 145, 0.55),
+            transparent 18%
+        ),
+        linear-gradient(180deg, #fcf8ef 0%, $bg 45%, #f2e7cd 100%);
+}
+
+.eyebrow,
+.section-heading h2,
+.rail-media h3 {
+    font-family: $font-display;
+}
+
+.overline,
+.kicker,
+.card-label,
+.story-meta,
+.city-stamp,
+.text-link,
+.topic-pill,
+.author-chip small,
+.stack-card small {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}

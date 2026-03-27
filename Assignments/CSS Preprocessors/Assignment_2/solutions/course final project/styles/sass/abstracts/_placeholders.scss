@@ -1,0 +1,11 @@
+// placeholders for grid system
+%grid-row-base {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+%grid-col-base {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+}

@@ -1,0 +1,38 @@
+@import "../abstracts/variables";
+@import "../abstracts/functions";
+
+.main-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: thin solid $primary-color;
+    background-color: transparent;
+    color: $primary-color;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: $primary-color;
+        color: white;
+    }
+}
+
+
+$total-width: 100%;
+.finish-btn {
+    @extend .main-btn;
+    width: $total-width;
+    display: block;
+    margin-inline: auto;
+    @media (min-width: 768px) {
+        width: half($total-width);
+    }
+}
+
+
+
+// Tablet and above
+@media (min-width: 768px) {
+    .main-btn {
+        font-size: 1.2rem;
+    }
+}

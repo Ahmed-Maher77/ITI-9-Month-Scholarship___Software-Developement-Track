@@ -1,0 +1,35 @@
+@import "base/reset";
+@import "base/typography";
+@import "components/buttons";
+@import "abstracts/functions";
+
+// @import "variables";
+
+// // 
+
+// body {
+//     background-color: $secondary-color;
+//     color: $primary-color;
+// }
+
+
+
+
+// @mixin createColumns($breakpointName: "", $colsNumber: 12) {
+//     $columnName: if($breakpointName == "", "col", "col-#{$breakpointName}");
+
+//     @for $i from 1 through $colsNumber {
+//         .#{$columnName}-#{$i} {
+//             width: ($i / $colsNumber) * 100%;
+//         }
+//     }
+// }
+
+// $breakpoints: ("sm": 576px, "md":768px, "lg":992px, "xl":1200px, "xxl":1400px);
+// @each $key, $value in $breakpoints {
+//     @media (min-width: $value) {
+//         @include createColumns($key);
+//     }
+// }
+
+// @include createColumns();

@@ -1,0 +1,66 @@
+.side-rail {
+    display: grid;
+    gap: 18px;
+}
+
+.rail-card,
+.rail-list,
+.rail-media {
+    padding: 18px;
+
+    p {
+        color: $muted;
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+}
+
+.profile-card {
+    text-align: center;
+}
+
+.rail-avatar {
+    width: 58px;
+    height: 58px;
+    margin: 12px auto 14px;
+    border-radius: 50%;
+    @include decorative-image(#7d5239, #d6af83, #f6e6cb);
+}
+
+.rail-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+
+    span {
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: rgba(255, 249, 239, 0.7);
+        border: 1px solid $line;
+        font-size: 0.72rem;
+        font-weight: 700;
+    }
+}
+
+.rail-stack,
+.rail-list {
+    display: grid;
+    gap: 14px;
+}
+
+.mini-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.mini-icon,
+.stat-icon {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #b77a4f, #d4b38b);
+}

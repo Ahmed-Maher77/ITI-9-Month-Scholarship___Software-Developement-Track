@@ -1,0 +1,16 @@
+@import "../abstracts/_mixins";
+
+
+$breakpoints: (
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1400px
+);
+@include createCols(10px);
+@each $key, $value in $breakpoints {
+    @media (min-width: $value) {
+        @include createCols($key, 10px);
+    }
+}

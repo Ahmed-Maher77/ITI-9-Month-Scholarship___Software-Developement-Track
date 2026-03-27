@@ -1,0 +1,21 @@
+@use "abstracts/variables" as *;
+@use "abstracts/functions" as *;
+@use "abstracts/mixins" as *;
+@use "abstracts/placeholders" as *;
+
+@use "vendors/bootstrap" as *;
+
+@use "base/reset" as *;
+@use "base/typography" as *;
+
+@use "layout/grid" as *;
+@use "layout/navigation" as *;
+@use "layout/sidebar" as *;
+@use "layout/footer" as *;
+
+@use "components/buttons" as *;
+@use "components/card" as *;
+@use "components/carousel" as *;
+@use "components/cover" as *;
+
+@use "pages/home" as *;

@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Noto+Sans+Georgian:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+    font-family: "Noto Sans Georgian", sans-serif;
+    font-optical-sizing: auto;
+    background: var(--main-bg-color);
+}
+
+.gap-3-5 {
+    gap: 1.2rem;
+}
+
+.font-small {
+    font-size: 0.9rem;
+}
+
+.grey-color {
+    color: var(--grey-color);
+}

@@ -1,0 +1,109 @@
+#features .label {
+    right: 8px;
+    top: 8px;
+}
+
+#features a {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+#features a svg {
+    min-width: fit-content;
+}
+
+#features a,
+#features a svg {
+    transition: transform 0.5s ease;
+}
+
+#features a:hover,
+#features a:hover svg {
+    color: rgb(0, 61, 101) !important;
+}
+
+#features a:hover svg {
+    transform: rotate(360deg);
+}
+
+.card .card-title {
+    font-size: clamp(1.3rem, 2vw, 1.4rem) !important;
+}
+
+.card .card-body p {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+#testimonials .card img {
+    width: 60px;
+    height: 60px;
+}
+
+#testimonials .card a {
+    width: 45px;
+    height: 45px;
+}
+
+#testimonials .card a svg {
+    transition: all 0.5s ease;
+}
+
+#testimonials .card a:hover svg {
+    transform: rotate(360deg);
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.fade-in-left.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.fade-in-right.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.scale-in.animated {
+    opacity: 1;
+    transform: scale(1);
+}

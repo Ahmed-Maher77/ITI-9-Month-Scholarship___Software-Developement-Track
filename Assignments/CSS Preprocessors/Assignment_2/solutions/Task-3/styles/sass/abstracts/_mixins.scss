@@ -1,0 +1,22 @@
+@mixin panel-surface {
+    background: linear-gradient(180deg, $surface, $surface-soft);
+    border: 1px solid rgba(83, 59, 33, 0.08);
+    box-shadow: $shadow;
+    backdrop-filter: blur(12px);
+}
+
+@mixin decorative-image($first, $second, $third: transparent) {
+    background:
+        radial-gradient(
+            circle at 18% 18%,
+            rgba(255, 255, 255, 0.4),
+            transparent 18%
+        ),
+        linear-gradient(135deg, $first, $second 58%, $third 100%);
+}
+
+@mixin respond-down($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}

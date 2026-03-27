@@ -1,0 +1,25 @@
+@import "../components/buttons";
+
+form {
+    // max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+fieldset {
+    padding: 20px 10px 10px 10px;
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+input {
+    width: 100%;
+    padding: 10px;
+}
+#form-submit {
+    @extend %main-btn;
+}

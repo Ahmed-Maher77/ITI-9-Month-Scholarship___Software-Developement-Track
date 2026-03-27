@@ -1,0 +1,82 @@
+$carousel-control-size: 50px;
+$carousel-control-color: rgba(52, 152, 219, 0.9);
+
+@mixin carousel-control($side, $shift) {
+    #{$side}: 50%;
+    transform: translateX($shift);
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: relative;
+    display: none;
+    float: left;
+    width: 100%;
+    margin-right: -100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-item .card {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.carousel-item,
+.carousel-item .card {
+    background-color: transparent;
+    border: none;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $carousel-control-size;
+    height: $carousel-control-size;
+    bottom: -70px;
+    top: auto;
+    background-color: $carousel-control-color;
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 0.3s ease;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(52, 152, 219, 1);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.5);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
+}
+
+.carousel-control-prev {
+    @include carousel-control(left, -70px);
+}
+
+.carousel-control-next {
+    @include carousel-control(right, 70px);
+}

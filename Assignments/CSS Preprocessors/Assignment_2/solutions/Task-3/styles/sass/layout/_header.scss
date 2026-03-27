@@ -1,0 +1,33 @@
+.site-header {
+    max-width: 760px;
+    margin-bottom: 30px;
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 0.9;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 4vw, 4.2rem);
+    line-height: 0.96;
+    letter-spacing: -0.05em;
+    max-width: 12ch;
+}
+
+.hero-copy {
+    max-width: 60ch;
+    margin-top: 16px;
+    color: $muted;
+    line-height: 1.75;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}

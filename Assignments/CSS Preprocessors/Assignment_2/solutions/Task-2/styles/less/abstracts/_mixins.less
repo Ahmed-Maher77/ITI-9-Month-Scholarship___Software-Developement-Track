@@ -1,0 +1,14 @@
+@grid-gap: 10px;
+
+.createCols(@breakpointName: ~"", @gap: @grid-gap) {
+    @prefix: if((@breakpointName = ~""), ~"col", ~"col-@{breakpointName}");
+    ._createColsLoop(@i: 1) when (@i =< 12) {
+        .@{prefix}-@{i} {
+            width: calc(~"(@{i} / 12 * 100%) - @{gap}");
+        }
+        ._createColsLoop((@i + 1));
+    }
+    ._createColsLoop(@i) when (@i > 12) {
+    }
+    ._createColsLoop();
+}

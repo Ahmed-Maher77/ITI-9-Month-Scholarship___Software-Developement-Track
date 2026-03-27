@@ -1,0 +1,17 @@
+%panel-surface {
+    @include panel-surface;
+    border-radius: $radius-xl;
+}
+
+%interactive-lift {
+    transition:
+        transform $transition-fast,
+        box-shadow $transition-fast,
+        background-color $transition-fast;
+}
+
+%content-card {
+    border: 1px solid $line;
+    border-radius: $radius-lg;
+    background: $card-surface;
+}

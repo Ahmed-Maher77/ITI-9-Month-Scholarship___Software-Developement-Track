@@ -1,0 +1,259 @@
+@use "../abstracts/mixins" as m;
+
+$u-colors: (
+    primary: #2f6df6,
+    success: #1f9d66,
+    danger: #de3f55,
+    dark: #1f2430,
+    white: #ffffff,
+    muted: #6b7280,
+    secondary: #7b8190,
+);
+
+$u-space: (
+    0: 0,
+    1: 0.3rem,
+    2: 0.55rem,
+    3: 1rem,
+    4: 1.45rem,
+    5: 2.8rem,
+);
+
+@mixin make-space($name, $css-prop, $sides...) {
+    @each $key, $val in $u-space {
+        .#{$name}-#{$key} {
+            @if length($sides) == 0 {
+                #{$css-prop}: $val;
+            } @else {
+                @each $side in $sides {
+                    #{$css-prop}-#{$side}: $val;
+                }
+            }
+        }
+    }
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-block {
+    display: block;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+.flex-sm-row {
+    @include m.up(sm) {
+        flex-direction: row;
+    }
+}
+.flex-lg-row {
+    @include m.up(lg) {
+        flex-direction: row;
+    }
+}
+.flex-lg-column {
+    @include m.up(lg) {
+        flex-direction: column;
+    }
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+.justify-content-start {
+    justify-content: flex-start;
+}
+.justify-content-sm-start {
+    @include m.up(sm) {
+        justify-content: flex-start;
+    }
+}
+.justify-content-lg-center {
+    @include m.up(lg) {
+        justify-content: center;
+    }
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.align-items-center {
+    align-items: center;
+}
+.align-items-start {
+    align-items: flex-start;
+}
+.align-items-lg-end {
+    @include m.up(lg) {
+        align-items: flex-end;
+    }
+}
+
+.position-relative {
+    position: relative;
+}
+.position-absolute {
+    position: absolute;
+}
+
+.mx-auto {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.ms-auto {
+    margin-left: auto;
+}
+.me-2 {
+    margin-right: map-get($u-space, 2);
+}
+
+@include make-space(m, margin);
+@include make-space(mt, margin, top);
+@include make-space(mb, margin, bottom);
+@include make-space(p, padding);
+@include make-space(pt, padding, top);
+@include make-space(pb, padding, bottom);
+@include make-space(px, padding, left, right);
+@include make-space(py, padding, top, bottom);
+
+.g-4,
+.gap-4 {
+    gap: map-get($u-space, 4);
+}
+.gap-2 {
+    gap: map-get($u-space, 2);
+}
+.gap-3 {
+    gap: map-get($u-space, 3);
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+.fw-medium {
+    font-weight: 560;
+}
+.fs-4 {
+    font-size: clamp(1.3rem, 1.1rem + 0.7vw, 1.6rem);
+}
+.fs-6 {
+    font-size: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+.text-lg-end {
+    @include m.up(lg) {
+        text-align: right;
+    }
+}
+.text-decoration-none {
+    text-decoration: none;
+}
+.text-sm {
+    font-size: 0.84rem;
+}
+
+@each $name, $value in $u-colors {
+    .text-#{$name} {
+        color: $value;
+    }
+}
+
+.bg-dark {
+    background-color: map-get($u-colors, dark);
+}
+
+.rounded {
+    border-radius: 0.4rem;
+}
+.rounded-2 {
+    border-radius: 0.62rem;
+}
+.rounded-circle {
+    border-radius: 50%;
+}
+
+.border-3 {
+    border-width: 3px;
+    border-style: solid;
+}
+
+.border-primary {
+    border-color: map-get($u-colors, primary);
+}
+
+.shadow {
+    box-shadow: 0 14px 32px rgba(16, 24, 40, 0.12);
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.ratio {
+    position: relative;
+    width: 100%;
+}
+
+.ratio::before {
+    content: "";
+    display: block;
+}
+
+.ratio > * {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ratio-16x9::before {
+    padding-top: 56.25%;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+svg.bi {
+    vertical-align: -0.12em;
+}
+
+@include m.up(lg) {
+    .mb-lg-0 {
+        margin-bottom: 0;
+    }
+}

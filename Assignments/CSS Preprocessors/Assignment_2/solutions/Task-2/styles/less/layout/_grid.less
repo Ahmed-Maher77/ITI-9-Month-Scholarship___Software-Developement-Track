@@ -1,0 +1,32 @@
+@import "../abstracts/mixins.less";
+
+@breakpoints: 
+    sm 576px,
+    md 768px,
+    lg 992px,
+    xl 1200px,
+    xxl 1400px;
+
+.createCols(~"", 10px);
+
+each(@breakpoints, {
+    @name: extract(@value, 1);
+    @size: extract(@value, 2);
+
+    @media (min-width: @size) {
+        .createCols(@name, 10px);
+    }
+});
+
+
+
+
+
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}

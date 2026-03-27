@@ -1,0 +1,50 @@
+@use "../abstracts/mixins" as m;
+
+$grid-gutter: 0.85rem;
+$grid-columns: 12;
+
+$container-widths: (
+    sm: 550px,
+    md: 730px,
+    lg: 980px,
+    xl: 1160px,
+    xxl: 1340px,
+);
+
+// Responsive container widths
+.container {
+    width: min(100%, 1460px);
+    margin-inline: auto;
+    padding-inline: $grid-gutter;
+}
+
+@each $breakpoint, $max in $container-widths {
+    @include m.up($breakpoint) {
+        .container {
+            max-width: $max;
+        }
+    }
+}
+
+// Base row
+.row {
+    --row-gap: #{$grid-gutter};
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--row-gap);
+}
+
+.row > * {
+    width: 100%;
+    max-width: 100%;
+}
+
+// Base columns
+@include m.create-columns("", $grid-columns);
+
+// Breakpoint columns
+@each $key, $value in m.$breakpoints {
+    @media (min-width: $value) {
+        @include m.create-columns($key, $grid-columns);
+    }
+}

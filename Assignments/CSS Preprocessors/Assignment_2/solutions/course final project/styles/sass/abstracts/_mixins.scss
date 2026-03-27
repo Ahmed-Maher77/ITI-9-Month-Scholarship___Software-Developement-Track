@@ -1,0 +1,44 @@
+@use "sass:map";
+
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+// Min-width media helper
+@mixin up($point, $points: $breakpoints) {
+    $min: map.get($points, $point);
+
+    @media (min-width: $min) {
+        @content;
+    }
+}
+
+// Generate col classes
+@mixin create-columns($breakpoint-name: "", $cols-number: 12) {
+    $column-name: if($breakpoint-name == "", "col", "col-#{$breakpoint-name}");
+
+    @for $i from 1 through $cols-number {
+        .#{$column-name}-#{$i} {
+            flex: 0 0 auto;
+            width: ($i / $cols-number) * 100%;
+        }
+
+        // Account for row gap when not in a flex-column row
+        .row:not(.flex-column) > .#{$column-name}-#{$i} {
+            width: calc((#{$i} / #{$cols-number}) * 100% - var(--row-gap, 0px));
+        }
+    }
+}
+
+// Button variant generator
+@mixin button-variant($name, $bg, $text: #fff) {
+    .btn-#{$name} {
+        color: $text;
+        background-color: $bg;
+        border-color: $bg;
+    }
+}

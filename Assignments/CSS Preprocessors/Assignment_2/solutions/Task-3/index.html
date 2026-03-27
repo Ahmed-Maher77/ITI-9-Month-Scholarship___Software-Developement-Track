@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Atelier Journal</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles/css/main.css" />
+    </head>
+    <body>
+        <main class="page-shell home-page">
+            <header class="hero site-header">
+                <p class="eyebrow">Atelier Journal</p>
+                <h1>
+                    Culture, craft, and slow digital experiences collected in
+                    one editorial home.
+                </h1>
+                <p class="hero-copy">
+                    A magazine-style landing page built from a proper Sass
+                    architecture, with feature stories, curated collections, a
+                    member rail, and media-led editorial blocks.
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#stories"
+                        >Read the latest issue</a
+                    >
+                    <a class="button button-secondary" href="#membership"
+                        >Become a member</a
+                    >
+                </div>
+            </header>
+
+            <section
+                class="layout-grid"
+                aria-label="Atelier Journal landing page"
+            >
+                <article class="panel panel-feature panel-outline" id="stories">
+                    <div class="feature-shell">
+                        <aside
+                            class="author-rail"
+                            aria-label="Featured contributors"
+                        >
+                            <div class="author-chip author-lead">
+                                <span class="author-avatar"></span>
+                                <small>Editor</small>
+                            </div>
+                            <div class="author-chip">
+                                <span class="author-avatar warm"></span>
+                                <small>Photo</small>
+                            </div>
+                            <div class="author-chip">
+                                <span class="author-avatar soft"></span>
+                                <small>Notes</small>
+                            </div>
+                            <div class="author-chip">
+                                <span class="author-avatar pale"></span>
+                                <small>Issue 06</small>
+                            </div>
+                        </aside>
+
+                        <div class="feature-copy">
+                            <span class="kicker">Featured essay</span>
+                            <h2>
+                                How tactile design is reshaping the way readers
+                                stay with a story.
+                            </h2>
+                            <p>
+                                Our new issue explores slower interfaces, richer
+                                photography, and the return of generous
+                                whitespace in digital publishing.
+                            </p>
+
+                            <div class="feature-gallery">
+                                <article class="gallery-card gallery-card-1">
+                                    <span class="card-label"
+                                        >Inside the issue</span
+                                    >
+                                    <h3>
+                                        Studios with natural light, raw
+                                        materials, and analog rituals.
+                                    </h3>
+                                </article>
+                                <article class="gallery-card gallery-card-2">
+                                    <span class="card-label">Field notes</span>
+                                    <h3>
+                                        Dispatches from kitchens, bookstores,
+                                        and quiet hotel lobbies.
+                                    </h3>
+                                </article>
+                                <article class="gallery-card gallery-card-3">
+                                    <span class="card-label">Objects</span>
+                                    <h3>
+                                        Furniture, tableware, and fashion
+                                        selected for lived-in elegance.
+                                    </h3>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stats-row">
+                        <article class="stat-card">
+                            <span class="stat-icon"></span>
+                            <h3>28 long reads</h3>
+                            <p>
+                                Profiles, essays, and journals that privilege
+                                pacing, atmosphere, and reporting.
+                            </p>
+                        </article>
+                        <article class="stat-card">
+                            <span class="stat-icon"></span>
+                            <h3>12 city guides</h3>
+                            <p>
+                                Independent addresses for Milan, Kyoto,
+                                Copenhagen, and Mexico City.
+                            </p>
+                        </article>
+                        <article class="stat-card">
+                            <span class="stat-icon"></span>
+                            <h3>Weekly dispatch</h3>
+                            <p>
+                                A member newsletter with reading lists,
+                                exhibitions, and calm recommendations.
+                            </p>
+                        </article>
+                    </div>
+                </article>
+
+                <article class="panel event-panel panel-outline">
+                    <div class="topic-row" aria-label="Featured topics">
+                        <span class="topic-pill active">Craft</span>
+                        <span class="topic-pill">Travel</span>
+                        <span class="topic-pill">Interiors</span>
+                        <span class="topic-pill">Sound</span>
+                    </div>
+
+                    <div class="schedule-card">
+                        <p class="overline">This week at Atelier</p>
+                        <h2>
+                            Three intimate events and one new film series for
+                            members.
+                        </h2>
+                        <p>
+                            Join a ceramic workshop in Lisbon, a listening room
+                            session in Paris, and a Sunday breakfast
+                            conversation streamed from Tokyo.
+                        </p>
+                    </div>
+
+                    <div class="story-list">
+                        <article class="story-item">
+                            <div class="story-thumb story-thumb-1"></div>
+                            <div>
+                                <span class="story-meta">Thursday</span>
+                                <h3>
+                                    A florist builds monochrome arrangements
+                                    from seasonal stems.
+                                </h3>
+                            </div>
+                        </article>
+                        <article class="story-item">
+                            <div class="story-thumb story-thumb-2"></div>
+                            <div>
+                                <span class="story-meta">Friday</span>
+                                <h3>
+                                    Inside a listening bar where records are
+                                    served like tasting menus.
+                                </h3>
+                            </div>
+                        </article>
+                        <article class="story-item">
+                            <div class="story-thumb story-thumb-3"></div>
+                            <div>
+                                <span class="story-meta">Sunday</span>
+                                <h3>
+                                    Designing a guest room with linen, oak, and
+                                    one very good chair.
+                                </h3>
+                            </div>
+                        </article>
+                    </div>
+                </article>
+
+                <aside class="side-rail sidebar" id="membership">
+                    <article class="rail-card profile-card">
+                        <p class="overline">Member profile</p>
+                        <div class="rail-avatar"></div>
+                        <h3>Elena Hart</h3>
+                        <p>
+                            Creative director collecting quiet places, ceramics,
+                            and memorable breakfasts.
+                        </p>
+                        <div class="rail-badges" aria-label="Member interests">
+                            <span>Art</span>
+                            <span>Stay</span>
+                            <span>Food</span>
+                        </div>
+                    </article>
+
+                    <article
+                        class="rail-card rail-stack"
+                        aria-label="Curated highlights"
+                    >
+                        <article class="stack-card stack-card-1">
+                            <small>Collection</small>
+                            <strong>Homes with sculptural kitchens</strong>
+                        </article>
+                        <article class="stack-card stack-card-2">
+                            <small>Playlist</small>
+                            <strong>Late night jazz and warm static</strong>
+                        </article>
+                        <article class="stack-card stack-card-3">
+                            <small>Reading list</small>
+                            <strong
+                                >Essays on objects, memory, and rooms</strong
+                            >
+                        </article>
+                    </article>
+
+                    <article class="rail-list" aria-label="Membership numbers">
+                        <div class="mini-item">
+                            <span class="mini-icon"></span>
+                            <div class="mini-copy">
+                                <strong>18k readers</strong>
+                                <p>
+                                    Monthly active members across digital and
+                                    print.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mini-item">
+                            <span class="mini-icon"></span>
+                            <div class="mini-copy">
+                                <strong>42 cities</strong>
+                                <p>
+                                    Meetups hosted in bookstores, studios, and
+                                    neighborhood cafes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mini-item">
+                            <span class="mini-icon"></span>
+                            <div class="mini-copy">
+                                <strong>96% renewal</strong>
+                                <p>
+                                    Readers stay for thoughtful curation and a
+                                    slower editorial pace.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="rail-media">
+                        <p class="overline">Audio feature</p>
+                        <h3>media</h3>
+                        <p>
+                            Listen to a conversation about taste, material
+                            honesty, and editing for atmosphere.
+                        </p>
+                        <div class="media-thumb media-thumb-audio"></div>
+                        <a class="text-link" href="#podcast"
+                            >Play 18 minute episode</a
+                        >
+                    </article>
+                </aside>
+
+                <article class="media-panel media-panel-left">
+                    <div class="section-heading">
+                        <div>
+                            <p class="overline">Film journal</p>
+                            <h2>Moving images</h2>
+                        </div>
+                        <a class="text-link" href="#films">View archive</a>
+                    </div>
+
+                    <div class="media-layout">
+                        <div class="video-card video-card-documentary">
+                            <span class="play-icon"></span>
+                            <div class="video-caption">
+                                <strong>Studio Visit</strong>
+                                <p>
+                                    A short film inside a painter's apartment in
+                                    Copenhagen.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="text-card article-summary">
+                            <p>
+                                The companion essay traces how color, shadow,
+                                and quiet routines shape the way a room is
+                                remembered.
+                            </p>
+                            <ul>
+                                <li>8 minute watch</li>
+                                <li>16mm-inspired grading</li>
+                                <li>Annotated still frames</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer-cards editorial-links">
+                        <a href="#interview">Interview</a>
+                        <a href="#notes">Notes</a>
+                        <a href="#gallery">Gallery</a>
+                    </div>
+                </article>
+
+                <article class="media-panel media-panel-right">
+                    <div class="section-heading">
+                        <div>
+                            <p class="overline">Travel notebook</p>
+                            <h2>Weekend guide</h2>
+                        </div>
+                        <a class="text-link" href="#guides">All guides</a>
+                    </div>
+
+                    <div class="media-layout split-layout">
+                        <div class="video-card video-card-city">
+                            <div class="city-stamp">Kyoto</div>
+                            <div class="video-caption compact">
+                                <strong
+                                    >48 hours of tea, paper, and rain.</strong
+                                >
+                            </div>
+                        </div>
+                        <div class="text-card destination-notes">
+                            <p>
+                                A restrained guide with coffee counters, small
+                                galleries, and a hotel worth repeating.
+                            </p>
+                            <a
+                                class="button button-secondary button-small"
+                                href="#guide"
+                                >Read guide</a
+                            >
+                        </div>
+                    </div>
+
+                    <div class="footer-cards editorial-links compact-links">
+                        <a href="#stay">Stay</a>
+                        <a href="#eat">Eat</a>
+                        <a href="#shop">Shop</a>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>
