@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Lab 3 API Home</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+	<style>
+		:root {
+			--bg-1: #fff8ec;
+			--bg-2: #eef7ff;
+			--ink: #0f2430;
+			--muted: #425a68;
+			--card: rgba(255, 255, 255, 0.8);
+			--line: rgba(15, 36, 48, 0.12);
+			--accent: #ff7a59;
+			--accent-2: #1c9bd6;
+		}
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			min-height: 100vh;
+			font-family: "Space Grotesk", sans-serif;
+			color: var(--ink);
+			background:
+				radial-gradient(circle at 10% 5%, #ffe1cc 0%, transparent 35%),
+				radial-gradient(circle at 90% 20%, #cdeaff 0%, transparent 35%),
+				linear-gradient(135deg, var(--bg-1), var(--bg-2));
+			padding: clamp(1rem, 3vw, 2rem);
+			display: grid;
+			place-items: center;
+		}
+
+		.shell {
+			width: min(980px, 100%);
+			border: 1px solid var(--line);
+			border-radius: 24px;
+			background: var(--card);
+			backdrop-filter: blur(8px);
+			box-shadow: 0 22px 50px rgba(15, 36, 48, 0.14);
+			overflow: hidden;
+			animation: reveal 0.7s ease both;
+		}
+
+		header {
+			padding: clamp(1.2rem, 2.8vw, 2rem);
+			border-bottom: 1px solid var(--line);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.brand {
+			font-family: "Sora", sans-serif;
+			font-weight: 700;
+			letter-spacing: 0.01em;
+			font-size: clamp(1.1rem, 2vw, 1.35rem);
+		}
+
+		.badge {
+			border: 1px solid var(--line);
+			border-radius: 999px;
+			padding: 0.4rem 0.75rem;
+			font-size: 0.9rem;
+			color: var(--muted);
+			background: rgba(255, 255, 255, 0.75);
+		}
+
+		.hero {
+			padding: clamp(1.25rem, 3.5vw, 2.5rem);
+			display: grid;
+			gap: 1.1rem;
+		}
+
+		h1 {
+			font-family: "Sora", sans-serif;
+			font-size: clamp(1.8rem, 5vw, 3rem);
+			line-height: 1.12;
+			max-width: 18ch;
+		}
+
+		.lead {
+			color: var(--muted);
+			line-height: 1.7;
+			max-width: 60ch;
+		}
+
+		.cta-row {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.75rem;
+			margin-top: 0.35rem;
+		}
+
+		.btn {
+			text-decoration: none;
+			font-weight: 700;
+			border-radius: 12px;
+			padding: 0.72rem 1.05rem;
+			border: 1px solid transparent;
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+		}
+
+		.btn.primary {
+			background: linear-gradient(135deg, var(--accent), #ff9f43);
+			color: #fff;
+			box-shadow: 0 10px 20px rgba(255, 122, 89, 0.35);
+		}
+
+		.btn.ghost {
+			border-color: var(--line);
+			color: var(--ink);
+			background: rgba(255, 255, 255, 0.7);
+		}
+
+		.btn:hover {
+			transform: translateY(-2px);
+		}
+
+		.grid {
+			padding: 0 clamp(1.25rem, 3.5vw, 2.5rem) clamp(1.25rem, 3.5vw, 2.2rem);
+			display: grid;
+			gap: 0.85rem;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.tile {
+			border: 1px solid var(--line);
+			border-radius: 14px;
+			padding: 0.9rem;
+			background: rgba(255, 255, 255, 0.75);
+			display: grid;
+			gap: 0.35rem;
+		}
+
+		.tile .method {
+			font-weight: 700;
+			font-size: 0.78rem;
+			color: var(--accent-2);
+			letter-spacing: 0.06em;
+		}
+
+		.tile code {
+			font-family: "Space Grotesk", monospace;
+			color: #14384a;
+			word-break: break-all;
+		}
+
+		footer {
+			border-top: 1px solid var(--line);
+			padding: 0.95rem clamp(1.25rem, 3.5vw, 2.5rem);
+			color: var(--muted);
+			font-size: 0.92rem;
+		}
+
+		@keyframes reveal {
+			from {
+				opacity: 0;
+				transform: translateY(10px) scale(0.99);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0) scale(1);
+			}
+		}
+
+		@media (max-width: 820px) {
+			.grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main class="shell" role="main">
+		<header>
+			<div class="brand">Lab 3 • Products & Categories API</div>
+			<div class="badge">Node.js + Express + MongoDB</div>
+		</header>
+
+		<section class="hero">
+			<h1>Welcome. Your API Is Ready for CRUD Operations.</h1>
+			<p class="lead">
+				This project exposes category and product endpoints with Mongoose models.
+				Use the routes below to create, read, update, and delete records.
+			</p>
+
+			<div class="cta-row">
+				<a class="btn primary" href="/api/categories">Open Categories</a>
+				<a class="btn ghost" href="/api/products">Open Products</a>
+			</div>
+		</section>
+
+		<section class="grid" aria-label="API Endpoints">
+			<article class="tile"><span class="method">POST</span><code>/api/categories</code></article>
+			<article class="tile"><span class="method">GET</span><code>/api/categories</code></article>
+			<article class="tile"><span class="method">GET</span><code>/api/categories/:categoryId/products</code></article>
+			<article class="tile"><span class="method">POST</span><code>/api/products</code></article>
+			<article class="tile"><span class="method">GET</span><code>/api/products</code></article>
+			<article class="tile"><span class="method">GET</span><code>/api/products/:id</code></article>
+			<article class="tile"><span class="method">PUT</span><code>/api/products/:id</code></article>
+			<article class="tile"><span class="method">DELETE</span><code>/api/products/:id</code></article>
+		</section>
+
+		<footer>
+			If an endpoint path is wrong, the custom 404 page will be shown.
+		</footer>
+	</main>
+</body>
+</html>
