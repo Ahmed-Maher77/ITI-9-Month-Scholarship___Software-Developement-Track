@@ -1,0 +1,141 @@
+@use "sass:color";
+@use "../abstracts/animations" as *;
+@use "../abstracts/variables" as *;
+
+@mixin floating-action-button($size, $bottom-offset) {
+    position: fixed;
+    right: max(12px, env(safe-area-inset-right));
+    bottom: $bottom-offset;
+    width: $size;
+    height: $size;
+    border-radius: 999px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+    z-index: 9001;
+}
+
+.action-btn {
+    background-color: $action-btn;
+    &:hover {
+        background-color: color.adjust($action-btn, $lightness: -10%);
+    }
+}
+
+.animated-start-btn {
+    animation: moveIn 1s ease-out 0.5s backwards;
+    position: relative;
+    isolation: isolate;
+    overflow: visible;
+
+    > * {
+        position: relative;
+        z-index: 2;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        inset: -12px;
+        border-radius: inherit;
+        border: 2px solid rgba($action-btn, 0.75);
+        box-shadow: 0 0 0 2px rgba($white-color, 0.32);
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0;
+        transform: scale(0.92);
+        animation: startBtnWave 2.2s ease-out infinite;
+    }
+
+    &::after {
+        animation-delay: 1.1s;
+    }
+}
+
+.cancel-btn {
+    background-color: transparent;
+    border: 2px solid $cancel-color;
+    color: $cancel-color;
+    transition: 0.3s;
+    &:hover {
+        background-color: $cancel-color;
+        color: $white-color;
+    }
+}
+
+.main-btn {
+    @extend .action-btn;
+    color: $white-color;
+    transition: 0.3s;
+    &:hover {
+        color: $white-color;
+    }
+}
+
+.mute-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+    color: #151515;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+
+.mute-btn:hover {
+    background: #ffefe9;
+    border-color: rgba(255, 83, 51, 0.5);
+}
+
+.mute-btn.is-muted {
+    background: #d20020;
+    border-color: #d20020;
+    color: #ffffff;
+}
+
+.mute-btn-floating {
+    @include floating-action-button(46px, max(12px, env(safe-area-inset-bottom)));
+}
+
+.pause-btn {
+    background: #ffffff;
+    color: #151515;
+}
+
+.pause-btn:hover {
+    background: #eef7ff;
+    border-color: rgba(27, 102, 209, 0.45);
+}
+
+.pause-btn.is-paused {
+    background: #1c6bd6;
+    border-color: #1c6bd6;
+    color: #ffffff;
+}
+
+.pause-btn-floating {
+    @include floating-action-button(
+        46px,
+        calc(max(12px, env(safe-area-inset-bottom)) + 56px)
+    );
+}
+
+@media (max-width: 575.98px) {
+    .mute-btn-floating {
+        width: 42px;
+        height: 42px;
+        right: max(10px, env(safe-area-inset-right));
+        bottom: max(10px, env(safe-area-inset-bottom));
+    }
+
+    .pause-btn-floating {
+        width: 42px;
+        height: 42px;
+        right: max(10px, env(safe-area-inset-right));
+        bottom: calc(max(10px, env(safe-area-inset-bottom)) + 50px);
+    }
+}

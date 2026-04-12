@@ -1,0 +1,65 @@
+@use "sass:color";
+@use "../abstracts/variables" as *;
+@use "../abstracts/animations" as *;
+
+#game-progress {
+    width: 100%;
+    height: 35px;
+    padding: 4px;
+    background:
+        linear-gradient(
+            180deg,
+            $progress-top-highlight-color,
+            $progress-dark-shadow-color
+        ),
+        $gray-color;
+    border-radius: 30px;
+    box-shadow:
+        inset 0 1px 0 $progress-border-highlight-color,
+        inset 0 -1px 0 $progress-border-shadow-color;
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+
+    .progress-bar,
+    .progress-bar-number {
+        position: absolute;
+        z-index: 1;
+    }
+    .progress-bar {
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        border-radius: 30px;
+        background-color: $action-btn;
+        background-image:
+            linear-gradient(
+                135deg,
+                color.adjust($action-btn, $lightness: 6%),
+                color.adjust($action-btn, $lightness: -10%)
+            ),
+            repeating-linear-gradient(
+                45deg,
+                $progress-dash-color 0 10px,
+                $progress-dash-gap-color 10px 20px
+            );
+        background-size:
+            100% 100%,
+            28px 28px;
+        background-blend-mode: screen, normal;
+        box-shadow:
+            inset 0 1px 0 $progress-border-highlight-color,
+            inset 0 -1px 0 $progress-inner-shadow-color;
+        animation: progressBarShimmer 1.8s linear infinite;
+    }
+    .progress-bar-number {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $dark-color;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-shadow: 0 1px 0 $progress-number-shadow-color;
+        z-index: 2;
+    }
+}

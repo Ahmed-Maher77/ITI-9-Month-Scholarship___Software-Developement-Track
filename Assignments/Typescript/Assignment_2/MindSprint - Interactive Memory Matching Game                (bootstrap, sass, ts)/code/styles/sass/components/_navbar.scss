@@ -1,0 +1,8 @@
+#welcome-message {
+    b {
+        font-weight: 400;
+    }
+}
+#wrong-tries, #welcome-message {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}

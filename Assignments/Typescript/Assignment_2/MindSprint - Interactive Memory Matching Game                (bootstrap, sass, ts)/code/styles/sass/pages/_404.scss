@@ -1,0 +1,83 @@
+$page-404-background-layers: radial-gradient(
+        circle at 16% 20%,
+        rgba(255, 83, 51, 0.18),
+        transparent 35%
+    ), radial-gradient(
+        circle at 85% 84%,
+        rgba(255, 83, 51, 0.2),
+        transparent 38%
+    ), linear-gradient(180deg, #ffffff 0%, var(--paper) 100%);
+
+.page-404 {
+    --accent: #ff5333;
+    --accent-dark: #e4391a;
+    --ink: #111111;
+    --paper: #fff5f2;
+
+    min-height: 100svh;
+    margin: 0;
+    padding: 0;
+    margin-inline: auto;
+    font-family: "Lobster", sans-serif;
+    color: var(--ink);
+    background: $page-404-background-layers;
+
+    .not-found-card {
+        min-height: 100svh;
+        width: 100%;
+        padding: 1.8rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .code {
+        font-size: clamp(3rem, 13vw, 7rem);
+        line-height: 1;
+        color: var(--accent);
+        margin: 0;
+        letter-spacing: 0.03em;
+    }
+
+    .title {
+        margin: 0.25rem 0 0;
+        font-size: clamp(1.2rem, 4vw, 2rem);
+    }
+
+    .actions {
+        margin-top: 2.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+    }
+
+    .btn-home {
+        border: none;
+        border-radius: 0.7rem;
+        padding: 0.6rem 1rem;
+        background: var(--accent);
+        color: #ffffff;
+        font-weight: 700;
+    }
+
+    .btn-home:hover {
+        background: var(--accent-dark);
+    }
+
+    .btn-cancel {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 0.7rem;
+        padding: 0.6rem 1rem;
+        background: #ffffff;
+        color: var(--ink);
+        font-weight: 700;
+    }
+
+    .small-note {
+        margin-top: 0.8rem;
+        opacity: 0.8;
+    }
+}

@@ -1,0 +1,134 @@
+@use "../abstracts/variables" as *;
+
+#cards-container {
+    perspective: 1000px;
+    margin-top: 2rem;
+    figure {
+        position: relative;
+        aspect-ratio: 2 / 2.2;
+        min-height: 200px;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        border-radius: 14px;
+        overflow: hidden;
+        transform-style: preserve-3d;
+        will-change: transform;
+        transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        cursor: pointer;
+    }
+
+    .back-face,
+    .front-face {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+    .back-face {
+        transform: rotateY(0deg);
+    }
+
+    .front-face {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        rotate: 0 180deg;
+        transform: translateX(-50%) !important;
+        background:
+            radial-gradient(
+                circle at 20% 18%,
+                rgba($action-btn, 0.12),
+                transparent 45%
+            ),
+            linear-gradient(
+                180deg,
+                rgba($white-color, 0.95) 0%,
+                rgba($soft-white-color, 0.88) 60%,
+                rgba($action-btn, 0.08) 100%
+            );
+        border: 1px solid rgba($action-btn, 0.18);
+        box-shadow:
+            inset 0 1px 0 rgba($white-color, 0.7),
+            inset 0 -10px 20px rgba($action-btn, 0.08);
+        padding: 18px;
+        width: calc(100% - 8%) !important;
+        left: 50%;
+
+        img {
+            max-height: 100%;
+            display: block;
+            max-width: 100%;
+            object-fit: contain;
+            max-width: 130px;
+        }
+    }
+
+    figure.flipped .back-face {
+        transform: rotateY(180deg);
+    }
+
+    figure.flipped .front-face {
+        transform: rotateY(0deg);
+    }
+
+    figure.flipped {
+        transform: translateY(-2px) scale(1.01);
+    }
+
+    .image-mystery {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-style: normal;
+        line-height: 1;
+        color: $white-color;
+        text-shadow:
+            0 1px 0 rgba($mystery-shadow-color, 0.6),
+            0 4px 10px rgba($dark-color, 0.28);
+        letter-spacing: 0.02em;
+        background-image:
+            linear-gradient(
+                135deg,
+                $mystery-gradient-dark-color,
+                $mystery-gradient-darker-color
+            ),
+            radial-gradient(
+                circle at 22% 18%,
+                $mystery-glow-color,
+                transparent 34%
+            ),
+            linear-gradient(
+                160deg,
+                $mystery-light-color 0%,
+                $action-btn 42%,
+                $mystery-dark-color 100%
+            );
+        background-size: cover;
+        background-position: center;
+        isolation: isolate;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 10px;
+            border: 1px dashed $mystery-frame-color;
+            border-radius: 10px;
+            pointer-events: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+        }
+    }
+}
