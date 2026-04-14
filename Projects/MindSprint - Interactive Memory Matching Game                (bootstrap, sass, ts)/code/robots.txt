@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block common noisy/system paths if they are added later
+Disallow: /node_modules/
+Disallow: /.git/
+
+Sitemap: https://iti-sd-assignments.github.io/ts-ui-day02-Ahmed-Maher77/sitemap.xml
