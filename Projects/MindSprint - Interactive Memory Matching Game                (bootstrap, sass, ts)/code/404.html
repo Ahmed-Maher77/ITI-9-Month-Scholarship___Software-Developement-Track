@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Title & Meta -->
+        <title>404 - Page Not Found | MindSprint</title>
+        <meta
+            name="description"
+            content="The page you requested could not be found. Return to MindSprint to continue playing the memory card matching game."
+        />
+        <meta name="robots" content="noindex, follow" />
+        <meta name="theme-color" content="#ff5333" />
+        <link
+            rel="canonical"
+            href="https://ahmed-maher77.github.io/MindSprint___Interactive-Memory-Matching-Game/404.html"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="404 - Page Not Found | MindSprint" />
+        <meta
+            property="og:description"
+            content="This route is not available. Go back to MindSprint and start a new memory challenge."
+        />
+        <meta
+            property="og:url"
+            content="https://ahmed-maher77.github.io/MindSprint___Interactive-Memory-Matching-Game/404.html"
+        />
+        <meta
+            property="og:image"
+            content="https://ahmed-maher77.github.io/MindSprint___Interactive-Memory-Matching-Game/images/angular.svg"
+        />
+        <!-- JSON-LD -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "MindSprint 404 Page",
+                "url": "https://ahmed-maher77.github.io/MindSprint___Interactive-Memory-Matching-Game/404.html",
+                "description": "Custom not-found page for the MindSprint memory card game."
+            }
+        </script>
+        <!-- Bootstrap -->
+        <link
+            rel="stylesheet"
+            href="./packages/bootstrap-5.3.8-dist/css/bootstrap.min.css"
+        />
+        <!-- CSS -->
+        <link rel="stylesheet" href="./styles/css/style.css" />
+    </head>
+    <body class="page-404">
+        <main class="not-found-card">
+            <p class="code">404</p>
+            <h1 class="title">Page Not Found</h1>
+            <p class="mb-0">This route does not exist in the game app.</p>
+
+            <div class="actions">
+                <button id="home-btn" type="button" class="btn-home">
+                    Go Home
+                </button>
+                <button id="cancel-btn" type="button" class="btn-cancel">
+                    Stay Here
+                </button>
+            </div>
+
+            <p id="redirect-note" class="small-note"></p>
+        </main>
+
+        <script>
+            const missingPath = document.getElementById("missing-path");
+            const redirectNote = document.getElementById("redirect-note");
+            const homeBtn = document.getElementById("home-btn");
+            const cancelBtn = document.getElementById("cancel-btn");
+
+            const currentPath = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+            if (missingPath) {
+                missingPath.textContent = currentPath || "/";
+            }
+
+            const homeUrl = "./";
+            let secondsLeft = 8;
+            let timerId = null;
+
+            const goHome = () => {
+                window.location.href = homeUrl;
+            };
+
+            const updateNote = () => {
+                redirectNote.textContent = `Redirecting to Home in ${secondsLeft}s...`;
+            };
+
+            updateNote();
+
+            timerId = window.setInterval(() => {
+                secondsLeft -= 1;
+                if (secondsLeft <= 0) {
+                    window.clearInterval(timerId);
+                    goHome();
+                    return;
+                }
+                updateNote();
+            }, 1000);
+
+            homeBtn.addEventListener("click", goHome);
+            cancelBtn.addEventListener("click", () => {
+                if (timerId !== null) {
+                    window.clearInterval(timerId);
+                    timerId = null;
+                }
+                redirectNote.textContent = "Auto-redirect canceled.";
+                cancelBtn.disabled = true;
+            });
+        </script>
+    </body>
+</html>
