@@ -1,0 +1,1 @@
+{"version":3,"file":"IBoard.d.ts","sourceRoot":"","sources":["../../ts/interfaces/IBoard.ts"],"names":[],"mappings":"AAAA,OAAO,IAAI,MAAM,mBAAmB,CAAC;AAErC,UAAU,MAAM;IACZ,KAAK,EAAE,IAAI,EAAE,CAAC;IACd,OAAO,IAAI,IAAI,EAAE,CAAC;IAClB,KAAK,IAAI,IAAI,CAAC;IACd,WAAW,CAAC,MAAM,EAAE,MAAM,EAAE,GAAG,IAAI,EAAE,CAAC;CACzC;AAED,eAAe,MAAM,CAAC"}
