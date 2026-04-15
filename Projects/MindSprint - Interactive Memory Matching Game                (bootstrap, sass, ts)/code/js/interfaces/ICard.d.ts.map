@@ -1,0 +1,1 @@
+{"version":3,"file":"ICard.d.ts","sourceRoot":"","sources":["../../ts/interfaces/ICard.ts"],"names":[],"mappings":"AAAA,UAAU,KAAK;IACX,EAAE,EAAE,MAAM,CAAC;IACX,KAAK,EAAE,MAAM,CAAC;IACd,SAAS,EAAE,OAAO,CAAC;IACnB,SAAS,EAAE,OAAO,CAAC;IACnB,QAAQ,EAAE,OAAO,CAAC;IAClB,IAAI,IAAI,IAAI,CAAC;CAChB;AAED,eAAe,KAAK,CAAA"}
