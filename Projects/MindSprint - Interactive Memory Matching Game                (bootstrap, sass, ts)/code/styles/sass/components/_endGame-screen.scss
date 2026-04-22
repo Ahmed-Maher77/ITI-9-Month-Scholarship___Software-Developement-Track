@@ -1,0 +1,183 @@
+@use "sass:list";
+@use "sass:map";
+@use "../abstracts/_animations.scss";
+
+$end-game-theme-rules: (
+    win: (
+        card-background: linear-gradient(165deg, #fff8e6 0%, #ffe4a8 45%, #ffc457 100%),
+        border-color: #f4ad2c,
+        header-icon-color: #b97800,
+        decoration-background: linear-gradient(145deg, #fffadf, #ffb21d),
+        decoration-shadow: 0 0 0 1px rgba(185, 120, 0, 0.2),
+        decoration-animation: confettiFloat 2.7s ease-in-out infinite,
+        scene-background: rgba(255, 220, 122, 0.16),
+        scene-color: rgba(181, 120, 0, 0.9),
+        scene-shadow: 0 6px 14px rgba(181, 120, 0, 0.2),
+    ),
+    lose: (
+        card-background: linear-gradient(165deg, #fff5f5 0%, #ffd4d4 45%, #ff9f9f 100%),
+        border-color: #e46a6a,
+        header-icon-color: #9b2020,
+        decoration-background: linear-gradient(145deg, #ffd4d4, #d64d4d),
+        decoration-shadow: 0 0 0 1px rgba(126, 19, 19, 0.2),
+        decoration-animation: shakePulse 1.8s ease-in-out infinite,
+        scene-background: rgba(255, 160, 160, 0.15),
+        scene-color: rgba(132, 26, 26, 0.94),
+        scene-shadow: 0 6px 14px rgba(132, 26, 26, 0.2),
+    ),
+);
+
+$end-game-decoration-positions: (
+    (top: 12%, left: 12%),
+    (top: 18%, right: 16%),
+    (top: 54%, left: 6%),
+    (top: 62%, right: 10%),
+    (bottom: 12%, left: 22%),
+    (bottom: 14%, right: 24%),
+);
+
+.end-game-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.end-game-scene-decoration {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.end-game-scene-decoration span {
+    position: absolute;
+    width: var(--scene-size, 1.5rem);
+    height: var(--scene-size, 1.5rem);
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    opacity: 0.72;
+    animation: endGameOrbit 4s ease-in-out infinite;
+}
+
+.end-game-scene-decoration i {
+    font-size: calc(var(--scene-size, 1.5rem) * 0.88);
+}
+
+.end-game-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.62);
+    backdrop-filter: blur(4px);
+}
+
+.end-game-card {
+    position: relative;
+    width: min(520px, 100%);
+    border-radius: 1.2rem;
+    padding: 1.3rem;
+    overflow: hidden;
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.3);
+    animation: endGamePop 0.35s ease;
+    z-index: 2;
+}
+
+@each $state, $theme in $end-game-theme-rules {
+    .end-game-#{$state} {
+        background: map.get($theme, card-background);
+        border: 2px solid map.get($theme, border-color);
+    }
+
+    .end-game-#{$state} .end-game-header i {
+        color: map.get($theme, header-icon-color);
+    }
+
+    .end-game-#{$state} .end-game-decoration span {
+        background: map.get($theme, decoration-background);
+        box-shadow: map.get($theme, decoration-shadow);
+        animation: map.get($theme, decoration-animation);
+    }
+
+    .end-game-#{$state} .end-game-scene-decoration span {
+        background: map.get($theme, scene-background);
+        color: map.get($theme, scene-color);
+        text-shadow: map.get($theme, scene-shadow);
+    }
+}
+
+.end-game-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.end-game-header i {
+    font-size: 2rem;
+    margin-bottom: 0.35rem;
+    display: inline-block;
+}
+
+.end-game-header h2 {
+    margin: 0;
+    font-size: clamp(1.6rem, 4vw, 2.1rem);
+}
+
+.end-game-header p {
+    margin: 0.3rem 0 0;
+    opacity: 0.85;
+}
+
+.end-game-stats {
+    display: grid;
+    gap: 0.45rem;
+    margin: 0.8rem 0 1rem;
+}
+
+.end-game-stats p {
+    margin: 0;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 0.7rem;
+    padding: 0.45rem 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.end-game-btn {
+    width: 100%;
+    border: none;
+    border-radius: 0.7rem;
+    padding: 0.65rem 1rem;
+    font-weight: 700;
+    background: #ff5333;
+    color: #ffffff;
+}
+
+.end-game-btn:hover {
+    background: #ff2800;
+}
+
+.end-game-decoration {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.end-game-decoration span {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+@for $index from 1 through list.length($end-game-decoration-positions) {
+    .end-game-decoration span:nth-child(#{$index}) {
+        @each $property, $value in list.nth($end-game-decoration-positions, $index) {
+            #{$property}: $value;
+        }
+    }
+}
