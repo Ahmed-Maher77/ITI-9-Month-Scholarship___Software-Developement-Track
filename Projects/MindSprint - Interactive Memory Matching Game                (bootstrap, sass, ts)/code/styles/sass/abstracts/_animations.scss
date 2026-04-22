@@ -1,0 +1,144 @@
+@keyframes moveIn {
+    0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes startBtnWave {
+    0% {
+        opacity: 0.55;
+        transform: scale(0.92);
+    }
+    70% {
+        opacity: 0;
+        transform: scale(1.35);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.45);
+    }
+}
+
+@keyframes faceFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-6px) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-5px) rotate(2deg);
+    }
+}
+
+@keyframes eyeBlink {
+    0%,
+    46%,
+    100% {
+        transform: scaleY(1);
+    }
+    48%,
+    52% {
+        transform: scaleY(0.1);
+    }
+}
+
+@keyframes eyeLook {
+    0%,
+    18%,
+    100% {
+        margin-left: 0;
+    }
+    26%,
+    42% {
+        margin-left: -3px;
+    }
+    58%,
+    76% {
+        margin-left: 3px;
+    }
+}
+
+@keyframes waitDots {
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes progressBarShimmer {
+    0% {
+        background-position:
+            0 0,
+            0 0;
+    }
+    100% {
+        background-position:
+            0 0,
+            56px 0;
+    }
+}
+
+@keyframes endGamePop {
+    from {
+        transform: translateY(16px) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes confettiFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(18deg);
+    }
+}
+
+@keyframes shakePulse {
+    0%,
+    100% {
+        transform: translateX(0) scale(1);
+    }
+    35% {
+        transform: translateX(-2px) scale(1.05);
+    }
+    65% {
+        transform: translateX(2px) scale(0.98);
+    }
+}
+
+@keyframes endGameOrbit {
+    0%,
+    100% {
+        transform: translateY(0) scale(0.95) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) scale(1) rotate(8deg);
+    }
+    50% {
+        transform: translateY(6px) scale(1.04) rotate(-8deg);
+    }
+    75% {
+        transform: translateY(-6px) scale(0.98) rotate(6deg);
+    }
+}
