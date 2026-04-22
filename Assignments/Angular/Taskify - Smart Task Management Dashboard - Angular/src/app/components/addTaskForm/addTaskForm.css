@@ -1,0 +1,142 @@
+.add-task {
+  padding: 2.25rem 0;
+}
+
+.add-task__card {
+  color: #e2e8f0;
+  padding: 1.5rem;
+}
+
+.add-task__header {
+  margin-bottom: 1.35rem;
+  text-align: center;
+}
+
+.add-task__header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: #f8fafc;
+}
+
+.add-task__header p {
+  margin-top: 0.45rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.add-task__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.field--full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.field label.is-required::after {
+  content: ' *';
+  color: #dc2626;
+}
+
+.field textarea,
+.field input,
+.field select {
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.5);
+  color: #f8fafc;
+  padding: 0.72rem 0.82rem;
+  font: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.field textarea::placeholder,
+.field input::placeholder {
+  color: #a8b6c9;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.field textarea:focus,
+.field input:focus,
+.field select:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.18);
+}
+
+.add-task__actions {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.24);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.add-task__actions small {
+  color: #cbd5e1;
+}
+
+.add-task__actions small .is-required {
+  color: #dc2626;
+}
+
+.add-task__actions button {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  color: #1f2937;
+  font-weight: 700;
+  padding: 0.8rem 1.3rem;
+  font-size:0.9rem;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.add-task__actions button:hover {
+  filter: brightness(1.05);
+}
+
+@media (max-width: 768px) {
+  .add-task {
+    padding: 1.5rem 0;
+  }
+
+  .add-task__card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .add-task__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .add-task__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
