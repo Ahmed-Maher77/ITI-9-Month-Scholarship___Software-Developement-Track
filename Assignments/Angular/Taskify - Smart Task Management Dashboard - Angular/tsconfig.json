@@ -1,0 +1,33 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,                          // when save the file => ts compiles it => not needed now because cli watch tje changes and recompile the project
+  "compilerOptions": {
+    "strict": true,                                // activate strict type checking
+    "noImplicitOverride": true,                    // when override a method that is inherited from a parent class, needs to write override before
+    "noPropertyAccessFromIndexSignature": true,    // prevents this:  interface Iobj = { [key: string]: string };  const obj:Iobj = { name: "ahmed" };  obj.name (error; because it can't be sure that name exists inside obj);  obj['name'] (works fine)
+    "noImplicitReturns": true,                     // must return manually, to avoid problems that appear when the function returns undefined implicitly
+    "noFallthroughCasesInSwitch": true,            // must write (break) in swicth-case to prevent bugs
+    "skipLibCheck": true,                          // skip checking the types of .d.ts files (typescript declaration files) => exist in node_modules (contains ts file metadata, a js code for type annotation existing in a file)
+    "isolatedModules": true,                       // compiles each module/component individually
+    "experimentalDecorators": true,                // support decorators
+    "importHelpers": true,                         // after compiling ts into older js, modern features such as ES6+ aren't supported so the bunder adds files to them and import within the files you use these features in, so instead of importing them each time for each file => it imports them once in a single file and then import this file in the files that use these features => reduce the size of the output js files
+    "target": "ES2022",                            // js version that ts will be compiled to
+    "module": "preserve"                           // uses import/export
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,      // translation
+    "strictInjectionParameters": true,             // must add types to constructor paramters
+    "strictInputAccessModifiers": true,            // stict to the access modifier that is written in @Input() that is used to recieve data from parent component
+    "strictTemplates": true                        // apply type checking on templates because they are loosly types => const user = { name: "ahmed" };  {{ user.age }} // wrong
+  },
+  "files": [],
+  "references": [                                  // paths of the config files (app, testing)
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
+}
