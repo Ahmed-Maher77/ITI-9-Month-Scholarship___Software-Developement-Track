@@ -1,0 +1,38 @@
+<section class="auth-page container">
+  <div class="auth-card">
+    <p class="auth-card__tag">Get Started</p>
+    <h2 class="auth-card__title">Create Your Taskify Account</h2>
+    <p class="auth-card__subtitle">Sign up to organize your work and track progress in one place.</p>
+
+    <form class="auth-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()" novalidate>
+      <label class="auth-form__label" for="signup-name">Full Name</label>
+      <input class="auth-form__input" id="signup-name" type="text" placeholder="Ahmed Maher" formControlName="fullName" />
+      <p class="auth-form__error" *ngIf="signupForm.controls.fullName.invalid && (signupForm.controls.fullName.touched || isSubmitted)">
+        Full name is required and should be at least 3 characters.
+      </p>
+
+      <label class="auth-form__label" for="signup-email">Email</label>
+      <input class="auth-form__input" id="signup-email" type="email" placeholder="you@example.com" formControlName="email" />
+      <p class="auth-form__error" *ngIf="signupForm.controls.email.invalid && (signupForm.controls.email.touched || isSubmitted)">
+        Please enter a valid email address.
+      </p>
+
+      <label class="auth-form__label" for="signup-password">Password</label>
+      <input
+        class="auth-form__input"
+        id="signup-password"
+        type="password"
+        placeholder="Create a strong password"
+        formControlName="password"
+      />
+      <p
+        class="auth-form__error"
+        *ngIf="signupForm.controls.password.invalid && (signupForm.controls.password.touched || isSubmitted)"
+      >
+        Password is required and must be at least 6 characters.
+      </p>
+
+      <button class="auth-form__button" type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+    </form>
+  </div>
+</section>
