@@ -1,0 +1,72 @@
+<article class="task-card" [class.task-card--completed]="taskData?.status === 'done'">
+  <header class="task-card__header">
+    <h3>{{ taskData?.title }}</h3>
+    <span
+      class="task-card__priority"
+      [class.task-card__priority--high]="taskData?.priority === 'High'"
+      [class.task-card__priority--medium]="taskData?.priority === 'Medium'"
+      [class.task-card__priority--low]="taskData?.priority === 'Low'"
+    >
+      {{ taskData?.priority }}
+    </span>
+  </header>
+
+  <p class="task-card__description">{{ taskData?.description }}</p>
+
+  <footer class="task-card__footer">
+    <div class="task-card__meta">
+      <span>{{ taskData?.category }}</span>
+      <span>{{ taskData?.dueDate }}</span>
+      <span
+        class="task-card__done-badge"
+        [style.display]="taskData?.status === 'done' ? 'inline-flex' : 'none'"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2zm-1 14l-4-4l1.41-1.41L11 13.17l4.59-4.58L17 10z" />
+        </svg>
+        Done
+      </span>
+    </div>
+
+    <div class="task-card__actions" aria-label="Task actions">
+      <!-- delete task -->
+      <button
+        type="button"
+        class="task-card__icon-btn task-card__icon-btn--danger"
+        aria-label="Delete task"
+        (click)="delete.emit(taskIndex)"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 7h12l-1 14H7L6 7zm3-3h6l1 2H8l1-2z" />
+        </svg>
+      </button>
+      <!-- edit task -->
+      <button
+        type="button"
+        class="task-card__icon-btn"
+        aria-label="Update task"
+        (click)="update.emit(taskIndex)"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M3 17.25V21h3.75L18.81 8.94l-3.75-3.75L3 17.25zm17.71-10.04a1.003 1.003 0 0 0 0-1.42l-2.5-2.5a1.003 1.003 0 0 0-1.42 0l-1.83 1.83l3.75 3.75l2-1.66z"
+          />
+        </svg>
+      </button>
+      <!-- complete task -->
+      <button
+        type="button"
+        class="task-card__icon-btn task-card__icon-btn--success"
+        [attr.aria-label]="taskData?.status === 'done' ? 'Undo task' : 'Complete task'"
+        (click)="complete.emit(taskIndex)"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true" [style.display]="taskData?.status === 'done' ? 'none' : 'block'">
+          <path d="M9 16.17l-3.88-3.88L3.71 13.7L9 19l12-12l-1.41-1.41z" />
+        </svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true" [style.display]="taskData?.status === 'done' ? 'block' : 'none'">
+          <path d="M7 7V3H5v6h6V7H7zm10 10v4h2v-6h-6v2h4zM7 17h4v-2H5v6h2v-4zM17 7h-4v2h6V3h-2v4z" />
+        </svg>
+      </button>
+    </div>
+  </footer>
+</article>
