@@ -1,0 +1,3 @@
+#dashboard-page {
+  min-height: calc(100vh - (83px + 72px));
+}
