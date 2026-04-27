@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickSort Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    .container {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 24px;
+    }
+    label, input, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    input {
+      padding: 8px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 16px;
+      padding: 12px;
+      background: #f1f3f4;
+      border-radius: 4px;
+      min-height: 24px;
+      font-size: 1.1rem;
+      color: #222;
+    }
+    .error {
+      color: #c00;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>QuickSort Demo</h1>
+  <div class="container">
+    <label for="numbers">Enter numbers (comma separated):</label>
+    <input type="text" id="numbers" placeholder="e.g. 8,3,1,7,0,10,2">
+    <button id="sortBtn">Sort</button>
+    <div class="result" id="result"></div>
+    <div class="error" id="error"></div>
+  </div>
+  <script>
+    function quickSort(arr) {
+      if (!Array.isArray(arr)) return [];
+      if (arr.length <= 1) return arr.slice();
+      const pivotIndex = Math.floor(Math.random() * arr.length);
+      const pivot = arr[pivotIndex];
+      const left = [], middle = [], right = [];
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < pivot) left.push(arr[i]);
+        else if (arr[i] > pivot) right.push(arr[i]);
+        else middle.push(arr[i]);
+      }
+      return [...quickSort(left), ...middle, ...quickSort(right)];
+    }
+
+    document.getElementById('sortBtn').onclick = function() {
+      const input = document.getElementById('numbers').value;
+      const resultDiv = document.getElementById('result');
+      const errorDiv = document.getElementById('error');
+      errorDiv.textContent = '';
+      resultDiv.textContent = '';
+      if (!input.trim()) {
+        errorDiv.textContent = 'Please enter some numbers.';
+        return;
+      }
+
+      // Validate input: allow numbers, optional whitespace, and commas only
+      const validInputPattern = /^\s*-?\d+(\.\d+)?(\s*,\s*-?\d+(\.\d+)?)*\s*$/;
+      if (!validInputPattern.test(input)) {
+        errorDiv.textContent = 'Invalid input. Please enter only numbers separated by commas.';
+        return;
+      }
+
+      // Parse numbers
+      const numArr = input.split(',').map(s => s.trim()).filter(s => s.length > 0).map(Number);
+      // Check for NaN (e.g., empty values, invalid numbers)
+      const invalidIndexes = numArr.map((n, i) => isNaN(n) ? i : -1).filter(i => i !== -1);
+      if (invalidIndexes.length > 0) {
+        errorDiv.textContent = 'Invalid number at position ' + (invalidIndexes[0] + 1) + '. Please check your input.';
+        return;
+      }
+
+      const sorted = quickSort(numArr);
+      resultDiv.textContent = 'Sorted: ' + sorted.join(', ');
+    };
+  </script>
+</body>
+</html>
