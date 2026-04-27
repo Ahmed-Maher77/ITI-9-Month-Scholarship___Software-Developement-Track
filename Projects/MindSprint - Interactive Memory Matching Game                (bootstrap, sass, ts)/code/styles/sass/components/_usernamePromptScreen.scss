@@ -1,0 +1,27 @@
+@use "../abstracts/variables" as *;
+
+.modal-dialog.modal-dialog-centered.modal-sm {
+    max-width: 500px;
+    width: 100%;
+}
+.username-modal-card {
+    border-radius: 1.5rem;
+    background: linear-gradient(
+        180deg,
+        $username-card-top-color 0%,
+        $username-card-bottom-color 100%
+    );
+
+    .form-label {
+        font-weight: 600;
+    }
+
+    .form-control {
+        border: 1px solid $username-border-color;
+
+        &:focus {
+            border-color: $action-btn;
+            box-shadow: 0 0 0 0.2rem $username-focus-shadow-color;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@use "../abstracts/animations" as *;
+
+.pause-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+.pause-overlay-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(9, 12, 18, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.pause-overlay-card {
+    position: relative;
+    z-index: 1;
+    width: min(460px, 100%);
+    padding: 0.4rem 0.8rem;
+    text-align: center;
+    color: #ffffff;
+    animation: endGamePop 0.25s ease;
+}
+
+.pause-overlay-card i {
+    display: inline-block;
+    font-size: clamp(2.4rem, 7vw, 3.4rem);
+    color: #ffcc75;
+    margin-bottom: 0.25rem;
+    text-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.pause-overlay-card h2 {
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 3rem);
+    text-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.pause-overlay-card p {
+    margin: 0.2rem 0 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(0.95rem, 2.6vw, 1.1rem);
+    text-shadow: 0 6px 12px rgba(0, 0, 0, 0.32);
+}
+
+.pause-state-badge {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+    background: rgba(22, 135, 84, 0.12);
+    color: #0d6b42;
+    font-size: clamp(0.8rem, 2.2vw, 0.95rem);
+    font-weight: 600;
+}
+
+.pause-state-badge.is-paused {
+    background: rgba(28, 107, 214, 0.12);
+    color: #1452a8;
+}

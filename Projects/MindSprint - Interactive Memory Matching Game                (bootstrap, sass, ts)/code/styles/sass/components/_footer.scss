@@ -1,0 +1,97 @@
+@use "sass:color";
+@use "../abstracts/variables" as *;
+
+.site-footer {
+    margin-top: 5rem;
+    border-top: 1px solid rgba($action-btn, 0.16);
+
+    .footer-copy {
+        p {
+            color: $dark-color;
+        }
+
+        p:last-child {
+            font-weight: 300;
+
+            .footer-owner-name {
+                color: $action-btn;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .footer-social {
+        .social-link {
+            width: 42px;
+            height: 42px;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: $white-color;
+            background: $action-btn;
+            box-shadow: 0 10px 18px rgba($action-btn, 0.22);
+            text-decoration: none;
+            transition:
+                transform 0.2s ease,
+                background-color 0.2s ease,
+                box-shadow 0.2s ease;
+
+            &::before,
+            &::after {
+                position: absolute;
+                left: 50%;
+                opacity: 0;
+                pointer-events: none;
+                transition:
+                    opacity 0.2s ease,
+                    transform 0.2s ease;
+            }
+
+            &::before {
+                content: attr(data-tooltip);
+                top: -34px;
+                transform: translate(-50%, 6px);
+                background-color: rgba($dark-color, 0.92);
+                color: $white-color;
+                font-size: 0.78rem;
+                font-weight: 500;
+                line-height: 1;
+                padding: 0.45rem 0.6rem;
+                border-radius: 7px;
+                white-space: nowrap;
+                box-shadow: 0 6px 14px rgba($dark-color, 0.26);
+                z-index: 3;
+            }
+
+            &::after {
+                content: "";
+                top: -8px;
+                transform: translate(-50%, 6px);
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 6px solid rgba($dark-color, 0.92);
+                z-index: 2;
+            }
+
+            &:hover {
+                transform: translateY(-2px);
+                background: color.adjust($action-btn, $lightness: -8%);
+                box-shadow: 0 14px 22px rgba($action-btn, 0.3);
+            }
+
+            &:hover::before,
+            &:hover::after,
+            &:focus-visible::before,
+            &:focus-visible::after {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+
+            i {
+                font-size: 1.05rem;
+            }
+        }
+    }
+}

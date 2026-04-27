@@ -1,0 +1,20 @@
+#game-timer {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
+
+#timer-value {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+}
+
+.timer-icon {
+    color: #ff5333;
+}
+
+@media (max-width: 450px) {
+    .welcome-label,
+    .timer-label,
+    .wrong-tries-text {
+        display: none;
+    }
+}
