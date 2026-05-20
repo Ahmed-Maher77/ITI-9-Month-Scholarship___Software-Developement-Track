@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Lobster&family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --black-color: #101828;
+    --gray-bg: #fbfcfd;
+    --gray-color: #60656d;
+    --trans-3: all 0.3s ease;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: var(--black-color);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100svh;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+/* Pages */
+.pages {
+    margin-left: 230px;
+    transition: var(--trans-3);
+    padding-inline: clamp(2rem, 5vw, 3rem);
+}
+
+.pages.sidebar-collapsed {
+    margin-left: 88px;
+}
+
+.footer-offset {
+    margin-left: 230px;
+    /* padding-inline: clamp(2rem, 5vw, 3rem); */
+    transition: var(--trans-3);
+}
+
+.footer-offset.sidebar-collapsed {
+    margin-left: 88px;
+}
+
+
+
+@media (max-width: 991.98px) {
+    .pages {
+        margin-left: 0;
+    }
+
+    .footer-offset {
+        margin-left: 0;
+    }
+}
+
+
+/* =========== Reusable Styles =========== */
+.black-color {
+    color: var(--black-color);
+}
+.gray-color {
+    color: var(--gray-color);
+}
+.gray-bg {
+    background-color: var(--gray-bg);
+}
+
+/* fonts */
+.lobster-font {
+    font-family: 'Lobster', cursive;
+}
+
+/* spaces */
+.gap-35 {
+    gap: 0.8rem;
+}
+.pt-8 {
+    padding-top: 4rem;
+}
