@@ -171,6 +171,8 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 | **Clinic Appointment Scheduling System**          | A comprehensive healthcare management system for scheduling and managing clinic appointments.                    | [🔗 Project](./Projects/Clinic-Appointment-Scheduling-System)                                |
 | **MindSprint - Interactive Memory Matching Game** | An interactive memory matching game built with Bootstrap, Sass, and TypeScript for engaging user experience.     | [🔗 Project](https://github.com/Ahmed-Maher77/MindSprint___Interactive-Memory-Matching-Game) |
 | **TaskWave - Installable Web-based Task Manager** | An installable Progressive Web App for task management with offline support, filters, and productivity tracking. | [🔗 Project](./Projects/TaskWave%20-%20Installable%20Web-based%20Task%20Manager)             |
+| **Taskify - Smart Task Management Dashboard**     | Angular-based task management dashboard built with standalone components, RxJS, and TypeScript.                 | [🔗 Project](./Projects/Taskify%20-%20Smart%20Task%20Management%20Dashboard%20-%20Angular)   |
+| **Eventify — Event Discovery & Booking Platform**  | Event discovery and booking platform with AI assistant for recommendations and bookings.                        | [🔗 Project](./Projects/Eventify%20—%20Event%20Discovery%20&%20Booking%20Platform%20with%20AI%20Assistant) |
 
 ---
 
@@ -209,6 +211,9 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |   **AI-powered Coding Assistant Tools**    | Practical use of GitHub Copilot and AI coding assistants to implement algorithms (e.g., QuickSort), debug, document, and build simple interactive UIs. | [🔗 Assignment](<./Assignments/AI-powered%20Coding%20Assistant%20Tools>) |
 
 ---
+
+|                   **React.js**                    | Front-end assignments and final projects using React (components, hooks, state management, and routing). |                         [🔗 Assignment](./Assignments/React.js)                          |
+
 
 ## 🏁 Future Plans
 
