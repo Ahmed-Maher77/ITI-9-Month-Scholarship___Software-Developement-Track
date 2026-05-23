@@ -1,0 +1,16 @@
+{
+    "name": "lab",
+    "version": "1.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "test": "node ./node_modules/mocha/bin/mocha.js index.test.js"
+    },
+    "dependencies": {
+        "chai": "^6.2.2",
+        "mocha": "^11.7.5"
+    }
+}
