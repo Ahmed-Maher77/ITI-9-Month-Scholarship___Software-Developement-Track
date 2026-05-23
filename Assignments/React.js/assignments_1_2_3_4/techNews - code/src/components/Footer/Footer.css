@@ -1,0 +1,129 @@
+.AppFooter {
+    border-top: 1px solid #1f2a3d;
+    background: linear-gradient(180deg, #111827 0%, #0f172a 100%);
+    color: #cbd5e1;
+    padding: 2.6rem clamp(1.9rem, 4.6vw, 3.25rem) 1.15rem;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    padding-bottom: 2.15rem;
+}
+
+.footer-logo-wrap .logo {
+    padding: 0 !important;
+}
+
+.footer-logo-wrap .logo h1 {
+    color: #f8fafc;
+}
+
+.footer-description {
+    max-width: 540px;
+    line-height: 1.7;
+    margin: 0.7rem 0 1rem;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #e2e8f0;
+    font-weight: 600;
+    position: relative;
+    transition: var(--trans-3);
+}
+
+.footer-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 1.5px;
+    background-color: #93c5fd;
+    transition: var(--trans-3);
+}
+
+.footer-links a:hover {
+    color: #bfdbfe;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.footer-newsletter h3 {
+    color: #f8fafc;
+    margin: 0;
+}
+
+.footer-newsletter p {
+    margin: 0.7rem 0 1rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    border: 1px solid #334155;
+    border-radius: 0.65rem;
+    padding: 0.65rem 0.8rem;
+    outline: none;
+    background-color: #0b1220;
+    color: #e2e8f0;
+}
+
+.newsletter-form input:focus {
+    border-color: #474c55;
+    box-shadow: 0 0 0 2px rgb(170 170 170 / 8%);
+}
+
+.newsletter-form .footer-subscribe-btn > span {
+    padding: 0.65rem 0.95rem;
+    letter-spacing: 0.04em;
+    font-size: 0.88rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1f2a3d;
+    padding: 1.3rem 0 0.75rem;
+    font-size: 0.92rem;
+    color: #94a3b8;
+}
+
+@media (max-width: 900px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .AppFooter {
+        padding: 1.75rem 1.3rem 0.9rem;
+    }
+
+    .footer-main {
+        padding-bottom: 1.05rem;
+        gap: 1.2rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .newsletter-form .footer-subscribe-btn {
+        width: 100%;
+    }
+}
