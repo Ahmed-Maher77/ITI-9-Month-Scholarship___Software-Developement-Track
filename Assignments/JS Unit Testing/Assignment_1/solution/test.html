@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./node_modules/mocha/mocha.css" />
+    </head>
+
+    <body>
+        <div id="mocha"></div>
+
+        <form id="myForm">
+            <input type="text" id="username" placeholder="Enter String" />
+
+            <input type="number" id="age" placeholder="Enter Number" />
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="formMessage" hidden></div>
+
+
+        <script src="./node_modules/mocha/mocha.js"></script>
+
+        <script>
+            mocha.setup("bdd");
+        </script>
+
+        <script src="./index.js"></script>
+
+        <script type="module" src="./test.js"></script>
+    </body>
+</html>
