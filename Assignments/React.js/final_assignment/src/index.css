@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Lobster&family=Outfit:wght@100..900&display=swap");
+
+:root {
+    --black-color: #101828;
+    --gray-bg: #fbfcfd;
+    --gray-color: #60656d;
+    --trans-3: all 0.3s ease;
+    --theme-bg: #f4f4f4;
+    --theme-surface: #ffffff;
+    --theme-surface-soft: #fbfcfd;
+    --theme-surface-hover: #eef2f6;
+    --theme-border: #d8dde5;
+    --theme-border-soft: #e8edf3;
+    --theme-text-primary: #101828;
+    --theme-text-secondary: #60656d;
+    --theme-focus-ring: rgb(120 130 145 / 24%);
+    --theme-tabs-track: #eef2f6;
+    --theme-tabs-thumb: #ffffff;
+    --theme-tabs-thumb-shadow: 0 1px 2px rgb(16 24 40 / 8%);
+    --theme-sort-toggle-shadow: 0 1px 2px rgb(16 24 40 / 10%);
+    --footer-bg: linear-gradient(180deg, #111827 0%, #0f172a 100%);
+    --footer-border: #1f2a3d;
+    --footer-text: #cbd5e1;
+    --footer-heading: #f8fafc;
+    --footer-link: #e2e8f0;
+    --footer-link-hover: #bfdbfe;
+    --footer-link-underline: #93c5fd;
+    --footer-input-bg: #0b1220;
+    --footer-input-border: #334155;
+    --footer-input-text: #e2e8f0;
+    --footer-muted: #94a3b8;
+}
+
+:root[data-theme="dark"] {
+    --black-color: #f3f3f3;
+    --gray-bg: #1d1d1d;
+    --gray-color: #b0b0b0;
+    --theme-bg: #131313;
+    --theme-surface: #1a1a1a;
+    --theme-surface-soft: #1d1d1d;
+    --theme-surface-hover: #232323;
+    --theme-border: #2b2b2b;
+    --theme-border-soft: #252525;
+    --theme-text-primary: #f3f3f3;
+    --theme-text-secondary: #b0b0b0;
+    --theme-focus-ring: rgb(185 185 185 / 24%);
+    --theme-tabs-track: #252525;
+    --theme-tabs-thumb: #343434;
+    --theme-tabs-thumb-shadow: 0 1px 3px rgb(0 0 0 / 45%);
+    --theme-sort-toggle-shadow: 0 1px 3px rgb(0 0 0 / 40%);
+    --footer-bg: linear-gradient(180deg, #171717 0%, #131313 100%);
+    --footer-border: #2b2b2b;
+    --footer-text: #d6d6d6;
+    --footer-heading: #f5f5f5;
+    --footer-link: #dcdcdc;
+    --footer-link-hover: #ffffff;
+    --footer-link-underline: #9a9a9a;
+    --footer-input-bg: #1a1a1a;
+    --footer-input-border: #333333;
+    --footer-input-text: #ededed;
+    --footer-muted: #a7a7a7;
+}
+
+body {
+    background-color: var(--theme-bg);
+    color: var(--theme-text-primary);
+    font-family: "Outfit", sans-serif;
+    min-height: 100svh;
+    transition: var(--trans-3);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Pages — margin-inline-start reserves space beside fixed sidebar (LTR: left, RTL: right) */
+.pages {
+    margin-inline-start: 230px;
+    transition: var(--trans-3);
+    padding-inline: clamp(2rem, 5vw, 3rem);
+}
+
+.pages > * {
+    min-height: calc(100svh - 100px);
+}
+
+.pages.sidebar-collapsed {
+    margin-inline-start: 88px;
+}
+
+.footer-offset {
+    margin-inline-start: 230px;
+    /* padding-inline: clamp(2rem, 5vw, 3rem); */
+    transition: var(--trans-3);
+}
+
+.footer-offset.sidebar-collapsed {
+    margin-inline-start: 88px;
+}
+
+@media (max-width: 991.98px) {
+    .pages {
+        margin-inline-start: 0;
+    }
+
+    .footer-offset {
+        margin-inline-start: 0;
+    }
+}
+
+/* =========== Reusable Styles =========== */
+.black-color {
+    color: var(--black-color);
+}
+.gray-color {
+    color: var(--theme-text-secondary);
+}
+.gray-bg {
+    background-color: var(--theme-surface-soft);
+}
+
+.App,
+.pages,
+.auth-card,
+.post-details-content {
+    color: var(--theme-text-primary);
+}
+
+.form-control,
+.form-select,
+.app-form-control,
+.auth-card,
+.card,
+.post-card,
+.post-details-card,
+.posts-toolbar {
+    background-color: var(--theme-surface);
+    color: var(--theme-text-primary);
+    border-color: var(--theme-border);
+}
+
+.form-control::placeholder,
+.app-form-control::placeholder {
+    color: var(--theme-text-secondary);
+}
+
+.form-control:focus,
+.form-select:focus,
+.app-form-control:focus {
+    border-color: var(--theme-border);
+    box-shadow: 0 0 0 2px var(--theme-focus-ring);
+}
+
+:root[data-theme="dark"] .alert-danger {
+    background: #3a141a;
+    border-color: #8b2d37;
+    color: #ffcad1;
+}
+
+:root[data-theme="dark"] .text-muted {
+    color: #96a4bb !important;
+}
+
+/* fonts */
+.lobster-font {
+    font-family: "Lobster", cursive;
+}
+
+/* spaces */
+.gap-35 {
+    gap: 0.8rem;
+}
+.pt-8 {
+    padding-top: 4rem;
+}
