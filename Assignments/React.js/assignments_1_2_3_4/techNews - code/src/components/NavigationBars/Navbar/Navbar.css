@@ -1,0 +1,45 @@
+.Navbar {
+    position: fixed;
+    height: 65px;
+    top: 0;
+    z-index: 1041;
+    width: 100%;
+    box-shadow: 0 2px 16px 0 rgba(60, 72, 88, 0.08);
+}
+
+.menu-toggler {
+    color: var(--black-color);
+}
+
+.mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--trans-3);
+    z-index: 1040;
+}
+
+.mobile-menu.open {
+    max-height: 100svh;
+}
+
+.mobile-overlay {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(16, 24, 40, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--trans-3);
+    z-index: 1039;
+}
+
+.mobile-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}

@@ -1,0 +1,36 @@
+.like-dislike-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.reaction-btn {
+    border: 1px solid #d7dde6;
+    background: #f8fafc;
+    color: #475467;
+    border-radius: 999px;
+    padding: 0.34rem 0.65rem;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    transition: var(--trans-3);
+}
+
+.reaction-btn:hover {
+    border-color: #98a2b3;
+    color: var(--black-color);
+    background: #eef2f6;
+}
+
+.reaction-btn.active {
+    border-color: #2e90fa;
+    background: #eaf3ff;
+    color: #175cd3;
+}
+
+.reaction-btn.active.dislike {
+    border-color: #f04438;
+    background: #fff0ef;
+    color: #b42318;
+}
