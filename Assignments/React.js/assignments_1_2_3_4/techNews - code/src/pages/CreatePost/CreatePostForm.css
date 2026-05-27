@@ -1,0 +1,113 @@
+.create-post-form {
+    background-color: var(--gray-bg);
+    border: 2.5px solid #e7ecf1;
+    /* box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06); */
+}
+
+.create-post-form .form-title {
+    color: var(--black-color);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.create-post-form .form-label {
+    color: var(--black-color);
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition:
+        border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+
+.create-post-form .app-form-control {
+    border-color: #d8dee6;
+    background-color: #fff;
+    color: var(--black-color);
+}
+
+.create-post-form .app-form-control::placeholder {
+    color: #98a2b3;
+}
+
+.create-post-form .app-form-control:focus {
+    border-color: #98a2b3;
+    box-shadow: 0 0 0 3px rgba(16, 24, 40, 0.08);
+}
+
+.create-post-form .create-post-btn > span {
+    padding-block: 0.78rem;
+}
+
+.create-post-form .create-post-fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+.create-post-form .create-post-fieldset:disabled {
+    opacity: 0.82;
+}
+
+.create-post-form .author-category-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.create-post-form .author-category-field {
+    flex: 1;
+}
+
+@media (min-width: 992px) {
+    .create-post-form .author-category-row {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.post-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.submit-message {
+    margin-top: 0.25rem;
+    color: var(--gray-color);
+    font-size: 0.9rem;
+}
+
+.create-post-form .app-form-control.is-invalid {
+    border-color: #f04438;
+    box-shadow: 0 0 0 3px rgba(240, 68, 56, 0.12);
+}
+
+.create-post-form .app-field-error {
+    margin-top: 0.35rem;
+    color: #b42318;
+    font-size: 0.83rem;
+    font-weight: 500;
+}
+
+.create-post-form .app-field-counter {
+    margin-top: 0.35rem;
+    color: #667085;
+    font-size: 0.8rem;
+    text-align: right;
+}
