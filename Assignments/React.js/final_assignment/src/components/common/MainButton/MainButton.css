@@ -1,0 +1,139 @@
+.main-app-button {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--black-color);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    --btn-text-color: #ffffff;
+    --btn-text-hover-color: var(--black-color);
+}
+
+.main-app-button--default {
+    background: var(--black-color);
+}
+
+.main-app-button--default::after {
+    background: #e6ebf1;
+}
+
+.main-app-button--accent {
+    background: #183153;
+    --btn-text-hover-color: #183153;
+}
+
+.main-app-button--accent::after {
+    background: #ffd401;
+}
+
+.main-app-button--light {
+    background: #ffffff;
+    --btn-text-color: #183153;
+    --btn-text-hover-color: #ffffff;
+    border-radius: 18rem;
+}
+
+.main-app-button--light::after {
+    background: #183153;
+}
+
+.main-app-button--light > span {
+    color: var(--btn-text-color);
+}
+
+:root[data-theme="dark"] .main-app-button--default {
+    background: #2a2a2a;
+    --btn-text-color: #f3f3f3;
+    --btn-text-hover-color: #131313;
+}
+
+:root[data-theme="dark"] .main-app-button--default::after {
+    background: #f3f3f3;
+}
+
+:root[data-theme="dark"] .main-app-button--accent {
+    background: #f0b90b;
+    --btn-text-color: #111111;
+    --btn-text-hover-color: #111111;
+}
+
+:root[data-theme="dark"] .main-app-button--accent::after {
+    background: #ffd54f;
+}
+
+:root[data-theme="dark"] .main-app-button--light {
+    background: #242424;
+    --btn-text-color: #f3f3f3;
+    --btn-text-hover-color: #131313;
+    border: 1px solid #3a3a3a;
+}
+
+:root[data-theme="dark"] .main-app-button--light::after {
+    background: #f3f3f3;
+}
+
+.main-app-button.is-full-width {
+    width: 100%;
+}
+
+.main-app-button::after {
+    content: " ";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
+}
+
+.main-app-button:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+}
+
+.main-app-button:disabled {
+    opacity: 0.72;
+    cursor: not-allowed;
+}
+
+.main-app-button:disabled::after {
+    width: 0;
+}
+
+.main-app-button > span {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 12px 18px;
+    color: var(--btn-text-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-app-button:hover > span {
+    color: var(--btn-text-hover-color);
+    animation: mainButtonScaleUp 0.3s ease-in-out;
+}
+
+.main-app-button:disabled:hover > span {
+    color: var(--btn-text-color);
+    animation: none;
+}
+
+@keyframes mainButtonScaleUp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
