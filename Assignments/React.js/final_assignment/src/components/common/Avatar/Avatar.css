@@ -1,0 +1,9 @@
+.app-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-avatar img {
+    display: block;
+}
