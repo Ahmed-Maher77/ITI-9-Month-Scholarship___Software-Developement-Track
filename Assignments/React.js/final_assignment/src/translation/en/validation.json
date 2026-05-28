@@ -1,0 +1,22 @@
+{
+    "emailRequired": "Email is required.",
+    "emailInvalid": "Please enter a valid email.",
+    "passwordRequired": "Password is required.",
+    "fullNameRequired": "Full name is required.",
+    "fullNameMin": "Full name must be at least 3 characters.",
+    "passwordMin": "Password must be at least 6 characters.",
+    "confirmPasswordRequired": "Please confirm your password.",
+    "passwordsMismatch": "Passwords do not match.",
+    "titleRequired": "Title is required.",
+    "titleMin": "Title must be at least {{count}} characters.",
+    "authorRequired": "Author is required.",
+    "categoryRequired": "Category is required.",
+    "categoryMin": "Category must be at least {{count}} characters.",
+    "imageRequired": "Image URL is required.",
+    "imageHttp": "Image URL must start with http:// or https://",
+    "descriptionRequired": "Description is required.",
+    "descriptionMin": "Description must be at least {{count}} characters.",
+    "descriptionMax": "Description must be at most {{count}} characters.",
+    "contentRequired": "Content is required.",
+    "contentMin": "Content must be at least {{count}} characters."
+}

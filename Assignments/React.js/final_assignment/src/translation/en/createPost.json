@@ -1,0 +1,19 @@
+{
+    "title": "Create New Post",
+    "fieldTitle": "Title",
+    "fieldAuthor": "Author",
+    "fieldCategory": "Category",
+    "fieldImage": "Image URL",
+    "fieldDescription": "Description",
+    "fieldContent": "Content",
+    "placeholderTitle": "Enter post title",
+    "placeholderAuthor": "Author name",
+    "placeholderCategory": "e.g. React, AI",
+    "placeholderImage": "https://example.com/image.jpg",
+    "placeholderDescription": "Short post summary...",
+    "placeholderContent": "Full post content...",
+    "submit": "Create Post",
+    "submitting": "Creating...",
+    "success": "Post created successfully.",
+    "error": "Unable to create post. Please check json-server."
+}

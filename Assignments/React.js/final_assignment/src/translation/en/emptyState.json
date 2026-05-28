@@ -1,0 +1,10 @@
+{
+    "noPostsTitle": "No posts yet",
+    "noPostsSubtitle": "Your feed is empty right now. Create your first post to get things started.",
+    "createFirstPost": "Create your first post",
+    "noMatchTitle": "No matching posts",
+    "noMatchSubtitle": "Try a different title or category to find posts in the feed.",
+    "clearSearch": "Clear the search",
+    "postNotFoundTitle": "Post not found",
+    "postNotFoundSubtitle": "This post may have been removed or the link is invalid."
+}

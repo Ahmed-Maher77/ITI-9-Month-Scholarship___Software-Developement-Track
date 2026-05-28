@@ -1,0 +1,19 @@
+{
+    "guestUser": "زائر",
+    "loading": "جارٍ تحميل المنشور...",
+    "shareTitleFallback": "منشور TechNews",
+    "reactionSaveError": "تعذر حفظ التفاعلات. حاول مرة أخرى.",
+    "postCoverAlt": "غلاف المنشور",
+    "favoriteTooltip": "إضافة إلى المفضلة",
+    "shareTooltip": "مشاركة هذا المنشور",
+    "jumpDiscussionTooltip": "الانتقال للنقاش",
+    "toggleFavoriteAria": "تبديل المفضلة",
+    "sharePostAria": "مشاركة المنشور",
+    "goToCommentsAria": "الذهاب إلى التعليقات",
+    "minsRead": "{{count}} دقيقة للقراءة",
+    "discussionTitle": "مركز النقاش",
+    "discussionSubtitle": "شارك رأيك، اطرح أسئلة، وتفاعل مع هذا المنشور.",
+    "commentPlaceholder": "اكتب تعليقك...",
+    "addComment": "إضافة تعليق",
+    "noCommentsYet": "لا تعليقات بعد. ابدأ النقاش."
+}

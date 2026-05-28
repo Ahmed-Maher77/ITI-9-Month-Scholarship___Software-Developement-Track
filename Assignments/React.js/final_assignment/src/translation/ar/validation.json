@@ -1,0 +1,22 @@
+{
+    "emailRequired": "البريد الإلكتروني مطلوب.",
+    "emailInvalid": "يرجى إدخال بريد إلكتروني صحيح.",
+    "passwordRequired": "كلمة المرور مطلوبة.",
+    "fullNameRequired": "الاسم الكامل مطلوب.",
+    "fullNameMin": "يجب ألا يقل الاسم الكامل عن 3 أحرف.",
+    "passwordMin": "يجب ألا تقل كلمة المرور عن 6 أحرف.",
+    "confirmPasswordRequired": "يرجى تأكيد كلمة المرور.",
+    "passwordsMismatch": "كلمتا المرور غير متطابقتين.",
+    "titleRequired": "العنوان مطلوب.",
+    "titleMin": "يجب ألا يقل العنوان عن {{count}} أحرف.",
+    "authorRequired": "اسم الكاتب مطلوب.",
+    "categoryRequired": "التصنيف مطلوب.",
+    "categoryMin": "يجب ألا يقل التصنيف عن {{count}} أحرف.",
+    "imageRequired": "رابط الصورة مطلوب.",
+    "imageHttp": "يجب أن يبدأ رابط الصورة بـ http:// أو https://",
+    "descriptionRequired": "الوصف مطلوب.",
+    "descriptionMin": "يجب ألا يقل الوصف عن {{count}} أحرف.",
+    "descriptionMax": "يجب ألا يزيد الوصف عن {{count}} حرفًا.",
+    "contentRequired": "المحتوى مطلوب.",
+    "contentMin": "يجب ألا يقل المحتوى عن {{count}} أحرف."
+}

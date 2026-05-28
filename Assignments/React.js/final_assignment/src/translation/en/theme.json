@@ -1,0 +1,11 @@
+{
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme",
+    "switchToLightMode": "Switch to light mode",
+    "switchToDarkMode": "Switch to dark mode",
+    "tablistAria": "Theme mode",
+    "lightTitle": "Use light theme",
+    "darkTitle": "Use dark theme",
+    "light": "Light",
+    "dark": "Dark"
+}

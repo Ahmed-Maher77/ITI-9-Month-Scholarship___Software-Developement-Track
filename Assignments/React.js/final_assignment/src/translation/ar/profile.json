@@ -1,0 +1,7 @@
+{
+    "fallbackUser": "مستخدم",
+    "roleLabels": {
+        "user": "مستخدم",
+        "admin": "مسؤول"
+    }
+}

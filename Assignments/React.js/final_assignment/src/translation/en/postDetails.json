@@ -1,0 +1,19 @@
+{
+    "guestUser": "Guest User",
+    "loading": "Loading post...",
+    "shareTitleFallback": "TechNews Post",
+    "reactionSaveError": "Unable to save reactions. Please try again.",
+    "postCoverAlt": "Post cover",
+    "favoriteTooltip": "Add to favorites",
+    "shareTooltip": "Share this post",
+    "jumpDiscussionTooltip": "Jump to discussion",
+    "toggleFavoriteAria": "Toggle favorite",
+    "sharePostAria": "Share post",
+    "goToCommentsAria": "Go to comments",
+    "minsRead": "{{count}} mins read",
+    "discussionTitle": "Discussion Center",
+    "discussionSubtitle": "Share your thoughts, ask questions, and react to this post.",
+    "commentPlaceholder": "Write your comment...",
+    "addComment": "Add comment",
+    "noCommentsYet": "No comments yet. Start the discussion."
+}

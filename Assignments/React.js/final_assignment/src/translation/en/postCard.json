@@ -1,0 +1,11 @@
+{
+    "shareError": "Unable to share post. Please try again.",
+    "favoriteAria": "Add to favourites",
+    "shareAria": "Share post",
+    "openPostAria": "Open post link",
+    "postCoverAlt": "Post cover",
+    "shareTitleFallback": "TechNews Post",
+    "commentsCountAria": "Comments count",
+    "likeAria": "Like post",
+    "dislikeAria": "Dislike post"
+}

@@ -1,0 +1,13 @@
+{
+    "dashboard": "لوحة التحكم",
+    "userManagement": "إدارة المستخدمين",
+    "postManagement": "إدارة المنشورات",
+    "moderationQueue": "طابور المراجعة",
+    "homeFeed": "الرئيسية",
+    "explore": "استكشاف",
+    "myPosts": "منشوراتي",
+    "createPost": "إنشاء منشور",
+    "profile": "الملف الشخصي",
+    "logout": "تسجيل الخروج",
+    "login": "تسجيل الدخول"
+}

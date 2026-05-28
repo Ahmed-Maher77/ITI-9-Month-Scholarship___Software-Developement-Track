@@ -1,0 +1,13 @@
+{
+    "dashboard": "Dashboard",
+    "userManagement": "User Management",
+    "postManagement": "Post Management",
+    "moderationQueue": "Moderation Queue",
+    "homeFeed": "Home Feed",
+    "explore": "Explore",
+    "myPosts": "My Posts",
+    "createPost": "Create Post",
+    "profile": "Profile",
+    "logout": "Logout",
+    "login": "Login"
+}

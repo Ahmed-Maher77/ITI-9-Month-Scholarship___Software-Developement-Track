@@ -1,0 +1,7 @@
+{
+    "label": "FEATURED TODAY",
+    "openFeaturedAria": "Open featured post",
+    "featuredPostAlt": "Featured post",
+    "showSlideAria": "Show featured post {{count}}",
+    "minsRead": "{{count}} mins read"
+}

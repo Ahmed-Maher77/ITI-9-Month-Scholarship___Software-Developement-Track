@@ -1,0 +1,11 @@
+{
+    "shareError": "تعذر مشاركة المنشور. حاول مرة أخرى.",
+    "favoriteAria": "إضافة إلى المفضلة",
+    "shareAria": "مشاركة المنشور",
+    "openPostAria": "فتح رابط المنشور",
+    "postCoverAlt": "غلاف المنشور",
+    "shareTitleFallback": "منشور TechNews",
+    "commentsCountAria": "عدد التعليقات",
+    "likeAria": "إعجاب بالمنشور",
+    "dislikeAria": "عدم إعجاب بالمنشور"
+}
