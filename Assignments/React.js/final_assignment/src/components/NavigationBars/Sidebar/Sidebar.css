@@ -1,0 +1,292 @@
+aside.Sidebar {
+    width: 230px;
+    min-height: 100vh;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    inset-inline-start: 0;
+    border-inline-end: 2px solid #bbbbbb30;
+    z-index: 1040;
+    box-shadow: 2px 0 4px 0 rgb(174 174 174 / 8%);
+    transition: var(--trans-3);
+}
+
+[dir="rtl"] aside.Sidebar {
+    box-shadow: -2px 0 4px 0 rgb(174 174 174 / 8%);
+}
+
+/* .list-unstyled only clears padding-left; RTL list indent uses padding-inline-start */
+aside.Sidebar > ul.list-unstyled {
+    padding-inline: 0;
+}
+
+aside.Sidebar.is-mobile {
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    position: static;
+    box-shadow: none;
+}
+
+aside.Sidebar .sidebar-toggle-btn {
+    color: var(--gray-color);
+    font-size: 1.05rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+aside.Sidebar .sidebar-toggle-btn:hover {
+    background-color: var(--theme-surface-hover) !important;
+}
+
+aside.Sidebar .sidebar-header .logo {
+    padding-inline-start: 0 !important;
+}
+
+aside.Sidebar .sidebar-header .logo h1,
+aside.Sidebar .navlink-item span,
+aside.Sidebar .navlink-item figure,
+aside.Sidebar .navlink-item .fa-arrow-right-from-bracket {
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        max-width 0.2s ease;
+}
+
+aside.Sidebar .sidebar-header .logo h1 {
+    max-width: 140px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+aside.Sidebar .navlink-item span {
+    max-width: 120px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+aside.Sidebar.is-collapsed {
+    width: 88px;
+}
+
+aside.Sidebar.is-collapsed .top,
+aside.Sidebar.is-collapsed .bottom {
+    align-items: center;
+    gap: 0.4rem !important;
+}
+
+aside.Sidebar.is-collapsed .sidebar-header {
+    justify-content: center !important;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+aside.Sidebar.is-collapsed .sidebar-header .sidebar-toggle-btn {
+    order: -1;
+}
+
+aside.Sidebar.is-collapsed .sidebar-header .logo {
+    padding: 0 !important;
+    gap: 0 !important;
+}
+
+aside.Sidebar.is-collapsed .sidebar-header .logo i {
+    font-size: 1.15rem !important;
+}
+
+aside.Sidebar.is-collapsed .navlink-item {
+    width: 64px;
+    min-width: 64px;
+    height: 64px;
+    justify-content: center;
+    padding: 0 !important;
+    border-radius: 1rem !important;
+}
+
+aside.Sidebar.is-collapsed .navlink-item a {
+    justify-content: center !important;
+    gap: 0 !important;
+    width: 100%;
+    height: 100%;
+    padding: 0 !important;
+    border-radius: inherit;
+}
+
+aside.Sidebar.is-collapsed .navlink-item i {
+    font-size: 1.35rem;
+}
+
+aside.Sidebar.is-collapsed .navlink-item span,
+aside.Sidebar.is-collapsed .navlink-item figure,
+aside.Sidebar.is-collapsed .navlink-item .fa-arrow-right-from-bracket {
+    opacity: 0;
+    max-width: 0;
+    transform: translateX(-6px);
+    pointer-events: none;
+}
+
+[dir="rtl"] aside.Sidebar.is-collapsed .navlink-item span,
+[dir="rtl"] aside.Sidebar.is-collapsed .navlink-item figure,
+[dir="rtl"]
+    aside.Sidebar.is-collapsed
+    .navlink-item
+    .fa-arrow-right-from-bracket {
+    transform: translateX(6px);
+}
+
+aside.Sidebar.is-collapsed
+    .navlink-item.logout-item
+    .fa-arrow-right-from-bracket {
+    opacity: 1;
+    max-width: 24px;
+    transform: none;
+    pointer-events: auto;
+}
+
+[dir="rtl"]
+    aside.Sidebar.is-collapsed
+    .navlink-item.logout-item
+    .fa-arrow-right-from-bracket {
+    transform: scaleX(-1);
+}
+
+aside.Sidebar.is-collapsed .navlink-item.logout-item > button {
+    position: relative;
+    justify-content: center !important;
+    gap: 0 !important;
+}
+
+aside.Sidebar.is-collapsed .navlink-item.logout-item > button > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    opacity: 0;
+    max-width: 0;
+    transform: none;
+}
+
+aside.Sidebar.is-collapsed .navlink-item.profile-item figure {
+    margin: 0 auto !important;
+    opacity: 1;
+    max-width: 36px;
+    transform: none;
+    pointer-events: auto;
+}
+
+aside.Sidebar.is-collapsed .sidebar-header .logo h1 {
+    opacity: 0;
+    max-width: 0;
+    transform: translateX(-6px);
+}
+
+[dir="rtl"] aside.Sidebar.is-collapsed .sidebar-header .logo h1 {
+    transform: translateX(6px);
+}
+
+/* Directional icons: point “out” of sidebar in RTL */
+[dir="rtl"] aside.Sidebar .logout-item .fa-arrow-right-from-bracket,
+[dir="rtl"] aside.Sidebar .login-main-btn .fa-right-to-bracket {
+    transform: scaleX(-1);
+}
+
+.navlink-item {
+    border: 1px solid transparent;
+    transition: var(--trans-3);
+    color: var(--gray-color);
+}
+.navlink-item:hover {
+    color: var(--gray-color);
+    background-color: var(--theme-surface);
+    border-color: var(--theme-border-soft);
+    color: var(--black-color);
+}
+
+.navlink-item:has(> a.active) {
+    color: var(--gray-color);
+    background-color: var(--theme-surface);
+    border-color: var(--theme-border-soft);
+    color: var(--black-color);
+}
+
+.navlink-item.logout-item,
+.navlink-item.logout-item a {
+    color: #dc3545;
+}
+
+.navlink-item.logout-item:hover,
+.navlink-item.logout-item:hover a {
+    color: #bb2d3b;
+}
+
+.bottom .login-main-btn > span {
+    letter-spacing: 0.04em;
+    font-size: 0.88rem;
+    padding-block: 0.7rem;
+}
+
+.theme-sidebar-row {
+    width: 100%;
+    margin-bottom: 0.1rem;
+}
+
+.theme-sidebar-row:has(.theme-toggle-btn) {
+    border-color: transparent;
+    background: transparent;
+}
+.theme-sidebar-row:has(.theme-toggle-btn:hover) {
+    border-color: transparent;
+    background: transparent;
+}
+
+.theme-sidebar-row .theme-toggle-wrap {
+    width: 100%;
+    justify-content: center;
+}
+
+.theme-sidebar-row .theme-tabs {
+    width: 100%;
+}
+
+.theme-sidebar-row.is-collapsed {
+    width: 64px;
+    min-width: 64px;
+    display: grid;
+    place-items: center;
+    padding: 0.45rem 0.35rem;
+}
+
+.theme-sidebar-row.is-collapsed .theme-toggle-wrap {
+    justify-content: center;
+}
+
+.theme-sidebar-row.is-collapsed .theme-toggle-btn.switch {
+    padding-inline: 0.35rem;
+}
+
+.theme-sidebar-row.is-collapsed .theme-toggle-btn.compact i {
+    font-size: 1.3rem;
+}
+
+aside.Sidebar.is-collapsed .bottom .login-main-btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 1rem;
+}
+
+aside.Sidebar.is-collapsed .bottom .login-main-btn > span {
+    padding: 0;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 1.35rem;
+}
