@@ -1,0 +1,84 @@
+.theme-toggle-btn {
+    border: none;
+    background: transparent;
+    color: var(--theme-text-primary);
+    min-height: 38px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--trans-3);
+}
+
+.theme-toggle-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.theme-toggle-label {
+    color: var(--theme-text-secondary);
+    font-size: 0.9rem;
+}
+
+.theme-toggle-btn:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 2px var(--theme-focus-ring);
+}
+
+.theme-toggle-btn.compact {
+    width: 38px;
+    min-height: 38px;
+    padding: 0;
+    justify-content: center;
+}
+
+.theme-tabs {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    height: 50px;
+    background: var(--theme-tabs-track);
+    border: 1px solid var(--theme-border-soft);
+    border-radius: 5px;
+    padding: 0.4rem;
+}
+
+.theme-tab {
+    border: 0;
+    background: transparent;
+    color: var(--theme-text-secondary);
+    min-height: 100%;
+    min-width: 0;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.28rem 0.7rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: var(--trans-3);
+    flex: 1 1 0;
+}
+
+.theme-tab.active {
+    background: var(--theme-tabs-thumb);
+    color: var(--theme-text-primary);
+    box-shadow: var(--theme-tabs-thumb-shadow);
+}
+
+.theme-tab i {
+    font-size: 0.8rem;
+}
+
+.theme-tab:hover {
+    color: var(--theme-text-primary);
+}
+
+.theme-tab:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 2px var(--theme-focus-ring);
+}
