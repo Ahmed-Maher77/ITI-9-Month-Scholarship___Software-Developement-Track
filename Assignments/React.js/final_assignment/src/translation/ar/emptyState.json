@@ -1,0 +1,10 @@
+{
+    "noPostsTitle": "لا توجد منشورات بعد",
+    "noPostsSubtitle": "خلاصتك فارغة حاليًا. أنشئ أول منشور للبدء.",
+    "createFirstPost": "أنشئ أول منشور",
+    "noMatchTitle": "لا توجد نتائج مطابقة",
+    "noMatchSubtitle": "جرّب عنوانًا أو تصنيفًا مختلفًا للعثور على منشورات.",
+    "clearSearch": "مسح البحث",
+    "postNotFoundTitle": "المنشور غير موجود",
+    "postNotFoundSubtitle": "ربما تم حذف هذا المنشور أو أن الرابط غير صالح."
+}

@@ -1,0 +1,19 @@
+{
+    "title": "إنشاء منشور جديد",
+    "fieldTitle": "العنوان",
+    "fieldAuthor": "الكاتب",
+    "fieldCategory": "التصنيف",
+    "fieldImage": "رابط الصورة",
+    "fieldDescription": "الوصف",
+    "fieldContent": "المحتوى",
+    "placeholderTitle": "أدخل عنوان المنشور",
+    "placeholderAuthor": "اسم الكاتب",
+    "placeholderCategory": "مثال: React, AI",
+    "placeholderImage": "https://example.com/image.jpg",
+    "placeholderDescription": "ملخص قصير للمنشور...",
+    "placeholderContent": "المحتوى الكامل للمنشور...",
+    "submit": "إنشاء منشور",
+    "submitting": "جارٍ الإنشاء...",
+    "success": "تم إنشاء المنشور بنجاح.",
+    "error": "تعذر إنشاء المنشور. تحقق من json-server."
+}
