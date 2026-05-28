@@ -1,0 +1,77 @@
+.PostsLoading {
+    width: 100%;
+}
+
+.loading-featured {
+    width: 100%;
+    height: clamp(360px, 46vw, 540px);
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    background-color: #e9edf2;
+}
+
+.loading-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.loading-post-card {
+    border: 2.5px solid #b0b0b054;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #fff;
+}
+
+.loading-image {
+    height: 180px;
+    background-color: #e9edf2;
+}
+
+.loading-content {
+    padding: 1rem;
+}
+
+.loading-line {
+    height: 10px;
+    border-radius: 999px;
+    background-color: #e9edf2;
+    margin-bottom: 0.65rem;
+}
+
+.loading-line.lg {
+    width: 88%;
+}
+
+.loading-line.md {
+    width: 64%;
+}
+
+.loading-line.sm {
+    width: 40%;
+}
+
+.skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.46) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: skeleton-shimmer 1.2s infinite;
+}
+
+@keyframes skeleton-shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
