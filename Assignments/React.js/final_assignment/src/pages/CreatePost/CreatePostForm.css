@@ -1,0 +1,122 @@
+.create-post-form {
+    background-color: var(--theme-surface-soft);
+    border: 2.5px solid var(--theme-border-soft);
+}
+
+.create-post-form .form-title {
+    color: var(--theme-text-primary);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.create-post-form .form-label {
+    color: var(--theme-text-primary);
+}
+
+/* Scoped to this form only (do not target global .form-control) */
+.create-post-form .form-control {
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--theme-text-primary);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--theme-surface);
+    background-clip: padding-box;
+    border: 1px solid var(--theme-border);
+    border-radius: var(--bs-border-radius, 0.375rem);
+    transition:
+        border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+
+.create-post-form .app-form-control {
+    border-color: var(--theme-border);
+    background-color: var(--theme-surface);
+    color: var(--theme-text-primary);
+}
+
+.create-post-form .app-form-control::placeholder {
+    color: var(--theme-text-secondary);
+}
+
+.create-post-form .app-form-control:focus {
+    border-color: var(--theme-border);
+    box-shadow: 0 0 0 2px var(--theme-focus-ring);
+}
+
+.create-post-form .create-post-btn > span {
+    padding-block: 0.78rem;
+}
+
+.create-post-form .create-post-fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+.create-post-form .create-post-fieldset:disabled {
+    opacity: 0.82;
+}
+
+.create-post-form .author-category-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.create-post-form .author-category-field {
+    flex: 1;
+}
+
+@media (min-width: 992px) {
+    .create-post-form .author-category-row {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.post-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.submit-message {
+    margin-top: 0.25rem;
+    color: var(--theme-text-secondary);
+    font-size: 0.9rem;
+}
+
+.create-post-form .app-form-control.is-invalid {
+    border-color: #f04438;
+    box-shadow: 0 0 0 2px rgba(240, 68, 56, 0.2);
+}
+
+:root[data-theme="dark"] .create-post-form .app-form-control.is-invalid {
+    border-color: #f97066;
+    box-shadow: 0 0 0 2px rgba(249, 112, 102, 0.22);
+}
+
+.create-post-form .app-field-error {
+    margin-top: 0.35rem;
+    color: #b42318;
+    font-size: 0.83rem;
+    font-weight: 500;
+}
+
+:root[data-theme="dark"] .create-post-form .app-field-error {
+    color: #fda29b;
+}
+
+.create-post-form .app-field-counter {
+    margin-top: 0.35rem;
+    color: var(--theme-text-secondary);
+    font-size: 0.8rem;
+    text-align: end;
+}
