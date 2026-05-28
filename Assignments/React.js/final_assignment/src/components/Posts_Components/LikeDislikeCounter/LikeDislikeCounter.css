@@ -1,0 +1,36 @@
+.like-dislike-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.reaction-btn {
+    border: 1px solid var(--theme-border);
+    background: var(--theme-surface);
+    color: var(--theme-text-secondary);
+    border-radius: 999px;
+    padding: 0.34rem 0.65rem;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    transition: var(--trans-3);
+}
+
+.reaction-btn:hover {
+    border-color: var(--theme-border);
+    color: var(--theme-text-primary);
+    background: var(--theme-surface-hover);
+}
+
+.reaction-btn.active {
+    border-color: #2e90fa;
+    background: color-mix(in srgb, #2e90fa 16%, var(--theme-surface));
+    color: #4ea2ff;
+}
+
+.reaction-btn.active.dislike {
+    border-color: #f04438;
+    background: color-mix(in srgb, #f04438 16%, var(--theme-surface));
+    color: #ff8d85;
+}

@@ -1,0 +1,182 @@
+.PostCard {
+    border: 1px solid var(--theme-border);
+    border-radius: 0.9rem;
+    overflow: visible;
+    background-color: var(--theme-surface);
+    color: var(--theme-text-primary);
+    position: relative;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.PostCard:hover .post-image img {
+    transform: scale(1.05);
+}
+
+.PostCard:hover .post-image::before {
+    left: 125%;
+}
+
+.PostCard .post-image {
+    aspect-ratio: 16/9;
+    background-color: var(--theme-surface-hover);
+    overflow: hidden;
+    position: relative;
+    border-top-left-radius: calc(0.9rem - 2.5px);
+    border-top-right-radius: calc(0.9rem - 2.5px);
+}
+
+.PostCard .post-image::before {
+    content: "";
+    position: absolute;
+    top: -25%;
+    left: -75%;
+    width: 55%;
+    height: 160%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.38) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(12deg);
+    transition: left 0.45s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.PostCard .post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.PostCard .post-image-category {
+    position: absolute;
+    inset-inline-start: 0.8rem;
+    bottom: 0.8rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.36rem 0.72rem;
+    border-radius: 999px;
+    background-color: rgb(16 24 40 / 52%);
+    color: #f8fafc;
+    font-size: 0.78rem;
+    font-weight: 600;
+    backdrop-filter: blur(1.2px);
+}
+
+.PostCard .post-title {
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    line-height: 1.35;
+    color: var(--theme-text-primary);
+    font-weight: 600;
+    padding-inline-end: 4.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.PostCard .post-description {
+    color: var(--theme-text-secondary);
+    line-height: 1.6;
+    font-size: 0.9rem;
+    min-height: 2.9rem;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.PostCard .post-actions {
+    position: absolute;
+    top: 0.8rem;
+    inset-inline-end: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 2;
+}
+
+.PostCard .post-link-btn {
+    position: absolute;
+    inset-inline-start: 0.8rem;
+    top: 0.8rem;
+    z-index: 2;
+    background-color: color-mix(in srgb, var(--theme-surface) 92%, transparent);
+}
+.PostCard .post-link-btn:hover {
+    color: var(--theme-text-primary);
+    border-color: var(--theme-border);
+    background-color: var(--theme-surface-hover);
+    rotate: 360deg;
+}
+
+.PostCard .post-action-btn {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 999px;
+    border: 1px solid var(--theme-border);
+    background-color: var(--theme-surface);
+    color: var(--theme-text-secondary);
+    display: grid;
+    font-size: 0.85rem;
+    place-items: center;
+    transition: var(--trans-3);
+}
+
+.PostCard .post-action-btn:hover {
+    color: var(--theme-text-primary);
+    border-color: var(--theme-border);
+    background-color: var(--theme-surface-hover);
+}
+
+.PostCard .post-meta {
+    color: var(--theme-text-secondary);
+    font-size: 0.85rem;
+}
+
+.PostCard .post-meta .meta-item {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.PostCard .meta-author-name {
+    display: inline-block;
+    max-width: 135px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+
+.PostCard .post-comments-stat {
+    margin-inline-start: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--theme-text-secondary);
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: default;
+}
+
+@media (max-width: 575.98px) {
+    .PostCard .post-title {
+        padding-inline-end: 0;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        line-height: 1.45;
+    }
+}
