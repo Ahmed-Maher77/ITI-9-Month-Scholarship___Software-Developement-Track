@@ -1,0 +1,13 @@
+.Posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+#posts-search-input {
+    padding-left: 2.8rem;
+    @media (max-width: 576px) {
+        max-width: 100%;
+    }
+}
