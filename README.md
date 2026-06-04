@@ -4,7 +4,8 @@
 > **Institute:** Information Technology Institute (ITI), Ministry of Communications and Information Technology (MCIT), Egypt  
 > **Track:** Software Development  
 > **Duration:** 9 Months (≈ 1024 Hours of Intensive Learning)  
-> **Mode:** Full-Time, On-Campus
+> **Mode:** Full-Time, On-Campus <br/>
+> **Intake:** 46
 
 ---
 
