@@ -1,0 +1,20 @@
+# Run the container
+docker run --name cont1 nginx
+
+# Check container status
+docker ps -a
+
+# Stop the container
+docker stop cont1
+
+# Start the stopped container
+docker start cont1
+
+# Stop it again before removing (if still running)
+docker stop cont1
+
+# Remove the container
+docker rm cont1
+
+# Remove the image
+docker rmi nginx
