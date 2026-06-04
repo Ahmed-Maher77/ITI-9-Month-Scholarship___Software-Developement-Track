@@ -210,6 +210,8 @@ Being accepted into the ITI 9-Month Scholarship is a milestone in my professiona
 |           **AI & Prompt Engineering**            | Generative AI and prompt engineering exercises for building AI-powered applications.                                                                    |              [🔗 Assignment](./Assignments/AI%20%26%20Prompt%20Engineering)               |
 |   **AI-powered Coding Assistant Tools**    | Practical use of GitHub Copilot and AI coding assistants to implement algorithms (e.g., QuickSort), debug, document, and build simple interactive UIs. | [🔗 Assignment](<./Assignments/AI-powered%20Coding%20Assistant%20Tools>) |
 
+| **Docker & Kubernetes** | Containerization and orchestration exercises using Docker and Kubernetes for building, containerizing, and deploying microservices. | [🔗 Assignment](./Assignments/Docker) |
+
 ---
 
 |                   **React.js**                    | Front-end assignments and final projects using React (components, hooks, state management, and routing). |                         [🔗 Assignment](./Assignments/React.js)                          |
