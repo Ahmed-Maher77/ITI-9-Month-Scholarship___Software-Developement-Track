@@ -1,0 +1,25 @@
+info:
+  name: Authentication
+  type: folder
+  seq: 1
+
+http:
+  headers:
+    - name: content-type
+      value: application/json
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        // Common tests for auth requests
+        test("Response time is acceptable", function() {
+          expect(res.responseTime).to.be.below(5000);
+        });
+
+docs:
+  content: |-
+    # Authentication Endpoints
+
+    User registration and login endpoints for obtaining JWT tokens.
+  type: text/markdown
