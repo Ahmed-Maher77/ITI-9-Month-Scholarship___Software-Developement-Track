@@ -1,0 +1,18 @@
+# Run container ubuntu in an interactive mode
+docker run -it --name cont2 ubuntu
+
+# 2. Run the command
+echo docker
+
+# Create the file
+>> touch hello-docker
+>> ls
+>> exit
+
+# Stop and remove the container
+docker stop cont2
+docker rm cont2
+
+# Remove all stopped containers
+docker container prune
+// or: docker rm $(docker ps -aq -f status=exited)
