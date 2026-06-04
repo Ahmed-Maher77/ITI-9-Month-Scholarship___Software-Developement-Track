@@ -1,0 +1,34 @@
+# CMD vs ENTRYPOINT
+
+
+
+1. Both of them are running at run time (when the container starts)
+
+2. CMD provides a default command (or default arguments).
+   Example:
+       CMD ["python", "./app.py"]
+
+   Run:
+       docker run customImage
+
+   Executes:
+       python ./app.py
+
+   The user can override CMD completely:
+       docker run customImage ls
+
+   Executes:
+       ls
+
+3. ENTRYPOINT defines the main executable that always runs.
+
+   Example:
+       ENTRYPOINT ["echo"]
+
+   Run:
+       docker run customImage hello world
+
+   Executes:
+       echo hello world
+
+   Here, "hello world" are passed as arguments to the ENTRYPOINT command.
