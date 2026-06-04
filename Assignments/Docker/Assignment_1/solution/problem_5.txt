@@ -1,0 +1,15 @@
+# Create two bridge networks
+docker network create net10 --driver bridge --subnet 10.0.0.0/16
+
+# Run the containers
+docker run -d --name cont10 --network net10 nginx
+docker run -d --name cont20 --network net20 nginx
+
+# Connect cont10 to the second network
+docker network connect net20 cont10
+
+# Enter cont10
+docker exec -it cont10 sh
+
+# Access cont20
+curl http://cont20
