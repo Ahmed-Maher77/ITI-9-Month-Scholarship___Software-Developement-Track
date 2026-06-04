@@ -1,0 +1,26 @@
+# Run the image Nginx
+docker run -d --name cont4 nginx
+
+# Add html static files to the container
+docker exec -it cont4 sh
+echo "<h1>Container Home</h1>" > /usr/share/nginx/html/index.html
+echo "<h1>Container About</h1>" > /usr/share/nginx/html/about.html
+
+ls /usr/share/nginx/html
+
+cat /usr/share/nginx/html/index.html
+cat /usr/share/nginx/html/about.html
+
+exit
+
+
+# Test accessibility:
+docker run -d --name cont4 -p 8080:80 nginx
+
+# Then open:
+http://localhost:8080/
+http://localhost:8080/about.html
+
+
+# Commit the container
+docker commit cont4 IMAGE_NAME
