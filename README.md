@@ -22,7 +22,7 @@ The ITI program aims to bridge the gap between academic education and real indus
 
 | Folder                                                                              | Description                                                                                                                                  |
 | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`/About_Scholarship_and_Tracks - Docs`](./About_Scholarship_and_Tracks%20-%20Docs) | Detailed documents outlining the ITI 9-Month Scholarship, its objectives, tracks, and learning outcomes.                                     |
+| [`/About Scholarship and Tracks - Docs`](./About%20Scholarship%20and%20Tracks%20-%20Docs) | Detailed documents outlining the ITI 9-Month Scholarship, its objectives, tracks, and learning outcomes.                                     |
 | [`/Courses`](./Courses)                                                             | Contains all course-related materials, categorized by chapters and subjects (Software Engineering, Frontend, MEAN Stack, Soft Skills, etc.). |
 | [`/Assignments`](./Assignments)                                                     | Contains technical assignments and their solutions.                                                                                          |
 | [`/Projects`](./Projects)                                                           | Contains practical projects developed during the program.                                                                                    |
