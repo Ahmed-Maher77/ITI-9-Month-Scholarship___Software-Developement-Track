@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workcation</title>
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-200">
+    <!-- Hero Section -->
+    <div class="bg-gray-100 grid lg:grid-cols-2 2xl:grid-cols-5">
+        <div class="px-8 py-12 max-w-md mx-auto sm:max-w-2xl md:max-w-4xl lg:px-12 lg:py-24 lg:max-w-full xl:mr-0 2xl:col-span-2">
+            <div class="xl:max-w-xl">
+                <div class="flex items-center gap-2">
+                    <svg class="h-8 text-sky-500" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+                        <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+                    </svg>
+                    <span class="text-2xl font-bold text-gray-900 tracking-tight">Workcation</span>
+                </div>
+                
+                <img class="mt-6 rounded-lg sm:mt-8 sm:h-64 sm:w-full sm:object-cover object-center lg:hidden" src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=1000" alt="Woman working on beach">
+                
+                <h1 class="mt-6 text-2xl font-bold tracking-tight text-gray-900 sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl">
+                    You can work from anywhere.
+                    <br class="hidden lg:inline"> <span class="text-sky-500">Take advantage of it.</span>
+                </h1>
+                
+                <p class="mt-4 text-gray-600 sm:mt-6 sm:text-xl lg:text-lg xl:text-xl">
+                    Workcation helps you find work-friendly rentals in beautiful locations so you can enjoy some nice weather even when you're not on vacation.
+                </p>
+                
+                <div class="mt-6 sm:mt-8">
+                    <a href="#" class="inline-block px-5 py-3 rounded-lg text-white bg-sky-500 hover:bg-sky-400 active:bg-sky-600 focus:outline-none focus:ring-4 focus:ring-sky-500 focus:ring-opacity-50 uppercase tracking-wider font-semibold text-sm shadow-lg sm:text-base transition">Book your escape</a>
+                </div>
+            </div>
+        </div>
+        <div class="hidden lg:block 2xl:col-span-3 relative">
+            <img class="absolute inset-0 w-full h-full object-cover object-center" src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&q=80&w=1600" alt="Woman working on beach">
+        </div>
+    </div>
+
+    <!-- Destinations Section -->
+    <div class="max-w-md mx-auto sm:max-w-2xl md:max-w-4xl lg:max-w-6xl px-8 lg:px-12 py-12">
+        <h2 class="text-xl text-gray-900 font-semibold">Popular destinations</h2>
+        <p class="text-gray-600 text-sm mt-1 mb-8">A selection of great work-friendly cities with lots to see and explore.</p>
+        
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <!-- Card 1 -->
+            <div class="flex items-center rounded-lg bg-white shadow-md overflow-hidden min-h-32">
+                <img class="w-32 shrink-0 object-cover self-stretch" src="https://images.unsplash.com/photo-1507992781348-310259076fe0?auto=format&fit=crop&q=80&w=300" alt="Toronto">
+                <div class="px-4 py-4 w-full">
+                    <h3 class="text-lg font-semibold text-gray-800">Toronto</h3>
+                    <p class="text-gray-600 text-sm">$120 / night average</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-sky-500 hover:text-sky-600 font-semibold text-sm transition">Explore 76 properties</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flex items-center rounded-lg bg-white shadow-md overflow-hidden min-h-32">
+                <img class="w-32 shrink-0 object-cover self-stretch" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=300" alt="Malibu">
+                <div class="px-4 py-4 w-full">
+                    <h3 class="text-lg font-semibold text-gray-800">Malibu</h3>
+                    <p class="text-gray-600 text-sm">$215 / night average</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-sky-500 hover:text-sky-600 font-semibold text-sm transition">Explore 43 properties</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flex items-center rounded-lg bg-white shadow-md overflow-hidden min-h-32">
+                <img class="w-32 shrink-0 object-cover self-stretch" src="https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&q=80&w=300" alt="Chicago">
+                <div class="px-4 py-4 w-full">
+                    <h3 class="text-lg font-semibold text-gray-800">Chicago</h3>
+                    <p class="text-gray-600 text-sm">$130 / night average</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-sky-500 hover:text-sky-600 font-semibold text-sm transition">Explore 115 properties</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flex items-center rounded-lg bg-white shadow-md overflow-hidden min-h-32">
+                <img class="w-32 shrink-0 object-cover self-stretch" src="https://images.unsplash.com/photo-1502175353174-a7a70e73b362?auto=format&fit=crop&q=80&w=300" alt="Seattle">
+                <div class="px-4 py-4 w-full">
+                    <h3 class="text-lg font-semibold text-gray-800">Seattle</h3>
+                    <p class="text-gray-600 text-sm">$135 / night average</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-sky-500 hover:text-sky-600 font-semibold text-sm transition">Explore 63 properties</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="flex items-center rounded-lg bg-white shadow-md overflow-hidden min-h-32">
+                <img class="w-32 shrink-0 object-cover self-stretch" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=300" alt="Colorado">
+                <div class="px-4 py-4 w-full">
+                    <h3 class="text-lg font-semibold text-gray-800">Colorado</h3>
+                    <p class="text-gray-600 text-sm">$85 / night average</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-sky-500 hover:text-sky-600 font-semibold text-sm transition">Explore 47 properties</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="flex items-center rounded-lg bg-white shadow-md overflow-hidden min-h-32">
+                <img class="w-32 shrink-0 object-cover self-stretch" src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=300" alt="Miami">
+                <div class="px-4 py-4 w-full">
+                    <h3 class="text-lg font-semibold text-gray-800">Miami</h3>
+                    <p class="text-gray-600 text-sm">$115 / night average</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-sky-500 hover:text-sky-600 font-semibold text-sm transition">Explore 86 properties</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

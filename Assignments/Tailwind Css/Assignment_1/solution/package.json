@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  },
+  "scripts": {
+    "build:css": "node ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./input.css -o ./output.css --watch"
+  }
+}
