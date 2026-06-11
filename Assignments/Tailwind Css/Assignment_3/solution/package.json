@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "daisyui": "^5.5.23",
+    "tailwindcss": "^4.3.0"
+  },
+  "scripts": {
+    "build": "node ./node_modules/@tailwindcss/cli/dist/index.mjs -i ./src/input.css -o ./dist/output.css --watch"
+  }
+}
