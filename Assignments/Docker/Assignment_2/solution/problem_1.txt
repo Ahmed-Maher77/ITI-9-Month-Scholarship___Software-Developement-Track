@@ -1,0 +1,27 @@
+# Create volume
+docker volume create my-volume
+
+# Run first container
+docker run -d \
+  --name my-nginx \
+  -v my-volume:/usr/share/nginx/html \
+  nginx
+
+# Enter container
+docker exec -it my-nginx sh
+
+# Create HTML file
+echo "<h1>Heading</h1>" > /usr/share/nginx/html/index.html
+echo "<p>Sub Heading</p>" >> /usr/share/nginx/html/index.html
+
+exit
+
+# Remove container
+docker rm -f my-nginx
+
+# Run new container using same volume
+docker run -d \
+  --name new-nginx \
+  -p 8080:80 \
+  -v my-volume:/usr/share/nginx/html \
+  nginx
