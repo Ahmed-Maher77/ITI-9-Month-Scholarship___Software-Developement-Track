@@ -1,0 +1,250 @@
+<section class="admin-directory">
+  <header
+    class="admin-entity-page__header d-flex justify-content-between align-items-start gap-3 flex-wrap"
+  >
+    <app-highlighted-page-heading
+      titlePrefix="Member"
+      titleHighlight="Directory"
+      subtitle="Review user accounts, roles, and registration activity."
+      headingLevel="h2"
+      containerClass="admin-heading--container"
+      titleClass="admin-heading--title"
+      subtitleClass="admin-heading--subtitle"
+    />
+    <app-button
+      label="Create Admin"
+      variant="primary"
+      size="md"
+      [rounded]="true"
+      leftIcon="fa-solid fa-user-plus"
+      customClass="admin-entity-page__primary-btn diagonal-swipe-hover"
+      (pressed)="openCreateAdminModal()"
+    />
+  </header>
+
+  <div class="admin-entity-page__catalog-filters-wrap">
+    <div class="admin-entity-page__catalog-filters-bar">
+      <button
+        type="button"
+        id="directory-filters-toggle"
+        class="admin-entity-page__filters-toggle"
+        [attr.aria-expanded]="directoryFiltersExpanded()"
+        aria-controls="directory-filters-panel"
+        (click)="toggleDirectoryFilters()"
+      >
+        <i
+          class="fa-solid fa-chevron-right admin-entity-page__filters-toggle-icon"
+          aria-hidden="true"
+        ></i>
+        <span>Filters &amp; sort</span>
+      </button>
+      <button
+        type="button"
+        class="admin-entity-page__catalog-clear-btn"
+        aria-label="Clear filters"
+        title="Clear filters"
+        (click)="clearDirectoryFilters()"
+      >
+        <i class="fa-solid fa-filter-circle-xmark" aria-hidden="true"></i>
+        <span class="admin-entity-page__catalog-clear-label">Clear Filters</span>
+      </button>
+    </div>
+
+    <div
+      id="directory-filters-panel"
+      class="admin-entity-page__catalog-filters-body"
+      [class.is-open]="directoryFiltersExpanded()"
+      role="region"
+      aria-labelledby="directory-filters-toggle"
+      [attr.aria-hidden]="!directoryFiltersExpanded()"
+    >
+      <div class="admin-entity-page__catalog-filters-inner">
+        <div class="admin-entity-page__catalog-filters" [formGroup]="directoryFilterForm">
+          <div class="admin-entity-page__catalog-filters-grid">
+            <label class="admin-entity-page__filter-field admin-entity-page__filter-field--search">
+              <span class="admin-entity-page__filter-label">Search</span>
+              <input
+                class="admin-entity-page__filter-input"
+                type="search"
+                formControlName="search"
+                placeholder="Name or email"
+                autocomplete="off"
+              />
+            </label>
+            <label class="admin-entity-page__filter-field">
+              <span class="admin-entity-page__filter-label">Role</span>
+              <app-custom-native-select
+                formControlName="role"
+                [options]="directoryRoleOptions"
+                selectClass="admin-entity-page__filter-input"
+              />
+            </label>
+            <label class="admin-entity-page__filter-field">
+              <span class="admin-entity-page__filter-label">Sort by</span>
+              <app-custom-native-select
+                formControlName="sort"
+                [options]="directorySortOptions"
+                selectClass="admin-entity-page__filter-input"
+              />
+            </label>
+            <label class="admin-entity-page__filter-field">
+              <span class="admin-entity-page__filter-label">Order</span>
+              <app-custom-native-select
+                formControlName="order"
+                [options]="directoryOrderOptions"
+                selectClass="admin-entity-page__filter-input"
+              />
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-entity-page__panel table-responsive">
+    <app-admin-list-state
+      [isLoading]="isLoading()"
+      [errorMessage]="errorMessage()"
+      loadingLabel="Loading member directory"
+    />
+    @if (!isLoading() && !errorMessage() && !rows().length && totalListItems() === 0) {
+      @if (hasActiveDirectoryFilters()) {
+        <p class="admin-entity-page__state-message">No members match your filters.</p>
+      } @else {
+        <p class="admin-entity-page__state-message">No members yet.</p>
+      }
+    } @else if (!isLoading() && !errorMessage()) {
+      <table class="table admin-entity-page__table align-middle mb-0">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Joined</th>
+            <th class="text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of rows(); track row._id) {
+            <tr>
+              <td>{{ row.name }}</td>
+              <td>{{ row.email }}</td>
+              <td>
+                <span class="admin-directory__pill">{{ row.role | titlecase }}</span>
+              </td>
+              <td>
+                <span
+                  class="admin-directory__status-pill"
+                  [class.is-inactive]="row.isActive === false"
+                >
+                  {{ row.isActive === false ? 'Inactive' : 'Active' }}
+                </span>
+              </td>
+              <td>{{ row.createdAt | date: 'mediumDate' }}</td>
+              <td class="text-end">
+                <button
+                  type="button"
+                  class="admin-entity-page__icon-btn admin-directory__view-btn"
+                  aria-label="View user details"
+                  [disabled]="isUserActionDisabled(row)"
+                  (click)="goToUserDetail(row)"
+                >
+                  <i class="fa-regular fa-eye" aria-hidden="true"></i>
+                </button>
+                <button
+                  type="button"
+                  class="admin-directory__row-action"
+                  [class.is-danger]="row.isActive !== false"
+                  [disabled]="isUserActionDisabled(row)"
+                  (click)="requestStatusToggle(row)"
+                >
+                  {{ row.isActive === false ? 'Reactivate' : 'Deactivate' }}
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+
+      <app-admin-entity-pagination
+        [currentPage]="listPage()"
+        [totalPages]="listTotalPages()"
+        [totalItems]="totalListItems()"
+        itemLabel="members"
+        ariaLabel="Member directory pagination"
+        (pageChange)="onListPageChange($event)"
+      />
+    }
+  </div>
+</section>
+
+@if (pendingAction(); as pending) {
+  <div
+    class="admin-confirm-modal is-open"
+    role="alertdialog"
+    aria-modal="true"
+    aria-labelledby="member-action-dialog-title"
+    aria-describedby="member-action-dialog-desc"
+  >
+    <button
+      type="button"
+      class="admin-confirm-modal__backdrop"
+      aria-label="Cancel action"
+      [disabled]="isUserActionDisabled(pending.user)"
+      (click)="closePendingActionModal()"
+    ></button>
+    <div class="admin-confirm-modal__panel">
+      <h3 id="member-action-dialog-title" class="admin-confirm-modal__title">
+        @if (pending.type === 'role') {
+          Change member role?
+        } @else {
+          {{ pending.nextIsActive ? 'Reactivate member?' : 'Deactivate member?' }}
+        }
+      </h3>
+      <p id="member-action-dialog-desc" class="admin-confirm-modal__text">
+        @if (pending.type === 'role') {
+          Update role for
+          <strong>{{ pending.user.name }}</strong>
+          to
+          <strong>{{ pending.nextRole === 'admin' ? 'Admin' : 'User' }}</strong
+          >.
+        } @else {
+          @if (pending.nextIsActive) {
+            Restore account access for
+            <strong>{{ pending.user.name }}</strong
+            >.
+          } @else {
+            Disable account access for
+            <strong>{{ pending.user.name }}</strong
+            >.
+          }
+        }
+      </p>
+      <div class="admin-confirm-modal__actions">
+        <app-button
+          label="Cancel"
+          variant="outline"
+          size="md"
+          [rounded]="true"
+          [disabled]="isUserActionDisabled(pending.user)"
+          customClass="diagonal-swipe-hover"
+          (pressed)="closePendingActionModal()"
+        />
+        <app-button
+          label="Confirm"
+          variant="primary"
+          size="md"
+          [rounded]="true"
+          [loading]="isUserActionDisabled(pending.user)"
+          customClass="diagonal-swipe-hover"
+          (pressed)="confirmPendingAction()"
+        />
+      </div>
+    </div>
+  </div>
+}
+
+@if (isCreateModalOpen()) {
+  <app-admin-create-admin-modal (closed)="closeCreateAdminModal()" (saved)="onAdminCreated()" />
+}

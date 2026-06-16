@@ -1,3 +1,205 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@layer components {
+
+  /* ── Page ─────── */
+  .page-body {
+    @apply bg-gray-200 dark:bg-gray-900 transition-colors duration-300;
+  }
+
+  /* ── Navbar ───── */
+  .site-navbar {
+    @apply flex items-center justify-between
+           bg-white dark:bg-gray-800
+           shadow-md transition-colors duration-300
+           px-4 sm:px-8 lg:px-12 h-16;
+  }
+  .navbar-left {
+    @apply flex-1;
+  }
+  .navbar-center {
+    @apply hidden sm:flex items-center gap-1;
+  }
+  .navbar-right {
+    @apply flex items-center gap-3;
+  }
+  .navbar-brand {
+    @apply inline-flex items-center gap-2 px-3 py-2
+           text-xl font-semibold
+           text-gray-900 dark:text-white
+           hover:bg-gray-100 dark:hover:bg-gray-700
+           rounded-lg transition-colors duration-200;
+  }
+  .brand-icon-sm {
+    @apply h-6 w-6 text-sky-500 shrink-0;
+  }
+  .navbar-link {
+    @apply px-3 py-2 rounded-md text-sm font-medium
+           text-gray-700 dark:text-gray-200
+           hover:text-sky-500 dark:hover:text-sky-400
+           hover:bg-gray-100 dark:hover:bg-gray-700
+           transition-colors duration-200;
+  }
+  .navbar-signin-btn {
+    @apply px-4 py-2 rounded-lg text-sm font-semibold
+           bg-sky-500 hover:bg-sky-400 active:bg-sky-600
+           text-white transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2;
+  }
+
+  /* ── Theme Toggle ─────────── */
+  .theme-toggle-btn {
+    @apply flex items-center justify-center w-9 h-9
+           rounded-full bg-gray-100 dark:bg-gray-700
+           text-gray-600 dark:text-yellow-400
+           hover:scale-110 transition-transform duration-200
+           focus:outline-none focus:ring-2 focus:ring-sky-500;
+  }
+  .theme-toggle-icon {
+    @apply w-5 h-5;
+  }
+
+  /* ── Modal ───────────────── */
+  .modal-overlay {
+    @apply fixed inset-0 z-50
+           flex items-center justify-center p-4
+           bg-black/50 backdrop-blur-sm
+           opacity-0 invisible
+           transition-all duration-300;
+  }
+  .modal-overlay.open {
+    @apply opacity-100 visible;
+  }
+  .modal-overlay.open .modal-box {
+    @apply scale-100 opacity-100;
+  }
+
+  .modal-box {
+    @apply w-full max-w-md
+           bg-white dark:bg-gray-800
+           rounded-2xl shadow-2xl
+           p-6 space-y-4
+           scale-95 opacity-0
+           transition-all duration-300;
+  }
+  .modal-header {
+    @apply flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700;
+  }
+  .modal-title {
+    @apply text-xl font-bold text-gray-900 dark:text-white;
+  }
+  .modal-close-btn {
+    @apply p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors;
+  }
+  .modal-subtitle {
+    @apply px-6 py-4 text-gray-600 dark:text-gray-400 text-sm;
+  }
+  .modal-form {
+    @apply p-6 space-y-4;
+  }
+  .form-group {
+    @apply flex flex-col gap-1;
+  }
+  .form-label {
+    @apply text-sm font-medium text-gray-700 dark:text-gray-300;
+  }
+  .form-input {
+    @apply w-full px-3 py-2 rounded-lg text-sm
+           bg-gray-50 dark:bg-gray-700
+           text-gray-900 dark:text-white
+           border border-gray-300 dark:border-gray-600
+           placeholder-gray-400 dark:placeholder-gray-500
+           focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent
+           transition-all duration-200;
+  }
+  .form-submit-btn {
+    @apply w-full mt-1 px-4 py-2.5 rounded-lg
+           bg-sky-500 hover:bg-sky-400 active:bg-sky-600
+           text-white text-sm font-semibold
+           transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* ── Hero ─────── */
+  .hero-wrapper {
+    @apply bg-gray-100 dark:bg-gray-800 grid lg:grid-cols-2 2xl:grid-cols-5 transition-colors duration-300;
+  }
+  .hero-content {
+    @apply px-8 py-12 max-w-md mx-auto sm:max-w-2xl md:max-w-4xl lg:px-12 lg:py-24 lg:max-w-full xl:mr-0 2xl:col-span-2;
+  }
+  .hero-inner {
+    @apply xl:max-w-xl;
+  }
+  .brand-row {
+    @apply flex items-center gap-2;
+  }
+  .brand-icon {
+    @apply h-8 text-sky-500;
+  }
+  .brand-name {
+    @apply text-2xl font-bold text-gray-900 dark:text-white tracking-tight transition-colors duration-300;
+  }
+  .hero-image-mobile {
+    @apply mt-6 rounded-lg sm:mt-8 sm:h-64 sm:w-full sm:object-cover object-center lg:hidden;
+  }
+  .hero-title {
+    @apply mt-6 text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl transition-colors duration-300;
+  }
+  .hero-title-accent {
+    @apply text-sky-500;
+  }
+  .hero-text {
+    @apply mt-4 text-gray-600 dark:text-gray-300 sm:mt-6 sm:text-xl lg:text-lg xl:text-xl transition-colors duration-300;
+  }
+  .hero-cta-wrapper {
+    @apply mt-6 sm:mt-8;
+  }
+  .hero-cta-btn {
+    @apply inline-block px-5 py-3 rounded-lg text-white bg-sky-500 hover:bg-sky-400 active:bg-sky-600 focus:outline-none focus:ring-4 focus:ring-sky-500/50 uppercase tracking-wider font-semibold text-sm shadow-lg sm:text-base transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-xl;
+  }
+  .hero-image-wrapper {
+    @apply hidden lg:block 2xl:col-span-3 relative;
+  }
+  .hero-image-desktop {
+    @apply absolute inset-0 w-full h-full object-cover object-center;
+  }
+
+  /* ── Destinations ───────── */
+  .destinations-section {
+    @apply max-w-md mx-auto sm:max-w-2xl md:max-w-4xl lg:max-w-6xl px-8 lg:px-12 py-12;
+  }
+  .destinations-title {
+    @apply text-xl text-gray-900 dark:text-white font-semibold transition-colors duration-300;
+  }
+  .destinations-subtitle {
+    @apply text-gray-600 dark:text-gray-400 text-sm mt-1 mb-8 transition-colors duration-300;
+  }
+  .destinations-grid {
+    @apply grid gap-6 md:grid-cols-2 xl:grid-cols-3;
+  }
+  .destination-card {
+    @apply flex items-center rounded-lg bg-white dark:bg-gray-800 shadow-md overflow-hidden min-h-32 transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer;
+  }
+  .destination-card-img {
+    @apply w-32 shrink-0 object-cover self-stretch;
+  }
+  .destination-card-body {
+    @apply px-4 py-4 w-full;
+  }
+  .destination-card-title {
+    @apply text-lg font-semibold text-gray-800 dark:text-white transition-colors duration-300;
+  }
+  .destination-card-price {
+    @apply text-gray-600 dark:text-gray-400 text-sm transition-colors duration-300;
+  }
+  .destination-card-link-wrapper {
+    @apply mt-3;
+  }
+  .destination-card-link {
+    @apply text-sky-500 hover:text-sky-600 dark:hover:text-sky-400 font-semibold text-sm transition-colors duration-300;
+  }
+}

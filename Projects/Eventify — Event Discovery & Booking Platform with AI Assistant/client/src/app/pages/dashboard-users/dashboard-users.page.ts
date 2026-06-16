@@ -1,0 +1,293 @@
+import { CommonModule } from '@angular/common';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Component, OnDestroy, OnInit, inject, signal } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Subject, debounceTime, distinctUntilChanged, finalize, takeUntil } from 'rxjs';
+import {
+  ADMIN_LIST_PAGE_SIZE,
+  AdminDashboardService,
+  AdminUserListItem,
+} from '../../services/admin-dashboard.service';
+import { AdminEntityPaginationComponent } from '../../shared/admin-entity-pagination/admin-entity-pagination.component';
+import { Button } from '../../shared/button/button';
+import { AdminCreateAdminModalComponent } from '../../shared/admin-create-admin-modal/admin-create-admin-modal.component';
+import {
+  CustomNativeSelectComponent,
+  CustomNativeSelectOption,
+} from '../../shared/custom-native-select/custom-native-select';
+import { HighlightedPageHeadingComponent } from '../../shared/highlighted-page-heading/highlighted-page-heading';
+import { ToastService } from '../../services/toast.service';
+import { MemberSortField, MemberSortOrder } from './dashboard-users.page.types';
+import { AdminListStateComponent } from '../../shared/admin-list-state/admin-list-state.component';
+
+@Component({
+  selector: 'app-dashboard-users-page',
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    HighlightedPageHeadingComponent,
+    Button,
+    CustomNativeSelectComponent,
+    AdminEntityPaginationComponent,
+    AdminCreateAdminModalComponent,
+    AdminListStateComponent,
+  ],
+  templateUrl: './dashboard-users.page.html',
+  styleUrl: './dashboard-users.page.scss',
+})
+export class DashboardUsersPage implements OnInit, OnDestroy {
+  private readonly adminApi = inject(AdminDashboardService);
+  private readonly fb = inject(FormBuilder);
+  private readonly router = inject(Router);
+  private readonly toastService = inject(ToastService);
+  private readonly destroy$ = new Subject<void>();
+
+  protected readonly directorySortOptions: CustomNativeSelectOption[] = [
+    { value: 'createdAt', label: 'Joined' },
+    { value: 'name', label: 'Name' },
+    { value: 'email', label: 'Email' },
+    { value: 'role', label: 'Role' },
+  ];
+
+  protected readonly directoryOrderOptions: CustomNativeSelectOption[] = [
+    { value: 'asc', label: 'Ascending' },
+    { value: 'desc', label: 'Descending' },
+  ];
+
+  protected readonly directoryRoleOptions: CustomNativeSelectOption[] = [
+    { value: '', label: 'All roles' },
+    { value: 'user', label: 'User' },
+    { value: 'admin', label: 'Admin' },
+  ];
+
+  protected readonly directoryFilterForm = this.fb.nonNullable.group({
+    search: [''],
+    role: [''],
+    sort: ['createdAt' as MemberSortField],
+    order: ['desc' as MemberSortOrder],
+  });
+
+  protected readonly isLoading = signal(true);
+  protected readonly errorMessage = signal<string | null>(null);
+  protected readonly listPage = signal(1);
+  protected readonly listTotalPages = signal(1);
+  protected readonly totalListItems = signal(0);
+  protected readonly rows = signal<AdminUserListItem[]>([]);
+  protected readonly directoryFiltersExpanded = signal(false);
+  protected readonly isCreateModalOpen = signal(false);
+  protected readonly actionInProgressId = signal<string | null>(null);
+  protected readonly pendingAction = signal<{
+    type: 'role' | 'status';
+    user: AdminUserListItem;
+    nextRole?: 'admin' | 'user';
+    nextIsActive?: boolean;
+  } | null>(null);
+
+  ngOnInit(): void {
+    this.directoryFilterForm.valueChanges
+      .pipe(
+        debounceTime(280),
+        distinctUntilChanged((a, b) => JSON.stringify(a) === JSON.stringify(b)),
+        takeUntil(this.destroy$),
+      )
+      .subscribe(() => {
+        this.listPage.set(1);
+        this.loadUsers();
+      });
+
+    this.loadUsers();
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  protected onListPageChange(page: number): void {
+    this.listPage.set(page);
+    this.loadUsers();
+  }
+
+  protected toggleDirectoryFilters(): void {
+    this.directoryFiltersExpanded.update((open) => !open);
+  }
+
+  protected clearDirectoryFilters(): void {
+    this.directoryFilterForm.reset(
+      {
+        search: '',
+        role: '',
+        sort: 'createdAt',
+        order: 'desc',
+      },
+      { emitEvent: false },
+    );
+    this.listPage.set(1);
+    this.loadUsers();
+  }
+
+  protected hasActiveDirectoryFilters(): boolean {
+    const v = this.directoryFilterForm.getRawValue();
+    return !!((v.search ?? '').trim() || (v.role ?? '').trim());
+  }
+
+  protected goToUserDetail(user: AdminUserListItem): void {
+    void this.router.navigate(['/dashboard/users', user._id]);
+  }
+
+  protected requestRoleToggle(user: AdminUserListItem): void {
+    const nextRole = user.role === 'admin' ? 'user' : 'admin';
+    this.pendingAction.set({ type: 'role', user, nextRole });
+  }
+
+  protected requestStatusToggle(user: AdminUserListItem): void {
+    const nextIsActive = !(user.isActive ?? true);
+    this.pendingAction.set({ type: 'status', user, nextIsActive });
+  }
+
+  protected closePendingActionModal(): void {
+    if (this.actionInProgressId()) {
+      return;
+    }
+    this.pendingAction.set(null);
+  }
+
+  protected confirmPendingAction(): void {
+    const pending = this.pendingAction();
+    if (!pending) {
+      return;
+    }
+    if (pending.type === 'role') {
+      this.executeRoleChange(pending.user, pending.nextRole ?? 'user');
+      return;
+    }
+    this.executeStatusChange(pending.user, pending.nextIsActive ?? true);
+  }
+
+  protected isUserActionDisabled(user: AdminUserListItem): boolean {
+    return this.actionInProgressId() === user._id;
+  }
+
+  protected openCreateAdminModal(): void {
+    this.isCreateModalOpen.set(true);
+  }
+
+  protected closeCreateAdminModal(): void {
+    this.isCreateModalOpen.set(false);
+  }
+
+  protected onAdminCreated(): void {
+    this.loadUsers();
+    this.closeCreateAdminModal();
+  }
+
+  private executeRoleChange(user: AdminUserListItem, role: 'admin' | 'user'): void {
+    this.actionInProgressId.set(user._id);
+    this.errorMessage.set(null);
+
+    this.adminApi
+      .updateUserRole(user._id, role)
+      .pipe(finalize(() => this.actionInProgressId.set(null)))
+      .subscribe({
+        next: () => {
+          this.pendingAction.set(null);
+          this.rows.update((rows) =>
+            rows.map((row) => (row._id === user._id ? { ...row, role } : row)),
+          );
+          this.toastService.showSuccess(
+            role === 'admin' ? 'User promoted to admin.' : 'User changed to regular member.',
+          );
+        },
+        error: (err: HttpErrorResponse) => {
+          const msg = err.error?.message;
+          this.errorMessage.set(
+            typeof msg === 'string' && msg.trim()
+              ? msg
+              : 'Unable to update role. Please try again.',
+          );
+        },
+      });
+  }
+
+  private executeStatusChange(user: AdminUserListItem, isActive: boolean): void {
+    this.actionInProgressId.set(user._id);
+    this.errorMessage.set(null);
+
+    this.adminApi
+      .updateUserStatus(user._id, isActive)
+      .pipe(finalize(() => this.actionInProgressId.set(null)))
+      .subscribe({
+        next: () => {
+          this.pendingAction.set(null);
+          this.rows.update((rows) =>
+            rows.map((row) => (row._id === user._id ? { ...row, isActive } : row)),
+          );
+          this.toastService.showSuccess(
+            isActive ? 'User account reactivated.' : 'User account deactivated.',
+          );
+        },
+        error: (err: HttpErrorResponse) => {
+          const msg = err.error?.message;
+          this.errorMessage.set(
+            typeof msg === 'string' && msg.trim()
+              ? msg
+              : 'Unable to update account status. Please try again.',
+          );
+        },
+      });
+  }
+
+  private loadUsers(): void {
+    this.isLoading.set(true);
+    this.errorMessage.set(null);
+
+    const v = this.directoryFilterForm.getRawValue();
+    const search = (v.search ?? '').trim();
+    const role = (v.role ?? '').trim();
+
+    this.adminApi
+      .getUsers({
+        page: this.listPage(),
+        limit: ADMIN_LIST_PAGE_SIZE,
+        ...(search ? { search } : {}),
+        ...(role === 'admin' || role === 'user' ? { role } : {}),
+        sort: (v.sort || 'createdAt') as MemberSortField,
+        order: (v.order || 'desc') as MemberSortOrder,
+      })
+      .pipe(finalize(() => this.isLoading.set(false)))
+      .subscribe({
+        next: (res) => {
+          const data = res.data;
+          const list = data?.users ?? [];
+          const pag = data?.pagination;
+          const totalPages = Math.max(1, pag?.totalPages ?? 1);
+          const total = pag?.totalUsers ?? 0;
+          let page = this.listPage();
+
+          if (page > totalPages && totalPages >= 1) {
+            page = totalPages;
+            this.listPage.set(page);
+            this.loadUsers();
+            return;
+          }
+
+          this.rows.set(list);
+          this.listTotalPages.set(totalPages);
+          this.totalListItems.set(total);
+        },
+        error: (err: HttpErrorResponse) => {
+          this.rows.set([]);
+          this.listTotalPages.set(1);
+          this.totalListItems.set(0);
+          const msg = err.error?.message;
+          this.errorMessage.set(
+            typeof msg === 'string' && msg.trim()
+              ? msg
+              : 'Unable to load members. Please try again.',
+          );
+        },
+      });
+  }
+}
