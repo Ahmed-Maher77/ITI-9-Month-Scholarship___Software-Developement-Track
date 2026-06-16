@@ -1,0 +1,362 @@
+<section class="static-info-page">
+  <div class="container static-info-page__container">
+    <app-highlighted-page-heading
+      titlePrefix="My"
+      titleHighlight="Profile"
+      subtitle="Manage your personal information and account preferences from one place."
+      titleClass="static-info-page__title"
+      subtitleClass="static-info-page__subtitle"
+    />
+
+    <div class="row g-4 profile-page__layout">
+      <aside class="col-12 col-lg-4">
+        <section class="profile-page__card profile-page__card--sidebar">
+          <app-profile-avatar-editor
+            [imageUrl]="getProfileImageUrl()"
+            [altText]="(profileForm.controls.fullName.value || 'User') + ' profile picture'"
+            [busy]="updateAvatarBusy()"
+            (fileSelected)="onAvatarFileSelected($event)"
+          />
+          <h2 class="profile-page__name">{{ profileForm.controls.fullName.value }}</h2>
+          <p class="profile-page__email">{{ profileForm.controls.email.value }}</p>
+          <span class="profile-page__role-badge">{{ authService.userData?.role ?? 'user' }}</span>
+
+          <div class="profile-page__stats">
+            @for (stat of quickStats; track stat.label) {
+              <article class="profile-page__stat-chip profile-page__stat-chip--{{ stat.tone }}">
+                <p class="profile-page__stat-value">{{ stat.value }}</p>
+                <p class="profile-page__stat-label">{{ stat.label }}</p>
+              </article>
+            }
+          </div>
+
+          <div class="profile-page__sidebar-actions">
+            <app-button
+              [label]="isProfileEditMode() ? 'Cancel Editing' : 'Edit Profile'"
+              [variant]="isProfileEditMode() ? 'outline' : 'primary'"
+              size="md"
+              [fullWidth]="true"
+              [rounded]="true"
+              [disabled]="saveProfileBusy() || updatePasswordBusy()"
+              customClass="profile-page__btn profile-page__btn--primary diagonal-swipe-hover"
+              (pressed)="toggleProfileEditMode()"
+            />
+            <app-button
+              label="Logout"
+              variant="ghost"
+              size="md"
+              [fullWidth]="true"
+              [rounded]="true"
+              rightIcon="fa-solid fa-right-from-bracket"
+              customClass="profile-page__btn profile-page__btn--change-password eventify-header__login-btn laser-sweep-hover"
+              (pressed)="logout()"
+            />
+          </div>
+        </section>
+      </aside>
+
+      <div class="col-12 col-lg-8">
+        <div class="profile-page__content-stack">
+          <section
+            class="profile-page__card"
+            [class.profile-page__card--readonly]="!isProfileEditMode()"
+          >
+            <header class="profile-page__card-header">
+              <h2 class="profile-page__card-title">Personal Information</h2>
+              <p class="profile-page__card-subtitle">Keep your profile details up to date.</p>
+            </header>
+
+            <form class="row g-3" [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+              <div class="col-12 col-md-6">
+                <label for="profile-full-name" class="profile-page__label">Full Name</label>
+                <input
+                  id="profile-full-name"
+                  type="text"
+                  class="profile-page__input"
+                  formControlName="fullName"
+                  placeholder="Your full name"
+                  [readonly]="!isProfileEditMode()"
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="profile-phone" class="profile-page__label">Phone</label>
+                <input
+                  id="profile-phone"
+                  type="tel"
+                  class="profile-page__input"
+                  formControlName="phone"
+                  placeholder="+20 1x xxx xxxx"
+                  [readonly]="!isProfileEditMode()"
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="profile-location" class="profile-page__label">City / Country</label>
+                <input
+                  id="profile-location"
+                  type="text"
+                  class="profile-page__input"
+                  formControlName="location"
+                  placeholder="Cairo, Egypt"
+                  [readonly]="!isProfileEditMode()"
+                />
+              </div>
+              @if (isProfileEditMode()) {
+                <div class="col-12">
+                  <app-button
+                    label="Save Changes"
+                    variant="primary"
+                    size="md"
+                    buttonType="submit"
+                    [rounded]="true"
+                    [loading]="saveProfileBusy()"
+                    [disabled]="saveProfileBusy()"
+                    customClass="profile-page__btn profile-page__btn--primary diagonal-swipe-hover"
+                  />
+                </div>
+              }
+            </form>
+          </section>
+
+          @if (isProfileEditMode()) {
+            <section class="profile-page__card">
+              <header class="profile-page__card-header">
+                <h2 class="profile-page__card-title">Security</h2>
+                <p class="profile-page__card-subtitle">
+                  Update your password to keep your account secure.
+                </p>
+              </header>
+
+              <form class="row g-3" [formGroup]="passwordForm" (ngSubmit)="updatePassword()">
+                <div class="col-12">
+                  <label for="profile-current-password" class="profile-page__label"
+                    >Current Password</label
+                  >
+                  <div class="profile-page__password-wrap">
+                    <input
+                      id="profile-current-password"
+                      [type]="isCurrentPasswordVisible() ? 'text' : 'password'"
+                      class="profile-page__input profile-page__input--password"
+                      formControlName="currentPassword"
+                      placeholder="Enter current password"
+                    />
+                    <button
+                      type="button"
+                      class="profile-page__password-toggle"
+                      [attr.aria-label]="
+                        isCurrentPasswordVisible() ? 'Hide password' : 'Show password'
+                      "
+                      (click)="togglePasswordVisibility('current')"
+                    >
+                      <i
+                        [class]="
+                          isCurrentPasswordVisible()
+                            ? 'fa-regular fa-eye-slash'
+                            : 'fa-regular fa-eye'
+                        "
+                      ></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="profile-new-password" class="profile-page__label">New Password</label>
+                  <div class="profile-page__password-wrap">
+                    <input
+                      id="profile-new-password"
+                      [type]="isNewPasswordVisible() ? 'text' : 'password'"
+                      class="profile-page__input profile-page__input--password"
+                      formControlName="newPassword"
+                      placeholder="Create new password"
+                    />
+                    <button
+                      type="button"
+                      class="profile-page__password-toggle"
+                      [attr.aria-label]="isNewPasswordVisible() ? 'Hide password' : 'Show password'"
+                      (click)="togglePasswordVisibility('new')"
+                    >
+                      <i
+                        [class]="
+                          isNewPasswordVisible() ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye'
+                        "
+                      ></i>
+                    </button>
+                  </div>
+
+                  <ul class="profile-page__password-checklist">
+                    <li [class.is-met]="hasMinLength">
+                      <i class="fa-solid fa-circle-check"></i> At least 6 characters
+                    </li>
+                    <li [class.is-met]="hasUppercase">
+                      <i class="fa-solid fa-circle-check"></i> One uppercase letter
+                    </li>
+                    <li [class.is-met]="hasLowercase">
+                      <i class="fa-solid fa-circle-check"></i> One lowercase letter
+                    </li>
+                    <li [class.is-met]="hasNumber">
+                      <i class="fa-solid fa-circle-check"></i> One number
+                    </li>
+                    <li [class.is-met]="hasSpecialCharacter">
+                      <i class="fa-solid fa-circle-check"></i> One special character (@$!%*?&)
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-12">
+                  <label for="profile-confirm-password" class="profile-page__label"
+                    >Confirm Password</label
+                  >
+                  <div class="profile-page__password-wrap">
+                    <input
+                      id="profile-confirm-password"
+                      [type]="isConfirmPasswordVisible() ? 'text' : 'password'"
+                      class="profile-page__input profile-page__input--password"
+                      formControlName="confirmPassword"
+                      placeholder="Confirm new password"
+                    />
+                    <button
+                      type="button"
+                      class="profile-page__password-toggle"
+                      [attr.aria-label]="
+                        isConfirmPasswordVisible() ? 'Hide password' : 'Show password'
+                      "
+                      (click)="togglePasswordVisibility('confirm')"
+                    >
+                      <i
+                        [class]="
+                          isConfirmPasswordVisible()
+                            ? 'fa-regular fa-eye-slash'
+                            : 'fa-regular fa-eye'
+                        "
+                      ></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <app-button
+                    label="Update Password"
+                    variant="primary"
+                    size="md"
+                    buttonType="submit"
+                    [rounded]="true"
+                    [loading]="updatePasswordBusy()"
+                    [disabled]="updatePasswordBusy()"
+                    customClass="profile-page__btn profile-page__btn--primary diagonal-swipe-hover"
+                  />
+                </div>
+              </form>
+            </section>
+          }
+
+          <section class="profile-page__card">
+            <header class="profile-page__card-header">
+              <h2 class="profile-page__card-title">Account Preferences</h2>
+              <p class="profile-page__card-subtitle">
+                Control your communication and reminder settings.
+              </p>
+            </header>
+
+            <div class="profile-page__preferences">
+              <label class="profile-page__toggle">
+                <input
+                  type="checkbox"
+                  [disabled]="!isProfileEditMode()"
+                  [checked]="emailNotificationsEnabled()"
+                  (change)="togglePreference('emailNotificationsEnabled')"
+                />
+                <span>Email notifications</span>
+              </label>
+              <label class="profile-page__toggle">
+                <input
+                  type="checkbox"
+                  [disabled]="!isProfileEditMode()"
+                  [checked]="marketingUpdatesEnabled()"
+                  (change)="togglePreference('marketingUpdatesEnabled')"
+                />
+                <span>Marketing updates</span>
+              </label>
+              <label class="profile-page__toggle">
+                <input
+                  type="checkbox"
+                  [disabled]="!isProfileEditMode()"
+                  [checked]="bookingRemindersEnabled()"
+                  (change)="togglePreference('bookingRemindersEnabled')"
+                />
+                <span>Booking reminders</span>
+              </label>
+            </div>
+          </section>
+
+          <section class="profile-page__card profile-page__card--danger">
+            <header class="profile-page__card-header">
+              <p class="profile-page__danger-label">Danger</p>
+              <h2 class="profile-page__card-title">Danger Zone</h2>
+              <p class="profile-page__card-subtitle">
+                These actions affect your account session and data.
+              </p>
+            </header>
+
+            <div class="profile-page__danger-actions">
+              <app-button
+                label="Delete Account"
+                variant="primary"
+                size="md"
+                [rounded]="true"
+                leftIcon="fa-solid fa-trash-can"
+                customClass="profile-page__btn profile-page__btn--danger diagonal-swipe-hover"
+                (pressed)="deleteAccount()"
+              />
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+@if (deleteAccountConfirmOpen()) {
+  <div
+    class="profile-page__confirm-modal is-open"
+    role="alertdialog"
+    aria-modal="true"
+    aria-labelledby="profile-delete-account-dialog-title"
+    aria-describedby="profile-delete-account-dialog-desc"
+  >
+    <button
+      type="button"
+      class="profile-page__confirm-backdrop"
+      aria-label="Cancel delete account"
+      [disabled]="deleteAccountBusy()"
+      (click)="closeDeleteAccountConfirm()"
+    ></button>
+    <div class="profile-page__confirm-panel">
+      <h3 id="profile-delete-account-dialog-title" class="profile-page__confirm-title">
+        Delete your account?
+      </h3>
+      <p id="profile-delete-account-dialog-desc" class="profile-page__confirm-text">
+        This action is permanent. Your profile and account access will be removed.
+      </p>
+      <div class="profile-page__confirm-actions">
+        <app-button
+          label="Cancel"
+          variant="outline"
+          size="md"
+          [rounded]="true"
+          [disabled]="deleteAccountBusy()"
+          customClass="diagonal-swipe-hover"
+          (pressed)="closeDeleteAccountConfirm()"
+        />
+        <app-button
+          [label]="deleteAccountBusy() ? 'Deleting...' : 'Delete account'"
+          variant="primary"
+          size="md"
+          [rounded]="true"
+          [loading]="deleteAccountBusy()"
+          [disabled]="deleteAccountBusy()"
+          customClass="profile-page__confirm-delete-btn diagonal-swipe-hover"
+          (pressed)="confirmDeleteAccount()"
+        />
+      </div>
+    </div>
+  </div>
+}

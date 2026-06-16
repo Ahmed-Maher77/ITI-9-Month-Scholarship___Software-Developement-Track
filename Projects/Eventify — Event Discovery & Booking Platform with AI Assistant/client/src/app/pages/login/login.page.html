@@ -1,0 +1,82 @@
+<section class="auth-page">
+  <div class="container">
+    <div class="auth-page__shell">
+      <aside class="auth-page__aside">
+        <span class="auth-page__eyebrow">Welcome to Eventify</span>
+        <h1 class="auth-page__headline">Manage events with confidence.</h1>
+        <p class="auth-page__aside-copy">
+          Sign in to continue booking, managing tickets, and tracking your activity in one place.
+        </p>
+      </aside>
+
+      <div class="auth-page__card">
+        <div class="auth-page__body">
+          <h2 class="auth-page__title">Login</h2>
+          <p class="auth-page__subtitle">Welcome back. Enter your credentials to continue.</p>
+
+          @if (errorMessage()) {
+            <div #authAlert class="auth-page__alert" role="alert">{{ errorMessage() }}</div>
+          }
+
+          <form class="auth-page__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="auth-page__field">
+              <label for="login-email" class="auth-page__label">Email <span class="auth-page__required">*</span></label>
+              <input
+                id="login-email"
+                type="email"
+                class="auth-page__input"
+                formControlName="email"
+                placeholder="Enter your email"
+              />
+              @if (loginForm.controls.email.touched && loginForm.controls.email.invalid) {
+                <small class="auth-page__error">Please enter a valid email.</small>
+              }
+            </div>
+
+            <div class="auth-page__field">
+              <label for="login-password" class="auth-page__label"
+                >Password <span class="auth-page__required">*</span></label
+              >
+              <div class="auth-page__password-wrap">
+                <input
+                  id="login-password"
+                  [type]="isPasswordVisible() ? 'text' : 'password'"
+                  class="auth-page__input auth-page__input--password"
+                  formControlName="password"
+                  placeholder="Enter your password"
+                />
+                <button
+                  type="button"
+                  class="auth-page__password-toggle"
+                  [attr.aria-label]="isPasswordVisible() ? 'Hide password' : 'Show password'"
+                  (click)="togglePasswordVisibility()"
+                >
+                  <i [class]="isPasswordVisible() ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye'" aria-hidden="true"></i>
+                </button>
+              </div>
+              @if (loginForm.controls.password.touched && loginForm.controls.password.invalid) {
+                <small class="auth-page__error">Password must be at least 6 characters.</small>
+              }
+            </div>
+
+            <app-button
+              [label]="isSubmitting() ? 'Logging in...' : 'Login'"
+              variant="primary"
+              size="md"
+              [buttonType]="'submit'"
+              [fullWidth]="true"
+              [rounded]="false"
+              [disabled]="isSubmitting()"
+              customClass="auth-page__submit diagonal-swipe-hover rounded-pill"
+            />
+          </form>
+
+          <p class="auth-page__footer">
+            Don't have an account?
+            <a routerLink="/register">Create One</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
