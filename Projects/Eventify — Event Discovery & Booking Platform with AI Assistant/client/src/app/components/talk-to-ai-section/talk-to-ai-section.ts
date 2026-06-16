@@ -1,0 +1,98 @@
+import { CommonModule } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, ViewChild, inject, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Button } from '../../shared/button/button';
+import { ChatApiService } from '../../services/chat-api.service';
+import { ChatStoreService } from '../../services/chat-store.service';
+import { AuthService } from '../../services/auth.service';
+import { ToastService } from '../../services/toast.service';
+import { AiFeatureItem } from './talk-to-ai-section.model';
+import { setupTalkToAiAnimations } from './talk-to-ai-section.animations';
+
+@Component({
+  selector: 'app-talk-to-ai-section',
+  imports: [CommonModule, FormsModule, Button],
+  templateUrl: './talk-to-ai-section.html',
+  styleUrl: './talk-to-ai-section.scss',
+})
+export class TalkToAiSection implements AfterViewInit, OnDestroy {
+  private readonly chatStoreService = inject(ChatStoreService);
+  private readonly chatApiService = inject(ChatApiService);
+  private readonly authService = inject(AuthService);
+  private readonly toastService = inject(ToastService);
+  @ViewChild('talkToAiRoot') private talkToAiRoot?: ElementRef<HTMLElement>;
+  private talkToAiContext: ReturnType<typeof setupTalkToAiAnimations> | null = null;
+  protected readonly features: AiFeatureItem[] = [
+    { text: 'Find events that match your vibe' },
+    { text: 'Compare price, date, and category quickly' },
+    { text: 'Get smart picks for this week or weekend' }
+  ];
+  protected readonly isAssistantOnline = this.chatStoreService.isAssistantOnline;
+  protected readonly isSendingChat = this.chatStoreService.isSending;
+  protected readonly draftMessage = signal('');
+  protected readonly isMenuOpen = signal(false);
+
+  protected startChatFromCta(): void {
+    this.chatStoreService.activateChatScreen();
+  }
+
+  protected toggleMenu(): void {
+    this.isMenuOpen.update((currentState) => !currentState);
+  }
+
+  protected openChatScreen(): void {
+    this.chatStoreService.activateChatScreen();
+    this.isMenuOpen.set(false);
+  }
+
+  protected submitMessage(): void {
+    const message = this.draftMessage().trim();
+    if (!message || this.isSendingChat()) {
+      return;
+    }
+
+    if (!this.authService.isLoggedIn()) {
+      this.toastService.showError('Please log in to chat with our AI assistant.');
+      return;
+    }
+
+    this.chatStoreService.addUserMessage(message);
+    this.chatStoreService.activateChatScreen();
+    this.draftMessage.set('');
+    this.isMenuOpen.set(false);
+    this.chatStoreService.isSending.set(true);
+
+    this.chatApiService.getCompletion(
+      this.chatStoreService.messages(),
+      this.chatStoreService.sessionId()
+    ).subscribe({
+      next: (reply) => {
+        this.chatStoreService.addAssistantMessage(reply);
+        this.chatStoreService.isSending.set(false);
+      },
+      error: (err) => {
+        console.error('Talk-to-AI Error:', err);
+        this.toastService.showError('Failed to get a response. Please try again later.');
+        this.chatStoreService.isSending.set(false);
+      }
+    });
+  }
+
+  @HostListener('document:click')
+  protected closeMenuOnOutsideClick(): void {
+    this.isMenuOpen.set(false);
+  }
+
+  protected onMenuAreaClick(event: MouseEvent): void {
+    event.stopPropagation();
+  }
+
+  ngAfterViewInit(): void {
+    this.talkToAiContext = setupTalkToAiAnimations(this.talkToAiRoot?.nativeElement);
+  }
+
+  ngOnDestroy(): void {
+    this.talkToAiContext?.revert();
+    this.talkToAiContext = null;
+  }
+}
