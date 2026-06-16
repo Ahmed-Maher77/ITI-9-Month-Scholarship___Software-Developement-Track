@@ -1,0 +1,218 @@
+<section class="auth-page">
+  <div class="container">
+    <div class="auth-page__shell">
+      <aside class="auth-page__aside">
+        <span class="auth-page__eyebrow">Welcome to Eventify</span>
+        <h1 class="auth-page__headline">Create your account in minutes.</h1>
+        <p class="auth-page__aside-copy">
+          Join Eventify to book events faster, track tickets, and personalize your event experience.
+        </p>
+      </aside>
+
+      <div class="auth-page__card">
+        <div class="auth-page__body">
+          <h2 class="auth-page__title">Create Account</h2>
+          <p class="auth-page__subtitle">Set up your profile and start exploring events.</p>
+
+          @if (errorMessage()) {
+            <div #authAlert class="auth-page__alert" role="alert">{{ errorMessage() }}</div>
+          }
+
+          <form class="auth-page__form" [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="auth-page__field auth-page__field--half">
+              <label for="register-name" class="auth-page__label">Name <span class="auth-page__required">*</span></label>
+              <input
+                id="register-name"
+                type="text"
+                class="auth-page__input"
+                formControlName="name"
+                placeholder="Enter your full name"
+              />
+              @if (registerForm.controls.name.touched && registerForm.controls.name.invalid) {
+                <small class="auth-page__error">Name must be at least 2 characters.</small>
+              }
+            </div>
+
+            <div class="auth-page__field auth-page__field--half">
+              <label for="register-email" class="auth-page__label">Email <span class="auth-page__required">*</span></label>
+              <input
+                id="register-email"
+                type="email"
+                class="auth-page__input"
+                formControlName="email"
+                placeholder="Enter your email"
+              />
+              @if (registerForm.controls.email.touched && registerForm.controls.email.invalid) {
+                <small class="auth-page__error">Please enter a valid email.</small>
+              }
+            </div>
+
+            <div class="auth-page__field auth-page__field--full">
+              <label for="register-password" class="auth-page__label"
+                >Password <span class="auth-page__required">*</span></label
+              >
+              <div class="auth-page__password-wrap">
+                <input
+                  id="register-password"
+                  [type]="isPasswordVisible() ? 'text' : 'password'"
+                  class="auth-page__input auth-page__input--password"
+                  formControlName="password"
+                  placeholder="Create your password"
+                />
+                <button
+                  type="button"
+                  class="auth-page__password-toggle"
+                  [attr.aria-label]="isPasswordVisible() ? 'Hide password' : 'Show password'"
+                  (click)="togglePasswordVisibility()"
+                >
+                  <i [class]="isPasswordVisible() ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye'" aria-hidden="true"></i>
+                </button>
+              </div>
+              <ul class="auth-page__password-checklist">
+                <li [class.is-met]="hasMinLength">
+                  <i [class]="hasMinLength ? 'fa-solid fa-circle-check' : 'fa-regular fa-circle'" aria-hidden="true"></i>
+                  At least 6 characters
+                </li>
+                <li [class.is-met]="hasUppercase">
+                  <i [class]="hasUppercase ? 'fa-solid fa-circle-check' : 'fa-regular fa-circle'" aria-hidden="true"></i>
+                  One uppercase letter (A-Z)
+                </li>
+                <li [class.is-met]="hasLowercase">
+                  <i [class]="hasLowercase ? 'fa-solid fa-circle-check' : 'fa-regular fa-circle'" aria-hidden="true"></i>
+                  One lowercase letter (a-z)
+                </li>
+                <li [class.is-met]="hasNumber">
+                  <i [class]="hasNumber ? 'fa-solid fa-circle-check' : 'fa-regular fa-circle'" aria-hidden="true"></i>
+                  One number (0-9)
+                </li>
+                <li [class.is-met]="hasSpecialCharacter">
+                  <i
+                    [class]="hasSpecialCharacter ? 'fa-solid fa-circle-check' : 'fa-regular fa-circle'"
+                    aria-hidden="true"
+                  ></i>
+                  One special character (@$!%*?&)
+                </li>
+                <li [class.is-met]="hasOnlyAllowedCharacters">
+                  <i
+                    [class]="hasOnlyAllowedCharacters ? 'fa-solid fa-circle-check' : 'fa-regular fa-circle'"
+                    aria-hidden="true"
+                  ></i>
+                  Letters, numbers, and @$!%*?& only (no spaces)
+                </li>
+              </ul>
+              @if (
+                registerForm.controls.password.touched &&
+                registerForm.controls.password.invalid &&
+                hasMinLength &&
+                hasUppercase &&
+                hasLowercase &&
+                hasNumber &&
+                hasSpecialCharacter &&
+                !hasOnlyAllowedCharacters
+              ) {
+                <small class="auth-page__error">
+                  Remove spaces and unsupported characters (only letters, numbers, and @$!%*?& are allowed).
+                </small>
+              } @else if (registerForm.controls.password.touched && registerForm.controls.password.invalid) {
+                <small class="auth-page__error">
+                  Complete all password requirements above.
+                </small>
+              }
+            </div>
+
+            <div class="auth-page__field auth-page__field--full">
+              <label class="auth-page__label">Profile Picture (optional)</label>
+              <div class="auth-page__mode-switch" role="tablist" aria-label="Picture upload mode">
+                <button
+                  type="button"
+                  class="auth-page__mode-btn"
+                  [class.is-active]="pictureMode() === 'file'"
+                  [attr.aria-selected]="pictureMode() === 'file'"
+                  (click)="setPictureMode('file')"
+                >
+                  Upload File
+                </button>
+                <button
+                  type="button"
+                  class="auth-page__mode-btn"
+                  [class.is-active]="pictureMode() === 'url'"
+                  [attr.aria-selected]="pictureMode() === 'url'"
+                  (click)="setPictureMode('url')"
+                >
+                  Use URL
+                </button>
+              </div>
+            </div>
+
+            @if (pictureMode() === 'file') {
+              <div class="auth-page__field auth-page__field--full">
+                <label for="register-image" class="auth-page__label">Upload Picture</label>
+                <label class="auth-page__upload-dropzone" for="register-image">
+                  <i class="fa-solid fa-cloud-arrow-up auth-page__upload-icon" aria-hidden="true"></i>
+                  <span class="auth-page__upload-cta">{{ selectedImageName() ? 'Change image' : 'Upload image' }}</span>
+                  <span class="auth-page__upload-instructions">PNG, JPG, WEBP, GIF - Max 5MB</span>
+                  <span class="auth-page__upload-file-name">{{ selectedImageName() || 'No file selected' }}</span>
+                </label>
+                <input
+                  #registerImageInput
+                  id="register-image"
+                  type="file"
+                  class="auth-page__file-native-input"
+                  accept="image/png,image/jpeg,image/webp,image/gif"
+                  (change)="onImageSelected($event)"
+                />
+                @if (selectedImageName()) {
+                  <div class="auth-page__selected-file">
+                    <span class="auth-page__selected-file-name">
+                      <i class="fa-solid fa-file-image" aria-hidden="true"></i>
+                      {{ selectedImageName() }}
+                    </span>
+                    <button
+                      type="button"
+                      class="auth-page__selected-file-remove"
+                      (click)="removeSelectedImage(registerImageInput)"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                }
+              </div>
+            } @else {
+              <div class="auth-page__field auth-page__field--full">
+                <label for="register-picture-url" class="auth-page__label">Picture URL</label>
+                <input
+                  id="register-picture-url"
+                  type="url"
+                  class="auth-page__input"
+                  formControlName="pictureUrl"
+                  placeholder="https://example.com/profile.jpg"
+                />
+                @if (registerForm.controls.pictureUrl.touched && registerForm.controls.pictureUrl.invalid) {
+                  <small class="auth-page__error">Enter a valid URL starting with http:// or https://</small>
+                } @else {
+                  <small class="auth-page__hint">Paste a direct image URL.</small>
+                }
+              </div>
+            }
+
+            <app-button
+              [label]="isSubmitting() ? 'Creating account...' : 'Register'"
+              variant="primary"
+              size="md"
+              [buttonType]="'submit'"
+              [fullWidth]="true"
+              [rounded]="false"
+              [disabled]="isSubmitting()"
+              customClass="auth-page__submit diagonal-swipe-hover rounded-pill"
+            />
+          </form>
+
+          <p class="auth-page__footer">
+            Already have an account?
+            <a routerLink="/login">Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

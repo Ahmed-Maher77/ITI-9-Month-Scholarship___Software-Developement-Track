@@ -1,0 +1,88 @@
+<section class="admin-user-detail">
+  <header class="admin-user-detail__header">
+    <nav class="admin-user-detail__breadcrumb" aria-label="Breadcrumb">
+      <ol class="admin-user-detail__crumbs">
+        <li>
+          <a routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/dashboard/users">Member Directory</a>
+        </li>
+        <li aria-current="page">User Profile</li>
+      </ol>
+    </nav>
+    <app-highlighted-page-heading
+      titlePrefix="User"
+      titleHighlight="Profile"
+      subtitle="Detailed view of member account information."
+      headingLevel="h2"
+      containerClass="admin-heading--container"
+      titleClass="admin-heading--title"
+      subtitleClass="admin-heading--subtitle"
+    />
+  </header>
+
+  @if (loading) {
+  <div class="admin-page__loader-wrap">
+    <app-section-loader [size]="36" label="Loading user profile" />
+  </div>
+  } @else if (error) {
+  <p class="admin-entity-page__state-message is-error">{{ error }}</p>
+  } @else if (user) {
+  <div class="admin-entity-page__panel">
+    <div class="user-profile-grid">
+      <div class="profile-main">
+        <div class="profile-avatar" aria-label="User profile picture">
+          @if (user.pictureUrl) {
+            <img [src]="user.pictureUrl" [alt]="user.name + ' profile picture'" loading="lazy" />
+          } @else {
+            <span class="profile-avatar__fallback">{{ userInitials(user) }}</span>
+          }
+        </div>
+        <div class="profile-field">
+          <span class="profile-label">Full Name</span>
+          <span class="profile-value">{{ user.name }}</span>
+        </div>
+        <div class="profile-field">
+          <span class="profile-label">Email Address</span>
+          <span class="profile-value">{{ user.email }}</span>
+        </div>
+        <div class="profile-field">
+          <span class="profile-label">Account Role</span>
+          <span class="profile-value">
+            <span class="admin-directory__pill">{{ user.role | titlecase }}</span>
+          </span>
+        </div>
+        <div class="profile-dates">
+          <div class="profile-field">
+            <span class="profile-label">Member Since</span>
+            <span class="profile-value">
+              {{ user.createdAt ? (user.createdAt | date: 'longDate') : '—' }}
+            </span>
+          </div>
+          <div class="profile-field">
+            <span class="profile-label">Updated At</span>
+            <span class="profile-value">
+              {{ user.updatedAt ? (user.updatedAt | date: 'medium') : '—' }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-actions">
+        <h3 class="actions-title">Account Actions</h3>
+        <app-button
+          label="View User Bookings"
+          variant="primary"
+          size="md"
+          [rounded]="true"
+          leftIcon="fa-solid fa-ticket"
+          customClass="diagonal-swipe-hover w-100"
+          [routerLink]="['/dashboard/bookings']"
+          [queryParams]="{ userId: user._id }"
+        />
+      </div>
+    </div>
+  </div>
+  }
+</section>
