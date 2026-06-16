@@ -1,0 +1,60 @@
+{
+    "name": "eventify",
+    "version": "1.0.0",
+    "description": "Express 5 REST API for Eventify - Event Management System: JWT auth, MongoDB/Mongoose, events and reviews, bookings, Stripe, Cloudinary, favorites, contact and newsletter, database-driven RAG chatbot (MongoDB event retrieval + Groq LLM via OpenAI SDK), assistant activity logging, admin analytics.",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js",
+        "seed:admin": "node src/scripts/seedAdmin.js",
+        "seed:events": "node src/scripts/seedEvents.js",
+        "upload:event-images": "node src/scripts/uploadEventImagesFromLocal.js",
+        "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand"
+    },
+    "keywords": [
+        "eventify",
+        "express",
+        "event-booking",
+        "stripe",
+        "mongodb",
+        "mongoose",
+        "jwt",
+        "cloudinary",
+        "openapi",
+        "swagger",
+        "rag",
+        "chatbot",
+        "groq",
+        "retrieval-augmented-generation",
+        "llm"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^3.0.3",
+        "cloudinary": "^2.9.0",
+        "cookie-parser": "^1.4.7",
+        "cors": "^2.8.6",
+        "dotenv": "^17.4.1",
+        "express": "^5.2.1",
+        "express-rate-limit": "^8.3.2",
+        "express-validator": "^7.3.2",
+        "helmet": "^8.1.0",
+        "jsonwebtoken": "^9.0.3",
+        "morgan": "^1.10.1",
+        "multer": "^2.1.1",
+        "mongoose": "^9.6.1",
+        "openai": "^6.35.0",
+        "streamifier": "^0.1.1",
+        "stripe": "^18.5.0",
+        "swagger-jsdoc": "^6.2.8",
+        "swagger-ui-express": "^5.0.1"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "mongodb-memory-server": "^11.1.0",
+        "nodemon": "^3.1.14",
+        "supertest": "^7.1.1"
+    }
+}

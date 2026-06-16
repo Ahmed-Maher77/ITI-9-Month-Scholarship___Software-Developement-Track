@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "rewrites": [
+        { "source": "/api/(.*)", "destination": "/api" },
+        { "source": "/api-docs", "destination": "/api" },
+        { "source": "/api-docs/(.*)", "destination": "/api" },
+        { "source": "/files/(.*)", "destination": "/api" },
+        { "source": "/healthz", "destination": "/api" },
+        { "source": "/", "destination": "/api" }
+    ],
+    "functions": {
+        "api/index.js": {
+            "maxDuration": 30
+        }
+    }
+}
