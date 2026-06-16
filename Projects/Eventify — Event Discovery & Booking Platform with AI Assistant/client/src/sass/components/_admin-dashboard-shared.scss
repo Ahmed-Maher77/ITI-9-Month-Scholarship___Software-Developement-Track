@@ -1,0 +1,50 @@
+@use '../abstracts/mixins' as mixins;
+
+%admin-page-panel {
+  border: 1px solid var(--color-admin-panel-border);
+  border-radius: 0.9rem;
+  background: var(--color-admin-panel-bg);
+}
+
+/** List/table area flush with page (no card chrome); use with `.table-responsive` where needed */
+%admin-entity-page-panel {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(161 138 105 / 88%) rgb(161 138 105 / 20%);
+}
+
+%admin-entity-page-panel::-webkit-scrollbar {
+  height: 0.65rem;
+}
+
+%admin-entity-page-panel::-webkit-scrollbar-track {
+  background: rgb(161 138 105 / 20%);
+  border-radius: 999px;
+}
+
+%admin-entity-page-panel::-webkit-scrollbar-thumb {
+  background: rgb(161 138 105 / 88%);
+  border-radius: 999px;
+  border: 2px solid rgb(161 138 105 / 20%);
+}
+
+%admin-entity-page-panel::-webkit-scrollbar-thumb:hover {
+  background: rgb(138 113 78 / 95%);
+}
+
+%admin-page-section-title {
+  margin: 0;
+  color: var(--color-black);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-weight: 600;
+}
+
+/* Left-to-right underline on hover; @extend in admin SCSS or add class .admin-link-underline-ltr in templates */
+%admin-link-underline-ltr {
+  @include mixins.admin-link-underline-ltr;
+}

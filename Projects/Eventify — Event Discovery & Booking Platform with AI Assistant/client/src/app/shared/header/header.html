@@ -1,0 +1,85 @@
+<header class="eventify-header" [class.eventify-header--solid]="!shouldUseHomeHeaderStyle()">
+  <nav #headerNavRoot class="navbar navbar-expand-lg container eventify-header__nav">
+    <a class="eventify-header__brand" routerLink="/" (click)="onNavItemClick()">
+      <img src="images/logo.png" alt="Eventify" class="eventify-header__brand-logo" />
+    </a>
+
+    <button
+      class="navbar-toggler eventify-header__toggler"
+      type="button"
+      aria-controls="mainHeaderNav"
+      [attr.aria-expanded]="isMainHeaderNavOpen()"
+      aria-label="Toggle navigation"
+      (click)="toggleMainHeaderNav()"
+    >
+      <span class="eventify-header__toggler-lines" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <div
+      #mainHeaderNavRef
+      id="mainHeaderNav"
+      class="collapse navbar-collapse eventify-header__collapse"
+      [class.show]="isMainHeaderNavOpen()"
+    >
+      <div class="eventify-header__mobile-main">
+        <button
+          type="button"
+          class="eventify-header__mobile-close"
+          aria-label="Close navigation menu"
+          (click)="closeMainHeaderNav()"
+        >
+          <span class="fa-solid fa-xmark" aria-hidden="true"></span>
+        </button>
+
+        <app-header-nav-links
+          [links]="navLinks"
+          [isSolidStyle]="!shouldUseHomeHeaderStyle()"
+          (navigate)="onNavItemClick()"
+        />
+      </div>
+
+      @if (!isLoggedIn()) {
+        <div class="eventify-header__actions">
+          <app-button
+            label="Login"
+            variant="ghost"
+            size="md"
+            [rounded]="true"
+            customClass="eventify-header__login-btn laser-sweep-hover"
+            [routerLink]="'/login'"
+            (click)="onNavItemClick()"
+          ></app-button>
+          <app-button
+            label="Get Started"
+            variant="primary"
+            size="md"
+            [rounded]="true"
+            customClass="eventify-header__cta-btn diagonal-swipe-hover"
+            [routerLink]="'/register'"
+            (click)="onNavItemClick()"
+          ></app-button>
+        </div>
+      } @else {
+        <div class="position-relative eventify-header__actions">
+          <app-header-user-menu
+            [displayName]="getDisplayName()"
+            [displayEmail]="getDisplayEmail()"
+            [profileImageUrl]="getProfileImageUrl()"
+            [bookingCount]="bookingCount()"
+            [favoriteCount]="favoriteCount()"
+            [isOpen]="isProfileMenuOpen()"
+            [isSolidStyle]="!shouldUseHomeHeaderStyle()"
+            (toggle)="toggleProfileMenu()"
+            (close)="closeProfileMenu()"
+            (navigate)="onNavItemClick()"
+            (logout)="logout()"
+          />
+        </div>
+      }
+    </div>
+  </nav>
+</header>
