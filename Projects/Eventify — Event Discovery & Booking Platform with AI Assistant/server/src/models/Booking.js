@@ -1,0 +1,58 @@
+import { Schema, model } from "mongoose";
+
+const bookingSchema = new Schema(
+  {
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "user",
+      required: [true, "A Booking must belong to a user."],
+    },
+    eventId: {
+      type: Schema.Types.ObjectId,
+      ref: "event",
+      required: [true, "Booking's Event is required."],
+    },
+    quantity: {
+      type: Number,
+      required: [true, "Please specify the number of seats."],
+      min: [1, "Quantity must be at least 1."],
+      default: 1,
+    },
+    totalPrice: {
+      type: Number,
+      required: [true, "Total price is required."],
+      min: [0, "Total price cannot be negative."],
+    },
+    status: {
+      type: String,
+      enum: {
+        values: ["pending", "confirmed", "cancelled"],
+        message: "{VALUE} is not a valid status.",
+      },
+      default: "pending",
+    },
+    payment: {
+      paymentIntentId: { type: String, default: null },
+      paymentStatus: { type: String, default: null },
+      amountPaid: { type: Number, default: null },
+      currency: { type: String, default: null },
+      paidAt: { type: Date, default: null },
+      refundId: { type: String, default: null },
+      refundStatus: { type: String, default: null },
+    },
+  },
+  { timestamps: true },
+);
+
+// Allow only one active booking per user/event. Cancelled bookings can be recreated.
+bookingSchema.index(
+  { userId: 1, eventId: 1 },
+  {
+    unique: true,
+    partialFilterExpression: { status: { $in: ["pending", "confirmed"] } },
+  },
+);
+
+const Booking = model("booking", bookingSchema);
+
+export default Booking;
