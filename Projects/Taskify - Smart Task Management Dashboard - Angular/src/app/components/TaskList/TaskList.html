@@ -1,0 +1,62 @@
+<section class="task-list container">
+  <!-- toast notification -->
+  <div class="task-list__toast" [class.task-list__toast--show]="isToastVisible" role="status" aria-live="polite">
+    <span>{{ toastMessage }}</span>
+    <button type="button" class="task-list__toast-close" (click)="closeToast()" aria-label="Close notification">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M18 6L6 18M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <header class="task-list__header">
+    <h2>Task List</h2>
+    <p>Track your current work with quick visibility on priority and deadlines.</p>
+  </header>
+
+  <!-- task status filters -->
+  <div class="task-list__tabs" aria-label="Task status filters">
+    <button
+      type="button"
+      class="task-list__tab"
+      [class.task-list__tab--active]="activeTab === 'all'"
+      (click)="setActiveTab('all')"
+    >
+      All
+    </button>
+    <button
+      type="button"
+      class="task-list__tab"
+      [class.task-list__tab--active]="activeTab === 'done'"
+      (click)="setActiveTab('done')"
+    >
+      Done
+    </button>
+    <button
+      type="button"
+      class="task-list__tab"
+      [class.task-list__tab--active]="activeTab === 'in-progress'"
+      (click)="setActiveTab('in-progress')"
+    >
+      In Progress
+    </button>
+  </div>
+
+  <!-- task list -->
+  <div class="task-list__grid" *ngIf="filteredTaskEntries.length > 0; else emptyState">
+    <app-task-card
+      *ngFor="let item of filteredTaskEntries"
+      [taskData]="item.task"
+      [taskIndex]="item.index"
+      (delete)="onDeleteTask($event)"
+      (update)="onUpdateTask($event)"
+      (complete)="onCompleteTask($event)"
+    ></app-task-card>
+  </div>
+
+  <ng-template #emptyState>
+    <div class="task-list__empty">
+      <p>{{ emptyStateMessage }}</p>
+    </div>
+  </ng-template>
+</section>
