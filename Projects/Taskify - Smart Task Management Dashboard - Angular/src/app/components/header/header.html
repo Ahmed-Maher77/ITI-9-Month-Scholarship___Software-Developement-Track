@@ -1,0 +1,90 @@
+<div class="container">
+  <header class="header">
+    <div class="header__brand">
+      <h1>Taskify</h1>
+      <p class="header__subtitle">Plan, track, and complete your work.</p>
+    </div>
+
+    <div class="header__timer">
+      <span class="header__timer-display">{{ timerDisplay }}</span>
+      <div class="header__timer-actions">
+        <!-- toggle timer -->
+        <button
+          type="button"
+          class="header__icon-btn"
+          (click)="toggleTimer()"
+          [attr.aria-label]="timerRunning ? 'Pause timer' : (timer > 0 ? 'Resume timer' : 'Start timer')"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" [style.display]="timerRunning ? 'none' : 'block'">
+            <path d="M8 5v14l11-7z"></path>
+          </svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true" [style.display]="timerRunning ? 'block' : 'none'">
+            <path d="M7 5h4v14H7zm6 0h4v14h-4z"></path>
+          </svg>
+        </button>
+        <!-- reset timer -->
+        <button
+          type="button"
+          class="header__icon-btn header__icon-btn--reset"
+          (click)="resetTimer()"
+          [disabled]="timer === 0 && !timerRunning"
+          aria-label="Reset timer"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 4v5h5"></path>
+            <path d="M20 20v-5h-5"></path>
+            <path d="M20 9a8 8 0 0 0-14.6-3"></path>
+            <path d="M4 15a8 8 0 0 0 14.6 3"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <button type="button" class="header__burger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="header__nav" [class.is-open]="isMenuOpen" aria-label="Main navigation">
+      <a
+        routerLink="/"
+        class="header__link"
+        routerLinkActive="header__link--active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="handleLinkClick()"
+        >Dashboard</a
+      >
+      <a
+        routerLink="/my-tasks"
+        class="header__link"
+        routerLinkActive="header__link--active"
+        (click)="handleLinkClick()"
+        >My Tasks</a
+      >
+
+      <!-- Auth menu -->
+      <div class="header__auth-menu">
+        <button type="button" class="header__auth-trigger" (click)="toggleAuthMenu($event)">
+          {{ authUser() ? 'Profile' : 'Get Started' }}
+          <svg
+            class="header__auth-arrow"
+            [class.header__auth-arrow--open]="isAuthMenuOpen"
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+          >
+            <path d="M5.5 7.5L10 12l4.5-4.5" />
+          </svg>
+        </button>
+        <div class="header__auth-dropdown" [class.is-open]="isAuthMenuOpen">
+          @if (authUser()) {
+            <a routerLink="/profile" class="header__dropdown-link" (click)="handleLinkClick()">Profile</a>
+          } @else {
+            <a routerLink="/login" class="header__dropdown-link" (click)="handleLinkClick()">Login</a>
+            <a routerLink="/signup" class="header__dropdown-link" (click)="handleLinkClick()">Sign Up</a>
+          }
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>

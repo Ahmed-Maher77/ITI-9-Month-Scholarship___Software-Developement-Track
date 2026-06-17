@@ -1,0 +1,71 @@
+<section class="add-task">
+  <div class="container">
+    <form id="add-task-form" class="add-task__card" (submit)="onSubmit($event)">
+      <header class="add-task__header">
+        <h2>Create New Task</h2>
+        <p>Add all task details and keep your workflow organized.</p>
+      </header>
+
+      <div class="add-task__grid">
+        <div class="field field--full">
+          <label for="task-title" class="is-required">Task Title</label>
+          <input
+            type="text"
+            name="task-title"
+            id="task-title"
+            placeholder="e.g. Prepare sprint planning notes"
+            required
+          />
+        </div>
+
+        <div class="field field--full">
+          <label for="task-description">Description</label>
+          <textarea
+            name="task-description"
+            id="task-description"
+            placeholder="Write a short description of the task scope and expected outcome."
+            rows="4"
+          ></textarea>
+        </div>
+
+        <div class="field">
+          <label for="task-priority">Priority</label>
+          <select name="task-priority" id="task-priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="task-due-date">Due Date</label>
+          <input type="date" name="task-due-date" id="task-due-date" />
+        </div>
+
+        <div class="field">
+          <label for="task-category">Category</label>
+          <select name="task-category" id="task-category">
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="study">Study</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="task-tags">Tags</label>
+          <input
+            type="text"
+            name="task-tags"
+            id="task-tags"
+            placeholder="design, frontend, urgent"
+          />
+        </div>
+      </div>
+
+      <div class="add-task__actions">
+        <small>Fields marked with <span class="is-required">*</span> are required.</small>
+        <button type="submit">Add Task</button>
+      </div>
+    </form>
+  </div>
+</section>
