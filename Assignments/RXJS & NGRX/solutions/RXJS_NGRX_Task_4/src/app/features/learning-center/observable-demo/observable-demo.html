@@ -1,0 +1,84 @@
+<div class="demo-card">
+  <h2 class="demo-card__title">Subject vs BehaviorSubject</h2>
+  <p class="demo-card__desc">Observe how Subject and BehaviorSubject behave differently with late subscribers.</p>
+
+  <div class="demo-card__controls">
+    <button class="btn btn--primary" (click)="emitEvent()">
+      <svg class="btn__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="22 12 8 2 8 22 22 12"/>
+      </svg>
+      Emit Event
+    </button>
+    <button class="btn btn--secondary" (click)="addSubscriberA()" [disabled]="hasSubA">
+      + Add Subscriber A
+    </button>
+    <button class="btn btn--secondary" (click)="addSubscriberB()" [disabled]="hasSubB">
+      + Add Subscriber B
+    </button>
+    <button class="btn btn--ghost" (click)="reset()">Reset</button>
+  </div>
+
+  <div class="demo-card__columns">
+    <div class="demo-panel">
+      <div class="demo-panel__header">
+        <h3>Subject</h3>
+        <span class="demo-panel__badge">No replay</span>
+      </div>
+      <div class="demo-panel__subscribers">
+        <div class="subscriber">
+          <div class="subscriber__title">Subscriber A</div>
+          <div class="subscriber__events">
+            @if (subjectSubA.length === 0) {
+              <span class="subscriber__empty">Awaiting events...</span>
+            }
+            @for (item of subjectSubA; track item) {
+              <span class="subscriber__event">{{ item }}</span>
+            }
+          </div>
+        </div>
+        <div class="subscriber">
+          <div class="subscriber__title">Subscriber B</div>
+          <div class="subscriber__events">
+            @if (subjectSubB.length === 0) {
+              <span class="subscriber__empty">Awaiting events...</span>
+            }
+            @for (item of subjectSubB; track item) {
+              <span class="subscriber__event subscriber__event--late">{{ item }}</span>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-panel demo-panel--behavior">
+      <div class="demo-panel__header">
+        <h3>BehaviorSubject</h3>
+        <span class="demo-panel__badge demo-panel__badge--green">Replays latest</span>
+      </div>
+      <div class="demo-panel__subscribers">
+        <div class="subscriber">
+          <div class="subscriber__title">Subscriber A</div>
+          <div class="subscriber__events">
+            @if (behaviorSubA.length === 0) {
+              <span class="subscriber__empty">Awaiting events...</span>
+            }
+            @for (item of behaviorSubA; track item) {
+              <span class="subscriber__event">{{ item }}</span>
+            }
+          </div>
+        </div>
+        <div class="subscriber">
+          <div class="subscriber__title">Subscriber B</div>
+          <div class="subscriber__events">
+            @if (behaviorSubB.length === 0) {
+              <span class="subscriber__empty">Awaiting events...</span>
+            }
+            @for (item of behaviorSubB; track item) {
+              <span class="subscriber__event subscriber__event--replayed">{{ item }}</span>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
