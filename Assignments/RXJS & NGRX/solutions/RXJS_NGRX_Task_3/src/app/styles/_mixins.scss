@@ -1,0 +1,68 @@
+@use 'variables' as *;
+
+@mixin panel {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  padding: 24px;
+  box-shadow: $shadow-panel;
+}
+
+@mixin panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $border;
+}
+
+@mixin panel-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $text-secondary;
+}
+
+@mixin progress-bar($color) {
+  height: 8px;
+  background: #eef2f6;
+  border-radius: 4px;
+  overflow: hidden;
+
+  &__fill {
+    height: 100%;
+    background: $color;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+}
+
+@mixin status-dot($color) {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: $color;
+  flex-shrink: 0;
+}
+
+@mixin fade-in {
+  animation: fadeIn 0.2s ease;
+}
+
+@mixin slide-up {
+  animation: slideUp 0.2s ease;
+}
+
+@mixin respond-tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin respond-mobile {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
