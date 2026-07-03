@@ -1,0 +1,71 @@
+<form class="form" [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="form__header">
+    <h2 class="form__title">{{ isEditMode() ? 'Edit User' : 'Add User' }}</h2>
+  </div>
+
+  <div class="form__body">
+    <div class="field">
+      <label class="field__label" for="name">Full Name</label>
+      <input
+        id="name"
+        type="text"
+        class="field__input"
+        formControlName="name"
+        placeholder="e.g. John Doe"
+        [attr.aria-invalid]="name.invalid && name.touched"
+        aria-describedby="name-error"
+      />
+      @if (name.invalid && name.touched) {
+        <p class="field__error" id="name-error" role="alert">
+          @if (name.errors?.['required']) { Full name is required. }
+          @else if (name.errors?.['minlength']) { Name must be at least 2 characters. }
+        </p>
+      }
+    </div>
+
+    <div class="field">
+      <label class="field__label" for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        class="field__input"
+        formControlName="email"
+        placeholder="e.g. john@example.com"
+        [attr.aria-invalid]="email.invalid && email.touched"
+        aria-describedby="email-error"
+      />
+      @if (email.invalid && email.touched) {
+        <p class="field__error" id="email-error" role="alert">
+          @if (email.errors?.['required']) { Email is required. }
+          @else if (email.errors?.['email']) { Please enter a valid email address. }
+        </p>
+      }
+    </div>
+
+    <div class="field">
+      <label class="field__label" for="phone">Phone Number</label>
+      <input
+        id="phone"
+        type="tel"
+        class="field__input"
+        formControlName="phone"
+        placeholder="e.g. +1 (555) 123-4567"
+        [attr.aria-invalid]="phone.invalid && phone.touched"
+        aria-describedby="phone-error"
+      />
+      @if (phone.invalid && phone.touched) {
+        <p class="field__error" id="phone-error" role="alert">
+          @if (phone.errors?.['required']) { Phone number is required. }
+          @else if (phone.errors?.['pattern']) { Please enter a valid phone number. }
+        </p>
+      }
+    </div>
+  </div>
+
+  <div class="form__actions">
+    <button type="button" class="btn btn--secondary" (click)="onCancel()">Cancel</button>
+    <button type="submit" class="btn btn--primary" [disabled]="userForm.invalid">
+      {{ isEditMode() ? 'Update' : 'Save' }}
+    </button>
+  </div>
+</form>
