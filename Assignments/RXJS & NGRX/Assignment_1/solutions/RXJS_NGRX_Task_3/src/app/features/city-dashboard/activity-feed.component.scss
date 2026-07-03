@@ -1,0 +1,76 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.ops-log {
+  @include panel;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    @include panel-header;
+  }
+
+  &__title {
+    @include panel-title;
+  }
+
+  &__list {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $border;
+      border-radius: 2px;
+    }
+  }
+
+  &__entry {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    background: transparent;
+    transition: background 0.15s ease;
+
+    &:hover {
+      background: #f8fafc;
+    }
+  }
+
+  &__time {
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    color: $text-secondary;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    min-width: 65px;
+  }
+
+  &__message {
+    font-size: 0.8rem;
+    color: $text-primary;
+    line-height: 1.4;
+  }
+
+  &__empty {
+    color: $text-secondary;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 32px 0;
+    margin: 0;
+  }
+}

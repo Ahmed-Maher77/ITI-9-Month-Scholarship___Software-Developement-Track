@@ -1,0 +1,347 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.airport-dashboard {
+  min-height: 100vh;
+  background: $background;
+}
+
+.airport-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $header-height;
+  padding: 0 24px;
+  background: $surface;
+  border-bottom: 1px solid $border;
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__icon {
+    width: 28px;
+    height: 28px;
+    color: $flight;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: $text-primary;
+    line-height: 1.3;
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: 0.75rem;
+    color: $text-secondary;
+    line-height: 1.3;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__time {
+    font-family: $font-mono;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: $text-primary;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: $success;
+
+    &--live {
+      padding: 4px 10px;
+      border: 1px solid rgba($success, 0.3);
+      border-radius: 4px;
+      background: rgba($success, 0.06);
+    }
+  }
+
+  &__dot {
+    @include status-dot($success);
+  }
+}
+
+.skeleton-state {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+
+  &__label {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    margin: 0 0 16px;
+    text-align: center;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+.skeleton-panel {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__line {
+    height: 12px;
+    background: #eef2f6;
+    border-radius: 4px;
+
+    &--title {
+      width: 40%;
+    }
+
+    &--lg {
+      width: 70%;
+      height: 24px;
+    }
+
+    &--sm {
+      width: 50%;
+    }
+  }
+}
+
+.dashboard-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  align-items: start;
+
+  &--hidden {
+    display: none;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.ops-panels {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.stats-panel {
+  @include panel;
+
+  &__header {
+    @include panel-header;
+  }
+
+  &__title {
+    @include panel-title;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+.stat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__label {
+    font-size: 0.75rem;
+    color: $text-secondary;
+  }
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $text-primary;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__bar {
+    height: 8px;
+    background: #eef2f6;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+
+  &__fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+
+    &--flight { background: $flight; }
+    &--weather { background: $weather; }
+    &--gate { background: $gate; }
+  }
+}
+
+.sync-bar {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &__label {
+    font-size: 0.8rem;
+    color: $text-secondary;
+  }
+
+  &__value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $text-primary;
+    font-family: $font-mono;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.incident-panel {
+  margin: 16px 24px 0;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: $radius-md;
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $error;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    strong {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #991b1b;
+    }
+
+    span {
+      font-size: 0.8rem;
+      color: #7f1d1d;
+    }
+  }
+
+  &__retry {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: $radius-sm;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #fecaca;
+    background: #fff;
+    color: #991b1b;
+    transition: background 0.15s ease;
+    white-space: nowrap;
+
+    &:hover {
+      background: #fee2e2;
+    }
+  }
+
+  &__retry-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@include respond-tablet {
+  .ops-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .skeleton-state__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-panel__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@include respond-mobile {
+  .airport-header {
+    height: auto;
+    padding: 12px 16px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+
+    &__right {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  .ops-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .skeleton-state__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-panel__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid {
+    padding: 12px 12px;
+  }
+}

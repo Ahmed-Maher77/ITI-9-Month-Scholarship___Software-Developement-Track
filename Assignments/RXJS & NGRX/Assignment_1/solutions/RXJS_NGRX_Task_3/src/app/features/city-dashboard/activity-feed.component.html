@@ -1,0 +1,17 @@
+<div class="ops-log">
+  <div class="ops-log__header">
+    <span class="ops-log__title">Operations Log</span>
+  </div>
+  <div class="ops-log__list">
+    @if (events().length === 0) {
+      <p class="ops-log__empty">Awaiting operational data...</p>
+    } @else {
+      @for (event of events(); track event.id) {
+        <div class="ops-log__entry">
+          <span class="ops-log__time">{{ event.timestamp | formatTime }}</span>
+          <span class="ops-log__message">{{ event.message }}</span>
+        </div>
+      }
+    }
+  </div>
+</div>

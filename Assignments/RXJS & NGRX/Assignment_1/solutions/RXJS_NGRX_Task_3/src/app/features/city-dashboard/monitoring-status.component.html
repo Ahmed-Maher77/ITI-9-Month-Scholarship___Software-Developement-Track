@@ -1,0 +1,24 @@
+<div class="system-status">
+  <div class="system-status__service" [class.system-status__service--active]="monitoring() && !monitoringCompleted()">
+    <span class="system-status__dot"></span>
+    <span class="system-status__name">Flight Service</span>
+    <span class="system-status__state">{{ monitoring() && !monitoringCompleted() ? 'Online' : 'Standby' }}</span>
+  </div>
+  <div class="system-status__service" [class.system-status__service--active]="monitoring() && !monitoringCompleted()">
+    <span class="system-status__dot"></span>
+    <span class="system-status__name">Weather Service</span>
+    <span class="system-status__state">{{ monitoring() && !monitoringCompleted() ? 'Online' : 'Standby' }}</span>
+  </div>
+  <div class="system-status__service" [class.system-status__service--active]="monitoring() && !monitoringCompleted()">
+    <span class="system-status__dot"></span>
+    <span class="system-status__name">Gate Service</span>
+    <span class="system-status__state">{{ monitoring() && !monitoringCompleted() ? 'Online' : 'Standby' }}</span>
+  </div>
+
+  @if (monitoring() && !monitoringCompleted()) {
+    <div class="system-status__timer">
+      <span class="system-status__timer-label">Session</span>
+      <span class="system-status__timer-value">{{ formatCountdown(remainingSeconds()) }}</span>
+    </div>
+  }
+</div>

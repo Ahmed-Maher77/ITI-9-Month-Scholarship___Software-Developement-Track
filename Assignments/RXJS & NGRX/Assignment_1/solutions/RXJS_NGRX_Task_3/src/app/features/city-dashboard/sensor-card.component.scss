@@ -1,0 +1,143 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.ops-panel {
+  @include panel;
+  @include slide-up;
+
+  border-left: 3px solid $border;
+
+  &--weather {
+    border-left-color: $weather;
+  }
+
+  &--moderate {
+    border-left-color: $warning;
+  }
+
+  &--heavy {
+    border-left-color: $error;
+  }
+
+  &--skeleton {
+    pointer-events: none;
+  }
+
+  &__header {
+    @include panel-header;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom-color: $border;
+  }
+
+  &__title {
+    @include panel-title;
+  }
+
+  &__badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #eef2f6;
+    color: $text-secondary;
+
+    &--cool {
+      background: rgba($weather, 0.1);
+      color: $weather;
+    }
+
+    &--normal {
+      background: rgba($flight, 0.1);
+      color: $flight;
+    }
+
+    &--warn {
+      background: rgba($warning, 0.12);
+      color: #b45309;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__metric {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $text-primary;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+  }
+
+  &__metric-unit {
+    font-size: 1rem;
+    font-weight: 400;
+    color: $text-secondary;
+    margin-left: 4px;
+  }
+
+  &__metric-label {
+    font-size: 0.75rem;
+    color: $text-secondary;
+  }
+
+  &__gauge {
+    &-track {
+      height: 6px;
+      background: #eef2f6;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    &-fill {
+      height: 100%;
+      background: $weather;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+
+      &--low { background: $gate; }
+      &--moderate { background: $warning; }
+      &--high { background: $error; }
+    }
+
+    &-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 4px;
+      font-size: 0.65rem;
+      color: $text-secondary;
+    }
+  }
+
+  &__empty {
+    color: $text-secondary;
+    text-align: center;
+    padding: 24px 0;
+    font-size: 0.85rem;
+  }
+
+  &__skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &-line {
+      height: 12px;
+      background: #eef2f6;
+      border-radius: 4px;
+
+      &--short {
+        width: 50%;
+      }
+    }
+  }
+}
