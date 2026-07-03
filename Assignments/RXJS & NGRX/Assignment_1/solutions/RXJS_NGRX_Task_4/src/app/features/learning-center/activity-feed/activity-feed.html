@@ -1,0 +1,24 @@
+<div class="feed-card">
+  <h2 class="feed-card__title">Activity Feed</h2>
+  <div class="feed-card__container">
+    @if ((activities$ | async); as activities) {
+      @if (activities.length === 0) {
+        <div class="feed-card__empty">
+          <p>No activity yet. Login to get started.</p>
+        </div>
+      } @else {
+        <div class="feed-list">
+          @for (activity of activities; track trackById($index, activity)) {
+            <div class="feed-item" [class.feed-item--enter]="true">
+              <div class="feed-item__dot" [attr.data-type]="activity.type"></div>
+              <div class="feed-item__content">
+                <span class="feed-item__time">{{ activity.timestamp | date:'HH:mm:ss' }}</span>
+                <span class="feed-item__message">{{ activity.message }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      }
+    }
+  </div>
+</div>

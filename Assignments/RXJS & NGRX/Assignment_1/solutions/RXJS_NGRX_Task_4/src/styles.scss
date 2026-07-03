@@ -1,0 +1,56 @@
+$background: #f5f5f7;
+$surface: #ffffff;
+$text-primary: #1d1d1f;
+$text-secondary: #6e6e73;
+$blue: #0071e3;
+$green: #34c759;
+$orange: #ff9f0a;
+$red: #ff3b30;
+$border: #d2d2d7;
+
+@use 'sass:color';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  background: $background;
+  color: $text-primary;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba($blue, 0.15);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color.adjust($border, $lightness: -10%);
+}
