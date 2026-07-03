@@ -1,0 +1,46 @@
+:host {
+  display: block;
+}
+
+.shell {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.shell__header {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 24px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.shell__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0F172A;
+}
+
+.shell__logo:hover {
+  opacity: 0.8;
+}
+
+.shell__main {
+  flex: 1;
+  padding: 32px 24px;
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .shell__main {
+    padding: 24px 16px;
+  }
+}

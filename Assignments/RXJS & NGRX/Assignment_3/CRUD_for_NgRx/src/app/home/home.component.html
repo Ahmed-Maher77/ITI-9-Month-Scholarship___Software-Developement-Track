@@ -1,0 +1,94 @@
+<section class="home">
+  <header class="home__header">
+    <h1 class="home__title">Users</h1>
+    <p class="home__subtitle">Manage application users</p>
+  </header>
+
+  <div class="home__layout">
+    <div class="home__list">
+      <div class="home__toolbar">
+        <div class="search-field">
+          <svg class="search-field__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="search" class="search-field__input" placeholder="Search users..." aria-label="Search users" />
+        </div>
+        <button class="btn btn--primary" (click)="onAddUser()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          Add User
+        </button>
+      </div>
+
+      @if (users().length === 0) {
+        <div class="empty-state">
+          <svg class="empty-state__icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          <h3 class="empty-state__title">No users yet</h3>
+          <p class="empty-state__description">Add a user to get started.</p>
+        </div>
+      } @else {
+        <div class="table-wrapper">
+          <table class="table" role="table">
+            <thead class="table__head">
+              <tr class="table__row">
+                <th class="table__header" scope="col">Name</th>
+                <th class="table__header" scope="col">Email</th>
+                <th class="table__header" scope="col">Phone</th>
+                <th class="table__header table__header--actions" scope="col"></th>
+              </tr>
+            </thead>
+            <tbody class="table__body">
+              @for (user of users(); track user.id) {
+                <tr class="table__row" [class.table__row--selected]="selectedUser()?.id === user.id">
+                  <td class="table__cell table__cell--name">{{ user.name }}</td>
+                  <td class="table__cell table__cell--muted">{{ user.email }}</td>
+                  <td class="table__cell table__cell--muted">{{ user.phone }}</td>
+                  <td class="table__cell table__cell--actions">
+                    <button
+                      class="icon-btn icon-btn--edit"
+                      (click)="onEditUser(user)"
+                      aria-label="Edit {{ user.name }}"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                      </svg>
+                    </button>
+                    <button
+                      class="icon-btn icon-btn--delete"
+                      (click)="deleteUser(user.id)"
+                      aria-label="Delete {{ user.name }}"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="3 6 5 6 21 6"/>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                        <line x1="10" y1="11" x2="10" y2="17"/>
+                        <line x1="14" y1="11" x2="14" y2="17"/>
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+    </div>
+
+    <div class="home__form">
+      <app-user-form
+        [user]="selectedUser()"
+        (saved)="onSaveUser($event)"
+        (cancelled)="onCancelEdit()"
+      />
+    </div>
+  </div>
+</section>
