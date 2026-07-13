@@ -1,0 +1,86 @@
+info:
+  name: Chat
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/chat"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "message": "شغل التكييف في غرفة المعيشة"
+      }
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status is 200", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Response has success flag", function() {
+          expect(res.body.success).to.equal(true);
+        });
+        test("Returns intent and reply", function() {
+          expect(res.body.data).to.have.property("intent");
+          expect(res.body.data).to.have.property("reply");
+        });
+        test("Intent is recognized", function() {
+          expect(res.body.data.intent).to.not.equal("unknown");
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Chat
+
+  Natural Language Chat Agent.
+
+  Sends a message in Arabic (or English) to the simulation. The NL agent
+  classifies the intent using Groq and executes the action if applicable.
+
+  ## How It Works
+  1. Sends user message + simulation context (circuits, devices, runtime state) to Groq
+  2. Groq returns structured JSON with intent, entity extraction, and a friendly reply
+  3. Server executes the action (toggle device, run advice, compute what-if, etc.)
+  4. Returns the Arabic reply + any action result
+
+  ## Supported Intents
+  - `toggle_device` — "شغل التكييف في غرفة المعيشة"
+  - `query_state` — "كم استهلاكي حاليا؟"
+  - `advise` — "إزاي أوفر في الفاتورة؟"
+  - `what_if` — "لو فصلت كل الأجهزة ساعة هيفرق كام؟"
+  - `query_prediction` — "أمتى هتعدي الشريحة الرابعة؟"
+
+  ## Request Body
+  - `message` (string, required, max 500): Natural language message in Arabic or English
+
+  ## Response
+  ```json
+  {
+    "success": true,
+    "data": {
+      "intent": "toggle_device",
+      "reply": "تم تشغيل تكييف غرفة المعيشة بنجاح",
+      "actionTaken": true,
+      "actionResult": {
+        "device": "تكييف غرفة المعيشة",
+        "isOn": true,
+        "loadW": 2200
+      }
+    }
+  }
+  ```
+
+  ## Requirements
+  - `GROQ_API_KEY` and `GROQ_MODEL` must be set in `.env`
+  - The simulation must exist and belong to the authenticated user

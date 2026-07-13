@@ -1,0 +1,73 @@
+info:
+  name: Add Circuit
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/circuits"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Kitchen",
+        "autoGenerate": true
+      }
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.status === 201) {
+          const circuits = res.body.data.circuits;
+          const lastCircuit = circuits[circuits.length - 1];
+          if (lastCircuit) {
+            bru.setEnvVar("circuitId", lastCircuit._id);
+            bru.setVar("circuitId", lastCircuit._id);
+          }
+        }
+    - type: tests
+      code: |-
+        test("Status is 201", function() {
+          expect(res.status).to.equal(201);
+        });
+        test("Circuit was added", function() {
+          const circuits = res.body.data.circuits;
+          const added = circuits.find(c => c.name === "Kitchen");
+          expect(added).to.exist;
+        });
+        test("Devices auto-generated when requested", function() {
+          if (req.getBody().autoGenerate) {
+            const circuits = res.body.data.circuits;
+            const added = circuits.find(c => c.name === "Kitchen");
+            expect(added.devices.length).to.be.greaterThan(0);
+          }
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Add Circuit
+
+  Adds a new circuit to an existing simulation. Supports manual creation (empty device list) or auto-generation from a named template.
+
+  ## Path Parameters
+  - `id` (string, required): Simulation ID
+
+  ## Request Body
+  - `name` (string, required): Circuit name — when `autoGenerate` is `true`, must match one of: `Kitchen`, `Living Room`, `Bedroom`, `Bathroom`, `Office`
+  - `autoGenerate` (boolean, optional, default: `false`): Auto-populate with preset devices
+
+  ## Response (201)
+  Returns the full simulation document with the new circuit appended.
+
+  ## Error Responses
+  - `404`: Simulation or circuit not found
+  - `403`: Not authorized

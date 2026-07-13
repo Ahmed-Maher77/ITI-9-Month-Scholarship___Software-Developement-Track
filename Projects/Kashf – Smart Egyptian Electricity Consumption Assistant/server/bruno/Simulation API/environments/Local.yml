@@ -1,0 +1,16 @@
+name: Local
+variables:
+  - name: baseUrl
+    value: http://localhost:3000
+  - name: simulationId
+    value: 6a27c154f9aab6b92f804b79
+  - name: circuitId
+    value: ""
+  - name: deviceId
+    value: 6a290eb8e800603c9b40f553
+  - secret: true
+    name: authToken
+  - name: email
+    value: test1@example.com
+  - name: password
+    value: password123

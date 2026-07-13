@@ -1,0 +1,60 @@
+info:
+  name: Update Circuit
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/circuits/{{circuitId}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Main Kitchen"
+      }
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.status === 200) {
+          const circuits = res.body.data.circuits;
+          const updated = circuits.find(c => c._id === bru.getVar("circuitId"));
+          if (updated) {
+            bru.setVar("circuitName", updated.name);
+          }
+        }
+    - type: tests
+      code: |-
+        test("Status is 200", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Circuit name was updated", function() {
+          const circuits = res.body.data.circuits;
+          const updated = circuits.find(c => c._id === bru.getVar("circuitId"));
+          expect(updated.name).to.equal("Main Kitchen");
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Update Circuit
+
+  Updates a circuit's name within a simulation.
+
+  ## Path Parameters
+  - `id` (string, required): Simulation ID
+  - `cid` (string, required): Circuit ID
+
+  ## Request Body
+  - `name` (string, required): New circuit name
+
+  ## Response (200)
+  Returns the full simulation document with the circuit renamed.

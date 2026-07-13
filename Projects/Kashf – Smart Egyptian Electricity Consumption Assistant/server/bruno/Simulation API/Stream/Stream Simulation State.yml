@@ -1,0 +1,61 @@
+info:
+  name: Stream Simulation State
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/stream"
+  headers:
+    - name: Accept
+      value: text/event-stream
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+
+docs: |-
+  # Stream Simulation State (SSE)
+
+  Opens a **Server-Sent Events** connection that receives real-time state updates every time the simulation engine ticks (every ~1 second).
+
+  ## Path Parameters
+  - `id` (string, required): Simulation ID
+
+  ## Response Headers
+  ```
+  Content-Type: text/event-stream
+  Cache-Control: no-cache
+  Connection: keep-alive
+  ```
+
+  ## Event Format
+  Each message is a JSON payload prefixed with `data: `:
+
+  ```
+  data: {"totalKWh":0.0417,"currentTier":1,"currentLoadW":1500,"estimatedBill":0.02,"tickCount":100,"running":true,"startedAt":"...","circuits":[{"_id":"...","name":"Kitchen","loadW":200,"deviceCount":3,"devicesOn":1}],"timestamp":"2026-06-09T10:00:00.000Z"}
+  ```
+
+  ## Payload Fields
+  | Field | Type | Description |
+  |-------|------|-------------|
+  | `totalKWh` | number | Accumulated kilowatt-hours (4 decimal places) |
+  | `currentTier` | number | Current Sheriha billing tier (1-7) |
+  | `currentLoadW` | number | Total wattage currently being drawn |
+  | `estimatedBill` | number | Estimated bill in EGP (2 decimal places) |
+  | `tickCount` | number | Number of engine ticks performed |
+  | `running` | boolean | Whether the engine is currently running |
+  | `startedAt` | string | ISO timestamp when the engine was last started |
+  | `circuits` | array | Per-circuit summary (`loadW`, `deviceCount`, `devicesOn`) |
+  | `timestamp` | string | ISO timestamp of this tick |
+
+  ## Connection Management
+  - The connection stays open indefinitely (no timeout)
+  - The server cleans up the connection when the client disconnects
+  - If the engine is not running, connect and wait — updates will arrive when `start` is called
+
+  ## Important
+  This is an SSE stream — it does **not** terminate. In Bruno, you will see data arrive in the response panel as long as the connection stays open. Set a manual timeout if you only want to capture a few ticks.

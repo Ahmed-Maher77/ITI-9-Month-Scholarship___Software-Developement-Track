@@ -1,0 +1,64 @@
+info:
+  name: Login
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/auth/login"
+  body:
+    type: json
+    data: |-
+      {
+        "email": "{{email}}",
+        "password": "{{password}}"
+      }
+  auth:
+    type: none
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.status === 200) {
+          const token = res.body.data.accessToken;
+          bru.setEnvVar("authToken", token);
+          bru.setVar("authToken", token);
+        }
+    - type: tests
+      code: |-
+        test("Login successful", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Response has success flag", function() {
+          expect(res.body).to.have.property("success");
+          expect(res.body.success).to.equal(true);
+        });
+        test("Response has access token", function() {
+          expect(res.body.data).to.have.property("accessToken");
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Login
+
+  Authenticates a user and retrieves an access token.
+
+  The after-response script automatically stores the token in the `authToken` environment variable for use in subsequent requests.
+
+  ## Request Body
+  - `email` (string, required): User email
+  - `password` (string, required): User password
+
+  ## Response
+  ```json
+  {
+    "success": true,
+    "data": {
+      "user": { ... },
+      "accessToken": "jwt_token_here"
+    }
+  }
+  ```

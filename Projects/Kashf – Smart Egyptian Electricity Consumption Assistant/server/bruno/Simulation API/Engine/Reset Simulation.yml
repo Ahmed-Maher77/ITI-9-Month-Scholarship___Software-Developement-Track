@@ -1,0 +1,66 @@
+info:
+  name: Reset Simulation
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/reset"
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status is 200", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Runtime counters are zeroed", function() {
+          expect(res.body.data.runtime.totalKWh).to.equal(0);
+          expect(res.body.data.runtime.currentTier).to.equal(1);
+          expect(res.body.data.runtime.currentLoadW).to.equal(0);
+          expect(res.body.data.runtime.tickCount).to.equal(0);
+        });
+        test("Config is preserved", function() {
+          expect(res.body.data).to.have.property("circuits");
+          expect(res.body.data.circuits.length).to.be.greaterThan(0);
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Reset Simulation
+
+  Resets all runtime counters to zero while preserving the circuit and device configuration.
+
+  ## Path Parameters
+  - `id` (string, required): Simulation ID
+
+  ## Response (200)
+  ```json
+  {
+    "success": true,
+    "data": {
+      "id": "sim_id",
+      "name": "My Smart Home",
+      "circuits": [...],
+      "runtime": {
+        "totalKWh": 0,
+        "currentTier": 1,
+        "currentLoadW": 0,
+        "estimatedBill": 0,
+        "tickCount": 0,
+        "running": false,
+        "startedAt": null
+      }
+    }
+  }
+  ```
+
+  ## Notes
+  - The engine is also paused if it was running
+  - Device states (`isOn`) are **not** reset — only runtime counters
+  - The in-memory config remains intact

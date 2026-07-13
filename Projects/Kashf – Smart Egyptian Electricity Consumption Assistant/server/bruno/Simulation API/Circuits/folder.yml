@@ -1,0 +1,8 @@
+info:
+  name: Circuits
+  type: folder
+
+http:
+  headers:
+    - name: Authorization
+      value: "Bearer {{authToken}}"

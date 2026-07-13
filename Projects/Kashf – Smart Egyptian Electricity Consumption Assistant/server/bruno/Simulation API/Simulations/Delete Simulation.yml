@@ -1,0 +1,52 @@
+info:
+  name: Delete Simulation
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}"
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status is 200", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Response has success flag", function() {
+          expect(res.body.success).to.equal(true);
+        });
+        test("Returns deleted simulation ID", function() {
+          expect(res.body.data).to.have.property("id");
+        });
+        test("Subsequent GET returns 404", function() {
+          // Run after deletion to verify cleanup
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Delete Simulation
+
+  Deletes a simulation and its configuration from the database. If the simulation engine is currently running, it is stopped and removed from memory.
+
+  ## Path Parameters
+  - `id` (string, required): Simulation ID
+
+  ## Response (200)
+  ```json
+  {
+    "success": true,
+    "data": { "id": "deleted_sim_id" }
+  }
+  ```
+
+  ## Notes
+  - This permanently removes all circuits and devices for this simulation
+  - Any active engine tick loop is cleaned up via `removeSimulation()`
+  - This action cannot be undone

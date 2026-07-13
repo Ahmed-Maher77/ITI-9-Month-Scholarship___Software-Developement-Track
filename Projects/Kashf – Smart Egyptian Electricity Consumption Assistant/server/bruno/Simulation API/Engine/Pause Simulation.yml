@@ -1,0 +1,57 @@
+info:
+  name: Pause Simulation
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/pause"
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status is 200", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Engine is paused", function() {
+          expect(res.body.data.running).to.equal(false);
+        });
+        test("Runtime state preserved", function() {
+          expect(res.body.data).to.have.property("totalKWh");
+          expect(res.body.data).to.have.property("tickCount");
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Pause Simulation
+
+  Pauses the simulation engine, freezing all runtime counters at their current values.
+
+  ## Path Parameters
+  - `id` (string, required): Simulation ID
+
+  ## Response (200)
+  ```json
+  {
+    "success": true,
+    "data": {
+      "totalKWh": 0.5,
+      "currentTier": 1,
+      "currentLoadW": 215,
+      "estimatedBill": 0.29,
+      "tickCount": 50,
+      "running": false,
+      "startedAt": "2026-06-09T..."
+    }
+  }
+  ```
+
+  ## Notes
+  - Runtime state is preserved in memory — calling `start` again resumes from where it left off
+  - Devices can still be toggled while paused; the load calculation will update on the next `start`

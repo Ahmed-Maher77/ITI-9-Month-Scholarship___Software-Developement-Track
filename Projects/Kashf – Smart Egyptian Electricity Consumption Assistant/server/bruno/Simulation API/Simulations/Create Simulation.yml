@@ -1,0 +1,93 @@
+info:
+  name: Create Simulation
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/simulations"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "My Smart Home",
+        "autoGenerate": true
+      }
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.status === 201) {
+          const id = res.body.data.id;
+          bru.setEnvVar("simulationId", id);
+          bru.setVar("simulationId", id);
+        }
+    - type: tests
+      code: |-
+        test("Status is 201", function() {
+          expect(res.status).to.equal(201);
+        });
+        test("Response has success flag", function() {
+          expect(res.body.success).to.equal(true);
+        });
+        test("Response has simulation data", function() {
+          expect(res.body.data).to.have.property("id");
+          expect(res.body.data).to.have.property("name");
+          expect(res.body.data).to.have.property("circuits");
+        });
+        test("Circuits are auto-generated when requested", function() {
+          if (req.getBody().autoGenerate) {
+            expect(res.body.data.circuits.length).to.be.greaterThan(0);
+          }
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Create Simulation
+
+  Creates a new simulation session for the authenticated user.
+
+  ## Request Body
+  - `name` (string, optional, default: `"New Simulation"`): Display name for the simulation
+  - `autoGenerate` (boolean, optional, default: `false`): When `true`, automatically populates the simulation with 5 default circuit templates (Kitchen, Living Room, Bedroom, Bathroom, Office) each containing realistic Egyptian home devices
+
+  ## Response (201)
+  ```json
+  {
+    "success": true,
+    "data": {
+      "id": "simulation_id",
+      "user": "user_id",
+      "name": "My Smart Home",
+      "circuits": [
+        {
+          "_id": "circuit_id",
+          "name": "Kitchen",
+          "devices": [
+            { "_id": "device_id", "name": "Refrigerator", "wattage": 200, "isOn": true }
+          ]
+        }
+      ],
+      "createdAt": "...",
+      "updatedAt": "..."
+    }
+  }
+  ```
+
+  ## Auto-Generated Circuits
+  | Circuit | Devices |
+  |---------|---------|
+  | Kitchen | Refrigerator (200W, ON), Microwave (1200W), Blender (300W) |
+  | Living Room | AC Unit (2200W), TV (150W), Lights (100W) |
+  | Bedroom | AC Unit (1500W), Fan (75W), Lights (80W) |
+  | Bathroom | Water Heater (1500W), Washing Machine (500W), Lights (60W) |
+  | Office | PC (300W), Monitor (50W), Router (15W, ON), Lights (40W) |

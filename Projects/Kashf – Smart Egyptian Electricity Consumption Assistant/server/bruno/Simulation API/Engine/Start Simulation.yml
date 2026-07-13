@@ -1,0 +1,72 @@
+info:
+  name: Start Simulation
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/start"
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status is 200", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Engine is running", function() {
+          expect(res.body.data.running).to.equal(true);
+        });
+        test("Runtime state is returned", function() {
+          expect(res.body.data).to.have.property("totalKWh");
+          expect(res.body.data).to.have.property("currentTier");
+          expect(res.body.data).to.have.property("currentLoadW");
+          expect(res.body.data).to.have.property("tickCount");
+          expect(res.body.data).to.have.property("startedAt");
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Start Simulation
+
+  Starts the in-memory simulation engine for the given simulation.
+
+  ## How It Works
+  1. Loads the simulation config (circuits and devices) from MongoDB into memory (if not already loaded)
+  2. Begins a `setInterval` loop that ticks every **1 second**
+  3. Each tick:
+     - Sums wattage of all `ON` devices across all circuits
+     - Computes `kWhThisTick = totalWatts / 3600`
+     - Accumulates into `totalKWh`
+     - Recalculates `currentTier` and `estimatedBill`
+     - Broadcasts state snapshot to all SSE clients
+  4. Returns the current runtime state immediately
+
+  ## Path Parameters
+  - `id` (string, required): Simulation ID
+
+  ## Response (200)
+  ```json
+  {
+    "success": true,
+    "data": {
+      "totalKWh": 0,
+      "currentTier": 1,
+      "currentLoadW": 215,
+      "estimatedBill": 0,
+      "tickCount": 0,
+      "running": true,
+      "startedAt": "2026-06-09T..."
+    }
+  }
+  ```
+
+  ## Notes
+  - All runtime state is **in-memory only** — not persisted to MongoDB
+  - Stopping the server will lose all runtime progress
+  - Calling start on an already-running simulation is a no-op

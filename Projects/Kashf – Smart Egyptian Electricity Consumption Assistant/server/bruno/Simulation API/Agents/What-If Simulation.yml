@@ -1,0 +1,119 @@
+info:
+  name: What-If Simulation
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/what-if"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "toggleDevices": [
+          { "deviceId": "{{deviceId}}", "isOn": false }
+        ],
+        "durationMinutes": 60
+      }
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.status === 200) {
+          bru.setVar("whatIfResult", JSON.stringify(res.body.data, null, 2));
+        }
+    - type: tests
+      code: |-
+        test("Status is 200", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Has current and whatIf sections", function() {
+          expect(res.body.data).to.have.property("current");
+          expect(res.body.data).to.have.property("whatIf");
+          expect(res.body.data).to.have.property("difference");
+        });
+        test("Current has projected values", function() {
+          const c = res.body.data.current;
+          expect(c).to.have.property("totalKWh");
+          expect(c).to.have.property("projectedKWhAfter");
+          expect(c).to.have.property("projectedTierAfter");
+          expect(c).to.have.property("projectedBillAfter");
+        });
+        test("Difference shows impact", function() {
+          const d = res.body.data.difference;
+          expect(d).to.have.property("kWhDiff");
+          expect(d).to.have.property("billDiff");
+          expect(d).to.have.property("tierDiff");
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # What-If Simulation
+
+  Answers "what if I change these devices?" without waiting for real-time. Projects consumption forward for a given duration and returns a side-by-side comparison.
+
+  ## How It Works
+  1. Loads the current config + runtime state
+  2. Deep clones the config and applies the requested device toggles
+  3. Computes new total load in watts
+  4. Projects kWh over duration: `kWh = (loadW / 1000) × (durationMinutes / 60)`
+  5. Computes tier and bill for both scenarios
+  6. Returns comparison
+
+  ## Request Body
+  - `toggleDevices` (array, required): List of devices to toggle
+    - `deviceId` (string): Device ID
+    - `isOn` (boolean): Target state
+  - `durationMinutes` (number, optional, default: 60): How far to project
+
+  ## Example
+  Request: turn off a 2200W AC for 1 hour
+
+  Response:
+  ```json
+  {
+    "success": true,
+    "data": {
+      "current": {
+        "totalKWh": 150.5,
+        "totalLoadW": 3700,
+        "tier": 3,
+        "bill": 122.00,
+        "projectedKWhAfter": 152.2,
+        "projectedTierAfter": 3,
+        "projectedBillAfter": 124.50
+      },
+      "whatIf": {
+        "totalLoadW": 1500,
+        "projectedKWhAfter": 151.0,
+        "projectedTierAfter": 3,
+        "projectedBillAfter": 123.00
+      },
+      "difference": {
+        "loadWDiff": -2200,
+        "kWhDiff": -1.2,
+        "billDiff": -1.50,
+        "tierDiff": 0
+      },
+      "changes": {
+        "durationMinutes": 60,
+        "togglesApplied": 1
+      },
+      "running": true
+    }
+  }
+  ```
+
+  ## Notes
+  - No actual tick loop runs — pure mathematical projection
+  - Works even with the engine paused
+  - Tier difference shows if the change would prevent a tier jump

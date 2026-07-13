@@ -1,0 +1,64 @@
+info:
+  name: Update Device
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/devices/{{deviceId}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "isOn": true,
+        "name": "Air Conditioner"
+      }
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status is 200", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Device was toggled on", function() {
+          const circuits = res.body.data.circuits;
+          for (const circuit of circuits) {
+            const device = circuit.devices.find(d => d._id === bru.getVar("deviceId"));
+            if (device) {
+              expect(device.isOn).to.equal(true);
+              break;
+            }
+          }
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Update Device
+
+  Updates a device's properties — typically used to toggle a device `ON`/`OFF` or change its wattage.
+
+  ## Path Parameters
+  - `id` (string, required): Simulation ID
+  - `did` (string, required): Device ID
+
+  ## Request Body
+  At least one field is required:
+  - `name` (string, optional): New device name
+  - `wattage` (number, optional): New power consumption in watts
+  - `isOn` (boolean, optional): Toggle device state
+
+  ## Response (200)
+  Returns the full simulation document with the device updated.
+
+  ## Notes
+  - Toggling a device `ON` while the engine is running will immediately increase the circuit load on the next tick
+  - The in-memory config is synced via `syncConfig()` for running engines

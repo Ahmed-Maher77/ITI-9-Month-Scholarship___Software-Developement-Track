@@ -1,0 +1,8 @@
+info:
+  name: Engine
+  type: folder
+
+http:
+  headers:
+    - name: Authorization
+      value: "Bearer {{authToken}}"

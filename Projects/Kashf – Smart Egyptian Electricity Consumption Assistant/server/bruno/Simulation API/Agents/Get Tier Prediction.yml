@@ -1,0 +1,81 @@
+info:
+  name: Get Tier Prediction
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/prediction"
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status is 200", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Response has success flag", function() {
+          expect(res.body.success).to.equal(true);
+        });
+        test("Has prediction fields", function() {
+          const d = res.body.data;
+          expect(d).to.have.property("currentTier");
+          expect(d).to.have.property("remainingKWh");
+          expect(d).to.have.property("warningLevel");
+          expect(d).to.have.property("kWhPerHour");
+        });
+        test("Warning level is valid", function() {
+          expect(res.body.data.warningLevel).to.be.oneOf(["green", "yellow", "orange", "red"]);
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Get Tier Prediction
+
+  Analyzes the current consumption rate and predicts when the user will cross into the next Sheriha billing tier.
+
+  ## How It Works
+  - `kWhPerHour` = current load in watts / 1000
+  - `remainingKWh` = tier threshold for current tier — total accumulated kWh
+  - `estimatedHoursToNextTier` = remainingKWh / kWhPerHour
+  - `warningLevel` based on percentage remaining in current tier
+
+  ## Warning Levels
+  | Level | Threshold | Meaning |
+  | :--- | :--- | :--- |
+  | 🟢 Green | > 20% remaining | Safe |
+  | 🟡 Yellow | ≤ 20% remaining | Getting close |
+  | 🟠 Orange | ≤ 10% remaining | Consider action |
+  | 🔴 Red | ≤ 5% remaining | Critical |
+
+  ## Path Parameters
+  - `id` (string, required): Simulation ID
+
+  ## Response (200)
+  ```json
+  {
+    "success": true,
+    "data": {
+      "currentTier": 2,
+      "nextTier": 3,
+      "remainingKWh": 30.50,
+      "totalKWh": 69.50,
+      "estimatedHoursToNextTier": 14.72,
+      "warningLevel": "yellow",
+      "currentLoadW": 2070,
+      "kWhPerHour": 2.07,
+      "running": true,
+      "tickCount": 250
+    }
+  }
+  ```
+
+  ## Notes
+  - If the engine is paused or all devices are off, `estimatedHoursToNextTier` is `null`
+  - Tier 7 (1000+ kWh) has no next tier — `nextTier` is `null` and `remainingKWh` is 0
+  - No AI call — pure computation from runtime state

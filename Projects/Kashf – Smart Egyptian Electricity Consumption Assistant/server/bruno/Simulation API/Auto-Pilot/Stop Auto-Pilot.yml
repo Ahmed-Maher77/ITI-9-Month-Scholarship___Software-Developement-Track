@@ -1,0 +1,31 @@
+info:
+  name: Stop Auto-Pilot
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/auto-pilot/stop"
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status is 200", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Auto-pilot is disabled", function() {
+          expect(res.body.data.enabled).to.equal(false);
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Stop Auto-Pilot
+
+  Disables autonomous consumption management. The engine will stop
+  checking projections and will no longer auto-toggle devices.

@@ -1,0 +1,77 @@
+info:
+  name: Get AI Advice
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/advise"
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status is 200", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Response has success flag", function() {
+          expect(res.body.success).to.equal(true);
+        });
+        test("Returns tips array", function() {
+          expect(res.body.data).to.have.property("tips");
+          expect(res.body.data.tips).to.be.an("array");
+        });
+        test("Each tip has device, advice, and savings", function() {
+          if (res.body.data.tips.length > 0) {
+            const tip = res.body.data.tips[0];
+            expect(tip).to.have.property("device");
+            expect(tip).to.have.property("advice");
+            expect(tip).to.have.property("savings");
+          }
+        });
+        test("Has generatedAt timestamp", function() {
+          expect(res.body.data).to.have.property("generatedAt");
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Get AI Advice
+
+  Sends the current simulation state to Groq AI (via OpenAI-compatible SDK) and returns personalized energy-saving tips in Egyptian Arabic.
+
+  ## How It Works
+  1. Loads the simulation config (circuits, devices, wattages) from MongoDB
+  2. Reads the current runtime state (totalKWh, currentTier, estimatedBill) from in-memory engine
+  3. Builds a structured prompt in Arabic with specific device details
+  4. Calls Groq AI with `system` role set to "energy-saving advisor for Egyptian homes"
+  5. Parses the response into structured tips
+
+  ## Path Parameters
+  - `id` (string, required): Simulation ID
+
+  ## Response (200)
+  ```json
+  {
+    "success": true,
+    "data": {
+      "tips": [
+        {
+          "device": "تكييف غرفة المعيشة",
+          "advice": "لو خفضت درجة حرارة التكييف من 24 لـ 26 هتوفر حوالي 30% من استهلاكه",
+          "savings": "45 جنيه في الشهر"
+        }
+      ],
+      "generatedAt": "2026-06-10T..."
+    }
+  }
+  ```
+
+  ## Requirements
+  - `GROQ_API_KEY` and `GROQ_MODEL` must be set in `.env`
+  - The simulation must exist and belong to the authenticated user
+  - The engine does NOT need to be running (runtime state may be null)

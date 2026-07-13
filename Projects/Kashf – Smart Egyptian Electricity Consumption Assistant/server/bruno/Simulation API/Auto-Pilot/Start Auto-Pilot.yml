@@ -1,0 +1,54 @@
+info:
+  name: Start Auto-Pilot
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/auto-pilot/start"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "monthlyKwhLimit": 300
+      }
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status is 200", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Auto-pilot is enabled", function() {
+          expect(res.body.data.enabled).to.equal(true);
+        });
+        test("Goal is set", function() {
+          expect(res.body.data.goal.monthlyKwhLimit).to.equal(300);
+        });
+        test("Has startedAt timestamp", function() {
+          expect(res.body.data.startedAt).to.not.equal(null);
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Start Auto-Pilot
+
+  Enables autonomous consumption management mode. Once enabled, the
+  engine's tick loop will check projected monthly consumption against
+  the goal on every tick and turn off non-essential devices (highest
+  wattage first) if over-projection is detected.
+
+  ## Request Body
+  - `monthlyKwhLimit` (number, optional): Maximum kWh target for the month
+  - `targetBillEgp` (number, optional): Maximum bill target for the month
+
+  At least one goal field must be provided.

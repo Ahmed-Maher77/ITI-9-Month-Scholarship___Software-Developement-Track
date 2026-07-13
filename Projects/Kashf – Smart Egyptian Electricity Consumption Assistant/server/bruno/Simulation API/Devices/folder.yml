@@ -1,0 +1,8 @@
+info:
+  name: Devices
+  type: folder
+
+http:
+  headers:
+    - name: Authorization
+      value: "Bearer {{authToken}}"

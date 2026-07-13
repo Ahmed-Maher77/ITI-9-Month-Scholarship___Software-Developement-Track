@@ -1,0 +1,71 @@
+info:
+  name: Add Device
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/devices"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "circuitId": "{{circuitId}}",
+        "name": "Air Conditioner",
+        "wattage": 2200
+      }
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if (res.status === 201) {
+          const circuits = res.body.data.circuits;
+          const circuit = circuits.find(c => c._id === bru.getVar("circuitId"));
+          if (circuit && circuit.devices.length > 0) {
+            const lastDevice = circuit.devices[circuit.devices.length - 1];
+            bru.setEnvVar("deviceId", lastDevice._id);
+            bru.setVar("deviceId", lastDevice._id);
+          }
+        }
+    - type: tests
+      code: |-
+        test("Status is 201", function() {
+          expect(res.status).to.equal(201);
+        });
+        test("Device was added to circuit", function() {
+          const circuits = res.body.data.circuits;
+          const circuit = circuits.find(c => c._id === bru.getVar("circuitId"));
+          const device = circuit.devices.find(d => d.name === "Air Conditioner");
+          expect(device).to.exist;
+          expect(device.wattage).to.equal(2200);
+          expect(device.isOn).to.equal(false);
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Add Device
+
+  Adds a new device to a specific circuit within a simulation. New devices are always created in the `OFF` state.
+
+  ## Path Parameters
+  - `id` (string, required): Simulation ID
+
+  ## Request Body
+  - `circuitId` (string, required): ID of the circuit to add the device to
+  - `name` (string, required): Device name (e.g., "Air Conditioner", "TV")
+  - `wattage` (number, required): Power consumption in watts (minimum: 1)
+
+  ## Response (201)
+  Returns the full simulation document with the new device pushed to the target circuit's devices array.
+
+  ## Error Responses
+  - `404`: Simulation or circuit not found

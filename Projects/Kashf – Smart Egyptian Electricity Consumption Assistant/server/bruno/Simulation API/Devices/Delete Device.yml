@@ -1,0 +1,46 @@
+info:
+  name: Delete Device
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/api/simulations/{{simulationId}}/devices/{{deviceId}}"
+  auth:
+    type: bearer
+    token: "{{authToken}}"
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status is 200", function() {
+          expect(res.status).to.equal(200);
+        });
+        test("Device was removed", function() {
+          const circuits = res.body.data.circuits;
+          let found = false;
+          for (const circuit of circuits) {
+            const device = circuit.devices.find(d => d._id === bru.getVar("deviceId"));
+            if (device) found = true;
+          }
+          expect(found).to.equal(false);
+        });
+
+settings:
+  encodeUrl: true
+
+docs: |-
+  # Delete Device
+
+  Removes a device from its parent circuit.
+
+  ## Path Parameters
+  - `id` (string, required): Simulation ID
+  - `did` (string, required): Device ID
+
+  ## Response (200)
+  Returns the full simulation document with the device removed.
+
+  ## Notes
+  - The engine config is synced so the deleted device stops contributing to the load on the next tick
