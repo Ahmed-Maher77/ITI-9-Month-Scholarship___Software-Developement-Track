@@ -1,0 +1,1771 @@
+{
+    "common": {
+        "brand": "Kashf",
+        "brandAdmin": "Kashf Admin",
+        "plannedContent": "Planned content",
+        "loading": "Loading Kashf",
+        "editGoals": "Edit Goals",
+        "kwh": "kWh",
+        "egp": "EGP",
+        "kwhValue": "{{value}} kWh",
+        "egpValue": "EGP {{value}}",
+        "tier": "Tier {{tier}}",
+        "enable": "Enable",
+        "view": "View",
+        "cancel": "Cancel",
+        "goBack": "Go Back",
+        "delete": "Delete",
+        "save": "Save",
+        "saving": "Saving...",
+        "allYears": "All Years",
+        "allStatus": "All Status",
+        "previous": "Previous",
+        "next": "Next",
+        "pageOf": "Page {{current}} of {{total}}",
+        "open": "Open",
+        "close": "Close",
+        "select": "Select...",
+        "pagination": {
+            "prev": "Previous",
+            "next": "Next",
+            "pageInfo": "Page {{page}} of {{totalPages}}"
+        },
+        "time": {
+            "justNow": "just now",
+            "minutesAgo": "{{count}}m ago",
+            "hoursAgo": "{{count}}h ago",
+            "daysAgo": "{{count}}d ago",
+            "weeksAgo": "{{count}}w ago"
+        },
+        "governorates": {
+            "cairo": "Cairo",
+            "giza": "Giza",
+            "alexandria": "Alexandria",
+            "dakahlia": "Dakahlia",
+            "red_sea": "Red Sea",
+            "beheira": "Beheira",
+            "fayoum": "Fayoum",
+            "gharbia": "Gharbia",
+            "ismailia": "Ismailia",
+            "menofia": "Menofia",
+            "minya": "Minya",
+            "qaliubiya": "Qaliubiya",
+            "new_valley": "New Valley",
+            "north_sinai": "North Sinai",
+            "port_said": "Port Said",
+            "qalyubia": "Qalyubia",
+            "sharqia": "Sharqia",
+            "south_sinai": "South Sinai",
+            "suez": "Suez",
+            "aswan": "Aswan",
+            "asyut": "Asyut",
+            "beni_suef": "Beni Suef",
+            "kafr_el-sheikh": "Kafr el-Sheikh",
+            "luxor": "Luxor",
+            "matrouh": "Matrouh",
+            "sohag": "Sohag",
+            "qena": "Qena",
+            "damietta": "Damietta"
+        }
+    },
+    "footer": {
+        "rights": "All rights reserved",
+        "backToTop": "Back to top"
+    },
+    "splash": {
+        "tagline": "Smart electricity monitoring for Egypt"
+    },
+    "stats": {
+        "users": {
+            "value": "2,400+",
+            "label": "Egyptian Households"
+        },
+        "scans": {
+            "value": "15,000+",
+            "label": "Active Sensors"
+        },
+        "savings": {
+            "value": "30%",
+            "label": "Avg. Bill Savings"
+        },
+        "accuracy": {
+            "value": "98%",
+            "label": "Sync Precision"
+        }
+    },
+    "testimonials": {
+        "title": "Egyptians who got their bills under control",
+        "subtitle": "Real stories from real users saving money with Kashf",
+        "ahmed": {
+            "name": "Ahmed Khalil",
+            "title": "Father of 3, Nasr City",
+            "quote": "كنت دايماً مفاجأة من الفاتورة، لكن كشف خلاني أعرف استهلاكي بالظبط وبقت تنبيهات قبل ما الفاتورة تزيد."
+        },
+        "omar": {
+            "name": "Omar Samy",
+            "title": "Business Owner, Alexandria",
+            "quote": "كنت مش عارف أحسب الفاتورة إزاي، كشف حل المشكلة وبي توصيات عملية بالذكاء الاصطناعي."
+        },
+        "karim": {
+            "name": "Karim Hassan",
+            "title": "Engineer, New Cairo",
+            "quote": "I was skeptical at first, but the real-time embedded system tracking is impressive. Saved 340 EGP on my last bill."
+        }
+    },
+    "language": {
+        "label": "Language",
+        "ariaLabel": "Change application language",
+        "switchTo": "Switch to {{language}}",
+        "ar": "العربية",
+        "en": "English"
+    },
+    "marketingNav": {
+        "aria": "Home page navigation",
+        "home": "Home",
+        "features": "Features",
+        "problem": "The Problem",
+        "howItWorks": "How It Works",
+        "aiAssistant": "AI Assistant",
+        "about": "About",
+        "pricing": "Pricing",
+        "cta": "Get Started",
+        "joinKashf": "Join Kashf",
+        "goToDashboard": "Go to dashboard",
+        "scan": "Live Sync"
+    },
+    "welcome": {
+        "aiPoweredBadge": "AI-powered energy insights",
+        "heroTitlePart1": "Know Before Your Electricity",
+        "heroTitlePart2": "Bill Surprises You",
+        "heroSubtitle": "Kashf uses advanced AI and real-time tracking to predict Sheriha jumps, sending you alerts before you enter expensive tiers.",
+        "startSaving": "Start Saving Today",
+        "watchDemo": "Watch Demo",
+        "demoPlaceholderTitle": "Kashf Demo Video",
+        "demoPlaceholderText": "See how Kashf syncs meter readings, tracks consumption tiers, and warns you about bill spikes.",
+        "socialProofPrimary": "+2,400 Egyptian households",
+        "socialProofSecondary": "already tracking with Kashf",
+        "meterTier": "Sheriha 3",
+        "meterRemaining": "40 kWh Left",
+        "card1Title": "Consumption Warning",
+        "card1Value": "40 kWh Remaining",
+        "card2Title": "Estimated Bill",
+        "card2Value": "EGP 412",
+        "card3Title": "AI INSIGHT",
+        "card3Value": "Reduce water heater usage today.",
+        "featuresText": "AI meter scanning, Sheriha tracking, tier-up warnings, and personalized energy-saving advice.",
+        "howItWorksText": "Connect your meter, Kashf syncs it and calculates your consumption and tier, then shows a clear dashboard with actionable tips.",
+        "pricingText": "Start for free — flexible plans coming soon for your household.",
+        "meterSectionTitle": "Interactive Smart Monitoring",
+        "meterSectionSubtitle": "Experience the real-time feedback of Kashf's virtual utility meter. Watch your consumption zones and plan ahead to stay in control.",
+        "coreCapabilities": "Core Capabilities"
+    },
+    "howItWorks": {
+        "badge": "How It Works",
+        "title": "Four steps.",
+        "titleAccent": "Smarter every month.",
+        "subtitle": "From meter reading to money saved — Kashf handles everything automatically.",
+        "steps": {
+            "scan": {
+                "title": "Connect the System",
+                "desc": "Connect the Kashf Smart Node to your electricity meter. Kashf syncs the data instantly in real-time."
+            },
+            "analyze": {
+                "title": "Analyze Consumption",
+                "desc": "AI analyzes the reading against your history and Egyptian tariff tiers in real time."
+            },
+            "track": {
+                "title": "Track Your Tier",
+                "desc": "Current tier, remaining kWh, cost forecast, and next threshold — all on one screen."
+            },
+            "save": {
+                "title": "Save Money",
+                "desc": "Follow personalized AI recommendations and receive alerts before crossing the next tier."
+            }
+        }
+    },
+    "problem": {
+        "badge": "The Problem",
+        "title": "Why Egyptians dread their",
+        "titleAccent": "electricity bill",
+        "subtitle": "Crossing just one tier costs hundreds of pounds. Kashf makes sure it never happens.",
+        "billLabel": "Electricity Bill — June 2026",
+        "without": {
+            "1": "Bill arrived — 847 EGP instead of the expected 350 EGP",
+            "2": "Jumped to Tier 5 mid-month with zero warning",
+            "3": "AC, water heater, and appliances all running simultaneously",
+            "4": "No visibility into daily usage, no forecast, no way out",
+            "title": "Without Kashf",
+            "billNote": "Tier 5 applied — 0.72 EGP/kWh on last 300 kWh"
+        },
+        "with": {
+            "1": "Real-time tier tracking shows you're at 287 kWh, 63 left to Tier 5",
+            "2": "48-hour forecast: 'You'll cross at this rate within 2.5 days'",
+            "3": "AI sent an alert: Reduce AC by 1.5 hrs for 3 days",
+            "4": "End-of-month bill: 412 EGP instead of 847 EGP — saved 435 EGP",
+            "title": "With Kashf",
+            "billNote": "Stayed in Tier 3 — saved 435 EGP this month"
+        },
+        "banner": "Kashf user average savings",
+        "bannerAmount": "380 EGP per month",
+        "bannerSuffix": "by staying ahead of tier thresholds."
+    },
+    "ai": {
+        "badge": "AI Energy Assistant",
+        "title": "Personalized tips in",
+        "titleAccent": "Egyptian Arabic",
+        "desc": "Kashf's AI analyzes your consumption profile and gives you actionable steps in Egyptian Arabic — not generic advice, but recommendations based on your home's actual behavior.",
+        "feat1": "Per-appliance recommendations",
+        "feat2": "Usage timing optimization",
+        "feat3": "Seasonal adjustment insights",
+        "feat4": "Arabic-first conversational UI",
+        "online": "Online",
+        "inputPlaceholder": "Ask Kashf about your bill...",
+        "quick1": "Save more",
+        "quick2": "More suggestions",
+        "quick3": "Another question",
+        "chat": {
+            "msg1": "Moving to the next tier will cost you 187 EGP extra. Reducing AC by 2 hours a day saves 64 EGP.",
+            "msg2": "What's better — change the AC temperature or reduce run time?",
+            "msg3": "Raising the temp to 26°C is better — saves more and you won't notice a big difference. Try it tonight!"
+        }
+    },
+    "pwa": {
+        "badge": "Installable Web App",
+        "title": "Install it.",
+        "titleAccent": "No App Store needed.",
+        "desc": "Kashf is a Progressive Web App — install it directly from your browser on any phone or computer. Works offline, sends notifications, and feels like a native app.",
+        "feat1": "Offline-first architecture",
+        "feat2": "Push notification alerts",
+        "feat3": "Automatic background sync",
+        "feat4": "iOS, Android, Windows & macOS support",
+        "tierAlert": "Tier Alert",
+        "untilTier": "until Tier 5",
+        "addToHome": "Add to Home Screen",
+        "installDesc": "Install Kashf for the best experience",
+        "install": "Install"
+    },
+    "cta": {
+        "badge": "Free Beta Access — Limited Time",
+        "title": "Take control of your",
+        "titleAccent": "electricity bill",
+        "desc": "Join over 2,400 Egyptian households using Kashf to track consumption, avoid tier jumps, and save hundreds of pounds every month.",
+        "button": "Start Monitoring for Free",
+        "finePrint": "No credit card. No App Store. Works on any device.",
+        "stat1": {
+            "num": "2,400+",
+            "label": "Egyptian households"
+        },
+        "stat2": {
+            "num": "380 EGP",
+            "label": "Avg. monthly savings"
+        },
+        "stat3": {
+            "num": "100%",
+            "label": "Free during beta"
+        }
+    },
+    "features": {
+        "smartMeter": "Real-Time Embedded Monitoring",
+        "smartMeterDesc": "Smart embedded system instant meter syncing via Kashf Smart Node",
+        "aiAnalysis": "AI Consumption Analysis",
+        "aiAnalysisDesc": "Machine learning models trained on Egyptian usage patterns",
+        "prediction": "Sheriha Prediction Engine",
+        "predictionDesc": "Real-time tier tracking with 48-hour cost forecasting",
+        "pwa": "Installable PWA",
+        "pwaDesc": "Works on mobile & desktop, even offline — no app store needed"
+    },
+    "auth": {
+        "alreadyHaveAccount": "Already have an account?",
+        "noAccount": "Don't have an account?",
+        "switchToLogin": "Login",
+        "switchToRegister": "Create account",
+        "loginTitle": "Login",
+        "loginSubtitle": "Welcome back — sign in to continue monitoring your electricity.",
+        "loginSubmit": "Login",
+        "loginSubmitting": "Signing in...",
+        "logout": "Log out",
+        "logoutSubmitting": "Logging out...",
+        "loginMissingToken": "Login succeeded but no access token was returned.",
+        "loginGenericError": "Could not sign in. Check your credentials and try again.",
+        "emailPlaceholder": "you@example.com",
+        "passwordPlaceholder": "At least 6 characters",
+        "showPassword": "Show password",
+        "hidePassword": "Hide password"
+    },
+    "register": {
+        "title": "Create account",
+        "subtitle": "Join Kashf and start monitoring your electricity from your dashboard.",
+        "username": "Username",
+        "usernamePlaceholder": "Your display name",
+        "email": "Email",
+        "password": "Password",
+        "repassword": "Confirm password",
+        "repasswordPlaceholder": "Re-enter your password",
+        "picture": "Profile picture",
+        "pictureChoose": "Choose image",
+        "pictureRemove": "Remove",
+        "pictureEmpty": "No image",
+        "picturePreviewAlt": "Profile preview",
+        "submit": "Create account",
+        "submitting": "Creating account...",
+        "backHome": "Back to home",
+        "passwordMismatch": "Passwords do not match.",
+        "missingToken": "Registration succeeded but no access token was returned.",
+        "genericError": "Could not create account. Please try again."
+    },
+    "profileMenu": {
+        "ariaLabel": "Account menu for {{name}}",
+        "fallbackName": "Account",
+        "profile": "Profile"
+    },
+    "nav": {
+        "mainAria": "Main navigation",
+        "mainMenu": "Main Menu",
+        "dashboard": "Dashboard",
+        "scan": "Live Sync",
+        "history": "History",
+        "tips": "Tips",
+        "meters": "My Meters",
+        "simulationOverview": "Simulation Overview",
+        "analytics": "Analytics",
+        "bills": "Bills & Predictions",
+        "aiAdvisor": "AI Advisor",
+        "alerts": "Alerts",
+        "reports": "Reports",
+        "billing": "Billing",
+        "profile": "Profile",
+        "settings": "Settings",
+        "about": "About",
+        "admin": "Admin",
+        "currentPlan": "Current Plan",
+        "coinsUsage": "Coins Usage",
+        "plan": {
+            "family": "Family",
+            "plus": "Plus",
+            "free": "Free"
+        }
+    },
+    "adminNav": {
+        "aria": "Admin navigation",
+        "dashboard": "Dashboard",
+        "users": "Users",
+        "scans": "Devices",
+        "tiers": "Tiers",
+        "notifications": "Notifications",
+        "settings": "Settings",
+        "backToApp": "Back to app"
+    },
+    "adminHelmet": {
+        "adminDashboard": {
+            "title": "Admin Dashboard — Kashf",
+            "description": "Admin panel — manage users, devices, bills, and system settings for Kashf."
+        },
+        "usersManagement": {
+            "title": "Users Management — Kashf",
+            "description": "Users management — search, filter, enable/disable, and delete user accounts."
+        },
+        "deviceManagement": {
+            "title": "Device Management — Kashf",
+            "description": "Device management — monitor device status, consumption, and settings."
+        },
+        "tierManagement": {
+            "title": "Tier Management — Kashf",
+            "description": "Tier management — edit consumption thresholds and rates per tier."
+        },
+        "notificationsManagement": {
+            "title": "Notifications Management — Kashf",
+            "description": "Create and manage system notifications for users."
+        },
+        "systemSettings": {
+            "title": "System Settings — Kashf",
+            "description": "Configure API keys, upload limits, session timeout, and maintenance mode."
+        },
+        "aiLogs": {
+            "title": "AI Logs — Kashf",
+            "description": "AI query logs — track and analyze assistant interactions."
+        }
+    },
+    "notFound": {
+        "goWelcome": "Go to Welcome",
+        "goDashboard": "Go to Dashboard"
+    },
+    "pages": {
+        "pricing": {
+            "title": "Pricing",
+            "description": "Kashf plans and pricing — coming soon.",
+            "sections": [
+                "Free tier",
+                "Upcoming paid plans",
+                "Feature comparison"
+            ]
+        },
+        "scanMeter": {
+            "title": "Live Sync",
+            "selectMeter": "Select a meter to view live sync",
+            "noMeters": "You must add a meter before you can sync.",
+            "goToMeters": "Go to My Meters",
+            "startScan": "Start Sync",
+            "description": "Connect your Kashf Smart Node so the embedded system can stream current readings in real-time.",
+            "sections": [
+                "Hardware integration",
+                "Live data streaming",
+                "Sync troubleshooting",
+                "Node connection guide"
+            ]
+        },
+        "processing": {
+            "title": "Processing",
+            "description": "Temporary screen shown while the Smart System analyzes your live data, calculates Sheriha tier, bill estimate, and generates tips.",
+            "sections": [
+                "Device sync indicator",
+                "AI processing progress",
+                "Status messages per pipeline stage",
+                "Auto-redirect to dashboard on success"
+            ]
+        },
+        "dashboard": {
+            "title": "User Dashboard",
+            "description": "Your home view for current consumption, electricity tier (Sheriha), estimated bill, and tier-up warnings.",
+            "sections": [
+                "Current consumption and Sheriha tier",
+                "Remaining kWh until next tier",
+                "Estimated bill (EGP)",
+                "Consumption gauge and chart",
+                "Tier warning banner",
+                "AI recommendations preview"
+            ]
+        },
+        "history": {
+            "title": "History",
+            "description": "Browse previous meter scans, consumption trends, bill estimates, and Sheriha tier changes over time.",
+            "sections": [
+                "Previous scans list",
+                "Consumption history timeline",
+                "Bills history table",
+                "Tier change log",
+                "Filters and pagination"
+            ]
+        },
+        "scanDetails": {
+            "title": "Sync Details",
+            "description": "Full details for a single data sync including live readings, calculations, and AI tips generated for that reading.",
+            "sections": [
+                "Live data stream",
+                "Sync status and latency",
+                "Sheriha and bill calculation breakdown",
+                "Generated AI tips (Egyptian Arabic)",
+                "Resync action"
+            ]
+        },
+        "tips": {
+            "title": "Tips & Recommendations",
+            "description": "Personalized electricity-saving advice powered by AI, plus general guidance with estimated savings.",
+            "sections": [
+                "Personalized AI tips feed",
+                "General electricity-saving advice",
+                "Estimated savings per tip",
+                "Category filters"
+            ]
+        },
+        "profile": {
+            "title": "Profile",
+            "description": "View your account details and profile picture.",
+            "loading": "Loading profile...",
+            "loadError": "Could not load your profile. Try logging in again.",
+            "noPicture": "No profile picture saved yet.",
+            "updatePictureTitle": "Update profile picture",
+            "pictureUpdate": "Save picture",
+            "pictureUpdating": "Saving...",
+            "pictureRequired": "Choose an image first.",
+            "pictureUpdateError": "Could not update profile picture."
+        },
+        "settings": {
+            "title": "Settings",
+            "description": "Manage your language, notifications, and appearance preferences.",
+            "sections": [
+                "Language settings (Arabic / English)",
+                "Notification settings",
+                "Theme settings (light / dark / system)"
+            ]
+        },
+        "about": {
+            "title": "About",
+            "description": "Learn about Kashf's mission, how AI and Smart Nodes power the platform, and our privacy commitments.",
+            "sections": [
+                "Project mission",
+                "How AI and Smart Nodes work",
+                "Privacy policy"
+            ]
+        },
+        "notFound": {
+            "title": "404 — Page Not Found",
+            "description": "The page you requested does not exist. Return to the welcome page or your dashboard.",
+            "sections": []
+        },
+        "adminDashboard": {
+            "title": "Admin Dashboard",
+            "description": "Operational overview of platform usage, Sync success rate, and system health.",
+            "sections": [
+                "Total users and total scans",
+                "Sync success rate",
+                "AI requests count",
+                "Recent activity feed",
+                "System health indicators"
+            ]
+        },
+        "usersManagement": {
+            "title": "Users Management",
+            "description": "Search, inspect, and moderate user accounts.",
+            "sections": [
+                "Users table with search and filters",
+                "User details panel",
+                "User status (active / disabled)",
+                "Actions: view, disable, enable user"
+            ]
+        },
+        "scanManagement": {
+            "title": "Device Management",
+            "description": "Review all meter syncs, connection statuses, and device logs.",
+            "sections": [
+                "All syncs table",
+                "Sync results and latency",
+                "Sync status",
+                "Device connection graphs",
+                "Actions: view sync, delete sync"
+            ]
+        },
+        "tierManagement": {
+            "title": "Tier Management",
+            "description": "Maintain Egyptian electricity tier (Sheriha) rules, pricing tables, and kWh thresholds.",
+            "sections": [
+                "Electricity tier rules",
+                "Pricing tables",
+                "kWh thresholds",
+                "Actions: create, edit, delete tier"
+            ]
+        },
+        "aiLogs": {
+            "title": "AI Logs",
+            "description": "Audit Data Sync and generative AI requests for debugging and compliance.",
+            "sections": [
+                "Sync requests log",
+                "AI prompts and responses",
+                "Processing times",
+                "Failure logs with filters"
+            ]
+        },
+        "notificationsManagement": {
+            "title": "Notifications Management",
+            "description": "Create and manage system announcements and user notifications.",
+            "sections": [
+                "System announcements list",
+                "User notifications",
+                "Actions: create, edit, delete notification"
+            ]
+        },
+        "systemSettings": {
+            "title": "System Settings",
+            "description": "Configure Gemini API, OCR settings, upload limits, and security policies.",
+            "sections": [
+                "Gemini API configuration",
+                "Embedded device settings",
+                "Upload limits",
+                "Security settings"
+            ]
+        }
+    },
+    "pricing": {
+        "eyebrow": "Simple Pricing",
+        "headline": "Start Saving on Your",
+        "headlineAccent": "Electricity Bill Today",
+        "subline": "Everything you need to monitor consumption, avoid costly Sheriha jumps, and receive AI-powered recommendations.",
+        "month": "month",
+        "free": "Free",
+        "badge": {
+            "popular": "Most Popular"
+        },
+        "footnote": "No credit card required · Cancel anytime ·",
+        "faqLink": "Read the FAQ",
+        "plan": {
+            "free": {
+                "title": "Free",
+                "desc": "Perfect for getting started"
+            },
+            "plus": {
+                "title": "Plus",
+                "desc": "For households that want complete control"
+            },
+            "family": {
+                "title": "Family",
+                "desc": "For multiple properties and households"
+            }
+        },
+        "cta": {
+            "free": "Get Started",
+            "plus": "Start Free Trial",
+            "family": "Choose Family"
+        }
+    },
+    "feat": {
+        "meterScan": "Meter scanning",
+        "consumTrack": "Consumption tracking",
+        "sheriha": "Sheriha monitoring",
+        "dashboard": "Basic dashboard",
+        "history": "Monthly history",
+        "everythingFree": "Everything in Free",
+        "aiRecs": "AI-powered recommendations",
+        "billForecast": "Bill forecasting",
+        "earlyAlerts": "Early Sheriha alerts",
+        "analytics": "Advanced analytics",
+        "push": "Push notifications",
+        "pwa": "Installable PWA",
+        "everythingPlus": "Everything in Plus",
+        "multiMeter": "Multiple meter management",
+        "familyReports": "Family usage reports",
+        "sharedAccess": "Shared access",
+        "extHistory": "Extended consumption history",
+        "prioritySupport": "Priority support",
+        "oneMeter": "1 electricity meter",
+        "twoMeters": "Up to 2 electricity meters",
+        "fiveMeters": "Up to 5 electricity meters",
+        "freeCoins": "50 Coins per month",
+        "plusCoins": "150 Coins per month",
+        "familyCoins": "300 Coins per month"
+    },
+    "about": {
+        "hero": {
+            "badge": "Behind Kashf",
+            "title": "Helping Families Take Control of Their",
+            "titleAccent": "Electricity Bills",
+            "desc": "Kashf was built to solve a growing challenge facing Egyptian households: unexpected electricity bill increases caused by crossing into higher Sheriha tiers. Our mission is to make electricity consumption simple, transparent, and actionable.",
+            "scrollHint": "Scroll to explore"
+        },
+        "story": {
+            "badge": "Our Story",
+            "title": "Built for",
+            "titleAccent": "Egyptian Families",
+            "body1": "In Egypt, many families only discover they exceeded their electricity tier after receiving an expensive monthly bill. The tiered Sheriha system means crossing a threshold by even 1 kWh can dramatically increase costs.",
+            "body2": "Kashf was created to provide proactive insights, helping users understand their consumption before costly surprises happen. Our AI-powered platform analyzes usage patterns, predicts tier crossings, and delivers personalized recommendations.",
+            "body3": "We’re focused on the Egyptian market, understanding local tariff structures, consumption patterns, and household needs. Our mission is simple: empower families with transparency and control.",
+            "timeline": {
+                "t1": {
+                    "year": "2025",
+                    "label": "The Problem",
+                    "desc": "Egyptian families face unpredictable electricity bills"
+                },
+                "t2": {
+                    "year": "2026",
+                    "label": "The Solution",
+                    "desc": "Kashf is born with AI-powered insights"
+                },
+                "t3": {
+                    "year": "Today",
+                    "label": "The Impact",
+                    "desc": "Thousands of households saving money"
+                }
+            }
+        },
+        "values": {
+            "badge": "What Drives Us",
+            "title": "Four principles",
+            "titleAccent": "that shape every decision",
+            "subtitle": "Our compass for building a product Egyptians trust with their energy and money.",
+            "v1": {
+                "title": "Accuracy First",
+                "desc": "We obsess over sensor precision and prediction quality. Every decimal point matters when it affects your bill."
+            },
+            "v2": {
+                "title": "Built for Egypt",
+                "desc": "Kashf is designed around Egypt’s tariff structure, spoken Arabic, and real household usage patterns."
+            },
+            "v3": {
+                "title": "Community-Driven",
+                "desc": "Every feature starts with real feedback from Egyptian families who use Kashf daily."
+            },
+            "v4": {
+                "title": "Speed & Simplicity",
+                "desc": "Scan your meter in seconds. See your forecast instantly. No spreadsheets, no complexity."
+            }
+        },
+        "team": {
+            "badge": "The Team",
+            "title": "The people",
+            "titleAccent": "behind Kashf",
+            "subtitle": "A small, dedicated team of Egyptians passionate about energy transparency and smart technology.",
+            "members": {
+                "maher": {
+                    "name": "Ahmed Maher Algohary",
+                    "title": "Software Engineer | Web Designer & Developer"
+                },
+                "rashad": {
+                    "name": "Mohamed Rashad",
+                    "title": "Software Engineer | Mobile App Developer"
+                },
+                "essam": {
+                    "name": "Ahmed Essam",
+                    "title": "Software Engineer | Backend Developer"
+                },
+                "awadallah": {
+                    "name": "Mohamed Awadallah",
+                    "title": "Software Engineer | Mobile App Developer"
+                },
+                "yasser": {
+                    "name": "Yasser Eid",
+                    "title": "Software Engineer | Mobile App Developer"
+                }
+            }
+        },
+        "faq": {
+            "badge": "FAQ",
+            "title": "Frequently Asked",
+            "titleAccent": "Questions",
+            "subtitle": "Everything you need to know before getting started with Kashf.",
+            "contact": "Still have questions? Email us at",
+            "email": "inquiry@kashf.com",
+            "items": {
+                "q1": {
+                    "q": "What is Kashf?",
+                    "a": "Kashf is an AI-powered electricity consumption assistant built for Egyptian households. It reads your meter, tracks your Sheriha tier in real time, forecasts your bill, and gives personalized Arabic-language recommendations to help you save money every month."
+                },
+                "q2": {
+                    "q": "Is Kashf free to use?",
+                    "a": "Yes — Kashf is completely free during the beta period. No credit card required. Once we exit beta, a generous free tier will always remain available."
+                },
+                "q3": {
+                    "q": "How does the meter connection work?",
+                    "a": "You simply connect the Kashf Smart Node to your electricity meter. Kashf’s embedded system streams the data in real time and stores the reading securely."
+                },
+                "q4": {
+                    "q": "What are Sheriha tiers?",
+                    "a": "Egypt’s electricity pricing is divided into consumption tiers (شرائح). The more kWh you use, the higher your price per unit. Crossing into a higher tier mid-month can cost hundreds of extra pounds. Kashf tracks your exact position and warns you before you cross."
+                },
+                "q5": {
+                    "q": "Does it work offline?",
+                    "a": "Yes. Kashf is a Progressive Web App (PWA) with offline-first architecture. You can log readings and view your dashboard without an internet connection. Data syncs automatically when you reconnect."
+                },
+                "q6": {
+                    "q": "Is my data private and secure?",
+                    "a": "Absolutely. Your data is encrypted in transit and at rest. We never sell or share your consumption data with third parties. You can delete your account and all data at any time."
+                },
+                "q7": {
+                    "q": "Can I install it without an app store?",
+                    "a": "Yes. Visit kashf.app in your browser, tap ‘Add to Home Screen’, and Kashf installs just like a native app — on iOS, Android, Windows, and macOS — with no app store required."
+                }
+            }
+        },
+        "cta": {
+            "title": "Start Monitoring",
+            "titleAccent": "Smarter",
+            "desc": "Join thousands of users taking control of their electricity consumption.",
+            "primary": "Get Started",
+            "secondary": "Contact Us"
+        }
+    },
+    "profile": {
+        "tabs": {
+            "overview": "Overview",
+            "meters": "Meters",
+            "preferences": "Preferences",
+            "security": "Security",
+            "subscription": "Subscription"
+        },
+        "header": {
+            "premiumUser": "Premium User",
+            "memberSince": "Member Since",
+            "changePicture": "Change Photo",
+            "uploading": "Uploading...",
+            "uploadError": "Failed to upload photo."
+        },
+        "overview": {
+            "title": "Account Overview",
+            "currentSheriha": "Current Sheriha",
+            "currentConsumption": "Current Consumption",
+            "remainingBeforeNextTier": "Remaining Before Next Tier",
+            "estimatedMonthlyBill": "Estimated Monthly Bill"
+        },
+        "meters": {
+            "title": "My Electricity Meters",
+            "addNewMeter": "Add New Meter",
+            "meterName": "Meter Name",
+            "meterNumber": "Meter Number",
+            "currentConsumption": "Current Consumption",
+            "currentTier": "Current Tier",
+            "status": "Status",
+            "active": "Active",
+            "warning": "Warning",
+            "viewDetails": "View Details",
+            "remove": "Remove",
+            "mock": {
+                "home": "Home",
+                "office": "Office"
+            }
+        },
+        "preferences": {
+            "title": "Notification Preferences",
+            "alertTypes": "Alert Types",
+            "sherihaWarningAlerts": "Sheriha Warning Alerts",
+            "sherihaWarningDesc": "Get notified when approaching tier limits",
+            "billForecastNotifications": "Bill Forecast Notifications",
+            "billForecastDesc": "Receive monthly bill estimates",
+            "aiRecommendations": "AI Recommendations",
+            "aiRecommendationsDesc": "Personalized energy-saving tips",
+            "monthlyReports": "Monthly Reports",
+            "monthlyReportsDesc": "Detailed consumption summaries",
+            "notificationChannels": "Notification Channels",
+            "pushNotifications": "Push Notifications",
+            "emailNotifications": "Email Notifications",
+            "smsNotifications": "SMS Notifications"
+        },
+        "personalInfo": {
+            "title": "Personal Information",
+            "editProfile": "Edit Profile",
+            "fullName": "Full Name",
+            "emailAddress": "Email Address",
+            "phoneNumber": "Phone Number",
+            "governorate": "Governorate",
+            "preferredLanguage": "Preferred Language",
+            "accountStatus": "Account Status",
+            "active": "Active",
+            "selectGovernorate": "Select governorate",
+            "emailReadOnly": "Email cannot be changed."
+        },
+        "aiAssistant": {
+            "title": "AI Energy Advisor",
+            "adviceLanguage": "Advice Language",
+            "adviceStyle": "Advice Style",
+            "shortTips": "Short Tips",
+            "detailedExplanations": "Detailed Explanations",
+            "savingGoal": "Saving Goal",
+            "maximumSavings": "Maximum Savings",
+            "balancedUsage": "Balanced Usage",
+            "comfortFirst": "Comfort First"
+        },
+        "consumptionGoals": {
+            "title": "Consumption Goals",
+            "monthlyConsumption": "Monthly Consumption",
+            "targetBillAmount": "Target Bill Amount",
+            "targetSheriha": "Target Sheriha",
+            "target": "Target",
+            "used": "Used",
+            "noScanData": "Consumption data will appear here once you scan your meter."
+        },
+        "security": {
+            "title": "Security Settings",
+            "changePassword": "Change Password",
+            "changePasswordDesc": "Update your password regularly",
+            "twoFactorAuth": "Two-Factor Authentication",
+            "twoFactorAuthDesc": "Add an extra layer of security",
+            "activeDevices": "Active Devices",
+            "activeDevicesDesc": "Manage your logged-in devices",
+            "loginHistory": "Login History",
+            "loginHistoryDesc": "View recent login activity",
+            "deleteAccount": "Delete Account",
+            "actions": {
+                "enable": "Enable",
+                "disable": "Disable",
+                "view": "View",
+                "revoke": "Revoke",
+                "cancel": "Cancel",
+                "save": "Save Changes"
+            },
+            "status": {
+                "enabled": "Enabled",
+                "disabled": "Disabled"
+            },
+            "changePasswordModal": {
+                "title": "Change Password",
+                "currentPassword": "Current Password",
+                "newPassword": "New Password",
+                "confirmPassword": "Confirm New Password",
+                "success": "Password updated successfully.",
+                "mismatch": "Passwords do not match."
+            },
+            "twoFactorModal": {
+                "title": "Two-Factor Authentication (2FA)",
+                "enableInstructions": "Enter the secret key below into your authenticator app (e.g., Google Authenticator, Authy) to set up 2FA, then enter the generated 6-digit verification code.",
+                "secretKey": "Secret Key",
+                "enterCode": "Enter 6-Digit Code",
+                "disableInstructions": "Enter your account password to confirm disabling two-factor authentication.",
+                "confirmPassword": "Account Password",
+                "successEnabled": "Two-factor authentication has been enabled successfully.",
+                "successDisabled": "Two-factor authentication has been disabled."
+            },
+            "devicesModal": {
+                "title": "Active Devices",
+                "current": "Current Device",
+                "unknown": "Unknown Device",
+                "revokeSuccess": "Session revoked successfully.",
+                "empty": "No active devices found. If you logged in before session tracking was enabled, please log out and log back in."
+            },
+            "historyModal": {
+                "title": "Login History",
+                "time": "Time",
+                "ip": "IP Address",
+                "device": "Device / Browser"
+            },
+            "deleteModal": {
+                "title": "Delete Account",
+                "warning": "Warning: This action is permanent and cannot be undone. All your meter data, consumption goals, scan history, and account settings will be permanently deleted.",
+                "confirmText": "To confirm deletion, please enter your password below:",
+                "button": "Permanently Delete My Account",
+                "success": "Your account has been deleted successfully."
+            }
+        },
+        "activity": {
+            "title": "Activity History",
+            "uploadedBill": "Uploaded Electricity Bill",
+            "scannedMeter": "Scanned Meter Reading",
+            "updatedProfile": "Updated Profile Information",
+            "receivedAlert": "Received Sheriha Alert",
+            "downloadedReport": "Downloaded Monthly Report",
+            "types": {
+                "login": "Logged In",
+                "logout": "Logged Out",
+                "register": "Created Account",
+                "profile_updated": "Updated Personal Information",
+                "picture_updated": "Updated Profile Picture",
+                "goals_updated": "Updated Consumption Goals",
+                "notification_prefs_updated": "Updated Notification Preferences",
+                "scan_uploaded": "Scanned Meter Reading",
+                "bill_uploaded": "Uploaded Electricity Bill",
+                "alert_received": "Received Sheriha Alert",
+                "report_downloaded": "Downloaded Monthly Report",
+                "meter_added": "Added New Meter",
+                "meter_removed": "Removed Meter",
+                "subscription_success": "Subscription Upgraded",
+                "subscription_canceled": "Subscription Canceled",
+                "subscription_expired": "Subscription Expired",
+                "subscription_failed": "Subscription Payment Failed"
+            },
+            "empty": "No activity yet.",
+            "loadingMore": "Loading..."
+        },
+        "pwa": {
+            "title": "PWA Installation Status",
+            "installed": "Installed",
+            "notInstalled": "Not Installed",
+            "pushNotifications": "Push Notifications",
+            "offlineSync": "Offline Sync",
+            "currentDevice": "Current Device",
+            "installPrompt": "Install app for better experience",
+            "platforms": {
+                "android": "Android",
+                "iphone": "iPhone",
+                "windows": "Windows",
+                "macos": "macOS",
+                "windows_phone": "Windows Phone",
+                "ios": "iOS",
+                "linux": "Linux",
+                "web_browser": "Web Browser",
+                "unknown": "Unknown"
+            }
+        },
+        "subscription": {
+            "title": "Subscription",
+            "currentPlan": "Current Plan",
+            "premium": "Premium",
+            "renewalDate": "Renewal Date",
+            "billingCycle": "Billing Cycle",
+            "monthly": "Monthly",
+            "coinBalance": "Coin Balance",
+            "rolloverCoins": "Rollover Coins",
+            "savingsThisMonth": "Savings This Month",
+            "savingsDesc": "You've saved approximately EGP 180 this month through Kashf's AI recommendations.",
+            "upgradePlan": "Upgrade Plan",
+            "upgradeToFamily": "Upgrade to Family",
+            "manageSubscription": "Manage Subscription",
+            "notApplicable": "N/A",
+            "noCharge": "Free forever",
+            "includes": "What's included",
+            "plans": {
+                "free": {
+                    "name": "Free Plan",
+                    "features": [
+                        "1 electricity meter",
+                        "50 Coins per month",
+                        "Basic tier tracking",
+                        "Manual bill entry"
+                    ]
+                },
+                "plus": {
+                    "name": "Plus Plan",
+                    "features": [
+                        "Up to 2 electricity meters",
+                        "150 Coins per month",
+                        "AI-powered consumption tips",
+                        "Tier crossing alerts",
+                        "Monthly reports",
+                        "Priority support"
+                    ],
+                    "savingsNote": "On average, Plus users save EGP 150–300/month."
+                },
+                "family": {
+                    "name": "Family Plan",
+                    "features": [
+                        "Up to 5 electricity meters",
+                        "300 Coins per month",
+                        "All Plus features",
+                        "Family usage dashboard",
+                        "Dedicated account manager",
+                        "SMS alerts"
+                    ],
+                    "savingsNote": "Family plan users save an average of EGP 400–800/month."
+                }
+            }
+        }
+    },
+    "dashboardOverview": {
+        "noMetersTitle": "No Meters Registered",
+        "noMetersDesc": "Add your first meter or scan a bill to unlock your dashboard, track consumption, and get personalized AI recommendations.",
+        "addMeterCta": "Add New Meter",
+        "scanMeterCta": "Scan Meter",
+        "yourMeters": "Registered Meters",
+        "viewAll": "View All",
+        "title": "Dashboard Overview",
+        "subtitle": "Real-time electricity monitoring & insights",
+        "liveSync": "Live Sync Active",
+        "currentUsage": "Current Usage",
+        "vsLastMonth": "vs last month",
+        "currentSheriha": "Current Sheriha",
+        "remainingToTier": "Remaining to Tier {{tier}}",
+        "expectedToCross": "Expected to cross in {{days}} days",
+        "estimatedBill": "Estimated Bill",
+        "monthlySavings": "Monthly Savings",
+        "savedViaAi": "Saved via AI tips",
+        "consumptionGauge": "Consumption Gauge",
+        "currentStatus": "Current Status",
+        "warningZone": "Warning Zone",
+        "nextThreshold": "Next Threshold",
+        "tierLimit": "{{limit}} kWh (Tier {{tier}})",
+        "aiAdvisor": "AI Energy Advisor",
+        "aiAdvisorDesc": "Personalized actions to prevent tier jumps",
+        "waterHeater": "Water Heater",
+        "waterHeaterDesc": "You left the heater on for 8 hours yesterday. Use it only 1 hour before showering.",
+        "acTiming": "AC Usage Timing",
+        "acTimingDesc": "Running ACs during peak hours (2PM-6PM) uses 15% more power due to heat.",
+        "vampireDraw": "Vampire Draw",
+        "vampireDrawDesc": "Your idle consumption is unusually high at night. Unplug microwaves and TVs.",
+        "impactHigh": "High Impact",
+        "impactMedium": "Medium Impact",
+        "impactQuick": "Quick Win",
+        "saveAmount": "Save {{savings}}",
+        "askKashf": "Ask Kashf how to reduce your bill",
+        "monthlyTrend": "Monthly Consumption Trend",
+        "consumptionBreakdown": "Consumption Breakdown",
+        "months": {
+            "jan": "Jan",
+            "feb": "Feb",
+            "mar": "Mar",
+            "apr": "Apr",
+            "may": "May",
+            "jun": "Jun"
+        },
+        "categories": {
+            "ac": "AC & Cooling",
+            "heater": "Water Heater",
+            "lighting": "Lighting",
+            "appliances": "Appliances"
+        }
+    },
+    "adminDashboard": {
+        "totalUsers": "Total Users",
+        "totalDevices": "Total Devices",
+        "totalBills": "Total Bills",
+        "activeRate": "Device Active Rate",
+        "recentRegistrations": "Recent Registrations",
+        "noRecentUsers": "No recent users found.",
+        "quickActions": "Quick Actions"
+    },
+    "usersManagement": {
+        "searchPlaceholder": "Search by name, email, or phone...",
+        "statusAll": "All",
+        "statusActive": "Active",
+        "statusDisabled": "Disabled",
+        "username": "Username",
+        "email": "Email",
+        "plan": "Plan",
+        "status": "Status",
+        "joined": "Joined",
+        "actions": "Actions",
+        "disableConfirm": "Disable this user?",
+        "enableConfirm": "Enable this user?",
+        "deleteConfirm": "Delete this user and all their data? This action cannot be undone.",
+        "userDisabled": "User disabled",
+        "userEnabled": "User enabled",
+        "userDeleted": "User deleted",
+        "noUsers": "No users found matching your search.",
+        "active": "Active",
+        "disabled": "Disabled",
+        "loadError": "Error loading users."
+    },
+    "deviceManagement": {
+        "searchPlaceholder": "Search by device name or number...",
+        "statusAll": "All Statuses",
+        "statusActive": "Active",
+        "statusStandby": "Standby",
+        "statusInactive": "Inactive",
+        "statusMaintenance": "Maintenance",
+        "name": "Device Name",
+        "number": "Meter Number",
+        "type": "Type",
+        "owner": "Owner",
+        "status": "Status",
+        "consumption": "Consumption",
+        "lastReading": "Last Reading",
+        "created": "Created",
+        "actions": "Actions",
+        "deleteConfirm": "Delete this device? This action cannot be undone.",
+        "deviceDeleted": "Device deleted",
+        "noDevices": "No devices found matching your search.",
+        "statusUpdated": "Device status updated",
+        "loadError": "Error loading devices.",
+        "typeResidential": "Residential",
+        "typeCommercial": "Commercial",
+        "typeVacation": "Vacation Home"
+    },
+    "tierManagement": {
+        "tier": "Tier",
+        "threshold": "Threshold (kWh)",
+        "rate": "Rate (EGP/kWh)",
+        "label": "Label",
+        "actions": "Actions",
+        "save": "Save",
+        "saving": "Saving...",
+        "saved": "Tier updated",
+        "edit": "Edit",
+        "cancel": "Cancel",
+        "noTiers": "No tiers configured.",
+        "loadError": "Error loading tiers.",
+        "infoTitle": "Important Note",
+        "infoText": "Tier {{last}} (above {{threshold}} kWh) uses the highest rate for all consumption above the last threshold."
+    },
+    "notificationsManagement": {
+        "sendNew": "Send Notification",
+        "typeAll": "All Types",
+        "typeWarning": "Warning",
+        "typeCritical": "Critical",
+        "typeRecommendation": "Recommendation",
+        "typeSystem": "System",
+        "readAll": "All",
+        "readRead": "Read",
+        "readUnread": "Unread",
+        "user": "User",
+        "type": "Type",
+        "title": "Title",
+        "status": "Status",
+        "date": "Date",
+        "actions": "Actions",
+        "deleteConfirm": "Delete this notification?",
+        "noNotifications": "No notifications found.",
+        "read": "Read",
+        "unread": "Unread",
+        "formTitle": "Send System Notification",
+        "formUserIds": "Recipient IDs (comma-separated)",
+        "formType": "Type",
+        "formTitleKey": "Title Key",
+        "formMessageKey": "Message Key",
+        "formSend": "Send",
+        "formCancel": "Cancel",
+        "formSending": "Sending...",
+        "sent": "Notification sent.",
+        "loadError": "Error loading notifications.",
+        "formPlaceholderUserIds": "64byte..."
+    },
+    "systemSettings": {
+        "sectionApi": "API Configuration",
+        "sectionApiDesc": "Configure third-party API keys and integrations.",
+        "geminiApiKey": "Gemini API Key",
+        "geminiApiKeyPlaceholder": "Enter your Gemini API key",
+        "sectionUpload": "Upload Limits",
+        "sectionUploadDesc": "Set file size limits and plan-based meter limits.",
+        "maxUploadSizeMb": "Max Upload Size (MB)",
+        "maxMetersFree": "Max Meters (Free)",
+        "maxMetersPlus": "Max Meters (Plus)",
+        "maxMetersFamily": "Max Meters (Family)",
+        "sectionSession": "Session & Security",
+        "sectionSessionDesc": "Manage session timeout and maintenance mode.",
+        "sessionTimeoutMinutes": "Session Timeout (minutes)",
+        "maintenanceMode": "Maintenance Mode",
+        "save": "Save Changes",
+        "saving": "Saving...",
+        "saved": "Settings saved",
+        "unsaved": "You have unsaved changes."
+    },
+    "aiAdvisor": {
+        "title": "AI Energy Advisor",
+        "subtitle": "Get personalized recommendations in Egyptian Arabic to lower your bill.",
+        "onlineStatus": "AI Online",
+        "inputPlaceholder": "Ask Kashf about your electricity usage...",
+        "disclaimer": "AI responses are generated based on your historical OCR scans and consumption patterns.",
+        "activeOpportunities": "Active Opportunities",
+        "impactLabel": "{{impact}} Impact",
+        "estimatedSavings": "Estimated Savings",
+        "suggestedQuestions": {
+            "q1": "How can I reduce my bill this month?",
+            "q2": "Why am I consuming more electricity than last May?",
+            "q3": "Am I going to reach Tier 4?",
+            "q4": "What appliances are using the most power right now?"
+        },
+        "savings": {
+            "impactHigh": "High",
+            "impactLow": "Low",
+            "optAC": {
+                "title": "Optimize AC Temperature",
+                "action": "Set living room AC to 25°C instead of 22°C",
+                "savings": "120 EGP"
+            },
+            "shiftHeater": {
+                "title": "Shift Water Heater Usage",
+                "action": "Turn on 1 hour before use, don't leave it on 24/7",
+                "savings": "95 EGP"
+            },
+            "standbyPower": {
+                "title": "Reduce Standby Power",
+                "action": "Unplug microwave and TV when not in use",
+                "savings": "25 EGP"
+            }
+        },
+        "mockChat": {
+            "msg1": "Welcome to Kashf! I am your smart electricity assistant. I noticed your consumption this week is 15% higher than usual. How can I help you?",
+            "msg2": "What is causing this high consumption?",
+            "msg3": "Based on the data analysis, the AC during the afternoon (2 PM to 5 PM) draws a lot of power. If you reduce its use by just one hour or set the temp to 25°C, you will save around 45 EGP and avoid entering the fourth tier."
+        }
+    },
+    "alerts": {
+        "title": "Notifications & Alerts",
+        "subtitle": "Stay updated on tier thresholds, consumption spikes, and AI tips.",
+        "markAllRead": "Mark all as read",
+        "emptyState": {
+            "title": "No alerts found",
+            "subtitle": "You're all caught up in this category."
+        },
+        "filters": {
+            "all": "All",
+            "warnings": "Warnings",
+            "critical": "Critical",
+        "recommendations": "Recommendations",
+            "system": "System"
+        },
+        "data": {
+            "alert1": {
+                "title": "Approaching Tier 4",
+                "message": "You are 40 kWh away from Tier 4. Reducing usage over the next 4 days can save you 180 EGP.",
+                "time": "2 hours ago"
+            },
+            "alert2": {
+                "title": "Consumption Spike Detected",
+                "message": "Your consumption increased by 12% compared to last Tuesday. Check your AC usage.",
+                "time": "5 hours ago"
+            },
+            "alert3": {
+                "title": "New AI Savings Opportunity",
+                "message": "Kashf AI found a new pattern. Shift your water heater usage to save ~45 EGP/month.",
+                "time": "1 day ago"
+            },
+            "alert4": {
+                "title": "Bill Estimated",
+                "message": "Your June bill estimate has been updated to 412 EGP based on current trajectory.",
+                "time": "2 days ago"
+            },
+            "subSuccess": {
+                "title": "Subscription Upgraded",
+                "message": "Congratulations! Your plan has been upgraded to the {{plan}} plan successfully. Enjoy your premium benefits and credited coins!"
+            },
+            "subExpired": {
+                "title": "Subscription Expired",
+                "message": "Your subscription has expired and you have been downgraded to the Free plan. To restore access to premium features, please renew your subscription."
+            },
+            "subCanceled": {
+                "title": "Subscription Canceled",
+                "message": "Your subscription to the {{plan}} plan has been canceled. You have reverted to the Free plan, and your coins have been reset to 50."
+            },
+            "subFailed": {
+                "title": "Payment Failed",
+                "message": "We couldn't process the payment for the {{plan}} plan. Please check your card details or try again."
+            }
+        }
+    },
+    "billing": {
+        "title": "Subscription & Billing",
+        "subtitle": "Manage your plan, payment methods, and invoices.",
+        "currentPlan": "Current Plan",
+        "active": "Active",
+        "renewalDate": "Renewal Date",
+        "billingCycle": "Billing Cycle",
+        "monthly": "Monthly",
+        "monthlyCost": "Monthly Cost",
+        "month": "month",
+        "paymentMethod": "Payment Method",
+        "defaultCard": "Default Card",
+        "update": "Update",
+        "noPaymentMethod": "No payment method on file.",
+        "upgradeToAddCard": "Upgrade your plan to add a card.",
+        "deleteCardConfirm": "Are you sure you want to delete this payment method?",
+        "deleteCardBtn": "Delete Card",
+        "deleteCardCancel": "Cancel",
+        "cancelSubscription": "Cancel Subscription",
+        "cancelSubscriptionTitle": "Cancel Subscription?",
+        "cancelSubscriptionWarning": "Are you sure you want to cancel your premium subscription and revert to the Free plan?",
+        "cancelSubscriptionDetail1": "Your account will be immediately downgraded to the Free plan.",
+        "cancelSubscriptionDetail2": "Your coins balance will reset to the default 50 coins immediately, and you will lose any extra coins.",
+        "cancelSubscriptionDetail3": "No refund will be provided for any unused time in your billing period.",
+        "cancelSubscriptionDetail4": "You will be limited to 1 meter (if you have more, extra meters will be disabled or read-only).",
+        "cancelSubscriptionConfirm": "Yes, Revert to Free",
+        "cancelSubscriptionCancel": "No, Keep My Plan",
+        "lossOfFundsWarningTitle": "Financial Loss Warning",
+        "lossOfFundsWarningMessage": "You will lose the money of the current active plan immediately. No refunds will be provided for any unused time in your billing period.",
+        "default": "Default",
+        "expires": "Expires",
+        "availablePlans": "Available Plans",
+        "mostPopular": "Most Popular",
+        "currentPlanBtn": "Current Plan",
+        "upgradeBtn": "Upgrade Plan",
+        "freePlanBtn": "Free Plan",
+        "downgradeBtn": "Downgrade",
+        "unavailableBtn": "Unavailable",
+        "paymentSuccessMsg": "Success! Your payment was processed and your plan is now active.",
+        "paymentCanceledMsg": "Payment was canceled.",
+        "checkout": {
+            "invalidPlan": "Invalid Plan selected",
+            "invalidPlanDesc": "Please select a valid plan from the available list.",
+            "backToBilling": "Back to Billing",
+            "title": "Confirm Plan Upgrade",
+            "subtitle": "Review your selected plan and proceed to secure checkout.",
+            "targetPlan": "Selected Plan",
+            "alreadySubscribed": "You are already subscribed to this plan.",
+            "errorGeneric": "Failed to initiate payment. Please try again.",
+            "summary": "Order Summary",
+            "total": "Total Due",
+            "processing": "Redirecting to Stripe...",
+            "currentActive": "Current Active Plan",
+            "payNow": "Pay with Card (Stripe)",
+            "terms": "By upgrading, you agree to our terms of service. Secure payment is processed via Stripe."
+        },
+        "history": {
+            "title": "Billing History",
+            "date": "Date",
+            "amount": "Amount",
+            "plan": "Plan",
+            "status": "Status",
+            "invoice": "Invoice",
+            "paid": "Paid",
+            "pdf": "PDF",
+            "empty": "No billing records found."
+        },
+        "plans": {
+            "free": {
+                "name": "Free",
+                "interval": "forever",
+                "description": "Perfect for tracking a single meter.",
+                "features": [
+                    "1 Electricity Meter",
+                    "50 AI Coins / month",
+                    "Basic Tier Tracking",
+                    "Community Support"
+                ]
+            },
+            "plus": {
+                "name": "Plus",
+                "interval": "per month",
+                "description": "Advanced analytics for power users.",
+                "features": [
+                    "Up to 2 Meters",
+                    "150 AI Coins / month",
+                    "Priority AI Tips",
+                    "Cost Forecasting",
+                    "Email Support"
+                ]
+            },
+            "family": {
+                "name": "Family",
+                "interval": "per month",
+                "description": "Complete coverage for multiple properties.",
+                "features": [
+                    "Up to 5 Meters",
+                    "300 AI Coins / month",
+                    "Family Member Access",
+                    "Custom PDF Reports",
+                    "24/7 Priority Support"
+                ]
+            }
+        }
+    },
+    "bills": {
+        "title": "Bills & Predictions",
+        "subtitle": "Review past invoices and track upcoming electricity costs.",
+        "exportSummary": "Export Annual Summary",
+        "currentEstimate": "June Estimate",
+        "tierWarning": "Approaching Tier 4 (+180 EGP risk)",
+        "projectedConsumption": "Projected Consumption",
+        "expectedTier": "Expected Tier",
+        "dueDate": "Due Date",
+        "chartTitle": "Cost Trajectory & Forecast (EGP)",
+        "actualCost": "Actual Cost",
+        "aiPrediction": "AI Prediction",
+        "deleteConfirmTitle": "Delete Bill?",
+        "deleteConfirmDesc": "Are you sure you want to delete this bill? This action cannot be undone.",
+        "addBill": "Add Bill",
+        "associatedMeter": "Associated Meter",
+        "noMeterSelected": "Select a Meter (Optional)",
+        "month": "Month / Period",
+        "consumption": "Consumption (kWh)",
+        "billingPeriod": "Billing Period",
+        "usageData": "Usage Data",
+        "financialSummary": "Financial Summary",
+        "paymentStatus": "Payment Status",
+        "totalPayable": "Total Payable",
+        "history": {
+            "title": "Invoice History",
+            "invoiceNo": "Invoice No.",
+            "billingMonth": "Billing Month",
+            "consumption": "Consumption",
+            "tier": "Sheriha Tier",
+            "amount": "Amount (EGP)",
+            "status": "Status",
+            "action": "Action",
+            "paid": "Paid",
+            "pending": "Pending",
+            "overdue": "Overdue",
+            "noBills": "No bills found."
+        },
+        "months": {
+            "jan": "Jan",
+            "feb": "Feb",
+            "mar": "Mar",
+            "apr": "Apr",
+            "may": "May",
+            "jun": "Jun",
+            "jul": "Jul",
+            "aug": "Aug"
+        }
+    },
+    "analytics": {
+        "title": "Consumption Analytics",
+        "subtitle": "Deep dive into your energy usage patterns and forecasts.",
+        "week": "Week",
+        "month": "Month",
+        "year": "Year",
+        "avgDailyUsage": "Avg Daily Usage",
+        "thisWeek": "This Week",
+        "peakHour": "Peak Hour",
+        "highestUsage": "Consistently highest usage",
+        "monthlyForecast": "Monthly Forecast",
+        "tier4Danger": "Tier 4 Danger",
+        "weeklyComparison": "Weekly Comparison",
+        "lastWeek": "Last Week",
+        "consumptionForecast": "Consumption Forecast",
+        "actualUsage": "Actual Usage",
+        "aiForecast": "AI Forecast",
+        "aiObservationsTitle": "AI Analyst Observations",
+        "insights": {
+            "spike": {
+                "title": "Weekend Spike Detected",
+                "desc": "Your consumption on Saturdays and Sundays is 45% higher than weekdays. This is likely due to the AC running continuously in the living room."
+            },
+            "efficiency": {
+                "title": "Excellent Nighttime Efficiency",
+                "desc": "Your base load between 2AM and 6AM has dropped to 0.5 kWh, indicating no parasitic drain. Great job!"
+            }
+        },
+        "obs": {
+            "noDataTitle": "Data Collection in Progress",
+            "noDataDesc": "We are currently collecting your consumption data. Real AI observations will appear after your first few readings.",
+            "trendSpikeTitle": "Consumption Spike Detected",
+            "trendSpikeDesc": "Your most recent reading shows a 20%+ increase compared to the previous period. Check for any unusually long-running appliances.",
+            "trendDropTitle": "Consumption Decreased",
+            "trendDropDesc": "Excellent! Your recent consumption dropped compared to your previous period.",
+            "periodAverageHighTitle": "High Average Usage",
+            "periodAverageHighDesc": "Your average usage per reading is {{avg}} kWh. This is higher than recommended.",
+            "dummyPeakTitle": "Peak Usage Detected",
+            "dummyPeakDesc": "Your consumption between 6PM and 10PM is consistently high. Consider shifting heavy appliances to morning hours to reduce strain.",
+            "dummyBaseTitle": "Base Load Optimized",
+            "dummyBaseDesc": "Your nighttime usage dropped to 0.4 kWh/hr. This means you successfully eliminated parasitic loads.",
+            "dummyWeatherTitle": "Weather Impact",
+            "dummyWeatherDesc": "The upcoming heatwave might increase your AC consumption by 15%. Pre-cooling your home can help save energy.",
+            "dummyTime1": "2 hrs ago",
+            "dummyTime2": "1 day ago",
+            "dummyTime3": "3 days ago"
+        },
+        "heatmapTitle": "Peak Usage Heatmap (Time vs Day)",
+        "time": "Time",
+        "days": {
+            "mon": "Mon",
+            "tue": "Tue",
+            "wed": "Wed",
+            "thu": "Thu",
+            "fri": "Fri",
+            "sat": "Sat",
+            "sun": "Sun"
+        },
+        "low": "Low",
+        "high": "High",
+        "noDataTitle": "No Data Available",
+        "noDataDesc": "Add a meter to see analytics.",
+        "period": "Period {{num}}",
+        "periodShort": "P{{num}}",
+        "periodEst": "P{{num}} (Est)",
+        "highConsumptionAlert": "High Consumption Alert",
+        "highConsumptionDesc": "You are currently in Tier {{tier}}. Consider reducing heavy appliance usage to avoid crossing into the next expensive tier.",
+        "efficientUsage": "Efficient Usage",
+        "efficientUsageDesc": "Great job! Your consumption is highly optimized compared to similar households.",
+        "usage": "Usage"
+    },
+    "meters": {
+        "title": "My Meters",
+        "meter": "Meter",
+        "subtitle": "Manage and monitor all your connected electricity meters.",
+        "errorLoading": "Failed to load meters. Please try again.",
+        "failedToSave": "Failed to save meter. Please check your plan limits.",
+        "maxMetersError": "You have reached the maximum number of meters allowed for your plan ({{limit}}). Please upgrade your plan to register more meters.",
+        "addMeter": "Add New Meter",
+        "registerMeter": "Register New Meter",
+        "registerMeterDesc": "Add another property or sub-meter to track its consumption.",
+        "consumption": "Consumption",
+        "currentTier": "Current Tier",
+        "lastReading": "Last Reading",
+        "viewAnalytics": "View Analytics",
+        "status": {
+            "active": "Active",
+            "standby": "Standby",
+            "inactive": "Inactive",
+            "maintenance": "Maintenance"
+        },
+        "mock": {
+            "meter1": "Home Primary Meter",
+            "meter2": "Alexandria Chalet"
+        },
+        "deleteConfirm": "Are you sure you want to delete this meter?",
+        "deleteConfirmTitle": "Delete Meter?",
+        "deleteConfirmDesc": "Are you sure you want to delete this meter? This action cannot be undone.",
+        "deleteMeter": "Delete Meter",
+        "aiAdvices": "AI Advices",
+        "aiAdvicesTitle": "AI Insights",
+        "editMeter": "Edit Meter",
+        "addNewMeter": "Add New Meter",
+        "formName": "Meter Name",
+        "formNamePlaceholder": "e.g. Home, Office",
+        "formNumber": "Meter Number",
+        "formNumberPlaceholder": "10-digit meter number",
+        "formType": "Meter Type",
+        "formStatus": "Status",
+        "typeResidential": "Residential",
+        "typeCommercial": "Commercial",
+        "typeVacation": "Vacation Home",
+        "aiAdviceHigh1": "You are consuming heavily during peak hours (6 PM - 10 PM). Consider shifting laundry to the morning.",
+        "aiAdviceHigh2": "Your AC might be running inefficiently. A 1-degree increase saves up to 5% on cooling.",
+        "aiAdviceHigh3": "Approaching Tier 4! Reducing usage now prevents a significant jump in cost per kWh.",
+        "aiAdviceLow1": "Great job! Your consumption is highly optimized compared to similar households.",
+        "aiAdviceLow2": "To keep costs low, ensure standby appliances (like TVs and consoles) are unplugged.",
+        "forMeter": "For {{name}}",
+        "adviceWarning": "Warning",
+        "adviceAlert": "Critical Alert",
+        "adviceSuccess": "Success",
+        "adviceTip": "Tip",
+        "noAdvicesTitle": "Gathering Data...",
+        "noAdvicesDesc": "We need a bit more consumption data to generate personalized AI advices. Check back soon!",
+        "createSimulationProfile": "Create Simulation Profile",
+        "createSimulationProfileDesc": "Would you like to auto-generate a smart home simulation for this meter to start seeing live consumption analytics?",
+        "simModeAuto": "Auto-Generate Smart Home",
+        "simModeAutoDesc": "Pre-configures standard circuits (Kitchen, Living Room, etc.) and appliances.",
+        "simModeCustom": "Custom Setup",
+        "simModeCustomDesc": "Start with an empty simulation profile. You can add circuits and devices later.",
+        "simModeSkip": "Skip for now",
+        "simModeSkipDesc": "Just create the meter. I'll setup the simulation later.",
+        "manageSimulation": "Manage Simulation",
+        "simulationOverview": "Simulation Overview"
+    },
+    "simulations": {
+        "dashboardTitle": "Simulation Dashboard",
+        "loadingMeter": "Loading Meter...",
+        "notFoundTitle": "No Simulation Found",
+        "notFoundDesc": "There is no simulation profile attached to this meter yet.",
+        "status": "Engine Status",
+        "running": "Running",
+        "paused": "Paused",
+        "livePower": "Live Power Draw",
+        "reset": "Reset",
+        "pause": "Pause",
+        "start": "Start",
+        "circuits": "Electrical Circuits",
+        "addCircuit": "Add Circuit",
+        "noCircuits": "No Circuits Yet",
+        "noCircuitsDesc": "Add your first circuit (like Kitchen or Bedroom) to start building your simulation.",
+        "circuitName": "Circuit Name",
+        "circuitNamePlaceholder": "e.g., Kitchen, Living Room",
+        "breakerCapacity": "Breaker Capacity (Amps)",
+        "breakerCapacityDesc": "Standard household circuits are typically 15A or 20A.",
+        "circuitLoad": "Current Load",
+        "noDevices": "No devices connected",
+        "addDeviceBtn": "Add Device",
+        "deleteCircuit": "Delete Circuit",
+        "deleteCircuitConfirm": "Are you sure you want to delete this circuit?",
+        "deleteDevice": "Delete Device",
+        "deleteDeviceConfirm": "Are you sure you want to delete this device?",
+        "addDeviceTo": "Add Device",
+        "toCircuit": "To Circuit:",
+        "deviceName": "Device Name",
+        "deviceNamePlaceholder": "e.g., Living Room TV",
+        "devicePower": "Power Consumption (Watts)",
+        "deviceType": "Device Type",
+        "on": "ON",
+        "off": "OFF",
+        "breakerAmp": "A Breaker",
+        "defaults": {
+            "Living Room": "Living Room",
+            "Bedroom": "Bedroom",
+            "Bathroom": "Bathroom",
+            "Kitchen": "Kitchen",
+            "Office": "Office",
+            "Refrigerator": "Refrigerator",
+            "Microwave": "Microwave",
+            "Blender": "Blender",
+            "AC Unit": "AC Unit",
+            "TV": "TV",
+            "Lights": "Lights",
+            "Fan": "Fan",
+            "Water Heater": "Water Heater",
+            "Washing Machine": "Washing Machine",
+            "PC": "PC",
+            "Monitor": "Monitor",
+            "Router": "Router"
+        },
+        "powerDraw": "Power Draw",
+        "energyConsumed": "Energy Used",
+        "estimatedBill": "Est. Bill",
+        "tierPrefix": "Tier ",
+        "ticks": "Ticks",
+        "started": "Started",
+        "tierPrediction": "Tier Prediction",
+        "currentTier": "Current Tier",
+        "tier": "Tier",
+        "remaining": "Remaining",
+        "totalConsumed": "Total Consumed",
+        "estHours": "Est. Hours Left",
+        "hours": "hrs",
+        "tierProgress": "Tier Progress",
+        "overviewTitle": "Simulation Overview",
+        "goToDashboard": "Go to Dashboard",
+        "devices": "Devices",
+        "totalLoad": "Total Load",
+        "active": "Active",
+        "aiFeatures": "AI Features",
+        "aiAdvice": "AI Energy Advice",
+        "aiAdviceDesc": "Get personalized, actionable advice to reduce your electricity bill and save energy.",
+        "aiAdviceTitle": "AI Energy Advisor",
+        "aiAdviceLoading": "Getting AI advice...",
+        "aiSavings": "Potential savings",
+        "aiNoAdvice": "No specific tips available for your current setup.",
+        "aiGeneratedAt": "Generated at",
+        "recommendationsDesc": "Get AI-powered optimization tips tailored to your consumption patterns.",
+        "whatIfDesc": "Simulate changes to devices, usage hours, or add new appliances and see the impact on your bill.",
+        "whatIf": "What-If",
+        "whatIfTitle": "What-If Analysis",
+        "whatIfDuration": "Project over",
+        "minutes": "min",
+        "whatIfDevices": "Toggle Devices",
+        "whatIfCalculating": "Calculating...",
+        "whatIfRun": "Run Analysis",
+        "changes": "changes",
+        "whatIfResults": "Comparison Results",
+        "metric": "Metric",
+        "current": "Current",
+        "load": "Load",
+        "projectKWh": "Projected kWh",
+        "projectBill": "Projected Bill",
+        "whatIfTierSave": "This change would keep you in a lower billing tier!",
+        "recommendations": "Recommendations",
+        "recommendationsTitle": "Smart Recommendations",
+        "recommendationsLoading": "Analyzing your setup...",
+        "recommendationsAnalysis": "Current State Analysis",
+        "totalKWh": "Energy Used",
+        "heaviestCircuit": "Heaviest circuit",
+        "recommendationsPriority": "Priority",
+        "recommendationsQuickWins": "Quick Wins",
+        "recommendationsGeneratedAt": "Generated at",
+        "retry": "Retry",
+        "currency": "EGP"
+    },
+    "reports": {
+        "title": "Downloadable Reports",
+        "subtitle": "Export your consumption data, AI insights, and billing histories.",
+        "availableReports": "Available Reports",
+        "generateCustom": "Generate Custom Date Range",
+        "preview": "Preview",
+        "downloadPdf": "Download PDF",
+        "reportDate": "Report Date",
+        "meterId": "Meter ID",
+        "totalConsumption": "Total Consumption",
+        "finalSheriha": "Final Sheriha",
+        "chartArea": "Chart Visualization Area",
+        "mock": {
+            "report1": "Monthly Consumption Report",
+            "report2": "Quarterly Analysis Q1 2026",
+            "report3": "Raw Meter Data (CSV)",
+            "report4": "Annual Energy Audit"
+        }
+    },
+    "settings": {
+        "title": "Profile & Settings",
+        "subtitle": "Manage your account details, security, and notification preferences.",
+        "editProfile": "Edit Profile",
+        "changeAvatar": "Change Avatar",
+        "preferences": "Preferences",
+        "interfaceLanguage": "Interface Language",
+        "notificationSettings": "Notification Settings",
+        "push": {
+            "title": "Push Notifications",
+            "desc": "Receive alerts directly on your device."
+        },
+        "email": {
+            "title": "Email Summaries",
+            "desc": "Weekly consumption and billing summaries."
+        },
+        "ai": {
+            "title": "AI Recommendations",
+            "desc": "Get notified when Kashf AI finds savings."
+        },
+        "sheriha": {
+            "title": "Sheriha (Tier) Alerts",
+            "desc": "Critical warnings before crossing a new tier."
+        },
+        "securityLogin": "Security & Login",
+        "changePassword": "Change Password",
+        "lastChanged": "Last changed 3 months ago",
+        "update": "Update",
+        "twoFactor": "Two-Factor Authentication",
+        "currentlyEnabled": "Currently Enabled",
+        "manage": "Manage",
+        "signOutOther": "Sign out of all other devices",
+        "dangerZone": "Danger Zone",
+        "deleteWarning": "Once you delete your account, there is no going back. Please be certain.",
+        "deleteAccount": "Delete Account"
+    },
+    "feat": {
+        "oneMeter": "1 electricity meter",
+        "freeCoins": "50 Coins per month",
+        "meterScan": "Meter scanning",
+        "consumTrack": "Consumption tracking",
+        "sheriha": "Sheriha monitoring",
+        "dashboard": "Basic dashboard",
+        "history": "Monthly history",
+        "twoMeters": "Up to 2 electricity meters",
+        "plusCoins": "150 Coins per month",
+        "everythingFree": "Everything in Free",
+        "aiRecs": "AI-powered recommendations",
+        "billForecast": "Bill forecasting",
+        "earlyAlerts": "Early Sheriha alerts",
+        "analytics": "Advanced analytics",
+        "push": "Push notifications",
+        "pwa": "Installable PWA",
+        "fiveMeters": "Up to 5 electricity meters",
+        "familyCoins": "300 Coins per month",
+        "everythingPlus": "Everything in Plus",
+        "familyReports": "Family usage reports",
+        "sharedAccess": "Shared access",
+        "extHistory": "Extended consumption history",
+        "prioritySupport": "Priority support"
+    },
+    "subscription": {
+        "includes": "What's included"
+    }
+}
