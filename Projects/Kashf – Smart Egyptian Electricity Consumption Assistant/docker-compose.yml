@@ -1,0 +1,31 @@
+services:
+  server:
+    image: ahmedmaher77/kashf-server
+    container_name: kashf-server
+    ports:
+      - "3000:3000"
+    env_file:
+      - path: ./server/.env
+        required: false
+    environment:
+      PORT: 3000
+      MONGO_URI: mongodb://host.docker.internal:27017/kashf
+      JWT_SECRET: dummy-jwt-secret-change-in-production
+      JWT_REFRESH_SECRET: dummy-jwt-refresh-secret-change-in-production
+      JWT_ACCESS_EXPIRES_IN: 15m
+      JWT_REFRESH_EXPIRES_IN: 7d
+      CLOUDINARY_CLOUD_NAME: dummy
+      CLOUDINARY_API_KEY: dummy
+      CLOUDINARY_API_SECRET: dummy
+      GROQ_API_KEY: dummy
+      GROQ_MODEL: dummy
+    restart: unless-stopped
+
+  client:
+    image: ahmedmaher77/kashf-client
+    container_name: kashf-client
+    ports:
+      - "8080:80"
+    depends_on:
+      - server
+    restart: unless-stopped

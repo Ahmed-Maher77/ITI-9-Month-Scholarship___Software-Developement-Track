@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+    --color-kashf-blue: #06b6d4;
+    --color-kashf-light-blue: #22d3ee;
+    --color-kashf-accent: #2dd4bf;
+    --color-kashf-bg: #0a0a0f;
+    --color-kashf-surface: #12121a;
+    --color-kashf-border: #1e1e2d;
+    --color-kashf-muted: #181825;
+    --color-kashf-hover: #2a2a3a;
+}
+
+@layer base {
+    html, body {
+        @apply m-0 min-h-screen p-0 antialiased overflow-x-hidden;
+        font-family: "Alexandria", sans-serif;
+    }
+
+    button:not(:disabled), [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
+
+    button:disabled {
+        cursor: not-allowed;
+    }
+}
+
+.line-height-15 {
+    line-height: 1.5;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-kashf-surface, #111118);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155; /* slate-700 */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569; /* slate-600 */
+}
+
+/* Specific tighter scrollbar for sidebars/menus */
+.scrollbar-tight::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.scrollbar-tight::-webkit-scrollbar-track {
+    background: var(--color-kashf-surface, #111118);
+}
+
+.scrollbar-tight::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+
+.scrollbar-tight::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+}
